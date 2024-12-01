@@ -140,7 +140,13 @@ const EnhancedChatPreview = () => {
                   )}
                   
                   <div className={`glass rounded-2xl p-4 max-w-[80%] ${message.type === 'ai' ? 'rounded-tl-sm' : 'rounded-tr-sm'} ${message.type === 'user' ? 'bg-accent/10' : ''}`}>
-                    <p className="text-lg whitespace-pre-line">{message.content}</p>
+                    <p className={`text-lg whitespace-pre-line ${
+                      message.type === 'user' 
+                        ? 'text-gradient-sunshine' 
+                        : 'text-gradient-candy'
+                    }`}>
+                      {message.content}
+                    </p>
                   </div>
 
                   {message.type === 'user' && (
