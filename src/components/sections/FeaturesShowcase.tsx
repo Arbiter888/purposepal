@@ -103,10 +103,10 @@ const FeaturesShowcase = () => {
             <div className="glass rounded-2xl p-8 h-full border border-white/10 backdrop-blur-xl relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-secondary/10 via-transparent to-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               
-              <div className="relative z-10">
-                <feature.icon className="w-12 h-12 mb-4 relative z-10 text-gradient-aurora transform group-hover:scale-110 transition-transform duration-500" />
+              <div className="relative z-10 flex flex-col items-start">
+                <feature.icon className="w-12 h-12 text-gradient-aurora transform group-hover:scale-110 transition-transform duration-500" />
                 
-                <h3 className="text-xl font-semibold text-gradient-aurora mb-3 group-hover:text-gradient-rainbow transition-all duration-500">
+                <h3 className="text-xl font-semibold text-gradient-aurora mt-3 mb-3 group-hover:text-gradient-rainbow transition-all duration-500">
                   {feature.title}
                 </h3>
                 
