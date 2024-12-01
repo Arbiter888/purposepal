@@ -6,40 +6,59 @@ const ChatPreview = () => {
     <motion.div 
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      className="glass rounded-2xl p-6 max-w-2xl mx-auto"
+      className="glass rounded-3xl p-8 max-w-3xl mx-auto backdrop-blur-xl"
     >
-      <div className="space-y-4">
-        <div className="flex items-start gap-3">
-          <div className="w-8 h-8 rounded-full bg-secondary flex-shrink-0" />
-          <div className="glass rounded-2xl p-3 max-w-[80%]">
-            <p>Hello! I'm your AI life coach. How can I help you today?</p>
+      <div className="space-y-6">
+        <motion.div 
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.2 }}
+          className="flex items-start gap-4"
+        >
+          <div className="w-10 h-10 rounded-full bg-gradient-to-r from-secondary to-accent flex-shrink-0 animate-pulse" />
+          <div className="glass rounded-2xl p-4 max-w-[80%] rounded-tl-sm">
+            <p className="text-lg">Hello! I'm your AI life coach. How can I help you today?</p>
           </div>
-        </div>
+        </motion.div>
         
-        <div className="flex items-start gap-3 justify-end">
-          <div className="glass rounded-2xl p-3 max-w-[80%]">
-            <p>I need help with setting career goals.</p>
+        <motion.div 
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.4 }}
+          className="flex items-start gap-4 justify-end"
+        >
+          <div className="glass rounded-2xl p-4 max-w-[80%] rounded-tr-sm">
+            <p className="text-lg">I need help with setting career goals.</p>
           </div>
-          <div className="w-8 h-8 rounded-full bg-accent flex-shrink-0" />
-        </div>
+          <div className="w-10 h-10 rounded-full bg-gradient-to-r from-accent to-secondary flex-shrink-0" />
+        </motion.div>
         
-        <div className="flex items-start gap-3">
-          <div className="w-8 h-8 rounded-full bg-secondary flex-shrink-0" />
-          <div className="glass rounded-2xl p-3 max-w-[80%]">
-            <p>I'd be happy to help you set and achieve your career goals. Let's start by understanding your current situation and aspirations.</p>
+        <motion.div 
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.6 }}
+          className="flex items-start gap-4"
+        >
+          <div className="w-10 h-10 rounded-full bg-gradient-to-r from-secondary to-accent flex-shrink-0 animate-pulse" />
+          <div className="glass rounded-2xl p-4 max-w-[80%] rounded-tl-sm">
+            <p className="text-lg">I'd be happy to help you set and achieve your career goals. Let's start by understanding your current situation and aspirations.</p>
           </div>
-        </div>
+        </motion.div>
       </div>
       
-      <div className="mt-4 flex gap-2">
+      <div className="mt-8 flex gap-3">
         <input 
           type="text" 
           placeholder="Type your message..." 
-          className="flex-1 glass rounded-full px-4 py-2 focus:outline-none focus:ring-2 focus:ring-secondary"
+          className="flex-1 glass rounded-full px-6 py-4 focus:outline-none focus:ring-2 focus:ring-secondary/50 transition-all text-lg"
         />
-        <button className="glass p-2 rounded-full hover:bg-white/10 transition-colors">
-          <Send className="w-5 h-5" />
-        </button>
+        <motion.button 
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className="glass p-4 rounded-full hover:bg-white/10 transition-colors group"
+        >
+          <Send className="w-6 h-6 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+        </motion.button>
       </div>
     </motion.div>
   );

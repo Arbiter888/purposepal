@@ -42,7 +42,7 @@ const professionals = [
 
 const ProfessionalDirectory = () => {
   return (
-    <div className="max-w-7xl mx-auto">
+    <div className="max-w-7xl mx-auto px-4">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {professionals.map((professional, index) => (
           <motion.div
@@ -50,49 +50,64 @@ const ProfessionalDirectory = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: index * 0.1 }}
-            className="glass p-6 rounded-2xl hover-lift"
+            whileHover={{ y: -5 }}
+            className="glass p-8 rounded-2xl hover-lift group"
           >
-            <div className="flex items-center gap-4">
-              <img
+            <div className="flex items-center gap-4 mb-6">
+              <motion.img
+                initial={{ scale: 0.8 }}
+                animate={{ scale: 1 }}
+                transition={{ duration: 0.3 }}
                 src={professional.image}
                 alt={professional.name}
-                className="w-16 h-16 rounded-full object-cover"
+                className="w-20 h-20 rounded-full object-cover ring-2 ring-white/20 group-hover:ring-white/40 transition-all"
               />
               <div>
                 <h3 className="text-xl font-semibold text-gradient">{professional.name}</h3>
-                <p className="text-sm text-muted-foreground">{professional.title}</p>
+                <p className="text-base text-muted-foreground">{professional.title}</p>
               </div>
             </div>
             
-            <div className="mt-4 flex items-center gap-2">
-              <Star className="w-4 h-4 text-yellow-500 fill-yellow-500" />
-              <span>{professional.rating}</span>
+            <div className="flex items-center gap-2 mb-6">
+              <Star className="w-5 h-5 text-yellow-500 fill-yellow-500" />
+              <span className="text-lg">{professional.rating}</span>
               <span className="text-muted-foreground">({professional.reviews} reviews)</span>
               {professional.faithBased && (
-                <HandHeart className="w-4 h-4 ml-2 text-gradient" />
+                <HandHeart className="w-5 h-5 ml-2 text-gradient" />
               )}
             </div>
             
-            <div className="mt-4">
-              <p className="text-sm font-medium mb-2">Specialties:</p>
+            <div className="mb-6">
+              <p className="text-base font-medium mb-3">Specialties:</p>
               <div className="flex flex-wrap gap-2">
                 {professional.specialties.map((specialty, i) => (
-                  <span key={i} className="glass px-3 py-1 rounded-full text-sm">
+                  <span 
+                    key={i} 
+                    className="glass px-4 py-2 rounded-full text-sm group-hover:bg-white/10 transition-colors"
+                  >
                     {specialty}
                   </span>
                 ))}
               </div>
             </div>
             
-            <div className="mt-6 flex gap-2">
-              <button className="flex-1 glass px-4 py-2 rounded-full hover:bg-white/10 transition-colors flex items-center justify-center gap-2">
-                <MessageCircle className="w-4 h-4" />
-                Chat
-              </button>
-              <button className="flex-1 glass px-4 py-2 rounded-full hover:bg-white/10 transition-colors flex items-center justify-center gap-2">
-                <Video className="w-4 h-4" />
-                Call
-              </button>
+            <div className="flex gap-3">
+              <motion.button 
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="flex-1 glass px-4 py-3 rounded-full hover:bg-white/10 transition-all duration-300 flex items-center justify-center gap-2 group"
+              >
+                <MessageCircle className="w-5 h-5" />
+                <span>Chat</span>
+              </motion.button>
+              <motion.button 
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="flex-1 glass px-4 py-3 rounded-full hover:bg-white/10 transition-all duration-300 flex items-center justify-center gap-2 group"
+              >
+                <Video className="w-5 h-5" />
+                <span>Call</span>
+              </motion.button>
             </div>
           </motion.div>
         ))}
