@@ -10,7 +10,7 @@ const InteractiveDemo = () => {
         transition={{ duration: 0.6 }}
         className="text-center mb-16"
       >
-        <h2 className="text-4xl font-bold text-gradient mb-4">Experience Our Platform</h2>
+        <h2 className="text-4xl font-bold text-gradient-candy mb-4">Experience Our Platform</h2>
         <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
           See how our AI-powered platform can transform your journey to wellness and personal growth
         </p>
