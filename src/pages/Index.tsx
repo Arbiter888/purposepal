@@ -4,6 +4,7 @@ import ChatPreview from "@/components/ChatPreview";
 import ProfessionalDirectory from "@/components/ProfessionalDirectory";
 import HeroSection from "@/components/HeroSection";
 import FaithBasedServices from "@/components/FaithBasedServices";
+import EnhancedChatPreview from "@/components/EnhancedChatPreview";
 
 const features = [
   {
@@ -113,12 +114,12 @@ const Index = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold text-gradient">Experience AI Coaching</h2>
-          <p className="mt-4 text-lg text-muted-foreground">
-            Get personalized guidance from our advanced AI coach
+          <h2 className="text-4xl font-bold text-gradient mb-4">Experience AI Coaching</h2>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            Get personalized guidance from our advanced AI coach that understands both your professional goals and spiritual journey
           </p>
         </motion.div>
-        <ChatPreview />
+        <EnhancedChatPreview />
       </section>
 
       {/* AI Services Section */}
