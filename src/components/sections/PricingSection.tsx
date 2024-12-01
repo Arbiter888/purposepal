@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Check, MessageSquare, Users, Crown } from "lucide-react";
+import { Check, MessageSquare, Users, Crown, DollarSign } from "lucide-react";
 
 const plans = [
   {
@@ -14,7 +14,9 @@ const plans = [
       "Community forum access"
     ],
     credits: "20 credits/month",
-    creditValue: "Start with essential wellness features"
+    creditValue: "Start with essential wellness features",
+    savings: "Save up to $50/month",
+    comparison: "Traditional consultation: $50/session vs. Free AI guidance"
   },
   {
     name: "Pro",
@@ -31,7 +33,9 @@ const plans = [
       "Progress analytics"
     ],
     credits: "200 credits/month",
-    creditValue: "Perfect for regular wellness sessions and coaching"
+    creditValue: "Perfect for regular wellness sessions and coaching",
+    savings: "Save up to $450/month",
+    comparison: "Traditional services: $480/month vs. $29/month for comprehensive support"
   },
   {
     name: "Whole Life",
@@ -50,7 +54,9 @@ const plans = [
       "Emergency support line"
     ],
     credits: "500 credits/month",
-    creditValue: "Full access to all premium features and services"
+    creditValue: "Full access to all premium features and services",
+    savings: "Save up to $900/month",
+    comparison: "Traditional services: $1000+/month vs. $99/month for unlimited access"
   },
 ];
 
@@ -145,6 +151,14 @@ const PricingSection = () => {
               <div className="mb-6 p-4 glass rounded-xl">
                 <p className="text-lg font-semibold mb-2">{plan.credits}</p>
                 <p className="text-sm text-muted-foreground">{plan.creditValue}</p>
+              </div>
+
+              <div className="mb-6 p-4 glass rounded-xl bg-white/5">
+                <div className="flex items-center gap-2 mb-2">
+                  <DollarSign className="w-5 h-5 text-gradient-sunshine" />
+                  <p className="font-semibold text-gradient-sunshine">{plan.savings}</p>
+                </div>
+                <p className="text-sm text-muted-foreground/80">{plan.comparison}</p>
               </div>
               
               <ul className="space-y-4 mb-8">
