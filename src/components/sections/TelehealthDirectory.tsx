@@ -2,12 +2,10 @@ import { motion } from "framer-motion";
 import { 
   Brain, 
   Salad, 
-  Heart, 
   Stethoscope, 
-  Users, 
-  Pill,
   Clock,
-  Smile
+  MessageCircle,
+  Video
 } from "lucide-react";
 
 const services = [
@@ -16,48 +14,42 @@ const services = [
     icon: Brain,
     emoji: "🧠",
     credits: 50,
-    description: "One-on-one sessions with licensed therapists",
-    duration: "50 minutes"
+    description: "Virtual therapy sessions with licensed mental health professionals. Get support for anxiety, depression, stress, and more.",
+    duration: "50 minutes",
+    features: [
+      "Video counseling sessions",
+      "Cognitive behavioral therapy",
+      "Stress management techniques",
+      "Mental health assessments"
+    ]
   },
   {
     name: "Nutrition Consultation",
     icon: Salad,
     emoji: "🥗",
     credits: 35,
-    description: "Personalized dietary guidance from registered dietitians",
-    duration: "30 minutes"
+    description: "Virtual consultations with registered dietitians for personalized nutrition advice and meal planning",
+    duration: "30 minutes",
+    features: [
+      "Personalized meal plans",
+      "Diet assessments",
+      "Weight management guidance",
+      "Nutritional counseling"
+    ]
   },
   {
-    name: "Cardiology",
-    icon: Heart,
-    emoji: "❤️",
-    credits: 60,
-    description: "Heart health consultations with specialists",
-    duration: "40 minutes"
-  },
-  {
-    name: "General Medicine",
+    name: "General Practitioner",
     icon: Stethoscope,
     emoji: "👨‍⚕️",
     credits: 40,
-    description: "Primary care physician consultations",
-    duration: "30 minutes"
-  },
-  {
-    name: "Group Therapy",
-    icon: Users,
-    emoji: "👥",
-    credits: 25,
-    description: "Guided group sessions with others on similar journeys",
-    duration: "60 minutes"
-  },
-  {
-    name: "Medication Management",
-    icon: Pill,
-    emoji: "💊",
-    credits: 45,
-    description: "Prescription reviews and adjustments",
-    duration: "25 minutes"
+    description: "Online consultations with licensed physicians for general health concerns and medical advice",
+    duration: "30 minutes",
+    features: [
+      "General health check-ups",
+      "Prescription renewals",
+      "Basic health assessments",
+      "Medical consultations"
+    ]
   }
 ];
 
@@ -71,10 +63,10 @@ const TelehealthDirectory = () => {
         className="text-center mb-16"
       >
         <h2 className="text-4xl font-bold text-gradient-candy mb-4">
-          Telehealth Services Directory
+          Virtual Healthcare Services
         </h2>
         <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-          Connect with healthcare professionals from various specialties
+          Connect with healthcare professionals from the comfort of your home
         </p>
       </motion.div>
 
@@ -107,17 +99,40 @@ const TelehealthDirectory = () => {
               {service.description}
             </p>
 
+            <div className="mb-6">
+              <h4 className="text-sm font-medium text-muted-foreground mb-3">Services Include:</h4>
+              <ul className="space-y-2">
+                {service.features.map((feature, idx) => (
+                  <li key={idx} className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <div className="w-1.5 h-1.5 rounded-full bg-secondary/50" />
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
             <div className="flex items-center justify-between">
               <div className="text-2xl font-bold text-gradient-sunshine">
                 {service.credits} Credits
               </div>
-              <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="glass px-6 py-2 rounded-full text-gradient-candy hover:bg-white/10 transition-colors"
-              >
-                Book Now
-              </motion.button>
+              <div className="flex gap-2">
+                <motion.button
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="glass px-4 py-2 rounded-full text-gradient-candy hover:bg-white/10 transition-colors flex items-center gap-2"
+                >
+                  <MessageCircle className="w-4 h-4" />
+                  Chat
+                </motion.button>
+                <motion.button
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="glass px-4 py-2 rounded-full text-gradient-candy hover:bg-white/10 transition-colors flex items-center gap-2"
+                >
+                  <Video className="w-4 h-4" />
+                  Video
+                </motion.button>
+              </div>
             </div>
           </motion.div>
         ))}
