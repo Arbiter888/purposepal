@@ -1,12 +1,11 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Sparkles, Stars } from "lucide-react";
+import { ArrowRight, Sparkles, Stars, Zap } from "lucide-react";
 
 const HeroWithFeatures = () => {
   return (
     <section className="min-h-screen section-padding relative overflow-hidden flex items-center">
       {/* Enhanced animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
-        {/* Animated gradient orbs */}
         <motion.div
           animate={{
             scale: [1, 1.2, 1],
@@ -36,15 +35,15 @@ const HeroWithFeatures = () => {
         />
       </div>
 
-      {/* Floating particles */}
+      {/* Enhanced floating particles */}
       <div className="absolute inset-0 overflow-hidden">
-        {[...Array(20)].map((_, i) => (
+        {[...Array(30)].map((_, i) => (
           <motion.div
             key={i}
             initial={{ opacity: 0, y: Math.random() * 100 }}
             animate={{
               opacity: [0.2, 0.5, 0.2],
-              y: [0, -500],
+              y: [-10, -500],
               x: Math.sin(i) * 50,
             }}
             transition={{
@@ -65,19 +64,30 @@ const HeroWithFeatures = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="max-w-4xl mx-auto text-center relative z-10"
+        className="max-w-5xl mx-auto text-center relative z-10"
       >
+        {/* Enhanced badge */}
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-8"
+        >
+          <Zap className="w-4 h-4 text-yellow-400" />
+          <span className="text-gradient-rainbow text-sm font-medium">AI-Powered Life Transformation</span>
+          <Zap className="w-4 h-4 text-yellow-400" />
+        </motion.div>
+
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
-          className="flex items-center justify-center gap-2 mb-4"
+          className="flex items-center justify-center gap-2 mb-6"
         >
-          <Sparkles className="w-5 h-5 text-yellow-400 animate-pulse" />
-          <span className="text-2xl md:text-3xl font-medium text-gradient-rainbow inline-block">
+          <Sparkles className="w-6 h-6 text-yellow-400 animate-pulse" />
+          <span className="text-2xl md:text-3xl font-medium text-gradient inline-block">
             Welcome to BornPurpose
           </span>
-          <Sparkles className="w-5 h-5 text-yellow-400 animate-pulse" />
+          <Sparkles className="w-6 h-6 text-yellow-400 animate-pulse" />
         </motion.div>
         
         <motion.h1
@@ -102,7 +112,7 @@ const HeroWithFeatures = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
-          className="mt-8 text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed glass p-6 rounded-xl"
+          className="mt-8 text-xl md:text-2xl text-muted-foreground/90 max-w-2xl mx-auto leading-relaxed glass p-6 rounded-xl"
         >
           Transform your life with personalized guidance and support from our advanced AI coach.
           Your journey to success starts here.
@@ -161,6 +171,30 @@ const HeroWithFeatures = () => {
             <span className="relative z-10">Watch Demo</span>
           </motion.button>
         </motion.div>
+
+        {/* Enhanced floating features */}
+        <div className="mt-20 flex justify-center gap-8 flex-wrap">
+          {[
+            { icon: "🎯", text: "Smart Goal Setting" },
+            { icon: "🧠", text: "AI-Powered Insights" },
+            { icon: "💪", text: "Personal Growth" },
+            { icon: "🌟", text: "Daily Motivation" }
+          ].map((feature, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.7 + index * 0.1 }}
+              className="glass px-6 py-3 rounded-full text-base animate-float flex items-center gap-2"
+              style={{
+                animationDelay: `${index * 0.2}s`
+              }}
+            >
+              <span className="text-2xl">{feature.icon}</span>
+              <span>{feature.text}</span>
+            </motion.div>
+          ))}
+        </div>
       </motion.div>
     </section>
   );
