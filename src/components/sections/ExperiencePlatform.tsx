@@ -3,9 +3,7 @@ import { MessageSquare, Video, Calendar, Coins } from "lucide-react";
 
 const ExperiencePlatform = () => {
   return (
-    <section className="section-padding relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-secondary/5 to-transparent pointer-events-none" />
-      
+    <section className="section-padding">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
