@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight, Check, Apple, Dumbbell, Brain, ShoppingBag, Heart } from "lucide-react";
 import ChatPreview from "@/components/ChatPreview";
 import ProfessionalDirectory from "@/components/ProfessionalDirectory";
 
@@ -40,9 +40,51 @@ const plans = [
   },
 ];
 
+const aiServices = [
+  {
+    icon: Apple,
+    title: "AI Dietician",
+    description: "Get personalized meal plans and nutrition advice tailored to your goals and preferences.",
+  },
+  {
+    icon: Dumbbell,
+    title: "Fitness Coach",
+    description: "Custom workout plans and real-time form corrections for optimal results.",
+  },
+  {
+    icon: Brain,
+    title: "Mental Wellness",
+    description: "24/7 support for meditation, stress management, and emotional well-being.",
+  },
+];
+
+const recommendedProducts = [
+  {
+    title: "Premium Yoga Mat",
+    description: "Perfect for your morning meditation routine",
+    price: "$49.99",
+    category: "Wellness",
+    image: "https://images.unsplash.com/photo-1592432678016-e910b452f9b3?w=500",
+  },
+  {
+    title: "Smart Food Scale",
+    description: "Track your portions with precision",
+    price: "$79.99",
+    category: "Nutrition",
+    image: "https://images.unsplash.com/photo-1542601600647-3a722a90a76b?w=500",
+  },
+  {
+    title: "Mindfulness Journal",
+    description: "Document your personal growth journey",
+    price: "$24.99",
+    category: "Mental Health",
+    image: "https://images.unsplash.com/photo-1517842645767-c639042777db?w=500",
+  },
+];
+
 const Index = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-black text-white">
       {/* Hero Section */}
       <section className="section-padding relative overflow-hidden">
         <motion.div
@@ -82,6 +124,82 @@ const Index = () => {
           </p>
         </motion.div>
         <ChatPreview />
+      </section>
+
+      {/* AI Services Section */}
+      <section className="section-padding">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl font-bold text-gradient">AI-Powered Services</h2>
+          <p className="mt-4 text-lg text-muted-foreground">
+            Personalized guidance for every aspect of your life
+          </p>
+        </motion.div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          {aiServices.map((service, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              className="glass p-6 rounded-2xl hover-lift"
+            >
+              <service.icon className="w-12 h-12 mb-4 text-gradient" />
+              <h3 className="text-xl font-semibold text-gradient">{service.title}</h3>
+              <p className="text-muted-foreground mt-2">{service.description}</p>
+              <button className="mt-4 glass px-4 py-2 rounded-full hover:bg-white/10 transition-colors w-full">
+                Try Now
+              </button>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* Recommended Products Section */}
+      <section className="section-padding bg-muted">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl font-bold text-gradient">Recommended for You</h2>
+          <p className="mt-4 text-lg text-muted-foreground">
+            Products and services aligned with your goals
+          </p>
+        </motion.div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          {recommendedProducts.map((product, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              className="glass p-6 rounded-2xl hover-lift overflow-hidden"
+            >
+              <img
+                src={product.image}
+                alt={product.title}
+                className="w-full h-48 object-cover rounded-xl mb-4"
+              />
+              <span className="inline-block glass px-3 py-1 rounded-full text-sm mb-2">
+                {product.category}
+              </span>
+              <h3 className="text-xl font-semibold">{product.title}</h3>
+              <p className="text-muted-foreground mt-2">{product.description}</p>
+              <div className="mt-4 flex items-center justify-between">
+                <span className="text-lg font-semibold text-gradient">{product.price}</span>
+                <button className="glass px-4 py-2 rounded-full hover:bg-white/10 transition-colors">
+                  <ShoppingBag className="w-5 h-5" />
+                </button>
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </section>
 
       {/* Features Section */}
