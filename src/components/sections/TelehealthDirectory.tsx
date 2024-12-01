@@ -10,12 +10,12 @@ const services = [
     emoji: "🧠",
     credits: 50,
     description: "Virtual therapy sessions with licensed mental health professionals focused on holistic wellness and emotional balance.",
-    duration: "50 minutes",
+    duration: "30 minutes",
     features: [
-      "Stress and anxiety management",
-      "Mindfulness techniques",
-      "Emotional wellness coaching",
-      "Personal growth guidance"
+      "Stress and anxiety management (10 credits/session)",
+      "Mindfulness techniques (10 credits/session)",
+      "Emotional wellness coaching (50 credits/session)",
+      "Personal growth guidance (50 credits/session)"
     ]
   },
   {
@@ -24,14 +24,14 @@ const services = [
     title: "Registered Dietitian",
     icon: Salad,
     emoji: "🥗",
-    credits: 35,
+    credits: 50,
     description: "Connect with certified nutritionists for personalized dietary guidance and healthy lifestyle planning.",
     duration: "30 minutes",
     features: [
-      "Personalized meal planning",
-      "Dietary assessments",
-      "Nutritional counseling",
-      "Wellness diet strategies"
+      "Personalized meal planning (50 credits/session)",
+      "Dietary assessments (10 credits)",
+      "Nutritional counseling (50 credits/session)",
+      "Wellness diet strategies (10 credits/session)"
     ]
   },
   {
@@ -40,14 +40,14 @@ const services = [
     title: "Wellness Coach",
     icon: Heart,
     emoji: "✨",
-    credits: 40,
+    credits: 50,
     description: "Engage in meaningful conversations about spiritual wellness and personal development with experienced guides.",
-    duration: "45 minutes",
+    duration: "30 minutes",
     features: [
-      "Spiritual wellness coaching",
-      "Meditation guidance",
-      "Mindfulness practices",
-      "Personal growth support"
+      "Spiritual wellness coaching (50 credits/session)",
+      "Meditation guidance (10 credits/session)",
+      "Mindfulness practices (10 credits/session)",
+      "Personal growth support (50 credits/session)"
     ]
   },
   {
@@ -56,14 +56,14 @@ const services = [
     title: "Certified Trainer",
     icon: Dumbbell,
     emoji: "💪",
-    credits: 45,
+    credits: 50,
     description: "Virtual fitness consultations with certified trainers for personalized exercise guidance and wellness planning.",
-    duration: "40 minutes",
+    duration: "30 minutes",
     features: [
-      "Custom workout planning",
-      "Form and technique guidance",
-      "Fitness goal setting",
-      "Exercise modifications"
+      "Custom workout planning (50 credits/session)",
+      "Form and technique guidance (10 credits/session)",
+      "Fitness goal setting (10 credits/session)",
+      "Exercise modifications (50 credits/session)"
     ]
   }
 ];

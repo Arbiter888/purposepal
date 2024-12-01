@@ -39,13 +39,13 @@ const ExperiencePlatform = () => {
           </div>
           <h3 className="text-2xl font-semibold text-gradient-candy mb-4">AI Chat Support</h3>
           <p className="text-lg text-muted-foreground mb-6">
-            24/7 intelligent chat support to guide you through your wellness journey
+            24/7 intelligent chat support to guide you through your wellness journey. Get instant answers and personalized guidance.
           </p>
           <div className="flex items-center justify-between mt-auto pt-4 border-t border-white/10">
-            <span className="text-sm text-muted-foreground">Per session</span>
+            <span className="text-sm text-muted-foreground">10 minutes</span>
             <div className="flex items-center gap-2">
               <Coins className="w-4 h-4 text-yellow-400" />
-              <span className="font-semibold">5 credits</span>
+              <span className="font-semibold">10 credits</span>
             </div>
           </div>
         </motion.div>
@@ -62,13 +62,13 @@ const ExperiencePlatform = () => {
           </div>
           <h3 className="text-2xl font-semibold text-gradient-aurora mb-4">Video Sessions</h3>
           <p className="text-lg text-muted-foreground mb-6">
-            High-quality video consultations with wellness experts and coaches
+            High-quality video consultations with wellness experts and coaches. Get personalized advice and guidance.
           </p>
           <div className="flex items-center justify-between mt-auto pt-4 border-t border-white/10">
             <span className="text-sm text-muted-foreground">30 min session</span>
             <div className="flex items-center gap-2">
               <Coins className="w-4 h-4 text-yellow-400" />
-              <span className="font-semibold">25 credits</span>
+              <span className="font-semibold">50 credits</span>
             </div>
           </div>
         </motion.div>
@@ -85,13 +85,13 @@ const ExperiencePlatform = () => {
           </div>
           <h3 className="text-2xl font-semibold text-gradient-rainbow mb-4">Smart Scheduling</h3>
           <p className="text-lg text-muted-foreground mb-6">
-            AI-powered scheduling to help you maintain your wellness routine
+            AI-powered scheduling to help you maintain your wellness routine with automated reminders and planning.
           </p>
           <div className="flex items-center justify-between mt-auto pt-4 border-t border-white/10">
             <span className="text-sm text-muted-foreground">Monthly plan</span>
             <div className="flex items-center gap-2">
               <Coins className="w-4 h-4 text-yellow-400" />
-              <span className="font-semibold">15 credits</span>
+              <span className="font-semibold">30 credits</span>
             </div>
           </div>
         </motion.div>

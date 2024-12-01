@@ -8,13 +8,13 @@ const plans = [
     description: "Get started with AI-powered guidance",
     icon: MessageSquare,
     features: [
-      "Basic AI chatbot access",
+      "Basic AI chatbot access (5 credits)",
       "Goal setting tools",
       "Progress tracking",
       "Community forum access"
     ],
-    credits: "10 credits/month",
-    creditValue: "Each credit = 1 minute of AI chat time"
+    credits: "20 credits/month",
+    creditValue: "Start with essential wellness features"
   },
   {
     name: "Pro",
@@ -22,16 +22,16 @@ const plans = [
     description: "Enhanced support for serious growth",
     icon: Users,
     features: [
-      "Advanced AI coaching",
+      "Advanced AI coaching (10 credits/session)",
+      "2 Video sessions/month (50 credits each)",
+      "Smart scheduling (30 credits)",
       "Priority support",
       "Professional network access",
-      "Telehealth sessions",
-      "Group coaching sessions",
       "Personalized wellness plans",
       "Progress analytics"
     ],
-    credits: "100 credits/month",
-    creditValue: "Credits can be used for AI chat (1 credit/min) or telehealth services (25-60 credits/session)"
+    credits: "200 credits/month",
+    creditValue: "Perfect for regular wellness sessions and coaching"
   },
   {
     name: "Whole Life",
@@ -39,8 +39,9 @@ const plans = [
     description: "Complete transformation support",
     icon: Crown,
     features: [
-      "Personal concierge service",
-      "Everything in Pro plan",
+      "Unlimited AI coaching",
+      "6 Video sessions/month (50 credits each)",
+      "Smart scheduling included",
       "1-on-1 expert consultations",
       "Priority scheduling",
       "Custom wellness programs",
@@ -48,8 +49,8 @@ const plans = [
       "Exclusive events access",
       "Emergency support line"
     ],
-    credits: "400 credits/month",
-    creditValue: "Unlimited AI chat + Premium credits for telehealth services"
+    credits: "500 credits/month",
+    creditValue: "Full access to all premium features and services"
   },
 ];
 
