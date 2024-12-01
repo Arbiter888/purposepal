@@ -29,17 +29,17 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-black text-white">
-      {/* Progress indicator */}
+      {/* Progress indicator with sunshine gradient */}
       <motion.div 
-        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-secondary via-accent to-tertiary z-50"
+        className="fixed top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 opacity-60 z-50"
         style={{ scaleX: scrollProgress }}
       />
 
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-secondary/20 via-background to-background pointer-events-none" />
       
       <div className="relative">
-        {/* Enhanced connecting line between sections */}
-        <div className="absolute left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-transparent via-secondary/40 to-transparent after:content-[''] after:absolute after:inset-0 after:animate-pulse after:bg-gradient-to-b after:from-transparent after:via-accent/30 after:to-transparent" />
+        {/* Enhanced connecting line between sections with sunshine gradient */}
+        <div className="absolute left-1/2 top-0 bottom-0 w-[1px] bg-gradient-to-b from-transparent via-yellow-400/20 to-transparent after:content-[''] after:absolute after:inset-0 after:animate-pulse after:bg-gradient-to-b after:from-transparent after:via-orange-500/10 after:to-transparent -z-10" />
         
         <motion.div
           initial={{ opacity: 0 }}
