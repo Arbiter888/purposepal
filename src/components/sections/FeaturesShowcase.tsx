@@ -5,32 +5,32 @@ const features = [
   {
     icon: Brain,
     title: "Mental Wellness",
-    description: "AI-powered support for meditation, stress management, and emotional well-being"
+    description: "Access personalized AI-powered support for meditation, stress management, and emotional well-being. Our platform offers guided sessions, mood tracking, and adaptive techniques to help you maintain mental balance in your daily life."
   },
   {
     icon: Apple,
     title: "Nutrition Guidance",
-    description: "Personalized meal plans and mindful eating practices aligned with your values"
+    description: "Receive customized meal plans and mindful eating practices aligned with your values and dietary preferences. Get real-time nutritional insights, recipe suggestions, and expert guidance to support your healthy eating journey."
   },
   {
     icon: Dumbbell,
     title: "Fitness Coaching",
-    description: "Custom workout plans and real-time form guidance for optimal results"
+    description: "Experience personalized workout plans with real-time form guidance for optimal results. Our AI coach adapts to your progress, provides motivation, and helps prevent injuries while working towards your fitness goals."
   },
   {
     icon: Heart,
     title: "Spiritual Growth",
-    description: "Faith-based guidance and support for your spiritual journey"
+    description: "Embark on a meaningful spiritual journey with faith-based guidance and support. Access daily devotionals, prayer tracking, and community connections to nurture your spiritual well-being and personal faith practice."
   },
   {
     icon: Book,
     title: "Personal Development",
-    description: "Tailored learning paths and skill development programs"
+    description: "Follow tailored learning paths and skill development programs designed for your growth. Track your progress, set meaningful goals, and access resources that align with your personal and professional aspirations."
   },
   {
     icon: Star,
     title: "Goal Achievement",
-    description: "Strategic planning and accountability for reaching your goals"
+    description: "Transform your aspirations into reality with strategic planning and accountability tools. Our platform helps you break down large goals into manageable steps, track progress, and celebrate milestones along the way."
   }
 ];
 
