@@ -127,7 +127,7 @@ const EnhancedChatPreview = ({ onServiceChange }: EnhancedChatPreviewProps) => {
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="glass rounded-3xl p-8 backdrop-blur-xl relative overflow-hidden"
+          className="bg-muted rounded-3xl p-8 relative overflow-hidden"
         >
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-secondary via-accent to-secondary opacity-50" />
           
@@ -148,7 +148,7 @@ const EnhancedChatPreview = ({ onServiceChange }: EnhancedChatPreviewProps) => {
                     </div>
                   )}
                   
-                  <div className={`glass rounded-2xl p-4 max-w-[80%] ${message.type === 'ai' ? 'rounded-tl-sm' : 'rounded-tr-sm'} ${message.type === 'user' ? 'bg-accent/10' : ''}`}>
+                  <div className={`bg-muted/80 rounded-2xl p-4 max-w-[80%] ${message.type === 'ai' ? 'rounded-tl-sm' : 'rounded-tr-sm'} ${message.type === 'user' ? 'bg-accent/10' : ''}`}>
                     <p className={`text-lg whitespace-pre-line ${
                       message.type === 'user' 
                         ? 'text-gradient-sunshine' 
@@ -174,12 +174,12 @@ const EnhancedChatPreview = ({ onServiceChange }: EnhancedChatPreviewProps) => {
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
               placeholder="Type your message..." 
-              className="flex-1 glass rounded-full px-6 py-4 focus:outline-none focus:ring-2 focus:ring-secondary/50 transition-all text-lg"
+              className="flex-1 bg-muted/80 rounded-full px-6 py-4 focus:outline-none focus:ring-2 focus:ring-secondary/50 transition-all text-lg"
             />
             <motion.button 
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="glass p-4 rounded-full hover:bg-white/10 transition-colors group"
+              className="bg-muted/80 p-4 rounded-full hover:bg-white/10 transition-colors group"
             >
               <Send className="w-6 h-6 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
             </motion.button>
