@@ -89,7 +89,7 @@ const FeaturesShowcase = () => {
       >
         <h2 className="text-4xl font-bold text-gradient-aurora mb-4">Comprehensive Support</h2>
         <p className="text-xl text-muted-foreground/90 max-w-2xl mx-auto">
-          Experience holistic growth with our AI-powered features designed to support every aspect of your journey. Save up to ${totalMonthlySavings}+ monthly compared to traditional services.
+          Experience holistic growth with our AI-powered features designed to support every aspect of your journey. <span className="text-gradient-sunshine font-semibold">Save up to ${totalMonthlySavings}+ monthly</span> compared to traditional services.
         </p>
       </motion.div>
 
