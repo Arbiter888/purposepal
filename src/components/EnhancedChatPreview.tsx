@@ -72,7 +72,7 @@ const fitnessMessages = [
 ];
 
 const serviceHighlight = {
-  wellness: "bg-gradient-to-r from-blue-500 to-purple-500",
+  wellness: "bg-gradient-to-r from-green-400 via-cyan-500 to-blue-500",
   nutrition: "bg-gradient-to-r from-green-500 to-emerald-500",
   spiritual: "bg-gradient-to-r from-amber-500 to-orange-500",
   fitness: "bg-gradient-to-r from-rose-500 to-red-500"
@@ -101,7 +101,7 @@ const EnhancedChatPreview = () => {
     <div className="max-w-5xl mx-auto">
       <Tabs defaultValue="wellness" className="w-full" onValueChange={setActiveTab}>
         <TabsList className="grid w-full grid-cols-4 mb-8">
-          <TabsTrigger value="wellness" className="data-[state=active]:bg-blue-500/20">
+          <TabsTrigger value="wellness" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-green-400 data-[state=active]:via-cyan-500 data-[state=active]:to-blue-500 data-[state=active]:bg-opacity-20">
             Wellness
           </TabsTrigger>
           <TabsTrigger value="nutrition" className="data-[state=active]:bg-green-500/20">
