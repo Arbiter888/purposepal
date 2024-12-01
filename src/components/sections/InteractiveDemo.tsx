@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { MessageSquare, Video, Calendar } from "lucide-react";
+import EnhancedChatPreview from "../EnhancedChatPreview";
 
 const InteractiveDemo = () => {
   return (
@@ -15,6 +16,10 @@ const InteractiveDemo = () => {
           See how our AI-powered platform can transform your journey to wellness and personal growth
         </p>
       </motion.div>
+
+      <div className="mb-20">
+        <EnhancedChatPreview />
+      </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
         <motion.div
