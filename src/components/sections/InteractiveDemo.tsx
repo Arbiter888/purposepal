@@ -17,11 +17,7 @@ const InteractiveDemo = () => {
         </p>
       </motion.div>
 
-      <div className="mb-20">
-        <EnhancedChatPreview />
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-20">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -60,6 +56,10 @@ const InteractiveDemo = () => {
             AI-powered scheduling to help you maintain your wellness routine
           </p>
         </motion.div>
+      </div>
+
+      <div>
+        <EnhancedChatPreview />
       </div>
     </section>
   );
