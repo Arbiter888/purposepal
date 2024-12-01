@@ -3,29 +3,29 @@ import { motion } from "framer-motion";
 const GradientShowcase = () => {
   const gradients = [
     {
-      name: "Sunshine",
-      class: "text-gradient-sunshine",
-      description: "Warm blend of yellow through orange to red"
+      name: "Dawn",
+      class: "text-gradient-dawn",
+      description: "A gentle blend of secondary and highlight tones"
     },
     {
-      name: "Rainbow",
-      class: "text-gradient-rainbow",
-      description: "Vibrant violet through pink to yellow"
+      name: "Dusk",
+      class: "text-gradient-dusk",
+      description: "Soft tertiary fading into secondary hues"
     },
     {
-      name: "Aurora",
-      class: "text-gradient-aurora",
-      description: "Cool green through cyan to blue"
+      name: "Forest",
+      class: "text-gradient-forest",
+      description: "Natural highlight transitioning to accent"
     },
     {
-      name: "Candy",
-      class: "text-gradient-candy",
-      description: "Sweet pink through purple to indigo"
+      name: "Mystic",
+      class: "text-gradient-mystic",
+      description: "Ethereal accent merging with highlight"
     },
     {
-      name: "Neon",
-      class: "text-gradient-neon",
-      description: "Electric lime through emerald to teal"
+      name: "Cosmic",
+      class: "text-gradient-cosmic",
+      description: "Celestial tertiary blending into highlight"
     }
   ];
 
@@ -37,9 +37,9 @@ const GradientShowcase = () => {
         transition={{ duration: 0.6 }}
         className="text-center mb-16"
       >
-        <h2 className="text-4xl font-bold text-gradient mb-4">Vibrant Gradients</h2>
+        <h2 className="text-4xl font-bold text-gradient mb-4">Gradient Showcase</h2>
         <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-          Explore our collection of energetic text gradients
+          Explore our new collection of text gradients
         </p>
       </motion.div>
 
