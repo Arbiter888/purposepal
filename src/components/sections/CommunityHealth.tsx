@@ -24,7 +24,7 @@ const CommunityHealth = () => {
           className="glass p-8 rounded-2xl hover:scale-105 transition-transform duration-300"
         >
           <Users className="w-12 h-12 mb-4 text-gradient" />
-          <h3 className="text-xl font-semibold text-gradient-forest mb-3">Peer Support Groups</h3>
+          <h3 className="text-xl font-semibold text-gradient-neon mb-3">Peer Support Groups</h3>
           <p className="text-muted-foreground">
             Join virtual support groups led by experienced facilitators and connect with others on similar journeys
           </p>
@@ -37,7 +37,7 @@ const CommunityHealth = () => {
           className="glass p-8 rounded-2xl hover:scale-105 transition-transform duration-300"
         >
           <Stethoscope className="w-12 h-12 mb-4 text-gradient" />
-          <h3 className="text-xl font-semibold text-gradient-forest mb-3">Telehealth Services</h3>
+          <h3 className="text-xl font-semibold text-gradient-neon mb-3">Telehealth Services</h3>
           <p className="text-muted-foreground">
             Access licensed healthcare professionals for virtual consultations and ongoing support
           </p>
@@ -50,7 +50,7 @@ const CommunityHealth = () => {
           className="glass p-8 rounded-2xl hover:scale-105 transition-transform duration-300"
         >
           <Heart className="w-12 h-12 mb-4 text-gradient" />
-          <h3 className="text-xl font-semibold text-gradient-forest mb-3">Holistic Wellness</h3>
+          <h3 className="text-xl font-semibold text-gradient-neon mb-3">Holistic Wellness</h3>
           <p className="text-muted-foreground">
             Integrate physical, mental, and spiritual health with guidance from our community experts
           </p>
