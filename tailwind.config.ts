@@ -31,14 +31,30 @@ export default {
         secondary: {
           DEFAULT: "#86B6B6",
           foreground: "#000000",
+          light: "#A8D1D1",
+          dark: "#5E8B8B",
         },
         accent: {
           DEFAULT: "#E8A8A8",
           foreground: "#000000",
+          light: "#F4C4C4",
+          dark: "#D17878",
         },
         muted: {
           DEFAULT: "#1A1A1A",
           foreground: "#FFFFFF",
+        },
+        tertiary: {
+          DEFAULT: "#B8A8E8",
+          light: "#D4C4F4",
+          dark: "#9B8BCC",
+          foreground: "#000000",
+        },
+        highlight: {
+          DEFAULT: "#A8E8D4",
+          light: "#C4F4E4",
+          dark: "#78D1B8",
+          foreground: "#000000",
         },
       },
       borderRadius: {
@@ -83,5 +99,27 @@ export default {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require("tailwindcss-animate"),
+    function({ addUtilities }) {
+      const newUtilities = {
+        '.text-gradient': {
+          '@apply bg-clip-text text-transparent bg-gradient-to-r from-secondary to-accent': {},
+        },
+        '.text-gradient-purple': {
+          '@apply bg-clip-text text-transparent bg-gradient-to-r from-tertiary to-accent': {},
+        },
+        '.text-gradient-ocean': {
+          '@apply bg-clip-text text-transparent bg-gradient-to-r from-highlight to-secondary': {},
+        },
+        '.text-gradient-sunset': {
+          '@apply bg-clip-text text-transparent bg-gradient-to-r from-accent to-tertiary': {},
+        },
+        '.text-gradient-nature': {
+          '@apply bg-clip-text text-transparent bg-gradient-to-r from-highlight to-tertiary': {},
+        },
+      }
+      addUtilities(newUtilities)
+    }
+  ],
 } satisfies Config;
