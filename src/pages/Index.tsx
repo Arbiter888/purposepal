@@ -1,5 +1,6 @@
 import HeroWithFeatures from "@/components/sections/HeroWithFeatures";
 import FeaturesShowcase from "@/components/sections/FeaturesShowcase";
+import ExperiencePlatform from "@/components/sections/ExperiencePlatform";
 import InteractiveDemo from "@/components/sections/InteractiveDemo";
 import CommunityHealth from "@/components/sections/CommunityHealth";
 import TelehealthDirectory from "@/components/sections/TelehealthDirectory";
@@ -14,6 +15,7 @@ const Index = () => {
     <div className="min-h-screen bg-black text-white">
       <HeroWithFeatures />
       <FeaturesShowcase />
+      <ExperiencePlatform />
       <div className="max-w-7xl mx-auto px-4 space-y-12">
         <InteractiveDemo onServiceChange={setSelectedService} />
         <TelehealthDirectory activeService={selectedService} />
