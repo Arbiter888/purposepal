@@ -86,7 +86,7 @@ const PricingSection = () => {
         className="text-center mb-16 relative z-10"
       >
         <h2 className="text-4xl font-bold text-gradient">Choose Your Journey</h2>
-        <p className="mt-4 text-xl text-gradient-sunshine">
+        <p className="mt-4 text-xl text-muted-foreground">
           Select the plan that best fits your transformation goals
         </p>
       </motion.div>
