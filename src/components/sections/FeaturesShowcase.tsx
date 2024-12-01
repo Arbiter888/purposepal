@@ -104,9 +104,7 @@ const FeaturesShowcase = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-secondary/10 via-transparent to-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               
               <div className="relative z-10">
-                <div className="mb-4 relative">
-                  <feature.icon className="w-12 h-12 relative z-10 text-gradient-aurora transform group-hover:scale-110 transition-transform duration-500" />
-                </div>
+                <feature.icon className="w-12 h-12 mb-4 relative z-10 text-gradient-aurora transform group-hover:scale-110 transition-transform duration-500" />
                 
                 <h3 className="text-xl font-semibold text-gradient-aurora mb-3 group-hover:text-gradient-rainbow transition-all duration-500">
                   {feature.title}
