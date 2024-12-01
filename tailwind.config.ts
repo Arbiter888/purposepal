@@ -132,6 +132,22 @@ export default {
         },
         '.text-gradient-cosmic': {
           '@apply bg-clip-text text-transparent bg-gradient-to-r from-tertiary/80 to-highlight/90': {},
+        },
+        // New vibrant gradients
+        '.text-gradient-sunshine': {
+          '@apply bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500': {},
+        },
+        '.text-gradient-rainbow': {
+          '@apply bg-clip-text text-transparent bg-gradient-to-r from-violet-500 via-pink-500 to-yellow-500': {},
+        },
+        '.text-gradient-aurora': {
+          '@apply bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-cyan-500 to-blue-500': {},
+        },
+        '.text-gradient-candy': {
+          '@apply bg-clip-text text-transparent bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500': {},
+        },
+        '.text-gradient-neon': {
+          '@apply bg-clip-text text-transparent bg-gradient-to-r from-lime-400 via-emerald-500 to-teal-500': {},
         }
       }
       addUtilities(newUtilities)
