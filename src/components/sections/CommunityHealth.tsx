@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { Users, Stethoscope, Heart, MessageCircle, Video, Calendar } from "lucide-react";
-import ProfessionalDirectory from "../ProfessionalDirectory";
 
 const CommunityHealth = () => {
   return (
@@ -17,7 +16,7 @@ const CommunityHealth = () => {
         </p>
       </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto mb-20">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -57,18 +56,6 @@ const CommunityHealth = () => {
           </p>
         </motion.div>
       </div>
-
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.4 }}
-        className="mb-16"
-      >
-        <h3 className="text-2xl font-semibold text-gradient-neon text-center mb-8">
-          Meet Our Professional Community
-        </h3>
-        <ProfessionalDirectory />
-      </motion.div>
 
       <div className="mt-16 flex flex-wrap justify-center gap-6">
         <motion.div
