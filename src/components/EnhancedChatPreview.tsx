@@ -72,10 +72,10 @@ const fitnessMessages = [
 ];
 
 const serviceHighlight = {
-  wellness: "bg-gradient-to-r from-highlight to-secondary",
-  nutrition: "bg-gradient-to-r from-tertiary to-accent",
-  spiritual: "bg-gradient-to-r from-accent to-tertiary",
-  fitness: "bg-gradient-to-r from-highlight to-tertiary"
+  wellness: "bg-gradient-to-r from-green-400 via-cyan-500 to-blue-500",
+  nutrition: "bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500",
+  spiritual: "bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500",
+  fitness: "bg-gradient-to-r from-lime-400 via-emerald-500 to-teal-500"
 };
 
 const EnhancedChatPreview = () => {
@@ -101,16 +101,16 @@ const EnhancedChatPreview = () => {
     <div className="max-w-5xl mx-auto">
       <Tabs defaultValue="wellness" className="w-full" onValueChange={setActiveTab}>
         <TabsList className="grid w-full grid-cols-4 mb-8">
-          <TabsTrigger value="wellness" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-highlight data-[state=active]:to-secondary data-[state=active]:text-primary">
+          <TabsTrigger value="wellness" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-green-400 data-[state=active]:via-cyan-500 data-[state=active]:to-blue-500 data-[state=active]:bg-opacity-20">
             Wellness
           </TabsTrigger>
-          <TabsTrigger value="nutrition" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-tertiary data-[state=active]:to-accent data-[state=active]:text-primary">
+          <TabsTrigger value="nutrition" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-pink-500 data-[state=active]:via-purple-500 data-[state=active]:to-indigo-500 data-[state=active]:bg-opacity-20">
             Nutrition
           </TabsTrigger>
-          <TabsTrigger value="spiritual" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-accent data-[state=active]:to-tertiary data-[state=active]:text-primary">
+          <TabsTrigger value="spiritual" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-yellow-400 data-[state=active]:via-orange-500 data-[state=active]:to-red-500 data-[state=active]:bg-opacity-20">
             Spiritual
           </TabsTrigger>
-          <TabsTrigger value="fitness" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-highlight data-[state=active]:to-tertiary data-[state=active]:text-primary">
+          <TabsTrigger value="fitness" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-lime-400 data-[state=active]:via-emerald-500 data-[state=active]:to-teal-500 data-[state=active]:bg-opacity-20">
             Fitness
           </TabsTrigger>
         </TabsList>
@@ -139,21 +139,12 @@ const EnhancedChatPreview = () => {
                     </div>
                   )}
                   
-                  <div 
-                    className={`glass rounded-2xl p-4 max-w-[80%] ${
-                      message.type === 'ai' ? 'rounded-tl-sm bg-gradient-to-br from-secondary/10 to-accent/10' : 
-                      'rounded-tr-sm bg-gradient-to-br from-tertiary/10 to-highlight/10'
-                    }`}
-                  >
-                    <p className={`text-lg whitespace-pre-line ${
-                      message.type === 'ai' ? 'text-gradient-dawn' : 'text-gradient-dusk'
-                    }`}>
-                      {message.content}
-                    </p>
+                  <div className={`glass rounded-2xl p-4 max-w-[80%] ${message.type === 'ai' ? 'rounded-tl-sm' : 'rounded-tr-sm'} ${message.type === 'user' ? 'bg-accent/10' : ''}`}>
+                    <p className="text-lg whitespace-pre-line">{message.content}</p>
                   </div>
 
                   {message.type === 'user' && (
-                    <div className="w-10 h-10 rounded-full bg-gradient-to-r from-tertiary to-highlight flex items-center justify-center flex-shrink-0">
+                    <div className="w-10 h-10 rounded-full bg-gradient-to-r from-accent to-secondary flex items-center justify-center flex-shrink-0">
                       <User className="w-6 h-6 text-white" />
                     </div>
                   )}
