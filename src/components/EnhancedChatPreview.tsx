@@ -15,7 +15,7 @@ const wellnessMessages = [
   },
   {
     type: "ai",
-    content: "I understand. Let's create a holistic wellness plan for you. We can work on:\n\n1. 🧘 Stress management techniques\n2. 💪 Physical exercise routines\n3. 🌱 Mindful practices\n4. 😴 Better sleep habits\n\nWhich area would you like to explore first?",
+    content: "I understand. Let's schedule a video session with one of our wellness experts to create a personalized plan. Here are some available slots:\n\n📅 Tomorrow at 2:00 PM\n📅 Wednesday at 11:00 AM\n📅 Friday at 3:30 PM\n\nI can also help set up smart reminders for daily wellness practices. Would you like to schedule a session?",
     service: "wellness"
   }
 ];
@@ -32,7 +32,7 @@ const nutritionMessages = [
   },
   {
     type: "ai",
-    content: "I'll help you create a sustainable nutrition plan. Let's focus on:\n\n1. 🥗 Balanced meal composition\n2. 📊 Portion control guidelines\n3. 🛒 Smart grocery shopping\n4. 🍽️ Meal prep strategies\n\nWould you like me to create a personalized meal plan based on your preferences?",
+    content: "Let's connect you with a certified nutritionist via video consultation. Available times:\n\n📅 Today at 4:00 PM\n📅 Thursday at 1:30 PM\n📅 Saturday at 10:00 AM\n\nI can also set up smart scheduling for:\n📱 Meal prep reminders\n⏰ Eating schedule alerts\n📝 Weekly meal planning sessions\n\nWould you like to book a consultation?",
     service: "nutrition"
   }
 ];
@@ -49,7 +49,7 @@ const spiritualMessages = [
   },
   {
     type: "ai",
-    content: "I'll help you build a meaningful spiritual routine. We can work on:\n\n1. 🙏 Daily devotional practices\n2. 📖 Scripture study plans\n3. ✨ Mindful meditation\n4. 🤲 Prayer techniques\n\nShall we start by creating a personalized spiritual growth plan?",
+    content: "I can arrange a video meeting with one of our spiritual mentors. Available sessions:\n\n📅 Tomorrow at 9:00 AM\n📅 Thursday at 5:00 PM\n📅 Sunday at 2:00 PM\n\nI'll also help set up:\n⏰ Daily devotional reminders\n🙏 Prayer time notifications\n📖 Scripture reading schedules\n\nWould you like to schedule a mentoring session?",
     service: "spiritual"
   }
 ];
@@ -66,7 +66,7 @@ const fitnessMessages = [
   },
   {
     type: "ai",
-    content: "I'll help you create a balanced fitness routine. Let's focus on:\n\n1. 💪 Strength training\n2. 🧘‍♀️ Flexibility exercises\n3. 🏃‍♀️ Cardio workouts\n4. 🎯 Progress tracking\n\nWould you like me to design a personalized workout plan for you?",
+    content: "Let's schedule a video consultation with a certified fitness trainer. Available slots:\n\n📅 Today at 6:00 PM\n📅 Wednesday at 7:30 AM\n📅 Friday at 4:00 PM\n\nI can also set up smart scheduling for:\n💪 Workout reminders\n🧘‍♀️ Flexibility sessions\n📊 Progress tracking check-ins\n\nWould you like to book a trainer consultation?",
     service: "fitness"
   }
 ];
