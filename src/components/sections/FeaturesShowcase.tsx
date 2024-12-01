@@ -71,6 +71,12 @@ const features = [
 ];
 
 const FeaturesShowcase = () => {
+  // Calculate total savings (taking minimum values from ranges)
+  const totalMonthlySavings = features.reduce((acc, feature) => {
+    const savingsMatch = feature.savings.match(/\$(\d+)/);
+    return acc + (savingsMatch ? parseInt(savingsMatch[1]) : 0);
+  }, 0);
+
   return (
     <section className="section-padding bg-muted relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-secondary/5 via-accent/5 to-tertiary/5" />
@@ -83,7 +89,7 @@ const FeaturesShowcase = () => {
       >
         <h2 className="text-4xl font-bold text-gradient-aurora mb-4">Comprehensive Support</h2>
         <p className="text-xl text-muted-foreground/90 max-w-2xl mx-auto">
-          Experience holistic growth with our AI-powered features designed to support every aspect of your journey
+          Experience holistic growth with our AI-powered features designed to support every aspect of your journey. Save up to ${totalMonthlySavings}+ monthly compared to traditional services.
         </p>
       </motion.div>
 
