@@ -42,7 +42,7 @@ const HeroWithFeatures = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
-          className="text-2xl md:text-3xl font-medium text-gradient-sunshine inline-block mb-4"
+          className="text-2xl md:text-3xl font-medium text-gradient-candy inline-block mb-4"
         >
           Welcome to BornPurpose
         </motion.span>
