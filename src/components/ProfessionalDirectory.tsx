@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Star, MessageCircle, Video, PrayingHands } from "lucide-react";
+import { Star, MessageCircle, Video, HandHeart } from "lucide-react";
 
 const professionals = [
   {
@@ -69,7 +69,7 @@ const ProfessionalDirectory = () => {
               <span>{professional.rating}</span>
               <span className="text-muted-foreground">({professional.reviews} reviews)</span>
               {professional.faithBased && (
-                <PrayingHands className="w-4 h-4 ml-2 text-gradient" />
+                <HandHeart className="w-4 h-4 ml-2 text-gradient" />
               )}
             </div>
             

@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
-import { PrayingHands, Users, Book, Heart } from "lucide-react";
+import { HandHeart, Users, Book, Heart } from "lucide-react";
 
 const faithServices = [
   {
-    icon: PrayingHands,
+    icon: HandHeart,
     title: "Faith-Based Coaching",
     description: "Integrate your spiritual beliefs into your personal growth journey with coaches who share your values.",
   },
