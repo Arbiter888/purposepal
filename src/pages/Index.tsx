@@ -38,8 +38,8 @@ const Index = () => {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-secondary/20 via-background to-background pointer-events-none" />
       
       <div className="relative">
-        {/* Connecting lines between sections */}
-        <div className="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-secondary/20 to-transparent" />
+        {/* Enhanced connecting line between sections */}
+        <div className="absolute left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-transparent via-secondary/40 to-transparent after:content-[''] after:absolute after:inset-0 after:animate-pulse after:bg-gradient-to-b after:from-transparent after:via-accent/30 after:to-transparent" />
         
         <motion.div
           initial={{ opacity: 0 }}
