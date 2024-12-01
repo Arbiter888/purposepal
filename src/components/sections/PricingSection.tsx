@@ -13,6 +13,8 @@ const plans = [
       "Progress tracking",
       "Community forum access"
     ],
+    credits: "10 credits/month",
+    creditValue: "Each credit = 1 minute of AI chat time"
   },
   {
     name: "Pro",
@@ -28,6 +30,8 @@ const plans = [
       "Personalized wellness plans",
       "Progress analytics"
     ],
+    credits: "100 credits/month",
+    creditValue: "Credits can be used for AI chat (1 credit/min) or telehealth services (25-60 credits/session)"
   },
   {
     name: "Whole Life",
@@ -44,6 +48,8 @@ const plans = [
       "Exclusive events access",
       "Emergency support line"
     ],
+    credits: "400 credits/month",
+    creditValue: "Unlimited AI chat + Premium credits for telehealth services"
   },
 ];
 
@@ -133,6 +139,11 @@ const PricingSection = () => {
                     : "text-gradient-sunshine"
               } mb-6`}>
                 {plan.price}<span className="text-lg">/month</span>
+              </div>
+              
+              <div className="mb-6 p-4 glass rounded-xl">
+                <p className="text-lg font-semibold mb-2">{plan.credits}</p>
+                <p className="text-sm text-muted-foreground">{plan.creditValue}</p>
               </div>
               
               <ul className="space-y-4 mb-8">

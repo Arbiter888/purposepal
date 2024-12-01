@@ -6,13 +6,15 @@ import {
   Stethoscope, 
   Users, 
   Pill,
-  Clock
+  Clock,
+  Smile
 } from "lucide-react";
 
 const services = [
   {
     name: "Mental Health Therapy",
     icon: Brain,
+    emoji: "🧠",
     credits: 50,
     description: "One-on-one sessions with licensed therapists",
     duration: "50 minutes"
@@ -20,6 +22,7 @@ const services = [
   {
     name: "Nutrition Consultation",
     icon: Salad,
+    emoji: "🥗",
     credits: 35,
     description: "Personalized dietary guidance from registered dietitians",
     duration: "30 minutes"
@@ -27,6 +30,7 @@ const services = [
   {
     name: "Cardiology",
     icon: Heart,
+    emoji: "❤️",
     credits: 60,
     description: "Heart health consultations with specialists",
     duration: "40 minutes"
@@ -34,6 +38,7 @@ const services = [
   {
     name: "General Medicine",
     icon: Stethoscope,
+    emoji: "👨‍⚕️",
     credits: 40,
     description: "Primary care physician consultations",
     duration: "30 minutes"
@@ -41,6 +46,7 @@ const services = [
   {
     name: "Group Therapy",
     icon: Users,
+    emoji: "👥",
     credits: 25,
     description: "Guided group sessions with others on similar journeys",
     duration: "60 minutes"
@@ -48,6 +54,7 @@ const services = [
   {
     name: "Medication Management",
     icon: Pill,
+    emoji: "💊",
     credits: 45,
     description: "Prescription reviews and adjustments",
     duration: "25 minutes"
@@ -81,8 +88,9 @@ const TelehealthDirectory = () => {
             className="glass p-8 rounded-2xl hover:scale-105 transition-transform duration-300"
           >
             <div className="flex items-center gap-4 mb-6">
-              <div className="p-3 glass rounded-xl">
+              <div className="p-3 glass rounded-xl flex items-center gap-2">
                 <service.icon className="w-8 h-8 text-gradient-candy" />
+                <span className="text-2xl">{service.emoji}</span>
               </div>
               <div>
                 <h3 className="text-xl font-semibold text-gradient-candy">
