@@ -175,23 +175,22 @@ const HeroWithFeatures = () => {
         {/* Enhanced floating features */}
         <div className="mt-20 flex justify-center gap-8 flex-wrap">
           {[
-            { icon: "🎯", text: "Smart Goal Setting" },
-            { icon: "🧠", text: "AI-Powered Insights" },
-            { icon: "💪", text: "Personal Growth" },
-            { icon: "🌟", text: "Daily Motivation" }
+            { text: "Smart Goal Setting" },
+            { text: "AI-Powered Insights" },
+            { text: "Personal Growth" },
+            { text: "Daily Motivation" }
           ].map((feature, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7 + index * 0.1 }}
-              className="glass px-6 py-3 rounded-full text-base animate-float flex items-center gap-2"
+              className="glass px-6 py-3 rounded-full text-base animate-float"
               style={{
                 animationDelay: `${index * 0.2}s`
               }}
             >
-              <span className="text-2xl">{feature.icon}</span>
-              <span>{feature.text}</span>
+              {feature.text}
             </motion.div>
           ))}
         </div>
