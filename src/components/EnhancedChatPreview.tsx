@@ -74,7 +74,7 @@ const fitnessMessages = [
 const serviceHighlight = {
   wellness: "bg-gradient-to-r from-green-400 via-cyan-500 to-blue-500",
   nutrition: "bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500",
-  spiritual: "bg-gradient-to-r from-amber-500 to-orange-500",
+  spiritual: "bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500",
   fitness: "bg-gradient-to-r from-rose-500 to-red-500"
 };
 
@@ -107,7 +107,7 @@ const EnhancedChatPreview = () => {
           <TabsTrigger value="nutrition" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-pink-500 data-[state=active]:via-purple-500 data-[state=active]:to-indigo-500 data-[state=active]:bg-opacity-20">
             Nutrition
           </TabsTrigger>
-          <TabsTrigger value="spiritual" className="data-[state=active]:bg-orange-500/20">
+          <TabsTrigger value="spiritual" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-yellow-400 data-[state=active]:via-orange-500 data-[state=active]:to-red-500 data-[state=active]:bg-opacity-20">
             Spiritual
           </TabsTrigger>
           <TabsTrigger value="fitness" className="data-[state=active]:bg-rose-500/20">
