@@ -56,10 +56,10 @@ const FeaturesShowcase = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: index * 0.1 }}
-            className="glass p-8 rounded-2xl hover:scale-105 transition-transform duration-300"
+            className="glass p-8 rounded-2xl hover-lift group"
           >
             <feature.icon className="w-12 h-12 mb-4 text-gradient" />
-            <h3 className="text-xl font-semibold text-gradient-mystic mb-3">{feature.title}</h3>
+            <h3 className="text-xl font-semibold text-gradient-aurora mb-3">{feature.title}</h3>
             <p className="text-muted-foreground">{feature.description}</p>
           </motion.div>
         ))}
