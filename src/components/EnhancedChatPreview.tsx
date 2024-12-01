@@ -28,24 +28,6 @@ const messages = [
   }
 ];
 
-const features = [
-  {
-    icon: Brain,
-    title: "Holistic Wellness",
-    description: "Integrated approach to mental, physical, and spiritual health"
-  },
-  {
-    icon: Apple,
-    title: "Nutrition Guidance",
-    description: "Personalized meal plans and mindful eating practices"
-  },
-  {
-    icon: Dumbbell,
-    title: "Fitness Coaching",
-    description: "Custom workout plans aligned with your goals"
-  }
-];
-
 const serviceHighlight = {
   general: "bg-gradient-to-r from-secondary to-accent",
   wellness: "bg-gradient-to-r from-blue-500 to-purple-500",
@@ -55,26 +37,9 @@ const serviceHighlight = {
 
 const EnhancedChatPreview = () => {
   const [inputValue, setInputValue] = useState("");
-  const [showFeatures, setShowFeatures] = useState(true);
 
   return (
     <div className="max-w-5xl mx-auto">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-        {features.map((feature, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.2 }}
-            className="glass p-6 rounded-2xl hover:scale-105 transition-transform duration-300"
-          >
-            <feature.icon className="w-10 h-10 mb-4 text-gradient" />
-            <h3 className="text-xl font-semibold text-gradient-dusk mb-2">{feature.title}</h3>
-            <p className="text-muted-foreground">{feature.description}</p>
-          </motion.div>
-        ))}
-      </div>
-
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
