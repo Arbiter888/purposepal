@@ -117,9 +117,21 @@ const PricingSection = () => {
                 </div>
               </div>
               
-              <h3 className={`text-2xl font-semibold ${plan.name === "Free" ? "text-gradient-aurora" : "text-gradient-sunshine"} mb-2`}>{plan.name}</h3>
+              <h3 className={`text-2xl font-semibold ${
+                plan.name === "Free" 
+                  ? "text-gradient-aurora" 
+                  : plan.name === "Pro" 
+                    ? "text-gradient-candy"
+                    : "text-gradient-sunshine"
+              } mb-2`}>{plan.name}</h3>
               <p className="text-muted-foreground mb-4">{plan.description}</p>
-              <div className={`text-4xl font-bold ${plan.name === "Free" ? "text-gradient-aurora" : "text-gradient"} mb-6`}>
+              <div className={`text-4xl font-bold ${
+                plan.name === "Free" 
+                  ? "text-gradient-aurora" 
+                  : plan.name === "Pro"
+                    ? "text-gradient-candy"
+                    : "text-gradient"
+              } mb-6`}>
                 {plan.price}<span className="text-lg">/month</span>
               </div>
               
@@ -140,7 +152,11 @@ const PricingSection = () => {
                 whileTap={{ scale: 0.98 }}
                 className={`w-full glass px-6 py-3 rounded-full font-medium hover-lift transition-all duration-300
                   border border-white/10 hover:border-white/20 backdrop-blur-lg
-                  ${plan.name === "Free" ? "text-gradient-aurora" : ""} 
+                  ${plan.name === "Free" 
+                    ? "text-gradient-aurora" 
+                    : plan.name === "Pro"
+                      ? "text-gradient-candy"
+                      : ""} 
                   bg-gradient-to-r from-white/5 to-white/10 hover:from-white/10 hover:to-white/15`}
               >
                 Get Started
