@@ -118,6 +118,21 @@ export default {
         '.text-gradient-nature': {
           '@apply bg-clip-text text-transparent bg-gradient-to-r from-highlight to-tertiary': {},
         },
+        '.text-gradient-dawn': {
+          '@apply bg-clip-text text-transparent bg-gradient-to-r from-secondary/80 to-highlight': {},
+        },
+        '.text-gradient-dusk': {
+          '@apply bg-clip-text text-transparent bg-gradient-to-r from-tertiary/90 to-secondary': {},
+        },
+        '.text-gradient-forest': {
+          '@apply bg-clip-text text-transparent bg-gradient-to-r from-highlight/90 to-accent/80': {},
+        },
+        '.text-gradient-mystic': {
+          '@apply bg-clip-text text-transparent bg-gradient-to-r from-accent/80 to-highlight/90': {},
+        },
+        '.text-gradient-cosmic': {
+          '@apply bg-clip-text text-transparent bg-gradient-to-r from-tertiary/80 to-highlight/90': {},
+        }
       }
       addUtilities(newUtilities)
     }
