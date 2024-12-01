@@ -2,6 +2,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Send, Bot, User } from "lucide-react";
 import { useState } from "react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+import { Button } from "@/components/ui/button";
 
 const wellnessMessages = [
   {
@@ -82,6 +83,29 @@ interface EnhancedChatPreviewProps {
   onServiceChange: (service: string) => void;
 }
 
+const suggestedMessages = {
+  wellness: [
+    "How can I manage stress better?",
+    "What are some good sleep habits?",
+    "Tips for work-life balance?"
+  ],
+  nutrition: [
+    "Help me plan healthy meals",
+    "Tips for portion control",
+    "Best foods for energy?"
+  ],
+  spiritual: [
+    "How to start meditation?",
+    "Daily spiritual practices",
+    "Finding inner peace"
+  ],
+  fitness: [
+    "Beginner workout routine",
+    "Home exercise tips",
+    "How to stay motivated?"
+  ]
+};
+
 const EnhancedChatPreview = ({ onServiceChange }: EnhancedChatPreviewProps) => {
   const [inputValue, setInputValue] = useState("");
   const [activeTab, setActiveTab] = useState("wellness");
@@ -89,6 +113,10 @@ const EnhancedChatPreview = ({ onServiceChange }: EnhancedChatPreviewProps) => {
   const handleTabChange = (value: string) => {
     setActiveTab(value);
     onServiceChange(value);
+  };
+
+  const handleSuggestedMessage = (message: string) => {
+    setInputValue(message);
   };
 
   const getActiveMessages = () => {
@@ -168,21 +196,37 @@ const EnhancedChatPreview = ({ onServiceChange }: EnhancedChatPreviewProps) => {
             </AnimatePresence>
           </div>
           
-          <div className="mt-8 flex gap-3">
-            <input 
-              type="text" 
-              value={inputValue}
-              onChange={(e) => setInputValue(e.target.value)}
-              placeholder="Type your message..." 
-              className="flex-1 bg-muted/80 rounded-full px-6 py-4 focus:outline-none focus:ring-2 focus:ring-secondary/50 transition-all text-lg"
-            />
-            <motion.button 
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-muted/80 p-4 rounded-full hover:bg-white/10 transition-colors group"
-            >
-              <Send className="w-6 h-6 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-            </motion.button>
+          <div className="space-y-4">
+            <div className="flex gap-3">
+              <input 
+                type="text" 
+                value={inputValue}
+                onChange={(e) => setInputValue(e.target.value)}
+                placeholder="Type your message..." 
+                className="flex-1 bg-muted/80 rounded-full px-6 py-4 focus:outline-none focus:ring-2 focus:ring-secondary/50 transition-all text-lg"
+              />
+              <motion.button 
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-muted/80 p-4 rounded-full hover:bg-white/10 transition-colors group"
+              >
+                <Send className="w-6 h-6 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+              </motion.button>
+            </div>
+            
+            <div className="flex flex-wrap gap-2">
+              {suggestedMessages[activeTab as keyof typeof suggestedMessages].map((message, index) => (
+                <Button
+                  key={index}
+                  variant="outline"
+                  size="sm"
+                  onClick={() => handleSuggestedMessage(message)}
+                  className="text-sm hover:bg-accent/10"
+                >
+                  {message}
+                </Button>
+              ))}
+            </div>
           </div>
         </motion.div>
       </Tabs>
