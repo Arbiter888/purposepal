@@ -130,7 +130,7 @@ const PricingSection = () => {
                   ? "text-gradient-aurora" 
                   : plan.name === "Pro"
                     ? "text-gradient-candy"
-                    : "text-gradient"
+                    : "text-gradient-sunshine"
               } mb-6`}>
                 {plan.price}<span className="text-lg">/month</span>
               </div>
@@ -156,7 +156,7 @@ const PricingSection = () => {
                     ? "text-gradient-aurora" 
                     : plan.name === "Pro"
                       ? "text-gradient-candy"
-                      : ""} 
+                      : "text-gradient-sunshine"} 
                   bg-gradient-to-r from-white/5 to-white/10 hover:from-white/10 hover:to-white/15`}
               >
                 Get Started
