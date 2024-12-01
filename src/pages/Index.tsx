@@ -5,15 +5,18 @@ import CommunityHealth from "@/components/sections/CommunityHealth";
 import TelehealthDirectory from "@/components/sections/TelehealthDirectory";
 import PricingSection from "@/components/sections/PricingSection";
 import CallToAction from "@/components/sections/CallToAction";
+import { useState } from "react";
 
 const Index = () => {
+  const [selectedService, setSelectedService] = useState("wellness");
+
   return (
     <div className="min-h-screen bg-black text-white">
       <HeroWithFeatures />
       <FeaturesShowcase />
-      <InteractiveDemo />
+      <InteractiveDemo onServiceChange={setSelectedService} />
+      <TelehealthDirectory activeService={selectedService} />
       <CommunityHealth />
-      <TelehealthDirectory />
       <PricingSection />
       <CallToAction />
     </div>

@@ -78,9 +78,18 @@ const serviceHighlight = {
   fitness: "bg-gradient-to-r from-lime-400 via-emerald-500 to-teal-500"
 };
 
-const EnhancedChatPreview = () => {
+interface EnhancedChatPreviewProps {
+  onServiceChange: (service: string) => void;
+}
+
+const EnhancedChatPreview = ({ onServiceChange }: EnhancedChatPreviewProps) => {
   const [inputValue, setInputValue] = useState("");
   const [activeTab, setActiveTab] = useState("wellness");
+
+  const handleTabChange = (value: string) => {
+    setActiveTab(value);
+    onServiceChange(value);
+  };
 
   const getActiveMessages = () => {
     switch (activeTab) {
@@ -99,7 +108,7 @@ const EnhancedChatPreview = () => {
 
   return (
     <div className="max-w-5xl mx-auto">
-      <Tabs defaultValue="wellness" className="w-full" onValueChange={setActiveTab}>
+      <Tabs defaultValue="wellness" className="w-full" onValueChange={handleTabChange}>
         <TabsList className="grid w-full grid-cols-4 mb-8">
           <TabsTrigger value="wellness" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-green-400 data-[state=active]:via-cyan-500 data-[state=active]:to-blue-500 data-[state=active]:bg-opacity-20">
             Wellness

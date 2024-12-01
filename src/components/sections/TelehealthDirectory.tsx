@@ -72,7 +72,16 @@ const services = [
   }
 ];
 
-const TelehealthDirectory = () => {
+interface TelehealthDirectoryProps {
+  activeService: string;
+}
+
+const TelehealthDirectory = ({ activeService }: TelehealthDirectoryProps) => {
+  const filteredServices = services.filter(service => 
+    service.name.toLowerCase().includes(activeService) || 
+    service.title.toLowerCase().includes(activeService)
+  );
+
   return (
     <div className="max-w-7xl mx-auto px-4">
       <motion.div
@@ -82,15 +91,15 @@ const TelehealthDirectory = () => {
         className="text-center mb-16"
       >
         <h2 className="text-4xl font-bold text-gradient-candy mb-4">
-          Connect with Wellness Experts
+          Connect with Your Expert
         </h2>
         <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-          Expert guidance for your mind, body, and spirit through secure virtual consultations
+          Schedule a virtual consultation with our specialized wellness professionals
         </p>
       </motion.div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        {services.map((service, index) => (
+        {filteredServices.map((service, index) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, y: 20 }}
