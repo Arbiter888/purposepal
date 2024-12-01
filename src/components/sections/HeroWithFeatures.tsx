@@ -54,7 +54,7 @@ const HeroWithFeatures = () => {
           className="mt-6 text-6xl sm:text-7xl lg:text-8xl font-bold tracking-tight leading-tight"
         >
           Your AI-Powered
-          <span className="text-gradient block mt-2">Life Coach</span>
+          <span className="text-gradient-sunshine block mt-2">Life Coach</span>
         </motion.h1>
 
         <motion.p
