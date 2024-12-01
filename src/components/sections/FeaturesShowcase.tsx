@@ -1,36 +1,72 @@
 import { motion } from "framer-motion";
-import { Brain, Apple, Dumbbell, Heart, Book, Star } from "lucide-react";
+import { Brain, Apple, Dumbbell, Heart, Book, Star, DollarSign } from "lucide-react";
 
 const features = [
   {
     icon: Brain,
     title: "Mental Wellness",
-    description: "Access personalized AI-powered support for meditation, stress management, and emotional well-being. Our platform offers guided sessions, mood tracking, and adaptive techniques to help you maintain mental balance in your daily life."
+    description: [
+      "24/7 AI-powered emotional support and guidance",
+      "Personalized meditation and stress management techniques",
+      "Real-time mood tracking and pattern recognition"
+    ],
+    savings: "Save $200+/month on traditional therapy sessions",
+    costComparison: "Traditional therapy: $150-200/session vs. Unlimited AI support"
   },
   {
     icon: Apple,
     title: "Nutrition Guidance",
-    description: "Receive customized meal plans and mindful eating practices aligned with your values and dietary preferences. Get real-time nutritional insights, recipe suggestions, and expert guidance to support your healthy eating journey."
+    description: [
+      "Custom meal plans aligned with your goals and preferences",
+      "Real-time nutritional analysis and recommendations",
+      "Smart grocery lists and recipe suggestions"
+    ],
+    savings: "Save $120+/month on nutritionist consultations",
+    costComparison: "Nutritionist: $100/session vs. Continuous AI guidance"
   },
   {
     icon: Dumbbell,
     title: "Fitness Coaching",
-    description: "Experience personalized workout plans with real-time form guidance for optimal results. Our AI coach adapts to your progress, provides motivation, and helps prevent injuries while working towards your fitness goals."
+    description: [
+      "Personalized workout plans with form guidance",
+      "Progress tracking and adaptive programming",
+      "Injury prevention recommendations"
+    ],
+    savings: "Save $250+/month on personal training",
+    costComparison: "Personal trainer: $60-80/session vs. Daily AI coaching"
   },
   {
     icon: Heart,
     title: "Spiritual Growth",
-    description: "Embark on a meaningful spiritual journey with faith-based guidance and support. Access daily devotionals, prayer tracking, and community connections to nurture your spiritual well-being and personal faith practice."
+    description: [
+      "Guided spiritual practices and meditation sessions",
+      "Personal faith development resources",
+      "Community connection opportunities"
+    ],
+    savings: "Save $100+/month on spiritual counseling",
+    costComparison: "Spiritual advisor: $80-100/session vs. Unlimited access"
   },
   {
     icon: Book,
     title: "Personal Development",
-    description: "Follow tailored learning paths and skill development programs designed for your growth. Track your progress, set meaningful goals, and access resources that align with your personal and professional aspirations."
+    description: [
+      "Customized learning paths and skill development",
+      "Progress tracking and milestone achievements",
+      "Resource library and expert insights"
+    ],
+    savings: "Save $150+/month on life coaching",
+    costComparison: "Life coach: $125/session vs. Continuous guidance"
   },
   {
     icon: Star,
     title: "Goal Achievement",
-    description: "Transform your aspirations into reality with strategic planning and accountability tools. Our platform helps you break down large goals into manageable steps, track progress, and celebrate milestones along the way."
+    description: [
+      "Strategic goal planning and breakdown",
+      "Progress tracking and accountability tools",
+      "Milestone celebration and adjustment support"
+    ],
+    savings: "Save $180+/month on achievement coaching",
+    costComparison: "Achievement coach: $150/session vs. Daily support"
   }
 ];
 
@@ -77,9 +113,22 @@ const FeaturesShowcase = () => {
                   {feature.title}
                 </h3>
                 
-                <p className="text-muted-foreground/90 group-hover:text-muted-foreground transition-colors duration-500">
-                  {feature.description}
-                </p>
+                <ul className="space-y-2 mb-6">
+                  {feature.description.map((item, idx) => (
+                    <li key={idx} className="flex items-start gap-2 text-muted-foreground/90 group-hover:text-muted-foreground transition-colors duration-500">
+                      <span className="text-secondary mt-1">•</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="mt-4 p-4 glass rounded-xl bg-white/5">
+                  <div className="flex items-center gap-2 mb-2">
+                    <DollarSign className="w-5 h-5 text-gradient-sunshine" />
+                    <p className="font-semibold text-gradient-sunshine">{feature.savings}</p>
+                  </div>
+                  <p className="text-sm text-muted-foreground/80">{feature.costComparison}</p>
+                </div>
               </div>
             </div>
           </motion.div>
