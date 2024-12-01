@@ -29,7 +29,7 @@ const HeroWithFeatures = () => {
           transition={{ delay: 0.3 }}
           className="flex items-center justify-center gap-2 mb-6"
         >
-          <span className="text-2xl md:text-3xl font-medium text-gradient inline-block">
+          <span className="text-2xl md:text-3xl font-medium text-gradient-sunshine inline-block">
             Welcome to BornPurpose
           </span>
         </motion.div>
