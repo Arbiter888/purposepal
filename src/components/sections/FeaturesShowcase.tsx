@@ -106,7 +106,7 @@ const FeaturesShowcase = () => {
               <div className="relative z-10 flex flex-col items-start">
                 <feature.icon className="w-12 h-12 text-gradient-aurora transform group-hover:scale-110 transition-transform duration-500" />
                 
-                <h3 className="text-xl font-semibold text-gradient-aurora mt-3 mb-3 group-hover:text-gradient-rainbow transition-all duration-500">
+                <h3 className="text-xl font-semibold text-gradient-aurora mb-3 group-hover:text-gradient-rainbow transition-all duration-500">
                   {feature.title}
                 </h3>
                 
