@@ -49,7 +49,7 @@ const Index = () => {
           transition={{ duration: 0.6 }}
           className="max-w-4xl mx-auto text-center"
         >
-          <span className="text-sm font-medium text-secondary">Welcome to BornPurpose</span>
+          <span className="text-sm font-medium text-gradient">Welcome to BornPurpose</span>
           <h1 className="mt-6 text-6xl font-bold tracking-tight">
             Your AI-Powered
             <span className="text-gradient"> Life Coach</span>
@@ -75,7 +75,7 @@ const Index = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold">Features</h2>
+            <h2 className="text-4xl font-bold text-gradient">Features</h2>
             <p className="mt-4 text-lg text-muted-foreground">
               Everything you need to achieve your goals
             </p>
@@ -89,7 +89,7 @@ const Index = () => {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="glass p-6 rounded-2xl hover-lift"
               >
-                <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
+                <h3 className="text-xl font-semibold text-gradient">{feature.title}</h3>
                 <p className="text-muted-foreground">{feature.description}</p>
               </motion.div>
             ))}
@@ -106,7 +106,7 @@ const Index = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold">Simple Pricing</h2>
+            <h2 className="text-4xl font-bold text-gradient">Simple Pricing</h2>
             <p className="mt-4 text-lg text-muted-foreground">
               Choose the plan that's right for you
             </p>
@@ -120,8 +120,8 @@ const Index = () => {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="glass p-8 rounded-2xl hover-lift"
               >
-                <h3 className="text-2xl font-semibold">{plan.name}</h3>
-                <div className="mt-4 text-4xl font-bold">{plan.price}</div>
+                <h3 className="text-2xl font-semibold text-gradient">{plan.name}</h3>
+                <div className="mt-4 text-4xl font-bold text-gradient">{plan.price}</div>
                 <ul className="mt-8 space-y-4">
                   {plan.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-center">
@@ -147,7 +147,7 @@ const Index = () => {
           transition={{ duration: 0.6 }}
           className="max-w-4xl mx-auto text-center"
         >
-          <h2 className="text-4xl font-bold">Ready to Transform Your Life?</h2>
+          <h2 className="text-4xl font-bold text-gradient">Ready to Transform Your Life?</h2>
           <p className="mt-4 text-lg text-muted-foreground">
             Join thousands of users who are already achieving their goals with BornPurpose
           </p>
