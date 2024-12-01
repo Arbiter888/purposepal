@@ -3,6 +3,7 @@ import { ArrowRight, Check, Apple, Dumbbell, Brain, ShoppingBag } from "lucide-r
 import ChatPreview from "@/components/ChatPreview";
 import ProfessionalDirectory from "@/components/ProfessionalDirectory";
 import HeroSection from "@/components/HeroSection";
+import FaithBasedServices from "@/components/FaithBasedServices";
 
 const features = [
   {
@@ -88,6 +89,22 @@ const Index = () => {
     <div className="min-h-screen bg-black text-white">
       <HeroSection />
       
+      {/* Faith-Based Services Section */}
+      <section className="section-padding">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl font-bold text-gradient">Faith-Based Guidance</h2>
+          <p className="mt-4 text-lg text-muted-foreground">
+            Integrate your spiritual journey with personal growth
+          </p>
+        </motion.div>
+        <FaithBasedServices />
+      </section>
+
       {/* Chat Preview Section */}
       <section className="section-padding bg-muted">
         <motion.div

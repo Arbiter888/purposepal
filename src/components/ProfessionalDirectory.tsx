@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Star, MessageCircle, Video } from "lucide-react";
+import { Star, MessageCircle, Video, PrayingHands } from "lucide-react";
 
 const professionals = [
   {
@@ -9,29 +9,41 @@ const professionals = [
     reviews: 128,
     image: "https://i.pravatar.cc/150?img=1",
     specialties: ["Career Transition", "Leadership", "Work-Life Balance"],
+    faithBased: false,
   },
   {
-    name: "Michael Chen",
-    title: "Life Coach",
-    rating: 4.8,
-    reviews: 93,
-    image: "https://i.pravatar.cc/150?img=2",
-    specialties: ["Personal Growth", "Motivation", "Goal Setting"],
-  },
-  {
-    name: "Dr. Emily Williams",
-    title: "Therapist",
+    name: "Rabbi David Cohen",
+    title: "Faith-Based Life Coach",
     rating: 5.0,
     reviews: 156,
-    image: "https://i.pravatar.cc/150?img=3",
-    specialties: ["Anxiety", "Depression", "Relationships"],
+    image: "https://i.pravatar.cc/150?img=4",
+    specialties: ["Jewish Spirituality", "Life Purpose", "Values Integration"],
+    faithBased: true,
+  },
+  {
+    name: "Imam Hassan Ahmed",
+    title: "Spiritual Wellness Coach",
+    rating: 4.9,
+    reviews: 142,
+    image: "https://i.pravatar.cc/150?img=5",
+    specialties: ["Islamic Mindfulness", "Personal Growth", "Community Building"],
+    faithBased: true,
+  },
+  {
+    name: "Pastor Grace Williams",
+    title: "Christian Life Coach",
+    rating: 4.8,
+    reviews: 134,
+    image: "https://i.pravatar.cc/150?img=6",
+    specialties: ["Biblical Counseling", "Purpose Discovery", "Faith Journey"],
+    faithBased: true,
   },
 ];
 
 const ProfessionalDirectory = () => {
   return (
     <div className="max-w-7xl mx-auto">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {professionals.map((professional, index) => (
           <motion.div
             key={index}
@@ -56,6 +68,9 @@ const ProfessionalDirectory = () => {
               <Star className="w-4 h-4 text-yellow-500 fill-yellow-500" />
               <span>{professional.rating}</span>
               <span className="text-muted-foreground">({professional.reviews} reviews)</span>
+              {professional.faithBased && (
+                <PrayingHands className="w-4 h-4 ml-2 text-gradient" />
+              )}
             </div>
             
             <div className="mt-4">
