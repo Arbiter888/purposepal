@@ -10,7 +10,7 @@ const CallToAction = () => {
         transition={{ duration: 0.6 }}
         className="max-w-4xl mx-auto text-center"
       >
-        <h2 className="text-4xl font-bold text-gradient">Ready to Transform Your Life?</h2>
+        <h2 className="text-4xl font-bold text-gradient-sunshine">Ready to Transform Your Life?</h2>
         <p className="mt-4 text-lg text-muted-foreground">
           Join thousands of users who are already achieving their goals with BornPurpose
         </p>
