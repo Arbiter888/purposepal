@@ -69,7 +69,7 @@ const EnhancedChatPreview = () => {
             className="glass p-6 rounded-2xl hover:scale-105 transition-transform duration-300"
           >
             <feature.icon className="w-10 h-10 mb-4 text-gradient" />
-            <h3 className="text-xl font-semibold mb-2 text-gradient">{feature.title}</h3>
+            <h3 className="text-xl font-semibold text-gradient-dusk mb-2">{feature.title}</h3>
             <p className="text-muted-foreground">{feature.description}</p>
           </motion.div>
         ))}
