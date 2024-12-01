@@ -14,8 +14,10 @@ const Index = () => {
     <div className="min-h-screen bg-black text-white">
       <HeroWithFeatures />
       <FeaturesShowcase />
-      <InteractiveDemo onServiceChange={setSelectedService} />
-      <TelehealthDirectory activeService={selectedService} />
+      <div className="max-w-7xl mx-auto px-4 space-y-12">
+        <InteractiveDemo onServiceChange={setSelectedService} />
+        <TelehealthDirectory activeService={selectedService} />
+      </div>
       <CommunityHealth />
       <PricingSection />
       <CallToAction />
