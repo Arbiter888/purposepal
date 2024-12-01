@@ -1,47 +1,57 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { Send, Bot, User, Sparkles, ThumbsUp, Brain } from "lucide-react";
+import { Send, Bot, User, Sparkles, ThumbsUp, Brain, Apple, Dumbbell } from "lucide-react";
 import { useState } from "react";
 
 const messages = [
   {
     type: "ai",
-    content: "Hello! I'm your AI life coach. I'm here to help you grow personally, professionally, and spiritually. What would you like to focus on today?",
+    content: "Hello! I'm your AI life coach. I can help with spiritual guidance, mental wellness, nutrition, and fitness. What would you like to focus on today?",
+    service: "general"
   },
   {
     type: "user",
-    content: "I've been feeling stuck in my career and spiritual journey lately.",
+    content: "I've been struggling with maintaining a healthy lifestyle while staying true to my faith.",
   },
   {
     type: "ai",
-    content: "I understand how challenging that can feel. Let's break this down into two areas. First, regarding your career - could you tell me about your current role and where you'd like to be? Also, what aspects of your spiritual journey would you like to explore?",
+    content: "I understand the challenge of balancing physical and spiritual well-being. Let's break this down:\n\n1. 🏋️ Fitness: I can create a workout plan that fits your schedule\n2. 🍎 Nutrition: We'll develop a meal plan aligned with your values\n3. 🧘 Mental Wellness: Including faith-based meditation practices\n\nWhich aspect would you like to explore first?",
+    service: "wellness"
   },
   {
     type: "user",
-    content: "I'm a software developer but I feel called to do something more meaningful. I want to align my work with my faith.",
+    content: "I'd like to start with nutrition. I want to make better food choices.",
   },
   {
     type: "ai",
-    content: "That's a beautiful aspiration! There are many ways to integrate faith and technology. Have you considered:\n\n1. Developing tools for faith communities\n2. Using your skills for non-profit organizations\n3. Mentoring others in tech while incorporating spiritual guidance\n\nWhich of these resonates with you?",
+    content: "Great choice! As your AI nutritionist, I'll help you create a sustainable and mindful eating plan. Here's what I suggest:\n\n1. Start with a food diary to track your current habits\n2. Set realistic goals that align with your faith and health\n3. Learn about mindful eating practices\n\nWould you like me to create a personalized meal plan based on your preferences?",
+    service: "nutrition"
   }
 ];
 
 const features = [
   {
     icon: Brain,
-    title: "Personalized Growth",
-    description: "AI-driven insights tailored to your unique journey"
+    title: "Holistic Wellness",
+    description: "Integrated approach to mental, physical, and spiritual health"
   },
   {
-    icon: Sparkles,
-    title: "Faith Integration",
-    description: "Seamlessly blend spiritual guidance with practical advice"
+    icon: Apple,
+    title: "Nutrition Guidance",
+    description: "Personalized meal plans and mindful eating practices"
   },
   {
-    icon: ThumbsUp,
-    title: "24/7 Support",
-    description: "Always available for guidance and encouragement"
+    icon: Dumbbell,
+    title: "Fitness Coaching",
+    description: "Custom workout plans aligned with your goals"
   }
 ];
+
+const serviceHighlight = {
+  general: "bg-gradient-to-r from-secondary to-accent",
+  wellness: "bg-gradient-to-r from-blue-500 to-purple-500",
+  nutrition: "bg-gradient-to-r from-green-500 to-emerald-500",
+  fitness: "bg-gradient-to-r from-orange-500 to-red-500"
+};
 
 const EnhancedChatPreview = () => {
   const [inputValue, setInputValue] = useState("");
@@ -83,8 +93,8 @@ const EnhancedChatPreview = () => {
                 className={`flex items-start gap-4 ${message.type === 'user' ? 'justify-end' : ''}`}
               >
                 {message.type === 'ai' && (
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-r from-secondary to-accent flex items-center justify-center flex-shrink-0">
-                    <Bot className="w-6 h-6 text-black" />
+                  <div className={`w-10 h-10 rounded-full ${message.service ? serviceHighlight[message.service] : serviceHighlight.general} flex items-center justify-center flex-shrink-0`}>
+                    <Bot className="w-6 h-6 text-white" />
                   </div>
                 )}
                 
@@ -94,7 +104,7 @@ const EnhancedChatPreview = () => {
 
                 {message.type === 'user' && (
                   <div className="w-10 h-10 rounded-full bg-gradient-to-r from-accent to-secondary flex items-center justify-center flex-shrink-0">
-                    <User className="w-6 h-6 text-black" />
+                    <User className="w-6 h-6 text-white" />
                   </div>
                 )}
               </motion.div>
@@ -107,7 +117,7 @@ const EnhancedChatPreview = () => {
             type="text" 
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
-            placeholder="Type your message..." 
+            placeholder="Ask about nutrition, fitness, or spiritual guidance..." 
             className="flex-1 glass rounded-full px-6 py-4 focus:outline-none focus:ring-2 focus:ring-secondary/50 transition-all text-lg"
           />
           <motion.button 
