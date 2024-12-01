@@ -70,7 +70,7 @@ const HeroWithFeatures = () => {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="glass px-8 py-4 rounded-full font-medium hover-lift flex items-center gap-2 group text-lg relative overflow-hidden"
+            className="px-8 py-4 rounded-full font-medium text-gradient-candy hover:text-gradient-aurora transition-all duration-300 bg-white/5 hover:bg-white/10 border border-white/10 relative overflow-hidden group"
           >
             <motion.div
               className="absolute inset-0 bg-gradient-to-r from-secondary/20 to-accent/20"
@@ -90,7 +90,7 @@ const HeroWithFeatures = () => {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="px-8 py-4 rounded-full font-medium border border-white/10 hover:bg-white/5 transition-colors text-lg relative overflow-hidden"
+            className="px-8 py-4 rounded-full font-medium text-gradient-mystic hover:text-gradient-cosmic transition-all duration-300 bg-white/5 hover:bg-white/10 border border-white/10 relative overflow-hidden group"
           >
             <motion.div
               className="absolute inset-0 bg-gradient-to-r from-tertiary/20 to-highlight/20"
