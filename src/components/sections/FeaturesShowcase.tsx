@@ -43,7 +43,7 @@ const FeaturesShowcase = () => {
         transition={{ duration: 0.6 }}
         className="text-center mb-16"
       >
-        <h2 className="text-4xl font-bold text-gradient mb-4">Comprehensive Support</h2>
+        <h2 className="text-4xl font-bold text-gradient-mystic mb-4">Comprehensive Support</h2>
         <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
           Experience holistic growth with our AI-powered features designed to support every aspect of your journey
         </p>
