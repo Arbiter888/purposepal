@@ -44,7 +44,7 @@ const HeroSection = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
-          className="text-sm font-medium text-gradient"
+          className="text-xl md:text-2xl font-medium text-gradient"
         >
           Welcome to BornPurpose
         </motion.span>
