@@ -1,6 +1,15 @@
 import { motion } from "framer-motion";
 
 export const FloatingParticles = () => {
+  // Array of gradient combinations using our predefined colors
+  const gradients = [
+    'linear-gradient(to right, #f59e0b, #f97316, #ef4444)', // Sunshine
+    'linear-gradient(to right, #8B5CF6, #D946EF)', // Purple to Pink
+    'linear-gradient(to right, #0EA5E9, #33C3F0)', // Ocean Blues
+    'linear-gradient(to right, #F2FCE2, #FEF7CD)', // Soft Green to Yellow
+    'linear-gradient(to right, #FEC6A1, #FFDEE2)', // Soft Orange to Pink
+  ];
+
   return (
     <div className="absolute inset-0 overflow-hidden">
       {[...Array(30)].map((_, i) => (
@@ -21,8 +30,8 @@ export const FloatingParticles = () => {
           style={{
             left: `${Math.random() * 100}%`,
             top: '100%',
-            background: `linear-gradient(to right, #f59e0b, #f97316, #ef4444)`, // Sunshine colors
-            boxShadow: '0 0 10px rgba(245, 158, 11, 0.5)' // Adds a subtle glow effect
+            background: gradients[i % gradients.length],
+            boxShadow: '0 0 10px rgba(245, 158, 11, 0.5)'
           }}
         />
       ))}
