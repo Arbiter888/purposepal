@@ -6,7 +6,7 @@ import CommunityHealth from "@/components/sections/CommunityHealth";
 import TelehealthDirectory from "@/components/sections/TelehealthDirectory";
 import PricingSection from "@/components/sections/PricingSection";
 import CallToAction from "@/components/sections/CallToAction";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 const Index = () => {
@@ -22,7 +22,7 @@ const Index = () => {
   };
 
   // Add scroll listener
-  useState(() => {
+  useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
