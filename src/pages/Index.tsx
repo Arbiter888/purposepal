@@ -1,6 +1,7 @@
 import HeroWithFeatures from "@/components/sections/HeroWithFeatures";
 import FeaturesShowcase from "@/components/sections/FeaturesShowcase";
 import InteractiveDemo from "@/components/sections/InteractiveDemo";
+import CommunityHealth from "@/components/sections/CommunityHealth";
 import PricingSection from "@/components/sections/PricingSection";
 import CallToAction from "@/components/sections/CallToAction";
 
@@ -10,6 +11,7 @@ const Index = () => {
       <HeroWithFeatures />
       <FeaturesShowcase />
       <InteractiveDemo />
+      <CommunityHealth />
       <PricingSection />
       <CallToAction />
     </div>
