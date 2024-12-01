@@ -1,17 +1,10 @@
-import { motion, AnimatePresence } from "framer-motion";
-import { Send, Bot, User } from "lucide-react";
-import { useState } from "react";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+import { motion } from "framer-motion";
 
-const wellnessMessages = [
-  {
-    type: "ai",
-    content: "Hello! I'm your AI wellness coach. I can help you create a balanced lifestyle that nurtures your mind, body, and spirit. What would you like to focus on today?",
-    service: "wellness"
-  },
+const wellnessChat = [
   {
     type: "user",
-    content: "I've been feeling stressed lately and would like to improve my overall well-being.",
+    content: "Hi, I've been feeling overwhelmed lately and need help with managing stress and improving my overall well-being.",
+    service: "wellness"
   },
   {
     type: "ai",
@@ -20,15 +13,11 @@ const wellnessMessages = [
   }
 ];
 
-const nutritionMessages = [
-  {
-    type: "ai",
-    content: "Welcome! I'm your AI nutrition guide. I can help you develop healthy eating habits and create personalized meal plans. What are your nutrition goals?",
-    service: "nutrition"
-  },
+const nutritionChat = [
   {
     type: "user",
-    content: "I want to eat healthier but struggle with meal planning and portion control.",
+    content: "Hello, I need help with developing better eating habits and meal planning. Can you assist me?",
+    service: "nutrition"
   },
   {
     type: "ai",
@@ -37,15 +26,11 @@ const nutritionMessages = [
   }
 ];
 
-const spiritualMessages = [
-  {
-    type: "ai",
-    content: "Greetings! I'm your AI spiritual companion. I'm here to support your faith journey and help you grow in your spiritual practice. How can I assist you today?",
-    service: "spiritual"
-  },
+const spiritualChat = [
   {
     type: "user",
-    content: "I'd like to develop a stronger daily spiritual practice but struggle with consistency.",
+    content: "I'm looking to deepen my spiritual practice and establish a more consistent daily routine. Can you help?",
+    service: "spiritual"
   },
   {
     type: "ai",
@@ -54,15 +39,11 @@ const spiritualMessages = [
   }
 ];
 
-const fitnessMessages = [
-  {
-    type: "ai",
-    content: "Hi there! I'm your AI fitness coach. I can help you achieve your fitness goals through personalized workout plans and expert guidance. What are your fitness objectives?",
-    service: "fitness"
-  },
+const fitnessChat = [
   {
     type: "user",
-    content: "I want to get stronger and more flexible, but I'm not sure where to start.",
+    content: "Hi, I want to start a fitness routine focusing on strength and flexibility. Where should I begin?",
+    service: "fitness"
   },
   {
     type: "ai",
@@ -71,106 +52,86 @@ const fitnessMessages = [
   }
 ];
 
-const serviceHighlight = {
-  wellness: "bg-gradient-to-r from-green-400 via-cyan-500 to-blue-500",
-  nutrition: "bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500",
-  spiritual: "bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500",
-  fitness: "bg-gradient-to-r from-lime-400 via-emerald-500 to-teal-500"
-};
-
 const EnhancedChatPreview = () => {
-  const [inputValue, setInputValue] = useState("");
-  const [activeTab, setActiveTab] = useState("wellness");
+  const renderMessage = (message: any, index: number) => {
+    const isAI = message.type === "ai";
+    const messageContent = message.content.split('\n').map((line: string, i: number) => {
+      if (line.startsWith('1.') || line.startsWith('2.')) {
+        return (
+          <h3 key={i} className="text-gradient-aurora font-semibold text-lg mb-2 mt-4">
+            {line}
+          </h3>
+        );
+      }
+      if (line.includes('assessment') || line.includes('analyze') || line.includes('assess')) {
+        return (
+          <div key={i} className="text-gradient-candy font-medium mb-4">
+            {line}
+          </div>
+        );
+      }
+      if (line.startsWith('📅')) {
+        return (
+          <div key={i} className="text-gradient-sunshine hover:scale-105 transition-transform cursor-pointer mb-2">
+            {line}
+          </div>
+        );
+      }
+      if (line.startsWith('⏰') || line.startsWith('📱') || line.startsWith('🧘‍♀️') || 
+          line.startsWith('😌') || line.startsWith('📝') || line.startsWith('🛒') || 
+          line.startsWith('🙏') || line.startsWith('📖') || line.startsWith('✨') || 
+          line.startsWith('💪') || line.startsWith('📊') || line.startsWith('🎯')) {
+        return (
+          <div key={i} className="text-gradient-ocean hover:scale-105 transition-transform cursor-pointer mb-2">
+            {line}
+          </div>
+        );
+      }
+      return <div key={i} className="mb-2">{line}</div>;
+    });
 
-  const getActiveMessages = () => {
-    switch (activeTab) {
-      case "wellness":
-        return wellnessMessages;
-      case "nutrition":
-        return nutritionMessages;
-      case "spiritual":
-        return spiritualMessages;
-      case "fitness":
-        return fitnessMessages;
-      default:
-        return wellnessMessages;
-    }
+    return (
+      <motion.div
+        key={index}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: index * 0.2 }}
+        className={`p-4 rounded-lg mb-4 ${
+          isAI 
+            ? 'glass ml-4' 
+            : 'bg-gradient-to-r from-tertiary/10 to-accent/10 mr-4'
+        }`}
+      >
+        <div className={`text-sm mb-2 ${
+          isAI ? 'text-gradient-cosmic' : 'text-gradient-mystic'
+        }`}>
+          {isAI ? 'AI Assistant' : 'You'}
+        </div>
+        <div className={isAI ? 'text-white/90' : 'text-white/80'}>
+          {messageContent}
+        </div>
+      </motion.div>
+    );
   };
 
   return (
-    <div className="max-w-5xl mx-auto">
-      <Tabs defaultValue="wellness" className="w-full" onValueChange={setActiveTab}>
-        <TabsList className="grid w-full grid-cols-4 mb-8">
-          <TabsTrigger value="wellness" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-green-400 data-[state=active]:via-cyan-500 data-[state=active]:to-blue-500 data-[state=active]:bg-opacity-20">
-            Wellness
-          </TabsTrigger>
-          <TabsTrigger value="nutrition" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-pink-500 data-[state=active]:via-purple-500 data-[state=active]:to-indigo-500 data-[state=active]:bg-opacity-20">
-            Nutrition
-          </TabsTrigger>
-          <TabsTrigger value="spiritual" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-yellow-400 data-[state=active]:via-orange-500 data-[state=active]:to-red-500 data-[state=active]:bg-opacity-20">
-            Spiritual
-          </TabsTrigger>
-          <TabsTrigger value="fitness" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-lime-400 data-[state=active]:via-emerald-500 data-[state=active]:to-teal-500 data-[state=active]:bg-opacity-20">
-            Fitness
-          </TabsTrigger>
-        </TabsList>
-
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="glass rounded-3xl p-8 backdrop-blur-xl relative overflow-hidden"
-        >
-          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-secondary via-accent to-secondary opacity-50" />
-          
-          <div className="space-y-6 mb-8 max-h-[500px] overflow-y-auto custom-scrollbar">
-            <AnimatePresence mode="wait">
-              {getActiveMessages().map((message, index) => (
-                <motion.div 
-                  key={`${activeTab}-${index}`}
-                  initial={{ opacity: 0, x: message.type === 'ai' ? -20 : 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: message.type === 'ai' ? -20 : 20 }}
-                  transition={{ delay: index * 0.2 }}
-                  className={`flex items-start gap-4 ${message.type === 'user' ? 'justify-end' : ''}`}
-                >
-                  {message.type === 'ai' && (
-                    <div className={`w-10 h-10 rounded-full ${serviceHighlight[message.service]} flex items-center justify-center flex-shrink-0`}>
-                      <Bot className="w-6 h-6 text-white" />
-                    </div>
-                  )}
-                  
-                  <div className={`glass rounded-2xl p-4 max-w-[80%] ${message.type === 'ai' ? 'rounded-tl-sm' : 'rounded-tr-sm'} ${message.type === 'user' ? 'bg-accent/10' : ''}`}>
-                    <p className="text-lg whitespace-pre-line">{message.content}</p>
-                  </div>
-
-                  {message.type === 'user' && (
-                    <div className="w-10 h-10 rounded-full bg-gradient-to-r from-accent to-secondary flex items-center justify-center flex-shrink-0">
-                      <User className="w-6 h-6 text-white" />
-                    </div>
-                  )}
-                </motion.div>
-              ))}
-            </AnimatePresence>
-          </div>
-          
-          <div className="mt-8 flex gap-3">
-            <input 
-              type="text" 
-              value={inputValue}
-              onChange={(e) => setInputValue(e.target.value)}
-              placeholder="Type your message..." 
-              className="flex-1 glass rounded-full px-6 py-4 focus:outline-none focus:ring-2 focus:ring-secondary/50 transition-all text-lg"
-            />
-            <motion.button 
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="glass p-4 rounded-full hover:bg-white/10 transition-colors group"
-            >
-              <Send className="w-6 h-6 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-            </motion.button>
-          </div>
-        </motion.div>
-      </Tabs>
+    <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="glass rounded-xl p-6">
+        <h3 className="text-gradient-aurora text-xl font-semibold mb-4">Wellness Chat</h3>
+        {wellnessChat.map((message, index) => renderMessage(message, index))}
+      </div>
+      <div className="glass rounded-xl p-6">
+        <h3 className="text-gradient-candy text-xl font-semibold mb-4">Nutrition Chat</h3>
+        {nutritionChat.map((message, index) => renderMessage(message, index))}
+      </div>
+      <div className="glass rounded-xl p-6">
+        <h3 className="text-gradient-cosmic text-xl font-semibold mb-4">Spiritual Chat</h3>
+        {spiritualChat.map((message, index) => renderMessage(message, index))}
+      </div>
+      <div className="glass rounded-xl p-6">
+        <h3 className="text-gradient-ocean text-xl font-semibold mb-4">Fitness Chat</h3>
+        {fitnessChat.map((message, index) => renderMessage(message, index))}
+      </div>
     </div>
   );
 };
