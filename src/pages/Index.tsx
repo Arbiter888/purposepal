@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Check, Apple, Dumbbell, Brain, ShoppingBag, Heart } from "lucide-react";
+import { ArrowRight, Check, Apple, Dumbbell, Brain, ShoppingBag } from "lucide-react";
 import ChatPreview from "@/components/ChatPreview";
 import ProfessionalDirectory from "@/components/ProfessionalDirectory";
+import HeroSection from "@/components/HeroSection";
 
 const features = [
   {
@@ -85,31 +86,8 @@ const recommendedProducts = [
 const Index = () => {
   return (
     <div className="min-h-screen bg-black text-white">
-      {/* Hero Section */}
-      <section className="section-padding relative overflow-hidden">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="max-w-4xl mx-auto text-center"
-        >
-          <span className="text-sm font-medium text-gradient">Welcome to BornPurpose</span>
-          <h1 className="mt-6 text-6xl font-bold tracking-tight">
-            Your AI-Powered
-            <span className="text-gradient"> Life Coach</span>
-          </h1>
-          <p className="mt-6 text-xl text-muted-foreground">
-            Transform your life with personalized guidance and support from our advanced AI coach.
-          </p>
-          <div className="mt-10 flex items-center justify-center gap-4">
-            <button className="glass px-8 py-3 rounded-full font-medium hover-lift">
-              Get Started
-              <ArrowRight className="ml-2 inline-block h-4 w-4" />
-            </button>
-          </div>
-        </motion.div>
-      </section>
-
+      <HeroSection />
+      
       {/* Chat Preview Section */}
       <section className="section-padding bg-muted">
         <motion.div
