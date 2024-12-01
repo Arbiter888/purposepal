@@ -10,7 +10,7 @@ const CommunityHealth = () => {
         transition={{ duration: 0.6 }}
         className="text-center mb-16"
       >
-        <h2 className="text-4xl font-bold text-gradient mb-4">Join Our Supportive Community</h2>
+        <h2 className="text-4xl font-bold text-gradient-neon mb-4">Join Our Supportive Community</h2>
         <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
           Connect with like-minded individuals and healthcare professionals who understand your journey
         </p>
