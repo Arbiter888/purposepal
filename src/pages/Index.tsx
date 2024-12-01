@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Check } from "lucide-react";
+import ChatPreview from "@/components/ChatPreview";
+import ProfessionalDirectory from "@/components/ProfessionalDirectory";
 
 const features = [
   {
@@ -66,6 +68,22 @@ const Index = () => {
         </motion.div>
       </section>
 
+      {/* Chat Preview Section */}
+      <section className="section-padding bg-muted">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl font-bold text-gradient">Experience AI Coaching</h2>
+          <p className="mt-4 text-lg text-muted-foreground">
+            Get personalized guidance from our advanced AI coach
+          </p>
+        </motion.div>
+        <ChatPreview />
+      </section>
+
       {/* Features Section */}
       <section className="section-padding bg-muted">
         <div className="max-w-7xl mx-auto">
@@ -95,6 +113,22 @@ const Index = () => {
             ))}
           </div>
         </div>
+      </section>
+
+      {/* Professional Directory Section */}
+      <section className="section-padding bg-muted">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl font-bold text-gradient">Meet Our Professionals</h2>
+          <p className="mt-4 text-lg text-muted-foreground">
+            Connect with experienced coaches and therapists
+          </p>
+        </motion.div>
+        <ProfessionalDirectory />
       </section>
 
       {/* Pricing Section */}
