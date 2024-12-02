@@ -5,6 +5,19 @@ import { FeatureBadges } from "../hero/FeatureBadges";
 import { UserPlus, Users } from "lucide-react";
 
 const HeroWithFeatures = () => {
+  const handleEmailClick = (type: 'signup' | 'referral') => {
+    const subject = type === 'signup' 
+      ? 'Early Access Request for BornPurpose'
+      : 'BornPurpose Referral Inquiry';
+    
+    const body = type === 'signup'
+      ? 'Hello,\n\nI would like to request early access to BornPurpose.'
+      : 'Hello,\n\nI have a referral for BornPurpose.';
+    
+    const mailtoLink = `mailto:membership@bornpurpose.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailtoLink;
+  };
+
   return (
     <section className="min-h-screen section-padding relative overflow-hidden flex items-center">
       <AnimatedBackground />
@@ -69,6 +82,7 @@ const HeroWithFeatures = () => {
           className="mt-12 flex items-center justify-center gap-6 flex-wrap"
         >
           <motion.button
+            onClick={() => handleEmailClick('signup')}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="glass px-8 py-4 rounded-full font-medium hover-lift flex items-center gap-2 group text-lg relative overflow-hidden"
@@ -90,6 +104,7 @@ const HeroWithFeatures = () => {
           </motion.button>
           
           <motion.button
+            onClick={() => handleEmailClick('referral')}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="px-8 py-4 rounded-full font-medium border border-white/10 hover:bg-white/5 transition-colors text-lg relative overflow-hidden flex items-center gap-2"
