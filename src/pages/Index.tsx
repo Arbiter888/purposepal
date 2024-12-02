@@ -28,12 +28,34 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-black text-white">
-      {/* Progress indicator with sunshine gradient */}
-      <motion.div 
-        className="fixed top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 opacity-60 z-50"
-        style={{ scaleX: scrollProgress }}
-      />
+    <div className="min-h-screen bg-black text-white relative">
+      {/* Progress border container */}
+      <div className="fixed inset-0 pointer-events-none z-50">
+        {/* Top border */}
+        <motion.div 
+          className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 opacity-60"
+          style={{ scaleX: scrollProgress }}
+          initial={{ transformOrigin: "left" }}
+        />
+        {/* Right border */}
+        <motion.div 
+          className="absolute top-0 right-0 bottom-0 w-0.5 bg-gradient-to-b from-red-500 via-orange-500 to-yellow-400 opacity-60"
+          style={{ scaleY: scrollProgress }}
+          initial={{ transformOrigin: "top" }}
+        />
+        {/* Bottom border */}
+        <motion.div 
+          className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 opacity-60"
+          style={{ scaleX: scrollProgress }}
+          initial={{ transformOrigin: "right" }}
+        />
+        {/* Left border */}
+        <motion.div 
+          className="absolute top-0 left-0 bottom-0 w-0.5 bg-gradient-to-b from-red-500 via-orange-500 to-yellow-400 opacity-60"
+          style={{ scaleY: scrollProgress }}
+          initial={{ transformOrigin: "bottom" }}
+        />
+      </div>
 
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-secondary/20 via-background to-background pointer-events-none" />
       
