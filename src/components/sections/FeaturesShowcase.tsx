@@ -4,69 +4,36 @@ import { Brain, Apple, Dumbbell, Heart, Book, Star, DollarSign } from "lucide-re
 const features = [
   {
     icon: Brain,
-    title: "Mental Wellness",
+    title: "Personal Growth",
     description: [
-      "24/7 AI-powered emotional support and guidance",
-      "Personalized meditation and stress management techniques",
-      "Real-time mood tracking and pattern recognition"
+      "AI-powered coaching available 24/7",
+      "Personalized development roadmaps",
+      "Goal tracking and achievement monitoring"
     ],
-    savings: "Save $200+/month on traditional therapy sessions",
-    costComparison: "Traditional therapy: $150-200/session vs. Unlimited AI support"
-  },
-  {
-    icon: Apple,
-    title: "Nutrition Guidance",
-    description: [
-      "Custom meal plans aligned with your goals and preferences",
-      "Real-time nutritional analysis and recommendations",
-      "Smart grocery lists and recipe suggestions"
-    ],
-    savings: "Save $120+/month on nutritionist consultations",
-    costComparison: "Nutritionist: $100/session vs. Continuous AI guidance"
-  },
-  {
-    icon: Dumbbell,
-    title: "Fitness Coaching",
-    description: [
-      "Personalized workout plans with form guidance",
-      "Progress tracking and adaptive programming",
-      "Injury prevention recommendations"
-    ],
-    savings: "Save $250+/month on personal training",
-    costComparison: "Personal trainer: $60-80/session vs. Daily AI coaching"
+    savings: "Save $200+/month on traditional coaching",
+    costComparison: "Traditional coaching: $150-200/session vs. Unlimited AI support"
   },
   {
     icon: Heart,
-    title: "Spiritual Growth",
+    title: "Life Design",
     description: [
-      "Guided spiritual practices and meditation sessions",
-      "Personal faith development resources",
-      "Community connection opportunities"
+      "Comprehensive life assessment tools",
+      "Custom action plans for transformation",
+      "Wellness and lifestyle optimization"
     ],
-    savings: "Save $100+/month on spiritual counseling",
-    costComparison: "Spiritual advisor: $80-100/session vs. Unlimited access"
+    savings: "Save $300+/month on life coaching",
+    costComparison: "Life coach: $200/session vs. Continuous guidance"
   },
   {
-    icon: Book,
-    title: "Personal Development",
+    icon: Globe,
+    title: "Global Living",
     description: [
-      "Customized learning paths and skill development",
-      "Progress tracking and milestone achievements",
-      "Resource library and expert insights"
+      "International relocation guidance",
+      "Cultural integration support",
+      "Global opportunities assessment"
     ],
-    savings: "Save $150+/month on life coaching",
-    costComparison: "Life coach: $125/session vs. Continuous guidance"
-  },
-  {
-    icon: Star,
-    title: "Financial Coaching",
-    description: [
-      "Personal budget planning and analysis",
-      "Investment strategy guidance",
-      "Debt management and savings plans"
-    ],
-    savings: "Save $180+/month on financial coaching",
-    costComparison: "Financial coach: $150/session vs. Daily support"
+    savings: "Save $500+/month on relocation services",
+    costComparison: "Relocation consultant: $250/hour vs. Complete support package"
   }
 ];
 
