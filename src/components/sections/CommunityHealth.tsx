@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Users, Stethoscope, Heart, MessageCircle, Video, Calendar } from "lucide-react";
+import { Globe, Plane, Building, Users, MessageCircle, Video, Calendar } from "lucide-react";
 
 const CommunityHealth = () => {
   return (
@@ -10,9 +10,9 @@ const CommunityHealth = () => {
         transition={{ duration: 0.6 }}
         className="text-center mb-16"
       >
-        <h2 className="text-4xl font-bold text-gradient-neon mb-4">Join Our Supportive Community</h2>
+        <h2 className="text-4xl font-bold text-gradient-neon mb-4">Your Journey to International Living</h2>
         <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-          Connect with like-minded individuals and healthcare professionals who understand your journey
+          Transform your life by exploring opportunities abroad. Connect with expats and experts who've successfully made the transition.
         </p>
       </motion.div>
 
@@ -23,10 +23,10 @@ const CommunityHealth = () => {
           transition={{ delay: 0.1 }}
           className="glass p-8 rounded-2xl hover:scale-105 transition-transform duration-300"
         >
-          <Users className="w-12 h-12 mb-4 text-gradient" />
-          <h3 className="text-xl font-semibold text-gradient-neon mb-3">Peer Support Groups</h3>
+          <Globe className="w-12 h-12 mb-4 text-gradient" />
+          <h3 className="text-xl font-semibold text-gradient-neon mb-3">Global Opportunities</h3>
           <p className="text-muted-foreground">
-            Join virtual support groups led by experienced facilitators and connect with others on similar journeys
+            Discover career opportunities, housing options, and lifestyle possibilities in countries around the world
           </p>
         </motion.div>
 
@@ -36,10 +36,10 @@ const CommunityHealth = () => {
           transition={{ delay: 0.2 }}
           className="glass p-8 rounded-2xl hover:scale-105 transition-transform duration-300"
         >
-          <Stethoscope className="w-12 h-12 mb-4 text-gradient" />
-          <h3 className="text-xl font-semibold text-gradient-neon mb-3">Telehealth Services</h3>
+          <Plane className="w-12 h-12 mb-4 text-gradient" />
+          <h3 className="text-xl font-semibold text-gradient-neon mb-3">Relocation Support</h3>
           <p className="text-muted-foreground">
-            Access licensed healthcare professionals for virtual consultations and ongoing support
+            Get expert guidance on visas, international moving, and settling into your new home country
           </p>
         </motion.div>
 
@@ -49,10 +49,10 @@ const CommunityHealth = () => {
           transition={{ delay: 0.3 }}
           className="glass p-8 rounded-2xl hover:scale-105 transition-transform duration-300"
         >
-          <Heart className="w-12 h-12 mb-4 text-gradient" />
-          <h3 className="text-xl font-semibold text-gradient-neon mb-3">Holistic Wellness</h3>
+          <Building className="w-12 h-12 mb-4 text-gradient" />
+          <h3 className="text-xl font-semibold text-gradient-neon mb-3">Local Integration</h3>
           <p className="text-muted-foreground">
-            Integrate physical, mental, and spiritual health with guidance from our community experts
+            Learn about local culture, customs, and connect with established expat communities in your target country
           </p>
         </motion.div>
       </div>
@@ -64,8 +64,8 @@ const CommunityHealth = () => {
           transition={{ delay: 0.4 }}
           className="flex items-center gap-3 glass px-6 py-3 rounded-full"
         >
-          <MessageCircle className="w-5 h-5" />
-          <span>24/7 Chat Support</span>
+          <Users className="w-5 h-5" />
+          <span>Global Community Support</span>
         </motion.div>
 
         <motion.div
@@ -75,7 +75,7 @@ const CommunityHealth = () => {
           className="flex items-center gap-3 glass px-6 py-3 rounded-full"
         >
           <Video className="w-5 h-5" />
-          <span>Video Consultations</span>
+          <span>Virtual Consultations</span>
         </motion.div>
 
         <motion.div
@@ -85,7 +85,7 @@ const CommunityHealth = () => {
           className="flex items-center gap-3 glass px-6 py-3 rounded-full"
         >
           <Calendar className="w-5 h-5" />
-          <span>Regular Check-ins</span>
+          <span>Personalized Planning</span>
         </motion.div>
       </div>
     </section>
