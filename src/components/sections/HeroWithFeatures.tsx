@@ -35,34 +35,23 @@ const HeroWithFeatures = () => {
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-8"
         >
           <Bot className="w-5 h-5 text-gradient-rainbow" />
-          <span className="text-gradient-rainbow text-sm font-medium">Meet Your Personal AI Avatar Coach</span>
+          <span className="text-gradient-rainbow text-sm font-medium">Design Your Dream Life with BornPurpose</span>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.3 }}
-          className="flex items-center justify-center gap-2 mb-6"
-        >
-          <span className="text-2xl md:text-3xl font-medium text-gradient-sunshine inline-block">
-            Your 24/7 AI Avatar Coach for Life Transformation
-          </span>
-        </motion.div>
-        
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
           className="mt-6 text-6xl sm:text-7xl lg:text-8xl font-bold tracking-tight leading-tight"
         >
-          Design Your Life with
+          Your Journey to
           <motion.span
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.6 }}
             className="text-gradient-aurora block mt-2 relative"
           >
-            AI Guidance
+            A New Life
           </motion.span>
         </motion.h1>
 
@@ -100,8 +89,8 @@ const HeroWithFeatures = () => {
                 ease: "linear",
               }}
             />
-            <Bot className="w-5 h-5" />
-            <span className="relative z-10">Get Your AI Avatar Coach</span>
+            <UserPlus className="w-5 h-5" />
+            <span className="relative z-10">Sign Up for Early Access</span>
           </motion.button>
           
           <motion.button
@@ -124,7 +113,7 @@ const HeroWithFeatures = () => {
               }}
             />
             <Users className="w-5 h-5" />
-            <span className="relative z-10">Refer a Friend</span>
+            <span className="relative z-10">I Have a Referral</span>
           </motion.button>
         </motion.div>
 
