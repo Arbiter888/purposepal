@@ -40,14 +40,14 @@ const HeroWithFeatures = () => {
           transition={{ delay: 0.4 }}
           className="mt-6 text-6xl sm:text-7xl lg:text-8xl font-bold tracking-tight leading-tight"
         >
-          Your AI-Powered
+          Your AI-Empowered
           <motion.span
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.6 }}
             className="text-gradient-aurora block mt-2 relative"
           >
-            Life Coach
+            Life
           </motion.span>
         </motion.h1>
 
