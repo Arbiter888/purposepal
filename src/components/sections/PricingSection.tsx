@@ -67,6 +67,14 @@ const plans = [
 ];
 
 const PricingSection = () => {
+  const handleGetStarted = (planName: string, price: string) => {
+    const subject = `Get Started with BornPurpose ${planName} Plan`;
+    const body = `Hello,\n\nI would like to get started with the ${planName} plan at ${price}/month.\n\nPlease provide me with more information about getting started.`;
+    
+    const mailtoLink = `mailto:membership@bornpurpose.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailtoLink;
+  };
+
   return (
     <section className="section-padding relative overflow-hidden">
       <motion.div
@@ -145,6 +153,7 @@ const PricingSection = () => {
               </ul>
               
               <motion.button 
+                onClick={() => handleGetStarted(plan.name, plan.price)}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 className={`w-full glass px-6 py-3 rounded-full font-medium hover-lift transition-all duration-300
