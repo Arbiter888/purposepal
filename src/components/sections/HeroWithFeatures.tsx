@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { AnimatedBackground } from "../hero/AnimatedBackground";
 import { FloatingParticles } from "../hero/FloatingParticles";
 import { FeatureBadges } from "../hero/FeatureBadges";
+import { UserPlus, Users } from "lucide-react";
 
 const HeroWithFeatures = () => {
   return (
@@ -20,7 +21,7 @@ const HeroWithFeatures = () => {
           animate={{ opacity: 1, y: 0 }}
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-8"
         >
-          <span className="text-gradient-rainbow text-sm font-medium">Transform Your Life Anywhere in the World</span>
+          <span className="text-gradient-rainbow text-sm font-medium">Exclusive Members Only</span>
         </motion.div>
 
         <motion.div
@@ -30,7 +31,7 @@ const HeroWithFeatures = () => {
           className="flex items-center justify-center gap-2 mb-6"
         >
           <span className="text-2xl md:text-3xl font-medium text-gradient-sunshine inline-block">
-            Design Your Dream Life with BornPurpose
+            Join Our Elite Community
           </span>
         </motion.div>
         
@@ -57,8 +58,8 @@ const HeroWithFeatures = () => {
           transition={{ delay: 0.5 }}
           className="mt-8 text-xl md:text-2xl text-muted-foreground/90 max-w-2xl mx-auto leading-relaxed glass p-6 rounded-xl"
         >
-          Whether you're seeking personal transformation or dreaming of a fresh start abroad,
-          our AI-powered platform guides you through every step of your journey to create the life you've always wanted.
+          Join our exclusive membership club where transformation meets community.
+          Limited spots available for those ready to redesign their lives.
         </motion.p>
 
         <motion.div
@@ -84,13 +85,14 @@ const HeroWithFeatures = () => {
                 ease: "linear",
               }}
             />
-            <span className="relative z-10">Begin Your Transformation</span>
+            <UserPlus className="w-5 h-5" />
+            <span className="relative z-10">Sign Up for Early Access</span>
           </motion.button>
           
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="px-8 py-4 rounded-full font-medium border border-white/10 hover:bg-white/5 transition-colors text-lg relative overflow-hidden"
+            className="px-8 py-4 rounded-full font-medium border border-white/10 hover:bg-white/5 transition-colors text-lg relative overflow-hidden flex items-center gap-2"
           >
             <motion.div
               className="absolute inset-0 bg-gradient-to-r from-tertiary/20 to-highlight/20"
@@ -105,7 +107,8 @@ const HeroWithFeatures = () => {
                 delay: 1.5,
               }}
             />
-            <span className="relative z-10">Explore Global Opportunities</span>
+            <Users className="w-5 h-5" />
+            <span className="relative z-10">I Have a Referral</span>
           </motion.button>
         </motion.div>
 
