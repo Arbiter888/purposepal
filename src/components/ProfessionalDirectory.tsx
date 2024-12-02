@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
-import { Star, MessageCircle, Video, HandHeart } from "lucide-react";
+import { Star, MessageCircle, Video, HandHeart, Bot } from "lucide-react";
 
 const professionals = [
   {
     name: "Dr. Sarah Johnson",
-    title: "Career Coach",
+    title: "BornPurpose Career Expert Friend",
     rating: 4.9,
     reviews: 128,
     image: "https://i.pravatar.cc/150?img=1",
@@ -13,7 +13,7 @@ const professionals = [
   },
   {
     name: "Rabbi David Cohen",
-    title: "Faith-Based Life Coach",
+    title: "BornPurpose Faith Expert Friend",
     rating: 5.0,
     reviews: 156,
     image: "https://i.pravatar.cc/150?img=4",
@@ -22,7 +22,7 @@ const professionals = [
   },
   {
     name: "Imam Hassan Ahmed",
-    title: "Spiritual Wellness Coach",
+    title: "BornPurpose Spiritual Expert Friend",
     rating: 4.9,
     reviews: 142,
     image: "https://i.pravatar.cc/150?img=5",
@@ -31,7 +31,7 @@ const professionals = [
   },
   {
     name: "Pastor Grace Williams",
-    title: "Christian Life Coach",
+    title: "BornPurpose Faith Expert Friend",
     rating: 4.8,
     reviews: 134,
     image: "https://i.pravatar.cc/150?img=6",
@@ -43,6 +43,13 @@ const professionals = [
 const ProfessionalDirectory = () => {
   return (
     <div className="max-w-7xl mx-auto px-4">
+      <div className="text-center mb-12">
+        <h2 className="text-3xl font-bold text-gradient-aurora mb-4">Meet Your BornPurpose Expert Friends</h2>
+        <p className="text-xl text-muted-foreground/90 max-w-2xl mx-auto">
+          Your AI avatar coach can introduce you to these trusted experts who are ready to support your journey
+        </p>
+      </div>
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {professionals.map((professional, index) => (
           <motion.div
@@ -97,16 +104,8 @@ const ProfessionalDirectory = () => {
                 whileTap={{ scale: 0.98 }}
                 className="flex-1 glass px-4 py-3 rounded-full hover:bg-white/10 transition-all duration-300 flex items-center justify-center gap-2 group"
               >
-                <MessageCircle className="w-5 h-5" />
-                <span>Chat</span>
-              </motion.button>
-              <motion.button 
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="flex-1 glass px-4 py-3 rounded-full hover:bg-white/10 transition-all duration-300 flex items-center justify-center gap-2 group"
-              >
-                <Video className="w-5 h-5" />
-                <span>Call</span>
+                <Bot className="w-5 h-5" />
+                <span>Connect via AI Coach</span>
               </motion.button>
             </div>
           </motion.div>
