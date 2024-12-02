@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Brain, Apple, Dumbbell, Heart, Book, Star, DollarSign } from "lucide-react";
+import { Brain, Apple, Dumbbell, Heart, Book, Star, DollarSign, Globe } from "lucide-react";
 
 const features = [
   {
