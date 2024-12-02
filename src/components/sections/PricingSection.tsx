@@ -1,23 +1,7 @@
 import { motion } from "framer-motion";
-import { Check, MessageSquare, Users, Crown, DollarSign } from "lucide-react";
+import { Check, MessageSquare, Users, Crown, Globe, DollarSign } from "lucide-react";
 
 const plans = [
-  {
-    name: "Free",
-    price: "$0",
-    description: "Get started with AI-powered guidance",
-    icon: MessageSquare,
-    features: [
-      "Basic AI chatbot access (5 credits)",
-      "Goal setting tools",
-      "Progress tracking",
-      "Community forum access"
-    ],
-    credits: "20 credits/month",
-    creditValue: "Start with essential wellness features",
-    savings: "Save up to $50/month",
-    comparison: "Traditional consultation: $50/session vs. Free AI guidance"
-  },
   {
     name: "Pro",
     price: "$29",
@@ -57,6 +41,28 @@ const plans = [
     creditValue: "Full access to all premium features and services",
     savings: "Save up to $900/month",
     comparison: "Traditional services: $1000+/month vs. $99/month for unlimited access"
+  },
+  {
+    name: "Another Life",
+    price: "$199",
+    description: "Your journey to international living",
+    icon: Globe,
+    features: [
+      "Everything in Whole Life plan",
+      "International relocation consulting",
+      "Visa application guidance",
+      "Global housing search assistance",
+      "Cultural integration support",
+      "Language learning resources",
+      "Global banking setup help",
+      "International job search support",
+      "Expat community connections",
+      "24/7 global transition support"
+    ],
+    credits: "Unlimited credits",
+    creditValue: "Complete support for your international transition",
+    savings: "Save up to $2000/month",
+    comparison: "Traditional relocation services: $2200+/month vs. $199/month for comprehensive support"
   },
 ];
 
@@ -131,19 +137,19 @@ const PricingSection = () => {
               </div>
               
               <h3 className={`text-2xl font-semibold ${
-                plan.name === "Free" 
-                  ? "text-gradient-aurora" 
-                  : plan.name === "Pro" 
-                    ? "text-gradient-candy"
-                    : "text-gradient-sunshine"
+                plan.name === "Pro" 
+                  ? "text-gradient-candy"
+                  : plan.name === "Whole Life" 
+                    ? "text-gradient-sunshine"
+                    : "text-gradient-aurora"
               } mb-2`}>{plan.name}</h3>
               <p className="text-muted-foreground mb-4">{plan.description}</p>
               <div className={`text-4xl font-bold ${
-                plan.name === "Free" 
-                  ? "text-gradient-aurora" 
-                  : plan.name === "Pro"
-                    ? "text-gradient-candy"
-                    : "text-gradient-sunshine"
+                plan.name === "Pro" 
+                  ? "text-gradient-candy"
+                  : plan.name === "Whole Life"
+                    ? "text-gradient-sunshine"
+                    : "text-gradient-aurora"
               } mb-6`}>
                 {plan.price}<span className="text-lg">/month</span>
               </div>
@@ -178,11 +184,11 @@ const PricingSection = () => {
                 whileTap={{ scale: 0.98 }}
                 className={`w-full glass px-6 py-3 rounded-full font-medium hover-lift transition-all duration-300
                   border border-white/10 hover:border-white/20 backdrop-blur-lg
-                  ${plan.name === "Free" 
-                    ? "text-gradient-aurora" 
-                    : plan.name === "Pro"
-                      ? "text-gradient-candy"
-                      : "text-gradient-sunshine"} 
+                  ${plan.name === "Pro" 
+                    ? "text-gradient-candy" 
+                    : plan.name === "Whole Life"
+                      ? "text-gradient-sunshine"
+                      : "text-gradient-aurora"} 
                   bg-gradient-to-r from-white/5 to-white/10 hover:from-white/10 hover:to-white/15`}
               >
                 Get Started
