@@ -65,23 +65,41 @@ const CommunityHealth = () => {
       >
         <h3 className="text-2xl font-semibold text-gradient-neon mb-6 text-center">Featured Destination: Kuala Lumpur, Malaysia</h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="text-center p-4 glass rounded-xl">
-            <DollarSign className="w-8 h-8 mx-auto mb-2 text-gradient-sunshine" />
-            <h4 className="font-semibold mb-2">Kuala Lumpur</h4>
-            <p className="text-muted-foreground text-sm">$1,800/month</p>
-            <p className="text-xs text-muted-foreground mt-2">Average living costs</p>
+          <div className="text-center p-4 glass rounded-xl relative overflow-hidden group">
+            <div 
+              className="absolute inset-0 bg-cover bg-center opacity-20 group-hover:opacity-40 transition-opacity duration-300"
+              style={{ backgroundImage: 'url(/lovable-uploads/b30aef96-040a-42a7-aca9-99e70c70fe68.png)' }}
+            />
+            <div className="relative z-10">
+              <DollarSign className="w-8 h-8 mx-auto mb-2 text-gradient-sunshine" />
+              <h4 className="font-semibold mb-2">Kuala Lumpur</h4>
+              <p className="text-muted-foreground text-sm">$1,800/month</p>
+              <p className="text-xs text-muted-foreground mt-2">Average living costs</p>
+            </div>
           </div>
-          <div className="text-center p-4 glass rounded-xl">
-            <DollarSign className="w-8 h-8 mx-auto mb-2 text-gradient-sunshine" />
-            <h4 className="font-semibold mb-2">London</h4>
-            <p className="text-muted-foreground text-sm">$4,800/month</p>
-            <p className="text-xs text-muted-foreground mt-2">167% more expensive</p>
+          <div className="text-center p-4 glass rounded-xl relative overflow-hidden group">
+            <div 
+              className="absolute inset-0 bg-cover bg-center opacity-20 group-hover:opacity-40 transition-opacity duration-300"
+              style={{ backgroundImage: 'url(/lovable-uploads/7c701826-e490-434c-b542-59f3652c6375.png)' }}
+            />
+            <div className="relative z-10">
+              <DollarSign className="w-8 h-8 mx-auto mb-2 text-gradient-sunshine" />
+              <h4 className="font-semibold mb-2">London</h4>
+              <p className="text-muted-foreground text-sm">$4,800/month</p>
+              <p className="text-xs text-muted-foreground mt-2">167% more expensive</p>
+            </div>
           </div>
-          <div className="text-center p-4 glass rounded-xl">
-            <DollarSign className="w-8 h-8 mx-auto mb-2 text-gradient-sunshine" />
-            <h4 className="font-semibold mb-2">New York</h4>
-            <p className="text-muted-foreground text-sm">$5,500/month</p>
-            <p className="text-xs text-muted-foreground mt-2">205% more expensive</p>
+          <div className="text-center p-4 glass rounded-xl relative overflow-hidden group">
+            <div 
+              className="absolute inset-0 bg-cover bg-center opacity-20 group-hover:opacity-40 transition-opacity duration-300"
+              style={{ backgroundImage: 'url(/lovable-uploads/861126b1-a991-4d52-b668-2a2ba821a15c.png)' }}
+            />
+            <div className="relative z-10">
+              <DollarSign className="w-8 h-8 mx-auto mb-2 text-gradient-sunshine" />
+              <h4 className="font-semibold mb-2">New York</h4>
+              <p className="text-muted-foreground text-sm">$5,500/month</p>
+              <p className="text-xs text-muted-foreground mt-2">205% more expensive</p>
+            </div>
           </div>
         </div>
         <p className="text-sm text-muted-foreground text-center mt-4">
