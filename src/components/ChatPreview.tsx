@@ -16,8 +16,9 @@ const ChatPreview = () => {
           className="flex items-start gap-4"
         >
           <div className="w-10 h-10 rounded-full bg-gradient-to-r from-secondary to-accent flex-shrink-0 animate-pulse" />
-          <div className="glass rounded-2xl p-4 max-w-[80%] rounded-tl-sm">
-            <p className="text-lg">Hello! I'm your AI life coach. How can I help you today?</p>
+          <div className="relative glass rounded-2xl p-4 max-w-[80%] rounded-tl-sm bg-muted/80">
+            <div className="absolute left-[-8px] top-4 w-0 h-0 border-t-[8px] border-t-transparent border-r-[8px] border-r-muted/80 border-b-[8px] border-b-transparent" />
+            <p className="text-lg text-gradient-candy">Hello! I'm your AI life coach. How can I help you today?</p>
           </div>
         </motion.div>
         
@@ -27,8 +28,9 @@ const ChatPreview = () => {
           transition={{ delay: 0.4 }}
           className="flex items-start gap-4 justify-end"
         >
-          <div className="glass rounded-2xl p-4 max-w-[80%] rounded-tr-sm">
-            <p className="text-lg">I need help with setting career goals.</p>
+          <div className="relative glass rounded-2xl p-4 max-w-[80%] rounded-tr-sm bg-accent/10">
+            <div className="absolute right-[-8px] top-4 w-0 h-0 border-t-[8px] border-t-transparent border-l-[8px] border-l-accent/10 border-b-[8px] border-b-transparent" />
+            <p className="text-lg text-gradient-sunshine">I need help with setting career goals.</p>
           </div>
           <div className="w-10 h-10 rounded-full bg-gradient-to-r from-accent to-secondary flex-shrink-0" />
         </motion.div>
@@ -40,8 +42,9 @@ const ChatPreview = () => {
           className="flex items-start gap-4"
         >
           <div className="w-10 h-10 rounded-full bg-gradient-to-r from-secondary to-accent flex-shrink-0 animate-pulse" />
-          <div className="glass rounded-2xl p-4 max-w-[80%] rounded-tl-sm">
-            <p className="text-lg">I'd be happy to help you set and achieve your career goals. Let's start by understanding your current situation and aspirations.</p>
+          <div className="relative glass rounded-2xl p-4 max-w-[80%] rounded-tl-sm bg-muted/80">
+            <div className="absolute left-[-8px] top-4 w-0 h-0 border-t-[8px] border-t-transparent border-r-[8px] border-r-muted/80 border-b-[8px] border-b-transparent" />
+            <p className="text-lg text-gradient-candy">I'd be happy to help you set and achieve your career goals. Let's start by understanding your current situation and aspirations.</p>
           </div>
         </motion.div>
       </div>
