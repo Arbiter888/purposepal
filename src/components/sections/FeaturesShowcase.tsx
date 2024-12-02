@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Brain, Heart, Globe } from "lucide-react";
+import { Brain, Heart, Globe, DollarSign } from "lucide-react";
 
 const features = [
   {
