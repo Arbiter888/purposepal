@@ -21,7 +21,7 @@ const HeroWithFeatures = () => {
           animate={{ opacity: 1, y: 0 }}
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-8"
         >
-          <span className="text-gradient-rainbow text-sm font-medium">Exclusive Members Only</span>
+          <span className="text-gradient-rainbow text-sm font-medium">Transform Your Life Anywhere in the World</span>
         </motion.div>
 
         <motion.div
@@ -31,7 +31,7 @@ const HeroWithFeatures = () => {
           className="flex items-center justify-center gap-2 mb-6"
         >
           <span className="text-2xl md:text-3xl font-medium text-gradient-sunshine inline-block">
-            Join Our Elite Community
+            Design Your Dream Life with BornPurpose
           </span>
         </motion.div>
         
