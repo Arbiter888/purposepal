@@ -2,17 +2,17 @@ import { motion } from "framer-motion";
 import { AnimatedBackground } from "../hero/AnimatedBackground";
 import { FloatingParticles } from "../hero/FloatingParticles";
 import { FeatureBadges } from "../hero/FeatureBadges";
-import { UserPlus, Users } from "lucide-react";
+import { Bot, UserPlus, Users } from "lucide-react";
 
 const HeroWithFeatures = () => {
   const handleEmailClick = (type: 'signup' | 'referral') => {
     const subject = type === 'signup' 
-      ? 'Early Access Request for BornPurpose'
-      : 'BornPurpose Referral Inquiry';
+      ? 'Early Access Request for BornPurpose AI Avatar Coach'
+      : 'BornPurpose AI Avatar Coach Referral';
     
     const body = type === 'signup'
-      ? 'Hello,\n\nI would like to request early access to BornPurpose.'
-      : 'Hello,\n\nI have a referral for BornPurpose.';
+      ? 'Hello,\n\nI would like to request early access to my personal BornPurpose AI Avatar Coach.'
+      : 'Hello,\n\nI have a referral for BornPurpose AI Avatar Coach program.';
     
     const mailtoLink = `mailto:membership@bornpurpose.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     window.location.href = mailtoLink;
@@ -34,7 +34,8 @@ const HeroWithFeatures = () => {
           animate={{ opacity: 1, y: 0 }}
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-8"
         >
-          <span className="text-gradient-rainbow text-sm font-medium">Transform Your Life Anywhere in the World</span>
+          <Bot className="w-5 h-5 text-gradient-rainbow" />
+          <span className="text-gradient-rainbow text-sm font-medium">Meet Your Personal AI Avatar Coach</span>
         </motion.div>
 
         <motion.div
@@ -44,7 +45,7 @@ const HeroWithFeatures = () => {
           className="flex items-center justify-center gap-2 mb-6"
         >
           <span className="text-2xl md:text-3xl font-medium text-gradient-sunshine inline-block">
-            Design Your Dream Life with BornPurpose
+            Your 24/7 AI Avatar Coach for Life Transformation
           </span>
         </motion.div>
         
@@ -54,14 +55,14 @@ const HeroWithFeatures = () => {
           transition={{ delay: 0.4 }}
           className="mt-6 text-6xl sm:text-7xl lg:text-8xl font-bold tracking-tight leading-tight"
         >
-          Your Journey to
+          Design Your Life with
           <motion.span
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.6 }}
             className="text-gradient-aurora block mt-2 relative"
           >
-            A New Life
+            AI Guidance
           </motion.span>
         </motion.h1>
 
@@ -71,8 +72,8 @@ const HeroWithFeatures = () => {
           transition={{ delay: 0.5 }}
           className="mt-8 text-xl md:text-2xl text-muted-foreground/90 max-w-2xl mx-auto leading-relaxed glass p-6 rounded-xl"
         >
-          Join our exclusive membership club where transformation meets community.
-          Limited spots available for those ready to redesign their lives.
+          Experience personalized coaching like never before with your dedicated AI Avatar Coach.
+          Available 24/7, ready to guide you through every step of your transformation journey.
         </motion.p>
 
         <motion.div
@@ -99,8 +100,8 @@ const HeroWithFeatures = () => {
                 ease: "linear",
               }}
             />
-            <UserPlus className="w-5 h-5" />
-            <span className="relative z-10">Sign Up for Early Access</span>
+            <Bot className="w-5 h-5" />
+            <span className="relative z-10">Get Your AI Avatar Coach</span>
           </motion.button>
           
           <motion.button
@@ -123,7 +124,7 @@ const HeroWithFeatures = () => {
               }}
             />
             <Users className="w-5 h-5" />
-            <span className="relative z-10">I Have a Referral</span>
+            <span className="relative z-10">Refer a Friend</span>
           </motion.button>
         </motion.div>
 

@@ -5,64 +5,64 @@ const plans = [
   {
     name: "Pro",
     price: "$29",
-    description: "Enhanced support for serious growth",
+    description: "Your personal AI Avatar Coach for growth",
     icon: Users,
     features: [
-      "Advanced AI coaching (10 credits/session)",
-      "2 Video sessions/month (50 credits each)",
-      "Smart scheduling (30 credits)",
-      "Priority support",
-      "Professional network access",
-      "Personalized wellness plans",
-      "Progress analytics"
+      "24/7 AI Avatar Coach access (10 credits/session)",
+      "2 Expert Friend introductions/month (50 credits each)",
+      "Smart goal tracking by your AI Coach (30 credits)",
+      "Priority AI response time",
+      "Basic wellness planning with AI",
+      "Progress analytics from your coach",
+      "Regular check-ins with your AI Avatar"
     ],
     credits: "200 credits/month",
-    creditValue: "Perfect for regular wellness sessions and coaching",
+    creditValue: "Perfect for regular AI coaching and guidance",
     savings: "Save up to $450/month",
-    comparison: "Traditional services: $480/month vs. $29/month for comprehensive support"
+    comparison: "Traditional coaching: $480/month vs. $29/month for AI-powered support"
   },
   {
     name: "Whole Life",
     price: "$99",
-    description: "Complete transformation support",
+    description: "Enhanced AI coaching with expert support",
     icon: Crown,
     features: [
-      "Unlimited AI coaching",
-      "6 Video sessions/month (50 credits each)",
-      "Smart scheduling included",
+      "Unlimited AI Avatar Coach access",
+      "6 Expert Friend introductions/month",
+      "Advanced goal tracking & insights",
       "1-on-1 expert consultations",
-      "Priority scheduling",
-      "Custom wellness programs",
-      "Family account access",
-      "Exclusive events access",
-      "Emergency support line"
+      "Priority scheduling with experts",
+      "Custom AI-powered programs",
+      "Family access to AI coaching",
+      "Exclusive community events",
+      "Emergency expert support"
     ],
     credits: "500 credits/month",
-    creditValue: "Full access to all premium features and services",
+    creditValue: "Full access to AI coaching and expert network",
     savings: "Save up to $900/month",
-    comparison: "Traditional services: $1000+/month vs. $99/month for unlimited access"
+    comparison: "Traditional services: $1000+/month vs. $99/month for comprehensive support"
   },
   {
     name: "Another Life",
     price: "$199",
-    description: "Your journey to international living",
+    description: "Global transformation with AI guidance",
     icon: Globe,
     features: [
       "Everything in Whole Life plan",
-      "International relocation consulting",
-      "Visa application guidance",
+      "AI-guided relocation planning",
+      "Expert visa consultation",
       "Global housing search assistance",
-      "Cultural integration support",
-      "Language learning resources",
-      "Global banking setup help",
-      "International job search support",
-      "Expat community connections",
+      "Cultural integration coaching",
+      "Language learning with AI",
+      "International banking guidance",
+      "Global career coaching",
+      "Expat community access",
       "24/7 global transition support"
     ],
     credits: "Unlimited credits",
-    creditValue: "Complete support for your international transition",
+    creditValue: "Complete AI and expert support for global transitions",
     savings: "Save up to $2000/month",
-    comparison: "Traditional relocation services: $2200+/month vs. $199/month for comprehensive support"
+    comparison: "Traditional relocation: $2200+/month vs. $199/month for AI-powered support"
   },
 ];
 
