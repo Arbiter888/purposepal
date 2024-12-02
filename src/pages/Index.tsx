@@ -49,18 +49,13 @@ const Index = () => {
           initial={{ transformOrigin: "bottom" }}
         />
       </div>
-
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-secondary/20 via-background to-background pointer-events-none" />
       
       <div className="relative">
-        <div className="absolute left-1/2 top-0 bottom-0 w-[1px] bg-gradient-to-b from-transparent via-yellow-400/20 to-transparent after:content-[''] after:absolute after:inset-0 after:animate-pulse after:bg-gradient-to-b after:from-transparent after:via-orange-500/10 after:to-transparent -z-10" />
-        
         <HeroWithFeatures />
         <FeaturesShowcase />
         <ExperiencePlatform />
         
         <div className="relative">
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-secondary/5 to-transparent pointer-events-none" />
           <div className="max-w-7xl mx-auto px-4 space-y-12">
             <CoachPreview activeService={selectedService} />
             <InteractiveDemo onServiceChange={setSelectedService} />
