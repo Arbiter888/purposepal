@@ -59,14 +59,14 @@ const features = [
   },
   {
     icon: Star,
-    title: "Goal Achievement",
+    title: "Financial Coaching",
     description: [
-      "Strategic goal planning and breakdown",
-      "Progress tracking and accountability tools",
-      "Milestone celebration and adjustment support"
+      "Personal budget planning and analysis",
+      "Investment strategy guidance",
+      "Debt management and savings plans"
     ],
-    savings: "Save $180+/month on achievement coaching",
-    costComparison: "Achievement coach: $150/session vs. Daily support"
+    savings: "Save $180+/month on financial coaching",
+    costComparison: "Financial coach: $150/session vs. Daily support"
   }
 ];
 
