@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Globe, Plane, Building, Users, MessageCircle, Video, Calendar } from "lucide-react";
+import { Globe, Plane, Building, Users, Video, Calendar, DollarSign } from "lucide-react";
 
 const CommunityHealth = () => {
   return (
@@ -57,11 +57,43 @@ const CommunityHealth = () => {
         </motion.div>
       </div>
 
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.4 }}
+        className="mt-16 max-w-4xl mx-auto glass p-8 rounded-2xl"
+      >
+        <h3 className="text-2xl font-semibold text-gradient-neon mb-6 text-center">Featured Destination: Kuala Lumpur, Malaysia</h3>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="text-center p-4 glass rounded-xl">
+            <DollarSign className="w-8 h-8 mx-auto mb-2 text-gradient-sunshine" />
+            <h4 className="font-semibold mb-2">Kuala Lumpur</h4>
+            <p className="text-muted-foreground text-sm">$1,800/month</p>
+            <p className="text-xs text-muted-foreground mt-2">Average living costs</p>
+          </div>
+          <div className="text-center p-4 glass rounded-xl">
+            <DollarSign className="w-8 h-8 mx-auto mb-2 text-gradient-sunshine" />
+            <h4 className="font-semibold mb-2">London</h4>
+            <p className="text-muted-foreground text-sm">$4,800/month</p>
+            <p className="text-xs text-muted-foreground mt-2">167% more expensive</p>
+          </div>
+          <div className="text-center p-4 glass rounded-xl">
+            <DollarSign className="w-8 h-8 mx-auto mb-2 text-gradient-sunshine" />
+            <h4 className="font-semibold mb-2">New York</h4>
+            <p className="text-muted-foreground text-sm">$5,500/month</p>
+            <p className="text-xs text-muted-foreground mt-2">205% more expensive</p>
+          </div>
+        </div>
+        <p className="text-sm text-muted-foreground text-center mt-4">
+          *Costs include rent, utilities, food, transportation, and basic entertainment for one person
+        </p>
+      </motion.div>
+
       <div className="mt-16 flex flex-wrap justify-center gap-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4 }}
+          transition={{ delay: 0.5 }}
           className="flex items-center gap-3 glass px-6 py-3 rounded-full"
         >
           <Users className="w-5 h-5" />
@@ -71,7 +103,7 @@ const CommunityHealth = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5 }}
+          transition={{ delay: 0.6 }}
           className="flex items-center gap-3 glass px-6 py-3 rounded-full"
         >
           <Video className="w-5 h-5" />
@@ -81,7 +113,7 @@ const CommunityHealth = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6 }}
+          transition={{ delay: 0.7 }}
           className="flex items-center gap-3 glass px-6 py-3 rounded-full"
         >
           <Calendar className="w-5 h-5" />
