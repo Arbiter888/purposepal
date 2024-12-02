@@ -93,12 +93,6 @@ const PricingSection = () => {
               before:absolute before:inset-0 before:rounded-2xl before:bg-gradient-to-b before:from-white/5 before:to-transparent before:pointer-events-none
               after:absolute after:inset-0 after:rounded-2xl after:bg-gradient-to-t after:from-white/5 after:to-transparent after:pointer-events-none`}
           >
-            {plan.name === "Pro" && (
-              <div className="absolute -top-4 left-1/2 -translate-x-1/2 glass px-4 py-1 rounded-full text-sm font-medium border border-secondary/50 backdrop-blur-md">
-                Most Popular
-              </div>
-            )}
-            
             <div className="relative">
               <div className="flex items-center justify-center mb-6">
                 <div className="relative">
