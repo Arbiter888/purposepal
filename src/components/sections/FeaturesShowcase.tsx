@@ -1,39 +1,61 @@
 import { motion } from "framer-motion";
-import { Brain, Apple, Dumbbell, Heart, Book, Star, DollarSign, Globe } from "lucide-react";
+import { Brain, Salad, Heart, Dumbbell, DollarSign } from "lucide-react";
 
 const features = [
   {
     icon: Brain,
-    title: "Personal Growth",
+    title: "Wellness Coaching",
     description: [
-      "AI-powered coaching available 24/7",
-      "Personalized development roadmaps",
-      "Goal tracking and achievement monitoring"
+      "24/7 mental wellness support",
+      "Stress management techniques",
+      "Emotional balance guidance"
     ],
-    savings: "Save $200+/month on traditional coaching",
-    costComparison: "Traditional coaching: $150-200/session vs. Unlimited AI support"
+    savings: "Save $200+/month on wellness coaching",
+    costComparison: "Traditional wellness coach: $150-200/session vs. Unlimited AI support"
+  },
+  {
+    icon: Salad,
+    title: "Nutrition Coaching",
+    description: [
+      "Personalized meal planning",
+      "Dietary assessments & guidance",
+      "Healthy lifestyle strategies"
+    ],
+    savings: "Save $300+/month on nutrition coaching",
+    costComparison: "Nutrition coach: $200/session vs. Continuous guidance"
   },
   {
     icon: Heart,
-    title: "Life Design",
+    title: "Spiritual Coaching",
     description: [
-      "Comprehensive life assessment tools",
-      "Custom action plans for transformation",
-      "Wellness and lifestyle optimization"
+      "Faith-based guidance",
+      "Meditation & mindfulness support",
+      "Personal spiritual growth"
     ],
-    savings: "Save $300+/month on life coaching",
-    costComparison: "Life coach: $200/session vs. Continuous guidance"
+    savings: "Save $250+/month on spiritual coaching",
+    costComparison: "Spiritual coach: $175/session vs. Complete support package"
   },
   {
-    icon: Globe,
-    title: "Global Living",
+    icon: Dumbbell,
+    title: "Fitness Coaching",
     description: [
-      "International relocation guidance",
-      "Cultural integration support",
-      "Global opportunities assessment"
+      "Custom workout planning",
+      "Form & technique guidance",
+      "Progress tracking support"
     ],
-    savings: "Save $500+/month on relocation services",
-    costComparison: "Relocation consultant: $250/hour vs. Complete support package"
+    savings: "Save $350+/month on fitness coaching",
+    costComparison: "Fitness trainer: $100/session vs. Full fitness support"
+  },
+  {
+    icon: DollarSign,
+    title: "Financial Coaching",
+    description: [
+      "Budgeting & planning support",
+      "Investment guidance",
+      "Wealth building strategies"
+    ],
+    savings: "Save $400+/month on financial coaching",
+    costComparison: "Financial advisor: $250/session vs. Ongoing financial guidance"
   }
 ];
 
@@ -54,9 +76,9 @@ const FeaturesShowcase = () => {
         transition={{ duration: 0.6 }}
         className="text-center mb-16 relative z-10"
       >
-        <h2 className="text-4xl font-bold text-gradient-aurora mb-4">Comprehensive Support</h2>
+        <h2 className="text-4xl font-bold text-gradient-aurora mb-4">Comprehensive Coaching Support</h2>
         <p className="text-xl text-muted-foreground/90 max-w-2xl mx-auto">
-          Experience holistic growth with our AI-powered features designed to support every aspect of your journey. <span className="text-gradient-sunshine font-semibold">Save up to ${totalMonthlySavings}+ monthly</span> compared to traditional services.
+          Experience transformative growth with our AI-powered coaching platform. Access expert guidance across all dimensions of life. <span className="text-gradient-sunshine font-semibold">Save up to ${totalMonthlySavings}+ monthly</span> compared to traditional coaching services.
         </p>
       </motion.div>
 
