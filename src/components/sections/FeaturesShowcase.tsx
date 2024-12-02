@@ -1,66 +1,43 @@
 import { motion } from "framer-motion";
-import { Brain, Salad, Heart, Dumbbell, DollarSign } from "lucide-react";
+import { Brain, Heart, Globe } from "lucide-react";
 
 const features = [
   {
     icon: Brain,
-    title: "Wellness Coaching",
+    title: "Personal Growth",
     description: [
-      "24/7 mental wellness support",
-      "Stress management techniques",
-      "Emotional balance guidance"
+      "AI-powered coaching available 24/7",
+      "Personalized development roadmaps",
+      "Access to wellness, nutrition & fitness guidance"
     ],
-    savings: "Save $200+/month on wellness coaching",
-    costComparison: "Traditional wellness coach: $150-200/session vs. Unlimited AI support"
-  },
-  {
-    icon: Salad,
-    title: "Nutrition Coaching",
-    description: [
-      "Personalized meal planning",
-      "Dietary assessments & guidance",
-      "Healthy lifestyle strategies"
-    ],
-    savings: "Save $300+/month on nutrition coaching",
-    costComparison: "Nutrition coach: $200/session vs. Continuous guidance"
+    savings: "Save $200+/month on traditional coaching",
+    costComparison: "Traditional coaching: $150-200/session vs. Unlimited AI support including wellness, nutrition, and fitness coaching"
   },
   {
     icon: Heart,
-    title: "Spiritual Coaching",
+    title: "Life Design",
     description: [
-      "Faith-based guidance",
-      "Meditation & mindfulness support",
-      "Personal spiritual growth"
+      "Comprehensive life assessment tools",
+      "Spiritual & financial wellness guidance",
+      "Holistic lifestyle optimization"
     ],
-    savings: "Save $250+/month on spiritual coaching",
-    costComparison: "Spiritual coach: $175/session vs. Complete support package"
+    savings: "Save $300+/month on life coaching",
+    costComparison: "Life coach: $200/session vs. Continuous guidance including spiritual and financial coaching"
   },
   {
-    icon: Dumbbell,
-    title: "Fitness Coaching",
+    icon: Globe,
+    title: "Global Living",
     description: [
-      "Custom workout planning",
-      "Form & technique guidance",
-      "Progress tracking support"
+      "International relocation guidance",
+      "Cultural integration support",
+      "Access to global wellness resources"
     ],
-    savings: "Save $350+/month on fitness coaching",
-    costComparison: "Fitness trainer: $100/session vs. Full fitness support"
-  },
-  {
-    icon: DollarSign,
-    title: "Financial Coaching",
-    description: [
-      "Budgeting & planning support",
-      "Investment guidance",
-      "Wealth building strategies"
-    ],
-    savings: "Save $400+/month on financial coaching",
-    costComparison: "Financial advisor: $250/session vs. Ongoing financial guidance"
+    savings: "Save $500+/month on relocation services",
+    costComparison: "Relocation consultant: $250/hour vs. Complete support package with worldwide wellness network"
   }
 ];
 
 const FeaturesShowcase = () => {
-  // Calculate total savings (taking minimum values from ranges)
   const totalMonthlySavings = features.reduce((acc, feature) => {
     const savingsMatch = feature.savings.match(/\$(\d+)/);
     return acc + (savingsMatch ? parseInt(savingsMatch[1]) : 0);
