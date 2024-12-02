@@ -6,7 +6,7 @@ const features = [
     icon: Brain,
     title: "Personal Growth",
     description: [
-      "AI-powered coaching available 24/7",
+      "Your dedicated AI avatar coach available 24/7",
       "Personalized development roadmaps",
       "Access to wellness, nutrition & fitness guidance"
     ],
@@ -53,21 +53,22 @@ const FeaturesShowcase = () => {
         transition={{ duration: 0.6 }}
         className="text-center mb-16 relative z-10"
       >
-        <h2 className="text-4xl font-bold text-gradient-aurora mb-4">Comprehensive Coaching Support</h2>
+        <h2 className="text-4xl font-bold text-gradient-aurora mb-4">Your Personal AI Avatar Coach</h2>
         <p className="text-xl text-muted-foreground/90 max-w-2xl mx-auto mb-12">
-          Experience transformative growth with our AI-powered coaching platform. Access expert guidance across all dimensions of life. <span className="text-gradient-sunshine font-semibold">Save up to ${totalMonthlySavings}+ monthly</span> compared to traditional coaching services.
+          Meet your dedicated BornPurpose AI Avatar Coach - your personal guide to transformation. Experience 24/7 support and expert guidance tailored just for you. <span className="text-gradient-sunshine font-semibold">Save up to ${totalMonthlySavings}+ monthly</span> compared to traditional coaching services.
         </p>
         
         <div className="max-w-3xl mx-auto mb-16 relative">
           <div className="aspect-video rounded-2xl overflow-hidden glass border border-white/10">
             <iframe
               src="https://www.youtube.com/embed/lV18PRNC5sc"
-              title="AI Coach Preview"
+              title="Preview Your BornPurpose AI Avatar Coach"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
               className="w-full h-full"
             />
           </div>
+          <p className="text-sm text-muted-foreground/70 mt-4">Preview how your personalized AI avatar coach will guide and support you on your journey</p>
         </div>
       </motion.div>
 
