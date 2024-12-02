@@ -16,7 +16,7 @@ const ChatPreview = () => {
           className="flex items-start gap-4"
         >
           <div className="w-10 h-10 rounded-full bg-gradient-to-r from-secondary to-accent flex-shrink-0 animate-pulse" />
-          <div className="glass rounded-2xl p-4 max-w-[80%] rounded-tl-sm">
+          <div className="glass rounded-2xl p-4 max-w-[80%] rounded-tl-none relative before:absolute before:left-[-8px] before:top-4 before:border-8 before:border-transparent before:border-r-white/5">
             <p className="text-lg">Hello! I'm your AI life coach. How can I help you today?</p>
           </div>
         </motion.div>
@@ -27,7 +27,7 @@ const ChatPreview = () => {
           transition={{ delay: 0.4 }}
           className="flex items-start gap-4 justify-end"
         >
-          <div className="glass rounded-2xl p-4 max-w-[80%] rounded-tr-sm">
+          <div className="glass rounded-2xl p-4 max-w-[80%] rounded-tr-none relative before:absolute before:right-[-8px] before:top-4 before:border-8 before:border-transparent before:border-l-white/5">
             <p className="text-lg">I need help with setting career goals.</p>
           </div>
           <div className="w-10 h-10 rounded-full bg-gradient-to-r from-accent to-secondary flex-shrink-0" />
@@ -40,7 +40,7 @@ const ChatPreview = () => {
           className="flex items-start gap-4"
         >
           <div className="w-10 h-10 rounded-full bg-gradient-to-r from-secondary to-accent flex-shrink-0 animate-pulse" />
-          <div className="glass rounded-2xl p-4 max-w-[80%] rounded-tl-sm">
+          <div className="glass rounded-2xl p-4 max-w-[80%] rounded-tl-none relative before:absolute before:left-[-8px] before:top-4 before:border-8 before:border-transparent before:border-r-white/5">
             <p className="text-lg">I'd be happy to help you set and achieve your career goals. Let's start by understanding your current situation and aspirations.</p>
           </div>
         </motion.div>
