@@ -29,39 +29,23 @@ const Index = () => {
     <div className="min-h-screen bg-black text-white relative">
       <div className="fixed inset-0 pointer-events-none z-50">
         <motion.div 
-          className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 opacity-60 shadow-[0_0_20px_rgba(250,204,21,0.7)] transition-all duration-300"
-          style={{ 
-            scaleX: scrollProgress,
-            filter: scrollProgress > 0.95 ? 'brightness(1.5) blur(2px)' : 'none',
-            boxShadow: scrollProgress > 0.95 ? '0 0 25px rgba(250,204,21,0.9), 0 0 15px rgba(250,204,21,0.7)' : 'none'
-          }}
+          className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 opacity-60"
+          style={{ scaleX: scrollProgress }}
           initial={{ transformOrigin: "left" }}
         />
         <motion.div 
-          className="absolute top-0 right-0 bottom-0 w-0.5 bg-gradient-to-b from-red-500 via-orange-500 to-yellow-400 opacity-60 shadow-[0_0_20px_rgba(250,204,21,0.7)] transition-all duration-300"
-          style={{ 
-            scaleY: scrollProgress,
-            filter: scrollProgress > 0.95 ? 'brightness(1.5) blur(2px)' : 'none',
-            boxShadow: scrollProgress > 0.95 ? '0 0 25px rgba(250,204,21,0.9), 0 0 15px rgba(250,204,21,0.7)' : 'none'
-          }}
+          className="absolute top-0 right-0 bottom-0 w-0.5 bg-gradient-to-b from-red-500 via-orange-500 to-yellow-400 opacity-60"
+          style={{ scaleY: scrollProgress }}
           initial={{ transformOrigin: "top" }}
         />
         <motion.div 
-          className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 opacity-60 shadow-[0_0_20px_rgba(250,204,21,0.7)] transition-all duration-300"
-          style={{ 
-            scaleX: scrollProgress,
-            filter: scrollProgress > 0.95 ? 'brightness(1.5) blur(2px)' : 'none',
-            boxShadow: scrollProgress > 0.95 ? '0 0 25px rgba(250,204,21,0.9), 0 0 15px rgba(250,204,21,0.7)' : 'none'
-          }}
+          className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 opacity-60"
+          style={{ scaleX: scrollProgress }}
           initial={{ transformOrigin: "right" }}
         />
         <motion.div 
-          className="absolute top-0 left-0 bottom-0 w-0.5 bg-gradient-to-b from-red-500 via-orange-500 to-yellow-400 opacity-60 shadow-[0_0_20px_rgba(250,204,21,0.7)] transition-all duration-300"
-          style={{ 
-            scaleY: scrollProgress,
-            filter: scrollProgress > 0.95 ? 'brightness(1.5) blur(2px)' : 'none',
-            boxShadow: scrollProgress > 0.95 ? '0 0 25px rgba(250,204,21,0.9), 0 0 15px rgba(250,204,21,0.7)' : 'none'
-          }}
+          className="absolute top-0 left-0 bottom-0 w-0.5 bg-gradient-to-b from-red-500 via-orange-500 to-yellow-400 opacity-60"
+          style={{ scaleY: scrollProgress }}
           initial={{ transformOrigin: "bottom" }}
         />
       </div>
