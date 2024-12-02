@@ -12,35 +12,40 @@ const coachData = {
     description: "Transform your mental well-being with personalized guidance from your dedicated AI-powered Wellness Coach. Get expert advice on stress management, mindfulness, and emotional balance.",
     gradient: "from-green-400 via-cyan-500 to-blue-500",
     tags: ["Stress Management", "Mindfulness", "Emotional Balance", "Personal Growth"],
-    videoUrl: "https://customer-6bwzxcz6kiyvxgqq.cloudflarestream.com/9a9d1d2f8d76cd6d8f4a7901ad44c2f3/manifest/video.m3u8"
+    videoUrl: "https://customer-6bwzxcz6kiyvxgqq.cloudflarestream.com/9a9d1d2f8d76cd6d8f4a7901ad44c2f3/manifest/video.m3u8",
+    backgroundImage: "/lovable-uploads/440c76a5-97ea-4586-87db-b7ad21444b16.png"
   },
   nutrition: {
     title: "Nutrition Expert",
     description: "Transform your dietary habits with personalized guidance from your dedicated AI-powered Nutrition Coach. Get expert advice on meal planning, portion control, and healthy eating strategies.",
     gradient: "from-pink-500 via-purple-500 to-indigo-500",
     tags: ["Meal Planning", "Portion Control", "Dietary Analysis", "Nutritional Guidance"],
-    videoUrl: "https://customer-6bwzxcz6kiyvxgqq.cloudflarestream.com/9a9d1d2f8d76cd6d8f4a7901ad44c2f3/manifest/video.m3u8"
+    videoUrl: "https://customer-6bwzxcz6kiyvxgqq.cloudflarestream.com/9a9d1d2f8d76cd6d8f4a7901ad44c2f3/manifest/video.m3u8",
+    backgroundImage: "/lovable-uploads/4335b249-4c44-4b85-bbbf-fa72d693bc4f.png"
   },
   spiritual: {
     title: "Spiritual Guide",
     description: "Transform your spiritual journey with personalized guidance from your dedicated AI-powered Spiritual Coach. Get expert advice on meditation, mindfulness, and personal development.",
     gradient: "from-yellow-400 via-orange-500 to-red-500",
     tags: ["Meditation", "Mindfulness", "Spiritual Growth", "Inner Peace"],
-    videoUrl: "https://customer-6bwzxcz6kiyvxgqq.cloudflarestream.com/9a9d1d2f8d76cd6d8f4a7901ad44c2f3/manifest/video.m3u8"
+    videoUrl: "https://customer-6bwzxcz6kiyvxgqq.cloudflarestream.com/9a9d1d2f8d76cd6d8f4a7901ad44c2f3/manifest/video.m3u8",
+    backgroundImage: "/lovable-uploads/440c76a5-97ea-4586-87db-b7ad21444b16.png"
   },
   fitness: {
     title: "Fitness Expert",
     description: "Transform your fitness journey with personalized guidance from your dedicated AI-powered Fitness Coach. Get expert advice on workouts, form correction, and exercise planning.",
     gradient: "from-lime-400 via-emerald-500 to-teal-500",
     tags: ["Workout Planning", "Form Guidance", "Exercise Tips", "Fitness Goals"],
-    videoUrl: "https://customer-6bwzxcz6kiyvxgqq.cloudflarestream.com/9a9d1d2f8d76cd6d8f4a7901ad44c2f3/manifest/video.m3u8"
+    videoUrl: "https://customer-6bwzxcz6kiyvxgqq.cloudflarestream.com/9a9d1d2f8d76cd6d8f4a7901ad44c2f3/manifest/video.m3u8",
+    backgroundImage: "/lovable-uploads/2b866cad-b0b6-4291-b93e-404f8ef8e0e4.png"
   },
   financial: {
     title: "Financial Coach",
     description: "Transform your financial future with personalized guidance from your dedicated AI-powered Financial Coach. Get expert advice on budgeting, investments, and wealth building strategies.",
     gradient: "from-blue-400 via-indigo-500 to-purple-500",
     tags: ["Investment Planning", "Budgeting", "Wealth Building", "Tax Strategy"],
-    videoUrl: "https://customer-6bwzxcz6kiyvxgqq.cloudflarestream.com/9a9d1d2f8d76cd6d8f4a7901ad44c2f3/manifest/video.m3u8"
+    videoUrl: "https://customer-6bwzxcz6kiyvxgqq.cloudflarestream.com/9a9d1d2f8d76cd6d8f4a7901ad44c2f3/manifest/video.m3u8",
+    backgroundImage: "/lovable-uploads/e1950664-3053-4b9a-aed1-78f46c6e7573.png"
   },
 };
 
@@ -53,9 +58,13 @@ const CoachPreview = ({ activeService }: CoachPreviewProps) => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="glass rounded-3xl p-8 backdrop-blur-xl"
+      className="glass rounded-3xl p-8 backdrop-blur-xl relative overflow-hidden"
     >
-      <div className="grid md:grid-cols-2 gap-8 items-center">
+      <div 
+        className="absolute inset-0 bg-cover bg-center opacity-10"
+        style={{ backgroundImage: `url(${coach.backgroundImage})` }}
+      />
+      <div className="grid md:grid-cols-2 gap-8 items-center relative z-10">
         <div className="space-y-6">
           <h3 className={`text-3xl font-bold bg-gradient-to-r ${coach.gradient} bg-clip-text text-transparent`}>
             Meet Your {coach.title}
