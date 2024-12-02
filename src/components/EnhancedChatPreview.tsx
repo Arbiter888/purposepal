@@ -92,11 +92,7 @@ const EnhancedChatPreview = ({ onServiceChange }: EnhancedChatPreviewProps) => {
                     </div>
                   )}
                   
-                  <div className={`bg-muted/80 rounded-2xl p-4 max-w-[80%] relative ${
-                    message.type === 'ai' 
-                      ? 'rounded-tl-none before:absolute before:left-[-8px] before:top-4 before:border-8 before:border-transparent before:border-r-muted/80' 
-                      : 'rounded-tr-none before:absolute before:right-[-8px] before:top-4 before:border-8 before:border-transparent before:border-l-muted/80'
-                  } ${message.type === 'user' ? 'bg-accent/10' : ''}`}>
+                  <div className={`bg-muted/80 rounded-2xl p-4 max-w-[80%] ${message.type === 'ai' ? 'rounded-tl-sm' : 'rounded-tr-sm'} ${message.type === 'user' ? 'bg-accent/10' : ''}`}>
                     <p className={`text-lg whitespace-pre-line ${
                       message.type === 'user' 
                         ? 'text-gradient-sunshine' 
