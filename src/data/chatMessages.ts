@@ -1,7 +1,7 @@
 export const wellnessMessages = [
   {
     type: "ai",
-    content: "Hello! I'm your AI wellness coach. I can help you create a balanced lifestyle that nurtures your mind, body, and spirit. What would you like to focus on today?",
+    content: "Hi friend! I'm your personal AI Avatar Coach. I notice you're interested in wellness support. I'd love to understand what's on your mind so I can guide you and potentially connect you with my expert friend Dr. Sarah, who specializes in holistic well-being. How can we help you today?",
     service: "wellness"
   },
   {
@@ -10,7 +10,7 @@ export const wellnessMessages = [
   },
   {
     type: "ai",
-    content: "I understand you're dealing with stress. Let me assess your situation:\n\n1. You're seeking overall well-being improvement\n2. Stress is affecting your daily life\n3. You're ready to make positive changes\n\nBased on this, I recommend starting with stress management techniques and building a holistic wellness routine. To provide you with the most personalized support:\n\n1. Let's schedule a video consultation with one of our wellness experts:\n📅 Tomorrow at 2:00 PM\n📅 Wednesday at 11:00 AM\n📅 Friday at 3:30 PM\n\n2. I can also set up smart scheduling for:\n⏰ Daily meditation reminders\n🧘‍♀️ Stress-relief exercise prompts\n😌 Mindfulness practice notifications\n\nWould you like to book a consultation and set up these wellness reminders?",
+    content: "I hear you, and I want you to know that feeling stressed is completely normal, especially during life transitions. Let me help you create a personalized plan:\n\n1. I notice you're seeking overall well-being improvement\n2. Stress is affecting your daily life\n3. You're ready for positive changes\n\nI'd love to connect you with my friend Dr. Sarah Johnson - she's our BornPurpose Career Expert Friend who has helped many others navigate similar challenges. She has a wonderful approach that combines stress management with career fulfillment.\n\nWould you like me to:\n\n1. Schedule a connection with Dr. Sarah?\n2. Start with some immediate stress-relief exercises?\n3. Create a daily well-being plan together?\n\nI'm here to support you every step of the way! 💫",
     service: "wellness"
   }
 ];
@@ -18,7 +18,7 @@ export const wellnessMessages = [
 export const nutritionMessages = [
   {
     type: "ai",
-    content: "Welcome! I'm your AI nutrition guide. I can help you develop healthy eating habits and create personalized meal plans. What are your nutrition goals?",
+    content: "Hello! 🌟 I'm your AI Avatar Coach, and I'm excited to support your nutrition journey! I work closely with our nutrition experts to help you achieve your health goals. What aspects of nutrition would you like to explore?",
     service: "nutrition"
   },
   {
@@ -27,7 +27,7 @@ export const nutritionMessages = [
   },
   {
     type: "ai",
-    content: "Thank you for sharing. Let me analyze your concerns:\n\n1. You want to improve your eating habits\n2. Meal planning is a challenge\n3. Portion control is an area for improvement\n\nBased on this assessment, you would benefit from structured guidance and practical meal planning strategies. Here's what I recommend:\n\n1. Schedule a video consultation with our certified nutritionist:\n📅 Today at 4:00 PM\n📅 Thursday at 1:30 PM\n📅 Saturday at 10:00 AM\n\n2. Let's set up smart scheduling for:\n📱 Weekly meal prep reminders\n⏰ Regular eating schedule alerts\n📝 Guided portion control check-ins\n🛒 Grocery shopping reminders\n\nWould you like to book a consultation and activate these nutrition support tools?",
+    content: "Thank you for sharing that with me! I understand these challenges, and I'm here to help make your nutrition journey easier and more enjoyable. Let's break this down:\n\n1. You're ready to improve your eating habits\n2. Meal planning feels overwhelming\n3. Portion control is a challenge\n\nI'd love to introduce you to my friend Rachel, our BornPurpose Nutrition Expert. She's amazing at creating simple, sustainable meal plans that fit your lifestyle!\n\nWhile we schedule time with Rachel, would you like me to:\n\n1. Share some quick portion control tips?\n2. Show you our easy meal planning template?\n3. Start with some healthy snack ideas?\n\nRemember, we're in this together! 🌱",
     service: "nutrition"
   }
 ];
@@ -35,7 +35,7 @@ export const nutritionMessages = [
 export const spiritualMessages = [
   {
     type: "ai",
-    content: "Greetings! I'm your AI spiritual companion. I'm here to support your faith journey and help you grow in your spiritual practice. How can I assist you today?",
+    content: "Blessed to meet you! 🙏 I'm your AI Avatar Coach, and I'm here to support your spiritual journey. Whether you're seeking deeper meaning, faith-based guidance, or personal growth, I can help connect you with our wonderful spiritual mentors. What's on your heart today?",
     service: "spiritual"
   },
   {
@@ -44,7 +44,7 @@ export const spiritualMessages = [
   },
   {
     type: "ai",
-    content: "I hear your desire for spiritual growth. Let me assess your situation:\n\n1. You're seeking a deeper spiritual connection\n2. Consistency is your main challenge\n3. You're looking for daily practice structure\n\nBased on this, I recommend a combination of guided support and structured practice. Here's my suggestion:\n\n1. Let's schedule a video session with one of our spiritual mentors:\n📅 Tomorrow at 9:00 AM\n📅 Thursday at 5:00 PM\n📅 Sunday at 2:00 PM\n\n2. I can help establish a consistent practice with:\n⏰ Daily devotional reminders\n🙏 Customized prayer time notifications\n📖 Scripture reading schedules\n✨ Reflection journal prompts\n\nWould you like to connect with a mentor and set up these spiritual practice reminders?",
+    content: "I deeply appreciate you sharing this with me. Developing a consistent spiritual practice is such a meaningful journey, and I'm here to walk alongside you. I can see that:\n\n1. You're seeking a deeper spiritual connection\n2. Consistency has been challenging\n3. You're ready to build a daily practice\n\nI'd love to introduce you to Rabbi David or Pastor Grace - they're both wonderful BornPurpose Faith Expert Friends who have helped many others build meaningful daily practices.\n\nWhile we arrange that connection, would you like to:\n\n1. Start with a simple 5-minute daily reflection?\n2. Explore different prayer and meditation techniques?\n3. Create a personalized spiritual routine together?\n\nLet's nurture your spiritual growth together! ✨",
     service: "spiritual"
   }
 ];
@@ -52,7 +52,7 @@ export const spiritualMessages = [
 export const fitnessMessages = [
   {
     type: "ai",
-    content: "Hi there! I'm your AI fitness coach. I can help you achieve your fitness goals through personalized workout plans and expert guidance. What are your fitness objectives?",
+    content: "Hi there! 💪 I'm your AI Avatar Coach, and I'm excited to be your fitness companion! Whether you're just starting or looking to level up, I'm here to guide you and connect you with our amazing fitness experts. What are your fitness goals?",
     service: "fitness"
   },
   {
@@ -61,7 +61,7 @@ export const fitnessMessages = [
   },
   {
     type: "ai",
-    content: "Let me analyze your fitness goals:\n\n1. You want to build strength\n2. Improving flexibility is important to you\n3. You need guidance on getting started\n\nBased on this assessment, I recommend a structured approach combining expert guidance with consistent practice. Here's my plan:\n\n1. Let's schedule a video session with a certified fitness trainer:\n📅 Today at 6:00 PM\n📅 Wednesday at 7:30 AM\n📅 Friday at 4:00 PM\n\n2. I'll set up smart scheduling for:\n💪 Progressive strength training reminders\n🧘‍♀️ Daily flexibility sessions\n📊 Progress tracking check-ins\n🎯 Goal milestone celebrations\n\nWould you like to book a trainer consultation and set up these fitness reminders?",
+    content: "I'm so glad you're taking this step! Let's create a fitness journey that's perfect for you. Here's what I understand:\n\n1. You want to build strength\n2. Improving flexibility is important to you\n3. You're looking for guidance to begin\n\nI'd love to connect you with Alex, our BornPurpose Fitness Expert Friend. They're fantastic at creating beginner-friendly programs that combine strength and flexibility!\n\nWhile we schedule your session with Alex, would you like me to:\n\n1. Show you some simple starter exercises?\n2. Create a basic weekly plan?\n3. Share some stretching techniques?\n\nRemember, I'm here to support you every step of the way! 🌟",
     service: "fitness"
   }
 ];
@@ -69,7 +69,7 @@ export const fitnessMessages = [
 export const financialMessages = [
   {
     type: "ai",
-    content: "Hello! I'm your AI financial coach. I can help you achieve your financial goals through personalized planning and expert guidance. What would you like to focus on today?",
+    content: "Hello! 💫 I'm your AI Avatar Coach, and I'm here to help you navigate your financial journey! Whether it's budgeting, investing, or planning for the future, I can guide you and connect you with our financial experts. What would you like to focus on?",
     service: "financial"
   },
   {
@@ -78,7 +78,7 @@ export const financialMessages = [
   },
   {
     type: "ai",
-    content: "Let me analyze your financial goals:\n\n1. You want to create a budget\n2. You're interested in starting investments\n3. You need guidance on getting started\n\nBased on this assessment, I recommend a structured approach combining expert guidance with practical tools. Here's my plan:\n\n1. Let's schedule a video consultation with a certified financial advisor:\n📅 Today at 3:00 PM\n📅 Wednesday at 2:30 PM\n📅 Friday at 11:00 AM\n\n2. I'll set up smart scheduling for:\n💰 Weekly budget reviews\n📊 Investment portfolio tracking\n💳 Expense monitoring alerts\n🎯 Savings goal check-ins\n\nWould you like to book an advisor consultation and set up these financial planning tools?",
+    content: "Thank you for sharing your financial goals with me! It's exciting to see you taking control of your financial future. Let me help you get started:\n\n1. You want to create a budget\n2. You're interested in investing\n3. You're seeking guidance to begin\n\nI'd love to introduce you to Michael, our BornPurpose Financial Expert Friend. He's helped many others start their investment journey and create sustainable budgets!\n\nWhile we arrange your session with Michael, would you like me to:\n\n1. Share a simple budgeting template?\n2. Explain some basic investment concepts?\n3. Help you track your current expenses?\n\nWe're in this together - let's make your financial goals a reality! 📈",
     service: "financial"
   }
 ];
