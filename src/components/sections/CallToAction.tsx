@@ -2,6 +2,14 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
 const CallToAction = () => {
+  const handleStartJourney = () => {
+    const subject = "Ready to Start My Journey with BornPurpose";
+    const body = "Hello,\n\nI'm ready to start my journey with BornPurpose. Please provide me with information about getting started.";
+    
+    const mailtoLink = `mailto:membership@bornpurpose.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailtoLink;
+  };
+
   return (
     <section className="section-padding bg-muted">
       <motion.div
@@ -15,6 +23,7 @@ const CallToAction = () => {
           Join thousands of users who are already achieving their goals with BornPurpose
         </p>
         <motion.button
+          onClick={handleStartJourney}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           className="mt-8 glass px-8 py-4 rounded-full font-medium hover-lift inline-flex items-center gap-2"
