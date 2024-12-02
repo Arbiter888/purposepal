@@ -3,108 +3,19 @@ import { Send, Bot, User } from "lucide-react";
 import { useState } from "react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
-
-const wellnessMessages = [
-  {
-    type: "ai",
-    content: "Hello! I'm your AI wellness coach. I can help you create a balanced lifestyle that nurtures your mind, body, and spirit. What would you like to focus on today?",
-    service: "wellness"
-  },
-  {
-    type: "user",
-    content: "I've been feeling stressed lately and would like to improve my overall well-being.",
-  },
-  {
-    type: "ai",
-    content: "I understand you're dealing with stress. Let me assess your situation:\n\n1. You're seeking overall well-being improvement\n2. Stress is affecting your daily life\n3. You're ready to make positive changes\n\nBased on this, I recommend starting with stress management techniques and building a holistic wellness routine. To provide you with the most personalized support:\n\n1. Let's schedule a video consultation with one of our wellness experts:\n📅 Tomorrow at 2:00 PM\n📅 Wednesday at 11:00 AM\n📅 Friday at 3:30 PM\n\n2. I can also set up smart scheduling for:\n⏰ Daily meditation reminders\n🧘‍♀️ Stress-relief exercise prompts\n😌 Mindfulness practice notifications\n\nWould you like to book a consultation and set up these wellness reminders?",
-    service: "wellness"
-  }
-];
-
-const nutritionMessages = [
-  {
-    type: "ai",
-    content: "Welcome! I'm your AI nutrition guide. I can help you develop healthy eating habits and create personalized meal plans. What are your nutrition goals?",
-    service: "nutrition"
-  },
-  {
-    type: "user",
-    content: "I want to eat healthier but struggle with meal planning and portion control.",
-  },
-  {
-    type: "ai",
-    content: "Thank you for sharing. Let me analyze your concerns:\n\n1. You want to improve your eating habits\n2. Meal planning is a challenge\n3. Portion control is an area for improvement\n\nBased on this assessment, you would benefit from structured guidance and practical meal planning strategies. Here's what I recommend:\n\n1. Schedule a video consultation with our certified nutritionist:\n📅 Today at 4:00 PM\n📅 Thursday at 1:30 PM\n📅 Saturday at 10:00 AM\n\n2. Let's set up smart scheduling for:\n📱 Weekly meal prep reminders\n⏰ Regular eating schedule alerts\n📝 Guided portion control check-ins\n🛒 Grocery shopping reminders\n\nWould you like to book a consultation and activate these nutrition support tools?",
-    service: "nutrition"
-  }
-];
-
-const spiritualMessages = [
-  {
-    type: "ai",
-    content: "Greetings! I'm your AI spiritual companion. I'm here to support your faith journey and help you grow in your spiritual practice. How can I assist you today?",
-    service: "spiritual"
-  },
-  {
-    type: "user",
-    content: "I'd like to develop a stronger daily spiritual practice but struggle with consistency.",
-  },
-  {
-    type: "ai",
-    content: "I hear your desire for spiritual growth. Let me assess your situation:\n\n1. You're seeking a deeper spiritual connection\n2. Consistency is your main challenge\n3. You're looking for daily practice structure\n\nBased on this, I recommend a combination of guided support and structured practice. Here's my suggestion:\n\n1. Let's schedule a video session with one of our spiritual mentors:\n📅 Tomorrow at 9:00 AM\n📅 Thursday at 5:00 PM\n📅 Sunday at 2:00 PM\n\n2. I can help establish a consistent practice with:\n⏰ Daily devotional reminders\n🙏 Customized prayer time notifications\n📖 Scripture reading schedules\n✨ Reflection journal prompts\n\nWould you like to connect with a mentor and set up these spiritual practice reminders?",
-    service: "spiritual"
-  }
-];
-
-const fitnessMessages = [
-  {
-    type: "ai",
-    content: "Hi there! I'm your AI fitness coach. I can help you achieve your fitness goals through personalized workout plans and expert guidance. What are your fitness objectives?",
-    service: "fitness"
-  },
-  {
-    type: "user",
-    content: "I want to get stronger and more flexible, but I'm not sure where to start.",
-  },
-  {
-    type: "ai",
-    content: "Let me analyze your fitness goals:\n\n1. You want to build strength\n2. Improving flexibility is important to you\n3. You need guidance on getting started\n\nBased on this assessment, I recommend a structured approach combining expert guidance with consistent practice. Here's my plan:\n\n1. Let's schedule a video session with a certified fitness trainer:\n📅 Today at 6:00 PM\n📅 Wednesday at 7:30 AM\n📅 Friday at 4:00 PM\n\n2. I'll set up smart scheduling for:\n💪 Progressive strength training reminders\n🧘‍♀️ Daily flexibility sessions\n📊 Progress tracking check-ins\n🎯 Goal milestone celebrations\n\nWould you like to book a trainer consultation and set up these fitness reminders?",
-    service: "fitness"
-  }
-];
-
-const serviceHighlight = {
-  wellness: "bg-gradient-to-r from-green-400 via-cyan-500 to-blue-500",
-  nutrition: "bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500",
-  spiritual: "bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500",
-  fitness: "bg-gradient-to-r from-lime-400 via-emerald-500 to-teal-500"
-};
+import { 
+  wellnessMessages, 
+  nutritionMessages, 
+  spiritualMessages, 
+  fitnessMessages,
+  financialMessages,
+  suggestedMessages,
+  serviceHighlight 
+} from "@/data/chatMessages";
 
 interface EnhancedChatPreviewProps {
   onServiceChange: (service: string) => void;
 }
-
-const suggestedMessages = {
-  wellness: [
-    "How can I manage stress better?",
-    "What are some good sleep habits?",
-    "Tips for work-life balance?"
-  ],
-  nutrition: [
-    "Help me plan healthy meals",
-    "Tips for portion control",
-    "Best foods for energy?"
-  ],
-  spiritual: [
-    "How to start meditation?",
-    "Daily spiritual practices",
-    "Finding inner peace"
-  ],
-  fitness: [
-    "Beginner workout routine",
-    "Home exercise tips",
-    "How to stay motivated?"
-  ]
-};
 
 const EnhancedChatPreview = ({ onServiceChange }: EnhancedChatPreviewProps) => {
   const [inputValue, setInputValue] = useState("");
@@ -129,6 +40,8 @@ const EnhancedChatPreview = ({ onServiceChange }: EnhancedChatPreviewProps) => {
         return spiritualMessages;
       case "fitness":
         return fitnessMessages;
+      case "financial":
+        return financialMessages;
       default:
         return wellnessMessages;
     }
@@ -137,7 +50,7 @@ const EnhancedChatPreview = ({ onServiceChange }: EnhancedChatPreviewProps) => {
   return (
     <div className="max-w-5xl mx-auto">
       <Tabs defaultValue="wellness" className="w-full" onValueChange={handleTabChange}>
-        <TabsList className="grid w-full grid-cols-4 mb-8">
+        <TabsList className="grid w-full grid-cols-5 mb-8">
           <TabsTrigger value="wellness" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-green-400 data-[state=active]:via-cyan-500 data-[state=active]:to-blue-500 data-[state=active]:bg-opacity-20">
             Wellness
           </TabsTrigger>
@@ -149,6 +62,9 @@ const EnhancedChatPreview = ({ onServiceChange }: EnhancedChatPreviewProps) => {
           </TabsTrigger>
           <TabsTrigger value="fitness" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-lime-400 data-[state=active]:via-emerald-500 data-[state=active]:to-teal-500 data-[state=active]:bg-opacity-20">
             Fitness
+          </TabsTrigger>
+          <TabsTrigger value="financial" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-blue-400 data-[state=active]:via-indigo-500 data-[state=active]:to-purple-500 data-[state=active]:bg-opacity-20">
+            Financial
           </TabsTrigger>
         </TabsList>
 
