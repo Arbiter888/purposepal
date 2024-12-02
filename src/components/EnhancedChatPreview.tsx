@@ -92,7 +92,17 @@ const EnhancedChatPreview = ({ onServiceChange }: EnhancedChatPreviewProps) => {
                     </div>
                   )}
                   
-                  <div className={`bg-muted/80 rounded-2xl p-4 max-w-[80%] ${message.type === 'ai' ? 'rounded-tl-sm' : 'rounded-tr-sm'} ${message.type === 'user' ? 'bg-accent/10' : ''}`}>
+                  <div className={`relative ${message.type === 'user' ? 'bg-accent/10' : 'bg-muted/80'} rounded-2xl p-4 max-w-[80%] ${
+                    message.type === 'ai' ? 'rounded-tl-sm' : 'rounded-tr-sm'
+                  }`}>
+                    {/* Add triangle pointer for AI messages */}
+                    {message.type === 'ai' && (
+                      <div className="absolute left-[-8px] top-4 w-0 h-0 border-t-[8px] border-t-transparent border-r-[8px] border-r-muted/80 border-b-[8px] border-b-transparent" />
+                    )}
+                    {/* Add triangle pointer for user messages */}
+                    {message.type === 'user' && (
+                      <div className="absolute right-[-8px] top-4 w-0 h-0 border-t-[8px] border-t-transparent border-l-[8px] border-l-accent/10 border-b-[8px] border-b-transparent" />
+                    )}
                     <p className={`text-lg whitespace-pre-line ${
                       message.type === 'user' 
                         ? 'text-gradient-sunshine' 
