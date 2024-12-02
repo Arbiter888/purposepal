@@ -6,7 +6,7 @@ const ChatPreview = () => {
     <motion.div 
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      className="glass rounded-3xl p-8 max-w-3xl mx-auto backdrop-blur-xl"
+      className="glass rounded-3xl p-8 max-w-3xl mx-auto backdrop-blur-xl bg-black/40"
     >
       <div className="space-y-6">
         <motion.div 
@@ -15,10 +15,13 @@ const ChatPreview = () => {
           transition={{ delay: 0.2 }}
           className="flex items-start gap-4"
         >
-          <div className="w-10 h-10 rounded-full bg-gradient-to-r from-secondary to-accent flex-shrink-0 animate-pulse" />
-          <div className="relative glass rounded-2xl p-4 max-w-[80%] rounded-tl-sm bg-muted/80">
-            <div className="absolute left-[-8px] top-4 w-0 h-0 border-t-[8px] border-t-transparent border-r-[8px] border-r-muted/80 border-b-[8px] border-b-transparent" />
-            <p className="text-lg text-gradient-candy">Hello! I'm your AI life coach. How can I help you today?</p>
+          <div className="w-10 h-10 rounded-full bg-gradient-to-r from-green-400 to-blue-500 flex-shrink-0 animate-pulse flex items-center justify-center">
+            <span className="text-white text-xl">🤖</span>
+          </div>
+          <div className="flex flex-col space-y-1 max-w-[80%]">
+            <p className="text-lg bg-gradient-to-r from-purple-400 via-pink-500 to-blue-500 bg-clip-text text-transparent">
+              Hello! I'm your AI wellness coach. I can help you create a balanced lifestyle that nurtures your mind, body, and spirit. What would you like to focus on today?
+            </p>
           </div>
         </motion.div>
         
@@ -28,11 +31,16 @@ const ChatPreview = () => {
           transition={{ delay: 0.4 }}
           className="flex items-start gap-4 justify-end"
         >
-          <div className="relative glass rounded-2xl p-4 max-w-[80%] rounded-tr-sm bg-accent/10">
-            <div className="absolute right-[-8px] top-4 w-0 h-0 border-t-[8px] border-t-transparent border-l-[8px] border-l-accent/10 border-b-[8px] border-b-transparent" />
-            <p className="text-lg text-gradient-sunshine">I need help with setting career goals.</p>
+          <div className="flex flex-col space-y-1 max-w-[80%]">
+            <div className="relative glass rounded-2xl p-4 bg-white/5">
+              <p className="text-lg bg-gradient-to-r from-orange-400 via-amber-500 to-yellow-500 bg-clip-text text-transparent">
+                I've been feeling stressed lately and would like to improve my overall well-being.
+              </p>
+            </div>
           </div>
-          <div className="w-10 h-10 rounded-full bg-gradient-to-r from-accent to-secondary flex-shrink-0" />
+          <div className="w-10 h-10 rounded-full bg-white/10 flex-shrink-0 flex items-center justify-center">
+            <span className="text-white text-xl">👤</span>
+          </div>
         </motion.div>
         
         <motion.div 
@@ -41,10 +49,27 @@ const ChatPreview = () => {
           transition={{ delay: 0.6 }}
           className="flex items-start gap-4"
         >
-          <div className="w-10 h-10 rounded-full bg-gradient-to-r from-secondary to-accent flex-shrink-0 animate-pulse" />
-          <div className="relative glass rounded-2xl p-4 max-w-[80%] rounded-tl-sm bg-muted/80">
-            <div className="absolute left-[-8px] top-4 w-0 h-0 border-t-[8px] border-t-transparent border-r-[8px] border-r-muted/80 border-b-[8px] border-b-transparent" />
-            <p className="text-lg text-gradient-candy">I'd be happy to help you set and achieve your career goals. Let's start by understanding your current situation and aspirations.</p>
+          <div className="w-10 h-10 rounded-full bg-gradient-to-r from-green-400 to-blue-500 flex-shrink-0 animate-pulse flex items-center justify-center">
+            <span className="text-white text-xl">🤖</span>
+          </div>
+          <div className="flex flex-col space-y-4 max-w-[80%]">
+            <p className="text-lg bg-gradient-to-r from-purple-400 via-pink-500 to-blue-500 bg-clip-text text-transparent">
+              I understand you're dealing with stress. Let me assess your situation:
+            </p>
+            <ul className="space-y-2">
+              <li className="text-lg bg-gradient-to-r from-purple-400 via-pink-500 to-blue-500 bg-clip-text text-transparent">
+                1. You're seeking overall well-being improvement
+              </li>
+              <li className="text-lg bg-gradient-to-r from-purple-400 via-pink-500 to-blue-500 bg-clip-text text-transparent">
+                2. Stress is affecting your daily life
+              </li>
+              <li className="text-lg bg-gradient-to-r from-purple-400 via-pink-500 to-blue-500 bg-clip-text text-transparent">
+                3. You're ready to make positive changes
+              </li>
+            </ul>
+            <p className="text-lg bg-gradient-to-r from-purple-400 via-pink-500 to-blue-500 bg-clip-text text-transparent">
+              Based on this, I recommend starting with stress management techniques and building a holistic wellness routine. To provide you with the most personalized support:
+            </p>
           </div>
         </motion.div>
       </div>
@@ -53,7 +78,7 @@ const ChatPreview = () => {
         <input 
           type="text" 
           placeholder="Type your message..." 
-          className="flex-1 glass rounded-full px-6 py-4 focus:outline-none focus:ring-2 focus:ring-secondary/50 transition-all text-lg"
+          className="flex-1 glass rounded-full px-6 py-4 focus:outline-none focus:ring-2 focus:ring-secondary/50 transition-all text-lg bg-white/5"
         />
         <motion.button 
           whileHover={{ scale: 1.05 }}
