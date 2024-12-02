@@ -8,6 +8,8 @@ import PricingSection from "@/components/sections/PricingSection";
 import CallToAction from "@/components/sections/CallToAction";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Video, MessageSquare, Star } from "lucide-react";
 
 const Index = () => {
   const [selectedService, setSelectedService] = useState("wellness");
@@ -99,6 +101,82 @@ const Index = () => {
               transition={{ duration: 0.6 }}
             >
               <InteractiveDemo onServiceChange={setSelectedService} />
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="glass rounded-3xl p-8 backdrop-blur-xl"
+            >
+              <div className="grid md:grid-cols-2 gap-8 items-center">
+                <div className="space-y-6">
+                  <h3 className="text-3xl font-bold bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-500 bg-clip-text text-transparent">
+                    Meet Your Financial Coach
+                  </h3>
+                  <p className="text-lg text-muted-foreground">
+                    Transform your financial future with personalized guidance from our AI-powered Financial Coach. Get expert advice on budgeting, investments, and wealth building strategies.
+                  </p>
+                  <div className="flex items-center gap-4">
+                    <div className="flex -space-x-4">
+                      {[...Array(3)].map((_, i) => (
+                        <div
+                          key={i}
+                          className="w-10 h-10 rounded-full border-2 border-background bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-500"
+                        />
+                      ))}
+                    </div>
+                    <div>
+                      <div className="flex items-center gap-1">
+                        {[...Array(5)].map((_, i) => (
+                          <Star key={i} className="w-4 h-4 fill-yellow-500 text-yellow-500" />
+                        ))}
+                      </div>
+                      <p className="text-sm text-muted-foreground">
+                        Trusted by 10,000+ users
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex flex-wrap gap-4">
+                    <Button className="bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-500">
+                      <MessageSquare className="w-4 h-4 mr-2" />
+                      Chat Now
+                    </Button>
+                    <Button variant="outline" className="border-blue-400/20">
+                      <Video className="w-4 h-4 mr-2" />
+                      Schedule Video Call
+                    </Button>
+                  </div>
+                </div>
+                <div className="relative">
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 via-indigo-500/20 to-purple-500/20 rounded-3xl blur-3xl" />
+                  <div className="relative bg-muted/80 rounded-3xl p-6 backdrop-blur-xl">
+                    <div className="space-y-4">
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-full bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-500" />
+                        <div>
+                          <p className="font-medium">Financial AI Coach</p>
+                          <p className="text-sm text-muted-foreground">Online now</p>
+                        </div>
+                      </div>
+                      <p className="text-sm text-muted-foreground">
+                        "I'll help you create a personalized financial plan, optimize your investments, and achieve your long-term financial goals. Let's start building your wealth today!"
+                      </p>
+                      <div className="flex flex-wrap gap-2">
+                        {["Investment Planning", "Budgeting", "Wealth Building", "Tax Strategy"].map((tag) => (
+                          <span
+                            key={tag}
+                            className="px-3 py-1 rounded-full text-xs bg-blue-400/10 text-blue-400"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </motion.div>
 
             <motion.div
