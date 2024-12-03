@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { MessageSquare, Video, Calendar, Coins, Globe, Users, Bot, Brain, Heart } from "lucide-react";
+import { MessageSquare, Video, Calendar, Coins, Globe, Users, Bot, Brain, Heart, UserPlus } from "lucide-react";
 
 const ExperiencePlatform = () => {
   return (
@@ -79,17 +79,17 @@ const ExperiencePlatform = () => {
           className="glass rounded-3xl p-8 hover:bg-white/10 transition-all cursor-pointer border border-white/5 hover:border-white/20"
         >
           <div className="h-12 w-12 rounded-2xl bg-gradient-to-r from-highlight via-accent to-tertiary flex items-center justify-center mb-6">
-            <Globe className="w-6 h-6 text-white" />
+            <UserPlus className="w-6 h-6 text-white" />
           </div>
-          <h3 className="text-2xl font-semibold text-gradient-rainbow mb-4">Global Journey</h3>
+          <h3 className="text-2xl font-semibold text-gradient-rainbow mb-4">Community Matching</h3>
           <p className="text-lg text-muted-foreground mb-6">
-            Your AI Avatar Coach helps navigate international transitions with cultural insights and local expertise
+            Connect with like-minded members on similar transformation journeys for mutual support and accountability
           </p>
           <div className="flex items-center justify-between mt-auto pt-4 border-t border-white/10">
             <span className="text-sm text-muted-foreground">Elite Feature</span>
             <div className="flex items-center gap-2">
-              <Globe className="w-4 h-4 text-yellow-400" />
-              <span className="font-semibold">Worldwide</span>
+              <Users className="w-4 h-4 text-yellow-400" />
+              <span className="font-semibold">Real Connections</span>
             </div>
           </div>
         </motion.div>
