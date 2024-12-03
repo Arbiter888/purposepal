@@ -36,7 +36,7 @@ const HeroWithFeatures = () => {
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-8"
         >
           <Bot className="w-5 h-5 text-gradient-rainbow" />
-          <span className="text-gradient-rainbow text-sm font-medium">Meet Your Personal AI Avatar Coach</span>
+          <span className="text-gradient-rainbow text-sm font-medium">Meet Presence+, Your Personal AI Avatar Coach</span>
         </motion.div>
 
         <motion.div
