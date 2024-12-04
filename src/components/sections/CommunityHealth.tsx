@@ -72,8 +72,8 @@ const CommunityHealth = () => {
             />
             <div className="relative z-10">
               <MapPin className="w-8 h-8 mx-auto mb-2 text-gradient-sunshine" />
-              <h4 className="font-semibold mb-2">Central Park Runners</h4>
-              <p className="text-muted-foreground text-sm">New York City</p>
+              <h4 className="font-semibold mb-2">KLCC Runners</h4>
+              <p className="text-muted-foreground text-sm">Kuala Lumpur</p>
               <p className="text-xs text-muted-foreground mt-2">500+ active members</p>
             </div>
           </div>
@@ -97,7 +97,7 @@ const CommunityHealth = () => {
             <div className="relative z-10">
               <MapPin className="w-8 h-8 mx-auto mb-2 text-gradient-sunshine" />
               <h4 className="font-semibold mb-2">Beach Road Runners</h4>
-              <p className="text-muted-foreground text-sm">Sydney</p>
+              <p className="text-muted-foreground text-sm">New York</p>
               <p className="text-xs text-muted-foreground mt-2">400+ active members</p>
             </div>
           </div>
