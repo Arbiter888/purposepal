@@ -43,26 +43,26 @@ const plans = [
     comparison: "Traditional services: $1000+/month vs. $99/month for comprehensive support"
   },
   {
-    name: "Another Life",
+    name: "Life Together",
     price: "$199",
-    description: "Global transformation with AI guidance",
-    icon: Globe,
+    description: "Community-focused transformation with AI guidance",
+    icon: Users,
     features: [
       "Everything in Whole Life plan",
-      "AI-guided relocation planning",
-      "Expert visa consultation",
-      "Global housing search assistance",
-      "Cultural integration coaching",
-      "Language learning with AI",
-      "International banking guidance",
-      "Global career coaching",
-      "Expat community access",
-      "24/7 global transition support"
+      "Advanced community matching",
+      "Personalized group activities",
+      "Community leadership opportunities",
+      "Group goal setting and tracking",
+      "Exclusive community events",
+      "Priority community support",
+      "Custom group challenges",
+      "Mentorship opportunities",
+      "24/7 community access"
     ],
     credits: "Unlimited credits",
-    creditValue: "Complete AI and expert support for global transitions",
+    creditValue: "Complete AI and community support for transformation",
     savings: "Save up to $2000/month",
-    comparison: "Traditional relocation: $2200+/month vs. $199/month for AI-powered support"
+    comparison: "Traditional programs: $2200+/month vs. $199/month for AI-powered community"
   },
 ];
 
