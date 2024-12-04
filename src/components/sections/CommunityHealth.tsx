@@ -96,7 +96,7 @@ const CommunityHealth = () => {
             />
             <div className="relative z-10">
               <MapPin className="w-8 h-8 mx-auto mb-2 text-gradient-sunshine" />
-              <h4 className="font-semibold mb-2">Beach Road Runners</h4>
+              <h4 className="font-semibold mb-2">Central Park Pacers</h4>
               <p className="text-muted-foreground text-sm">New York</p>
               <p className="text-xs text-muted-foreground mt-2">400+ active members</p>
             </div>
