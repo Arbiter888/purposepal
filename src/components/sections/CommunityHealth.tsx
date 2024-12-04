@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Running, Timer, Trophy, Users, Video, Calendar, DollarSign } from "lucide-react";
+import { Activity, Timer, Trophy, Users, Video, Calendar, DollarSign } from "lucide-react";
 
 const CommunityHealth = () => {
   return (
@@ -23,7 +23,7 @@ const CommunityHealth = () => {
           transition={{ delay: 0.1 }}
           className="glass p-8 rounded-2xl hover:scale-105 transition-transform duration-300"
         >
-          <Running className="w-12 h-12 mb-4 text-gradient" />
+          <Activity className="w-12 h-12 mb-4 text-gradient" />
           <h3 className="text-xl font-semibold text-gradient-neon mb-3">Personalized Training</h3>
           <p className="text-muted-foreground">
             Get customized running plans that adapt to your progress, fitness level, and goals
@@ -83,7 +83,7 @@ const CommunityHealth = () => {
               style={{ backgroundImage: 'url(/lovable-uploads/7c701826-e490-434c-b542-59f3652c6375.png)' }}
             />
             <div className="relative z-10">
-              <Running className="w-8 h-8 mx-auto mb-2 text-gradient-sunshine" />
+              <Activity className="w-8 h-8 mx-auto mb-2 text-gradient-sunshine" />
               <h4 className="font-semibold mb-2">Weekly Mileage</h4>
               <p className="text-muted-foreground text-sm">25 miles/week</p>
               <p className="text-xs text-muted-foreground mt-2">Up from 10 miles</p>
