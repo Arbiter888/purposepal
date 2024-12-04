@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Activity, Timer, Trophy, Users, Video, Calendar, DollarSign } from "lucide-react";
+import { Globe, Plane, Building, Users, Video, Calendar, DollarSign } from "lucide-react";
 
 const CommunityHealth = () => {
   return (
@@ -10,9 +10,9 @@ const CommunityHealth = () => {
         transition={{ duration: 0.6 }}
         className="text-center mb-16"
       >
-        <h2 className="text-4xl font-bold text-gradient-neon mb-4">Your AI Running Coach Journey</h2>
+        <h2 className="text-4xl font-bold text-gradient-neon mb-4">Your Journey to International Living</h2>
         <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-          Transform your running experience with personalized AI coaching. Connect with fellow runners and track your progress with advanced analytics.
+          Transform your life by exploring opportunities abroad. Connect with expats and experts who've successfully made the transition.
         </p>
       </motion.div>
 
@@ -23,10 +23,10 @@ const CommunityHealth = () => {
           transition={{ delay: 0.1 }}
           className="glass p-8 rounded-2xl hover:scale-105 transition-transform duration-300"
         >
-          <Activity className="w-12 h-12 mb-4 text-gradient" />
-          <h3 className="text-xl font-semibold text-gradient-neon mb-3">Personalized Training</h3>
+          <Globe className="w-12 h-12 mb-4 text-gradient" />
+          <h3 className="text-xl font-semibold text-gradient-neon mb-3">Global Opportunities</h3>
           <p className="text-muted-foreground">
-            Get customized running plans that adapt to your progress, fitness level, and goals
+            Discover career opportunities, housing options, and lifestyle possibilities in countries around the world
           </p>
         </motion.div>
 
@@ -36,10 +36,10 @@ const CommunityHealth = () => {
           transition={{ delay: 0.2 }}
           className="glass p-8 rounded-2xl hover:scale-105 transition-transform duration-300"
         >
-          <Timer className="w-12 h-12 mb-4 text-gradient" />
-          <h3 className="text-xl font-semibold text-gradient-neon mb-3">Real-time Feedback</h3>
+          <Plane className="w-12 h-12 mb-4 text-gradient" />
+          <h3 className="text-xl font-semibold text-gradient-neon mb-3">Relocation Support</h3>
           <p className="text-muted-foreground">
-            Receive instant guidance on pace, form, and performance during your runs
+            Get expert guidance on visas, international moving, and settling into your new home country
           </p>
         </motion.div>
 
@@ -49,10 +49,10 @@ const CommunityHealth = () => {
           transition={{ delay: 0.3 }}
           className="glass p-8 rounded-2xl hover:scale-105 transition-transform duration-300"
         >
-          <Trophy className="w-12 h-12 mb-4 text-gradient" />
-          <h3 className="text-xl font-semibold text-gradient-neon mb-3">Goal Achievement</h3>
+          <Building className="w-12 h-12 mb-4 text-gradient" />
+          <h3 className="text-xl font-semibold text-gradient-neon mb-3">Local Integration</h3>
           <p className="text-muted-foreground">
-            Track your milestones and celebrate progress with personalized achievements
+            Learn about local culture, customs, and connect with established expat communities in your target country
           </p>
         </motion.div>
       </div>
@@ -63,7 +63,7 @@ const CommunityHealth = () => {
         transition={{ delay: 0.4 }}
         className="mt-16 max-w-4xl mx-auto glass p-8 rounded-2xl"
       >
-        <h3 className="text-2xl font-semibold text-gradient-neon mb-6 text-center">Featured Runner Success Story</h3>
+        <h3 className="text-2xl font-semibold text-gradient-neon mb-6 text-center">Featured Destination: Kuala Lumpur, Malaysia</h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="text-center p-4 glass rounded-xl relative overflow-hidden group">
             <div 
@@ -71,10 +71,10 @@ const CommunityHealth = () => {
               style={{ backgroundImage: 'url(/lovable-uploads/b30aef96-040a-42a7-aca9-99e70c70fe68.png)' }}
             />
             <div className="relative z-10">
-              <Timer className="w-8 h-8 mx-auto mb-2 text-gradient-sunshine" />
-              <h4 className="font-semibold mb-2">Sarah's Progress</h4>
-              <p className="text-muted-foreground text-sm">5K Time: 28min</p>
-              <p className="text-xs text-muted-foreground mt-2">Started at 35min</p>
+              <DollarSign className="w-8 h-8 mx-auto mb-2 text-gradient-sunshine" />
+              <h4 className="font-semibold mb-2">Kuala Lumpur</h4>
+              <p className="text-muted-foreground text-sm">$1,800/month</p>
+              <p className="text-xs text-muted-foreground mt-2">Average living costs</p>
             </div>
           </div>
           <div className="text-center p-4 glass rounded-xl relative overflow-hidden group">
@@ -83,10 +83,10 @@ const CommunityHealth = () => {
               style={{ backgroundImage: 'url(/lovable-uploads/7c701826-e490-434c-b542-59f3652c6375.png)' }}
             />
             <div className="relative z-10">
-              <Activity className="w-8 h-8 mx-auto mb-2 text-gradient-sunshine" />
-              <h4 className="font-semibold mb-2">Weekly Mileage</h4>
-              <p className="text-muted-foreground text-sm">25 miles/week</p>
-              <p className="text-xs text-muted-foreground mt-2">Up from 10 miles</p>
+              <DollarSign className="w-8 h-8 mx-auto mb-2 text-gradient-sunshine" />
+              <h4 className="font-semibold mb-2">London</h4>
+              <p className="text-muted-foreground text-sm">$4,800/month</p>
+              <p className="text-xs text-muted-foreground mt-2">167% more expensive</p>
             </div>
           </div>
           <div className="text-center p-4 glass rounded-xl relative overflow-hidden group">
@@ -95,15 +95,15 @@ const CommunityHealth = () => {
               style={{ backgroundImage: 'url(/lovable-uploads/861126b1-a991-4d52-b668-2a2ba821a15c.png)' }}
             />
             <div className="relative z-10">
-              <Trophy className="w-8 h-8 mx-auto mb-2 text-gradient-sunshine" />
-              <h4 className="font-semibold mb-2">Achievements</h4>
-              <p className="text-muted-foreground text-sm">10 medals earned</p>
-              <p className="text-xs text-muted-foreground mt-2">Marathon ready!</p>
+              <DollarSign className="w-8 h-8 mx-auto mb-2 text-gradient-sunshine" />
+              <h4 className="font-semibold mb-2">New York</h4>
+              <p className="text-muted-foreground text-sm">$5,500/month</p>
+              <p className="text-xs text-muted-foreground mt-2">205% more expensive</p>
             </div>
           </div>
         </div>
         <p className="text-sm text-muted-foreground text-center mt-4">
-          *Results vary based on individual commitment and training consistency
+          *Costs include rent, utilities, food, transportation, and basic entertainment for one person
         </p>
       </motion.div>
 
@@ -115,7 +115,7 @@ const CommunityHealth = () => {
           className="flex items-center gap-3 glass px-6 py-3 rounded-full"
         >
           <Users className="w-5 h-5" />
-          <span>Running Community Support</span>
+          <span>Global Community Support</span>
         </motion.div>
 
         <motion.div
@@ -125,7 +125,7 @@ const CommunityHealth = () => {
           className="flex items-center gap-3 glass px-6 py-3 rounded-full"
         >
           <Video className="w-5 h-5" />
-          <span>Form Analysis</span>
+          <span>Virtual Consultations</span>
         </motion.div>
 
         <motion.div
@@ -135,7 +135,7 @@ const CommunityHealth = () => {
           className="flex items-center gap-3 glass px-6 py-3 rounded-full"
         >
           <Calendar className="w-5 h-5" />
-          <span>Adaptive Training Plans</span>
+          <span>Personalized Planning</span>
         </motion.div>
       </div>
     </section>
