@@ -38,11 +38,11 @@ const ParticleSystem = () => {
         // Initialize particles
         for (let i = 0; i < numParticles; i++) {
           particles.push({
-            x: p.random(p.width),
-            y: p.random(p.height),
+            x: p.random(0, p.width),
+            y: p.random(0, p.height),
             vx: p.random(-1, 1),
             vy: p.random(-1, 1),
-            color: colors[Math.floor(p.random(colors.length))],
+            color: colors[Math.floor(p.random(0, colors.length))],
             size: p.random(4, 8),
           });
         }
