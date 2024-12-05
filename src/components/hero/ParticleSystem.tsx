@@ -78,9 +78,10 @@ const ParticleSystem = () => {
           if (particle.y < 0) particle.y = p.height;
           if (particle.y > p.height) particle.y = 0;
 
-          // Draw particle
+          // Draw particle with proper color handling
           p.noStroke();
-          p.fill(particle.color);
+          const c = particle.color;
+          p.fill(p.red(c), p.green(c), p.blue(c), p.alpha(c));
           p.circle(particle.x, particle.y, particle.size);
         });
       };
