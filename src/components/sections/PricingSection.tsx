@@ -5,73 +5,63 @@ const plans = [
   {
     name: "Pro",
     price: "$29",
-    description: "Your personal AI Avatar Coach for growth",
+    description: "Essential AI coaching for personal growth",
     icon: Users,
     features: [
-      "24/7 AI Avatar Coach access (10 credits/session)",
-      "2 Expert Friend introductions/month (50 credits each)",
-      "Smart goal tracking by your AI Coach (30 credits)",
-      "Priority AI response time",
-      "Basic wellness planning with AI",
-      "Progress analytics from your coach",
-      "Regular check-ins with your AI Avatar"
+      "Daily AI coaching sessions",
+      "Personal goal tracking",
+      "Basic wellness planning",
+      "Progress reports",
+      "Community access"
     ],
     credits: "200 credits/month",
-    creditValue: "Perfect for regular AI coaching and guidance",
-    savings: "Save up to $450/month",
-    comparison: "Traditional coaching: $480/month vs. $29/month for AI-powered support",
+    creditValue: "Perfect for regular coaching support",
+    savings: "Save $450/month",
+    comparison: "vs. Traditional coaching at $480/month",
     buttonColor: "text-gradient-candy"
   },
   {
     name: "Whole Life",
     price: "$99",
-    description: "Enhanced AI coaching with expert support",
+    description: "Comprehensive AI coaching & expert support",
     icon: Crown,
     features: [
-      "Unlimited AI Avatar Coach access",
-      "6 Expert Friend introductions/month",
-      "Advanced goal tracking & insights",
-      "1-on-1 expert consultations",
-      "Priority scheduling with experts",
-      "Custom AI-powered programs",
-      "Family access to AI coaching",
-      "Exclusive community events",
-      "Emergency expert support"
+      "Unlimited AI coaching",
+      "Priority expert matching",
+      "Advanced wellness programs",
+      "Custom growth roadmaps",
+      "Expert consultations",
+      "Family account access"
     ],
     credits: "500 credits/month",
-    creditValue: "Full access to AI coaching and expert network",
-    savings: "Save up to $900/month",
-    comparison: "Traditional services: $1000+/month vs. $99/month for comprehensive support",
+    creditValue: "Full access to AI & expert support",
+    savings: "Save $900/month",
+    comparison: "vs. Traditional services at $1000/month",
     buttonColor: "text-gradient-sunshine"
   },
   {
     name: "Life Together",
     price: "$199",
-    description: "Community-focused transformation with AI guidance",
+    description: "Premium community & transformation support",
     icon: Users,
     features: [
-      "Everything in Whole Life plan",
-      "Advanced community matching",
-      "Personalized group activities",
-      "Community leadership opportunities",
-      "Group goal setting and tracking",
-      "Exclusive community events",
-      "Priority community support",
-      "Custom group challenges",
-      "Mentorship opportunities",
-      "24/7 community access"
+      "All Whole Life features",
+      "VIP community matching",
+      "Group coaching sessions",
+      "Leadership opportunities",
+      "Exclusive events access",
+      "Priority support 24/7"
     ],
     credits: "Unlimited credits",
-    creditValue: "Complete AI and community support for transformation",
-    savings: "Save up to $2000/month",
-    comparison: "Traditional programs: $2200+/month vs. $199/month for AI-powered community",
+    creditValue: "Complete access to all services",
+    savings: "Save $2000/month",
+    comparison: "vs. Premium programs at $2200/month",
     buttonColor: "text-gradient-aurora"
   }
 ];
 
 const PricingSection = () => {
   const handleGetStarted = (planName: string) => {
-    // Handle the get started action
     console.log(`Getting started with ${planName} plan`);
   };
 
