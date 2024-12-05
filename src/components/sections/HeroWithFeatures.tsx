@@ -46,7 +46,7 @@ const HeroWithFeatures = () => {
           className="flex items-center justify-center gap-2 mb-6"
         >
           <span className="text-2xl md:text-3xl font-medium inline-block">
-            Experience Life with <span className="text-gradient-sunshine">BornPurpose</span>
+            Experience <span className="text-gradient-sunshine">the Presence</span> of More Support
           </span>
         </motion.div>
         
@@ -73,8 +73,14 @@ const HeroWithFeatures = () => {
           transition={{ delay: 0.5 }}
           className="mt-8 text-xl md:text-2xl text-muted-foreground/90 max-w-2xl mx-auto leading-relaxed glass p-6 rounded-xl"
         >
-          Join Presence and their carefully chosen AI Avatar Coach friends on a transformative journey. 
-          Connect with like-minded members to live life together as they guide you through wellness, nutrition, spiritual growth, fitness, and financial success.
+          Join <span className="text-gradient-rainbow font-medium">Presence</span> and their carefully chosen 
+          <span className="text-gradient-aurora font-medium"> AI Avatar Coach friends</span> on a transformative journey. 
+          Connect with <span className="text-gradient-candy font-medium">like-minded members</span> to live life together 
+          as they guide you through <span className="text-gradient-sunshine font-medium">wellness</span>, 
+          <span className="text-gradient-neon font-medium"> nutrition</span>, 
+          <span className="text-gradient-mystic font-medium"> spiritual growth</span>, 
+          <span className="text-gradient-ocean font-medium"> fitness</span>, and 
+          <span className="text-gradient-cosmic font-medium"> financial success</span>.
         </motion.p>
 
         <motion.div
