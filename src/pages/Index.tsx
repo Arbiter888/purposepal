@@ -8,7 +8,6 @@ import CoachPreview from "@/components/sections/CoachPreview";
 import CommunityHealth from "@/components/sections/CommunityHealth";
 import PricingSection from "@/components/sections/PricingSection";
 import CallToAction from "@/components/sections/CallToAction";
-import LoadingScene from "@/components/LoadingScene";
 
 const coachInfo = {
   wellness: {
@@ -46,16 +45,6 @@ const coachInfo = {
 const Index = () => {
   const [selectedService, setSelectedService] = useState("wellness");
   const [scrollProgress, setScrollProgress] = useState(0);
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    // Simulate loading time
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 3000);
-
-    return () => clearTimeout(timer);
-  }, []);
 
   const handleScroll = () => {
     const scrollPx = document.documentElement.scrollTop;
@@ -70,10 +59,6 @@ const Index = () => {
   }, []);
 
   const activeCoach = coachInfo[selectedService as keyof typeof coachInfo];
-
-  if (isLoading) {
-    return <LoadingScene />;
-  }
 
   return (
     <div className="min-h-screen bg-black text-white relative">
