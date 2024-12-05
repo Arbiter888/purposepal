@@ -6,9 +6,18 @@ interface ProcessStepProps {
   title: string;
   description: string;
   index: number;
+  bgColor: string;
+  iconColor: string;
 }
 
-export const ProcessStep = ({ icon: Icon, title, description, index }: ProcessStepProps) => (
+export const ProcessStep = ({ 
+  icon: Icon, 
+  title, 
+  description, 
+  index,
+  bgColor,
+  iconColor 
+}: ProcessStepProps) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
@@ -17,9 +26,9 @@ export const ProcessStep = ({ icon: Icon, title, description, index }: ProcessSt
   >
     <div className="flex items-start gap-4">
       <div className="relative">
-        <div className="absolute -left-2 -top-2 w-12 h-12 bg-secondary/10 rounded-full animate-pulse" />
-        <div className="relative z-10 w-8 h-8 flex items-center justify-center bg-secondary/20 rounded-full">
-          <Icon className="w-5 h-5 text-gradient-sunshine" />
+        <div className={`absolute -left-2 -top-2 w-12 h-12 ${bgColor} rounded-full animate-pulse`} />
+        <div className={`relative z-10 w-8 h-8 flex items-center justify-center ${bgColor} rounded-full`}>
+          <Icon className={`w-5 h-5 ${iconColor}`} />
         </div>
       </div>
       <div className="flex-1">

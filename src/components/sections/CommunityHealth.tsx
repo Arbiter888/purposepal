@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Heart, Users, Handshake, Brain, Target, Sparkles, MessageSquare, UserCheck, Zap } from "lucide-react";
 import { ConnectionCategory } from "../community/ConnectionCategory";
 import { ProcessStep } from "../community/ProcessStep";
+import { TestimonialCard } from "../chat-preview/TestimonialCard";
 
 const categories = [
   {
@@ -45,27 +46,51 @@ const categories = [
   }
 ];
 
-const experts = [
+const testimonials = [
   {
-    name: "Dr. Sarah Chen",
-    role: "Life Purpose Coach",
-    image: "https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=800&q=80",
-    description: "Helping you align career and personal goals",
-    expertise: ["Career Development", "Life Planning", "Personal Growth"]
+    quote: "The AI coach helped me find my perfect business partner. Our values and vision aligned perfectly!",
+    author: "Sarah Chen",
+    initials: "SC",
+    image: "photo-1649972904349-6e44c42644a7",
+    gradient: "bg-gradient-to-r from-secondary to-accent"
   },
   {
-    name: "Emma Thompson",
-    role: "Relationship Expert",
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=800&q=80",
-    description: "Creating meaningful connections through understanding",
-    expertise: ["Dating Strategy", "Communication", "Self-Discovery"]
+    quote: "Through expert guidance, I discovered what I truly wanted in relationships and found amazing connections.",
+    author: "Emma Thompson",
+    initials: "ET",
+    image: "photo-1581091226825-a6a2a5aee158",
+    gradient: "bg-gradient-to-r from-tertiary to-highlight"
   },
   {
-    name: "Dr. Michelle Wang",
-    role: "Wellness Coach",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80",
-    description: "Balancing mind, body, and relationships",
-    expertise: ["Holistic Wellness", "Mindfulness", "Lifestyle Design"]
+    quote: "The personalized matching process introduced me to people who share my values and aspirations.",
+    author: "Michael Rivera",
+    initials: "MR",
+    image: "photo-1581092795360-fd1ca04f0952",
+    gradient: "bg-gradient-to-r from-highlight to-secondary"
+  }
+];
+
+const processSteps = [
+  {
+    icon: Brain,
+    title: "AI Understanding",
+    description: "Presence AI engages in natural conversations to understand your personality, aspirations, and life goals",
+    bgColor: "bg-red-500/20",
+    iconColor: "text-red-500"
+  },
+  {
+    icon: UserCheck,
+    title: "Expert Guidance",
+    description: "Connect with professional coaches who help refine your goals and prepare you for meaningful relationships",
+    bgColor: "bg-amber-500/20",
+    iconColor: "text-amber-500"
+  },
+  {
+    icon: Target,
+    title: "Personalized Matching",
+    description: "Our AI combines insights from your journey and expert guidance to find truly compatible connections",
+    bgColor: "bg-green-500/20",
+    iconColor: "text-green-500"
   }
 ];
 
@@ -104,31 +129,20 @@ const CommunityHealth = () => {
             <Sparkles className="w-4 h-4 text-secondary" />
             <span className="text-sm font-medium text-secondary">Your Journey to Meaningful Connections</span>
           </div>
-          <h3 className="text-3xl font-bold mb-4">Personalized Matching Process</h3>
+          <h3 className="text-3xl font-bold mb-4">How AI Matching Works</h3>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Our AI-powered platform guides you through a journey of self-discovery to meaningful connections
           </p>
         </div>
         
-        <div className="space-y-6">
-          <ProcessStep
-            index={0}
-            icon={Brain}
-            title="AI Understanding"
-            description="Presence AI engages in natural conversations to understand your personality, aspirations, and life goals"
-          />
-          <ProcessStep
-            index={1}
-            icon={UserCheck}
-            title="Expert Guidance"
-            description="Connect with professional coaches who help refine your goals and prepare you for meaningful relationships"
-          />
-          <ProcessStep
-            index={2}
-            icon={Target}
-            title="Personalized Matching"
-            description="Our AI combines insights from your journey and expert guidance to find truly compatible connections"
-          />
+        <div className="space-y-6 mb-16">
+          {processSteps.map((step, index) => (
+            <ProcessStep
+              key={index}
+              {...step}
+              index={index}
+            />
+          ))}
         </div>
 
         <motion.div 
@@ -137,39 +151,17 @@ const CommunityHealth = () => {
           transition={{ delay: 0.6 }}
           className="mt-16"
         >
-          <h4 className="text-2xl font-semibold text-center mb-8">Meet Our Expert Guides</h4>
+          <h4 className="text-2xl font-semibold text-center mb-8">What Our Members Say</h4>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {experts.map((expert, index) => (
+            {testimonials.map((testimonial, index) => (
               <motion.div
-                key={expert.name}
+                key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.2 }}
                 className="glass p-6 rounded-xl hover:scale-105 transition-transform duration-300"
               >
-                <div className="relative mb-4">
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-xl" />
-                  <img
-                    src={expert.image}
-                    alt={expert.name}
-                    className="w-full h-64 object-cover rounded-xl"
-                  />
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <h5 className="text-white font-semibold text-lg">{expert.name}</h5>
-                    <p className="text-white/80 text-sm">{expert.role}</p>
-                  </div>
-                </div>
-                <p className="text-muted-foreground mb-4">{expert.description}</p>
-                <div className="flex flex-wrap gap-2">
-                  {expert.expertise.map((skill) => (
-                    <span
-                      key={skill}
-                      className="text-xs px-3 py-1 rounded-full glass bg-white/5"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
+                <TestimonialCard {...testimonial} />
               </motion.div>
             ))}
           </div>
