@@ -25,26 +25,31 @@ export const ConnectionCategory = ({
 }: ConnectionCategoryProps) => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
       className="glass p-8 rounded-2xl hover:scale-[1.02] transition-all duration-300"
+      whileHover={{ scale: 1.05 }}
     >
       <div className="flex items-start gap-4 mb-6">
         <div className={`p-3 rounded-xl glass ${iconColor}`}>
           <Icon className="w-6 h-6" />
         </div>
         <div>
-          <h3 className="text-xl font-semibold text-gradient-neon mb-2">{title}</h3>
+          <h3 className="text-xl font-semibold text-gradient-rainbow mb-2">{title}</h3>
           <p className="text-muted-foreground">{description}</p>
         </div>
       </div>
 
-      <div className="glass bg-white/5 p-6 rounded-xl mb-6">
+      <motion.div 
+        className="glass bg-white/5 p-6 rounded-xl mb-6"
+        initial={{ rotateX: -180 }}
+        animate={{ rotateX: 0 }}
+        transition={{ duration: 0.6 }}
+      >
         <div className="flex items-start gap-4 mb-4">
-          <img
+          <motion.img
             src={match.image}
             alt={match.name}
             className="w-16 h-16 rounded-full object-cover ring-2 ring-white/20"
+            whileHover={{ scale: 1.1 }}
           />
           <div>
             <h4 className="font-semibold text-gradient">{match.name}</h4>
@@ -66,12 +71,13 @@ export const ConnectionCategory = ({
 
         <div className="flex flex-wrap gap-2 mb-4">
           {match.interests.map((interest) => (
-            <span
+            <motion.span
               key={interest}
               className="text-xs px-3 py-1 rounded-full glass bg-white/5"
+              whileHover={{ scale: 1.1 }}
             >
               {interest}
-            </span>
+            </motion.span>
           ))}
         </div>
 
@@ -83,7 +89,7 @@ export const ConnectionCategory = ({
           <MessageCircle className="w-4 h-4" />
           <span>Connect through AI Coach</span>
         </motion.button>
-      </div>
+      </motion.div>
     </motion.div>
   );
 };
