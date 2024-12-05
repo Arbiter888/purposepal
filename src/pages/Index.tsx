@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import HeroWithFeatures from "@/components/sections/HeroWithFeatures";
 import FeaturesShowcase from "@/components/sections/FeaturesShowcase";
-import ExperiencePlatform from "@/components/sections/ExperiencePlatform";
 import InteractiveDemo from "@/components/sections/InteractiveDemo";
 import CoachPreview from "@/components/sections/CoachPreview";
 import CommunityHealth from "@/components/sections/CommunityHealth";
@@ -88,7 +87,6 @@ const Index = () => {
       <div className="relative">
         <HeroWithFeatures />
         <FeaturesShowcase />
-        <ExperiencePlatform />
         
         <div className="relative py-12 md:py-24">
           <div className="max-w-7xl mx-auto px-4 space-y-8 md:space-y-16">
