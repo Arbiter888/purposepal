@@ -61,7 +61,7 @@ const FeaturesShowcase = () => {
         <div className="max-w-3xl mx-auto mb-16 relative">
           <div className="aspect-video rounded-2xl overflow-hidden glass border border-white/10">
             <iframe
-              src="https://www.youtube.com/embed/lV18PRNC5sc"
+              src="https://www.youtube.com/embed/bMmirsbJPEc"
               title="Preview Your BornPurpose AI Avatar Coach"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
