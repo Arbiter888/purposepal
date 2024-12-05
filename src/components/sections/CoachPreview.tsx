@@ -12,7 +12,7 @@ const coachData = {
     description: "Transform your mental well-being with personalized guidance from your dedicated AI-powered Wellness Coach. Get expert advice on stress management, mindfulness, and emotional balance.",
     gradient: "from-green-400 via-cyan-500 to-blue-500",
     tags: ["Stress Management", "Mindfulness", "Emotional Balance", "Personal Growth"],
-    videoUrl: "https://customer-6bwzxcz6kiyvxgqq.cloudflarestream.com/9a9d1d2f8d76cd6d8f4a7901ad44c2f3/manifest/video.m3u8",
+    videoUrl: "https://www.youtube.com/embed/GkOue0KxWaQ",
     backgroundImage: "/lovable-uploads/440c76a5-97ea-4586-87db-b7ad21444b16.png"
   },
   nutrition: {
@@ -20,7 +20,7 @@ const coachData = {
     description: "Transform your dietary habits with personalized guidance from your dedicated AI-powered Nutrition Coach. Get expert advice on meal planning, portion control, and healthy eating strategies.",
     gradient: "from-pink-500 via-purple-500 to-indigo-500",
     tags: ["Meal Planning", "Portion Control", "Dietary Analysis", "Nutritional Guidance"],
-    videoUrl: "https://customer-6bwzxcz6kiyvxgqq.cloudflarestream.com/9a9d1d2f8d76cd6d8f4a7901ad44c2f3/manifest/video.m3u8",
+    videoUrl: "https://www.youtube.com/embed/_9x2l119RGw",
     backgroundImage: "/lovable-uploads/4335b249-4c44-4b85-bbbf-fa72d693bc4f.png"
   },
   spiritual: {
@@ -28,7 +28,7 @@ const coachData = {
     description: "Transform your spiritual journey with personalized guidance from your dedicated AI-powered Spiritual Coach. Get expert advice on meditation, mindfulness, and personal development.",
     gradient: "from-yellow-400 via-orange-500 to-red-500",
     tags: ["Meditation", "Mindfulness", "Spiritual Growth", "Inner Peace"],
-    videoUrl: "https://customer-6bwzxcz6kiyvxgqq.cloudflarestream.com/9a9d1d2f8d76cd6d8f4a7901ad44c2f3/manifest/video.m3u8",
+    videoUrl: "https://www.youtube.com/embed/4cmO7dEGQBk",
     backgroundImage: "/lovable-uploads/440c76a5-97ea-4586-87db-b7ad21444b16.png"
   },
   fitness: {
@@ -36,7 +36,7 @@ const coachData = {
     description: "Transform your fitness journey with personalized guidance from your dedicated AI-powered Fitness Coach. Get expert advice on workouts, form correction, and exercise planning.",
     gradient: "from-lime-400 via-emerald-500 to-teal-500",
     tags: ["Workout Planning", "Form Guidance", "Exercise Tips", "Fitness Goals"],
-    videoUrl: "https://customer-6bwzxcz6kiyvxgqq.cloudflarestream.com/9a9d1d2f8d76cd6d8f4a7901ad44c2f3/manifest/video.m3u8",
+    videoUrl: "https://www.youtube.com/embed/O0o-Y25rv7c",
     backgroundImage: "/lovable-uploads/2b866cad-b0b6-4291-b93e-404f8ef8e0e4.png"
   },
   financial: {
@@ -44,7 +44,7 @@ const coachData = {
     description: "Transform your financial future with personalized guidance from your dedicated AI-powered Financial Coach. Get expert advice on budgeting, investments, and wealth building strategies.",
     gradient: "from-blue-400 via-indigo-500 to-purple-500",
     tags: ["Investment Planning", "Budgeting", "Wealth Building", "Tax Strategy"],
-    videoUrl: "https://customer-6bwzxcz6kiyvxgqq.cloudflarestream.com/9a9d1d2f8d76cd6d8f4a7901ad44c2f3/manifest/video.m3u8",
+    videoUrl: "https://www.youtube.com/embed/UiJ0OfgSt1M",
     backgroundImage: "/lovable-uploads/e1950664-3053-4b9a-aed1-78f46c6e7573.png"
   },
 };
@@ -106,17 +106,13 @@ const CoachPreview = ({ activeService }: CoachPreviewProps) => {
         <div className="relative">
           <div className={`absolute inset-0 bg-gradient-to-r ${coach.gradient.replace(/(from-|via-|to-)/g, "$1opacity-20")} rounded-3xl blur-3xl`} />
           <div className="relative bg-muted/80 rounded-3xl overflow-hidden">
-            <video 
+            <iframe 
               className="w-full aspect-video object-cover rounded-2xl"
-              autoPlay 
-              loop 
-              muted 
-              playsInline
-            >
-              <source src={coach.videoUrl} type="application/x-mpegURL" />
-              Your browser does not support the video tag.
-            </video>
-            <div className="absolute inset-0 bg-black/20" />
+              src={coach.videoUrl}
+              title={`Meet your ${coach.title}`}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
             <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
