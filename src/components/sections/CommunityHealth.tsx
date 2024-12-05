@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Heart, Users, Handshake, Brain, Target, ArrowRight, Sparkles } from "lucide-react";
+import { Heart, Users, Handshake, Brain, Target, ArrowRight, Sparkles, MessageSquare, UserCheck, Zap } from "lucide-react";
 import { ConnectionCategory } from "../community/ConnectionCategory";
 import { ProcessStep } from "../community/ProcessStep";
 
@@ -73,28 +73,49 @@ const CommunityHealth = () => {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4 }}
-        className="mt-16 max-w-4xl mx-auto glass p-8 rounded-2xl"
+        className="mt-16 max-w-4xl mx-auto"
       >
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/10 mb-6">
-          <Sparkles className="w-4 h-4 text-secondary" />
-          <span className="text-sm font-medium text-secondary">How AI Matching Works</span>
+        <div className="text-center mb-12">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/10 mb-6">
+            <Sparkles className="w-4 h-4 text-secondary" />
+            <span className="text-sm font-medium text-secondary">How AI Matching Works</span>
+          </div>
+          <h3 className="text-3xl font-bold mb-4">Intelligent Connection Process</h3>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            Our sophisticated AI system uses multiple layers of analysis to ensure meaningful and compatible connections.
+          </p>
         </div>
         
         <div className="space-y-6">
           <ProcessStep
+            index={0}
             icon={Brain}
             title="Deep Understanding"
-            description="AI coaches analyze your goals, interests, and lifestyle patterns"
+            description="AI analyzes your personality traits, communication style, and life experiences through natural conversations"
           />
           <ProcessStep
+            index={1}
             icon={Target}
             title="Precise Matching"
-            description="Advanced algorithms find meaningful connections based on compatibility"
+            description="Advanced algorithms identify potential connections based on compatibility scores across multiple dimensions"
           />
           <ProcessStep
-            icon={ArrowRight}
-            title="Guided Introductions"
-            description="AI coaches facilitate natural connections and conversations"
+            index={2}
+            icon={MessageSquare}
+            title="Guided Conversations"
+            description="AI coaches facilitate initial interactions and suggest relevant topics to discuss"
+          />
+          <ProcessStep
+            index={3}
+            icon={UserCheck}
+            title="Compatibility Verification"
+            description="Continuous analysis of interaction patterns to ensure meaningful connection development"
+          />
+          <ProcessStep
+            index={4}
+            icon={Zap}
+            title="Dynamic Adaptation"
+            description="AI learns from your feedback and interactions to improve future matches and suggestions"
           />
         </div>
       </motion.div>
