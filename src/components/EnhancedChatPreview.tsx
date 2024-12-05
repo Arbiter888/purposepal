@@ -22,11 +22,36 @@ interface EnhancedChatPreviewProps {
 }
 
 const coaches = [
-  { id: "wellness", name: "Ava", gradient: "from-green-400 via-cyan-500 to-blue-500" },
-  { id: "nutrition", name: "Olivia", gradient: "from-pink-500 via-purple-500 to-indigo-500" },
-  { id: "spiritual", name: "Amara", gradient: "from-yellow-400 via-orange-500 to-red-500" },
-  { id: "fitness", name: "Amber", gradient: "from-lime-400 via-emerald-500 to-teal-500" },
-  { id: "financial", name: "Maya", gradient: "from-blue-400 via-indigo-500 to-purple-500" },
+  { 
+    id: "wellness", 
+    name: "Ava", 
+    gradient: "from-green-400 via-cyan-500 to-blue-500",
+    bgGradient: "bg-gradient-to-r from-green-400 via-cyan-500 to-blue-500"
+  },
+  { 
+    id: "nutrition", 
+    name: "Olivia", 
+    gradient: "from-pink-500 via-purple-500 to-indigo-500",
+    bgGradient: "bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500"
+  },
+  { 
+    id: "spiritual", 
+    name: "Amara", 
+    gradient: "from-yellow-400 via-orange-500 to-red-500",
+    bgGradient: "bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500"
+  },
+  { 
+    id: "fitness", 
+    name: "Amber", 
+    gradient: "from-lime-400 via-emerald-500 to-teal-500",
+    bgGradient: "bg-gradient-to-r from-lime-400 via-emerald-500 to-teal-500"
+  },
+  { 
+    id: "financial", 
+    name: "Maya", 
+    gradient: "from-blue-400 via-indigo-500 to-purple-500",
+    bgGradient: "bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-500"
+  },
 ];
 
 const EnhancedChatPreview = ({ onServiceChange }: EnhancedChatPreviewProps) => {
@@ -61,7 +86,7 @@ const EnhancedChatPreview = ({ onServiceChange }: EnhancedChatPreviewProps) => {
           <DropdownMenuTrigger asChild>
             <Button 
               variant="outline" 
-              className="w-full h-14 text-lg font-medium bg-gradient-to-r from-[#4ADE80] to-[#2DD4BF] hover:opacity-90 transition-opacity rounded-2xl border-none text-white"
+              className={`w-full h-14 text-lg font-medium ${activeCoach.bgGradient} hover:opacity-90 transition-opacity rounded-2xl border-none text-white`}
             >
               {activeCoach.name}
               <ChevronDown className="ml-2 h-5 w-5" />
@@ -71,12 +96,14 @@ const EnhancedChatPreview = ({ onServiceChange }: EnhancedChatPreviewProps) => {
             {coaches.map((coach) => (
               <DropdownMenuItem
                 key={coach.id}
-                className={`text-lg py-3 px-4 focus:bg-white/10 focus:text-white cursor-pointer ${
+                className={`text-lg py-3 px-4 focus:bg-white/10 focus:text-white cursor-pointer group ${
                   activeCoach.id === coach.id ? 'bg-white/10' : ''
                 }`}
                 onClick={() => handleCoachChange(coach)}
               >
-                {coach.name}
+                <div className={`w-full h-full bg-gradient-to-r ${coach.gradient} bg-clip-text text-transparent group-hover:text-white transition-colors`}>
+                  {coach.name}
+                </div>
               </DropdownMenuItem>
             ))}
           </DropdownMenuContent>
