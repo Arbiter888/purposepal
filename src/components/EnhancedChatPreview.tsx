@@ -48,31 +48,31 @@ const EnhancedChatPreview = ({ onServiceChange }: EnhancedChatPreviewProps) => {
             value="wellness" 
             className="w-full text-sm sm:text-base data-[state=active]:bg-gradient-to-r data-[state=active]:from-green-400 data-[state=active]:via-cyan-500 data-[state=active]:to-blue-500 data-[state=active]:bg-opacity-20"
           >
-            Ava (Wellness)
+            Ava
           </TabsTrigger>
           <TabsTrigger 
             value="nutrition" 
             className="w-full text-sm sm:text-base data-[state=active]:bg-gradient-to-r data-[state=active]:from-pink-500 data-[state=active]:via-purple-500 data-[state=active]:to-indigo-500 data-[state=active]:bg-opacity-20"
           >
-            Olivia (Nutrition)
+            Olivia
           </TabsTrigger>
           <TabsTrigger 
             value="spiritual" 
             className="w-full text-sm sm:text-base data-[state=active]:bg-gradient-to-r data-[state=active]:from-yellow-400 data-[state=active]:via-orange-500 data-[state=active]:to-red-500 data-[state=active]:bg-opacity-20"
           >
-            Amara (Spiritual)
+            Amara
           </TabsTrigger>
           <TabsTrigger 
             value="fitness" 
             className="w-full text-sm sm:text-base data-[state=active]:bg-gradient-to-r data-[state=active]:from-lime-400 data-[state=active]:via-emerald-500 data-[state=active]:to-teal-500 data-[state=active]:bg-opacity-20"
           >
-            Amber (Fitness)
+            Amber
           </TabsTrigger>
           <TabsTrigger 
             value="financial" 
             className="w-full text-sm sm:text-base data-[state=active]:bg-gradient-to-r data-[state=active]:from-blue-400 data-[state=active]:via-indigo-500 data-[state=active]:to-purple-500 data-[state=active]:bg-opacity-20"
           >
-            Maya (Financial)
+            Maya
           </TabsTrigger>
         </TabsList>
 
