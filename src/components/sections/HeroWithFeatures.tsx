@@ -63,7 +63,7 @@ const HeroWithFeatures = () => {
             transition={{ delay: 0.6 }}
             className="text-gradient-aurora block mt-2 relative"
           >
-            Wholeness Begins Here
+            A New Life
           </motion.span>
         </motion.h1>
 
@@ -74,7 +74,7 @@ const HeroWithFeatures = () => {
           className="mt-8 text-xl md:text-2xl text-muted-foreground/90 max-w-2xl mx-auto leading-relaxed glass p-6 rounded-xl"
         >
           Join Presence and their carefully chosen AI Avatar Coach friends on a transformative journey. 
-          Together, they'll guide you through wellness, nutrition, spiritual growth, fitness, and financial success.
+          Connect with like-minded members to live life together as they guide you through wellness, nutrition, spiritual growth, fitness, and financial success.
         </motion.p>
 
         <motion.div
