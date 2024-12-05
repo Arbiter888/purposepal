@@ -59,7 +59,7 @@ const FeaturesShowcase = () => {
         transition={{ duration: 0.6 }}
         className="text-center mb-16 relative z-10"
       >
-        <h2 className="text-4xl font-bold text-gradient-aurora mb-4">Meet Your AI Coaches</h2>
+        <h2 className="text-4xl font-bold text-gradient-aurora mb-4">Meet Ava, Your Wellness Coach</h2>
         <p className="text-xl text-muted-foreground/90 max-w-2xl mx-auto mb-12">
           Meet your dedicated BornPurpose AI Avatar Coach - your personal guide to transformation. Experience 24/7 support and expert guidance tailored just for you. <span className="text-gradient-sunshine font-semibold">Save up to ${totalMonthlySavings}+ monthly</span> compared to traditional coaching services.
         </p>
