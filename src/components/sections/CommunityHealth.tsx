@@ -1,5 +1,35 @@
 import { motion } from "framer-motion";
-import { Heart, Users, Handshake, Brain, Target, ArrowRight } from "lucide-react";
+import { Heart, Users, Handshake, Brain, Target, ArrowRight, Bot, Sparkles } from "lucide-react";
+
+const featuredMatches = [
+  {
+    name: "Sarah Chen",
+    type: "Business Match",
+    image: "https://i.pravatar.cc/150?img=47",
+    reason: "Both focused on sustainable business practices and mindful leadership",
+    interests: ["Entrepreneurship", "Wellness", "Innovation"],
+    icon: Handshake,
+    iconColor: "text-cyan-500",
+  },
+  {
+    name: "Michael Rivera",
+    type: "Friendship Match",
+    image: "https://i.pravatar.cc/150?img=68",
+    reason: "Shared interest in personal development and spiritual growth",
+    interests: ["Meditation", "Fitness", "Reading"],
+    icon: Users,
+    iconColor: "text-purple-500",
+  },
+  {
+    name: "Emma Thompson",
+    type: "Romantic Match",
+    image: "https://i.pravatar.cc/150?img=45",
+    reason: "Compatible life goals and values alignment",
+    interests: ["Travel", "Wellness", "Arts"],
+    icon: Heart,
+    iconColor: "text-pink-500",
+  },
+];
 
 const CommunityHealth = () => {
   return (
@@ -16,7 +46,7 @@ const CommunityHealth = () => {
         </p>
       </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto mb-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -56,6 +86,68 @@ const CommunityHealth = () => {
           </p>
         </motion.div>
       </div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.2 }}
+        className="max-w-7xl mx-auto mb-16"
+      >
+        <div className="text-center mb-8">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/10 mb-4">
+            <Sparkles className="w-4 h-4 text-secondary" />
+            <span className="text-sm font-medium text-secondary">Featured Matches</span>
+          </div>
+          <h3 className="text-2xl font-semibold text-gradient-neon">
+            Example Matches Suggested by AI Coaches
+          </h3>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {featuredMatches.map((match, index) => (
+            <motion.div
+              key={match.name}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1 }}
+              className="glass p-6 rounded-xl hover:scale-105 transition-transform duration-300"
+            >
+              <div className="flex items-start gap-4 mb-4">
+                <img
+                  src={match.image}
+                  alt={match.name}
+                  className="w-16 h-16 rounded-full object-cover ring-2 ring-white/20"
+                />
+                <div>
+                  <h4 className="font-semibold text-gradient">{match.name}</h4>
+                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <match.icon className={`w-4 h-4 ${match.iconColor}`} />
+                    <span>{match.type}</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="mb-4">
+                <div className="flex items-start gap-2 text-sm text-muted-foreground">
+                  <Bot className="w-4 h-4 mt-1 text-secondary" />
+                  <p>{match.reason}</p>
+                </div>
+              </div>
+
+              <div className="flex flex-wrap gap-2">
+                {match.interests.map((interest) => (
+                  <span
+                    key={interest}
+                    className="text-xs px-3 py-1 rounded-full glass bg-white/5"
+                  >
+                    {interest}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </motion.div>
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
