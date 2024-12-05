@@ -52,19 +52,19 @@ const EnhancedChatPreview = ({ onServiceChange }: EnhancedChatPreviewProps) => {
       <Tabs defaultValue="wellness" className="w-full" onValueChange={handleTabChange}>
         <TabsList className="grid w-full grid-cols-5 mb-8">
           <TabsTrigger value="wellness" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-green-400 data-[state=active]:via-cyan-500 data-[state=active]:to-blue-500 data-[state=active]:bg-opacity-20">
-            Wellness
+            Ava (Wellness)
           </TabsTrigger>
           <TabsTrigger value="nutrition" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-pink-500 data-[state=active]:via-purple-500 data-[state=active]:to-indigo-500 data-[state=active]:bg-opacity-20">
-            Nutrition
+            Olivia (Nutrition)
           </TabsTrigger>
           <TabsTrigger value="spiritual" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-yellow-400 data-[state=active]:via-orange-500 data-[state=active]:to-red-500 data-[state=active]:bg-opacity-20">
-            Spiritual
+            Amara (Spiritual)
           </TabsTrigger>
           <TabsTrigger value="fitness" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-lime-400 data-[state=active]:via-emerald-500 data-[state=active]:to-teal-500 data-[state=active]:bg-opacity-20">
-            Fitness
+            Amber (Fitness)
           </TabsTrigger>
           <TabsTrigger value="financial" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-blue-400 data-[state=active]:via-indigo-500 data-[state=active]:to-purple-500 data-[state=active]:bg-opacity-20">
-            Financial
+            Maya (Financial)
           </TabsTrigger>
         </TabsList>
 

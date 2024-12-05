@@ -8,6 +8,7 @@ interface CoachPreviewProps {
 
 const coachData = {
   wellness: {
+    name: "Ava",
     title: "Mental Wellness Coach",
     description: "Transform your mental well-being with personalized guidance from your dedicated AI-powered Wellness Coach. Get expert advice on stress management, mindfulness, and emotional balance.",
     gradient: "from-green-400 via-cyan-500 to-blue-500",
@@ -16,6 +17,7 @@ const coachData = {
     backgroundImage: "/lovable-uploads/440c76a5-97ea-4586-87db-b7ad21444b16.png"
   },
   nutrition: {
+    name: "Olivia",
     title: "Nutrition Expert",
     description: "Transform your dietary habits with personalized guidance from your dedicated AI-powered Nutrition Coach. Get expert advice on meal planning, portion control, and healthy eating strategies.",
     gradient: "from-pink-500 via-purple-500 to-indigo-500",
@@ -24,6 +26,7 @@ const coachData = {
     backgroundImage: "/lovable-uploads/4335b249-4c44-4b85-bbbf-fa72d693bc4f.png"
   },
   spiritual: {
+    name: "Amara",
     title: "Spiritual Guide",
     description: "Transform your spiritual journey with personalized guidance from your dedicated AI-powered Spiritual Coach. Get expert advice on meditation, mindfulness, and personal development.",
     gradient: "from-yellow-400 via-orange-500 to-red-500",
@@ -32,6 +35,7 @@ const coachData = {
     backgroundImage: "/lovable-uploads/440c76a5-97ea-4586-87db-b7ad21444b16.png"
   },
   fitness: {
+    name: "Amber",
     title: "Fitness Expert",
     description: "Transform your fitness journey with personalized guidance from your dedicated AI-powered Fitness Coach. Get expert advice on workouts, form correction, and exercise planning.",
     gradient: "from-lime-400 via-emerald-500 to-teal-500",
@@ -40,6 +44,7 @@ const coachData = {
     backgroundImage: "/lovable-uploads/2b866cad-b0b6-4291-b93e-404f8ef8e0e4.png"
   },
   financial: {
+    name: "Maya",
     title: "Financial Coach",
     description: "Transform your financial future with personalized guidance from your dedicated AI-powered Financial Coach. Get expert advice on budgeting, investments, and wealth building strategies.",
     gradient: "from-blue-400 via-indigo-500 to-purple-500",
@@ -67,7 +72,7 @@ const CoachPreview = ({ activeService }: CoachPreviewProps) => {
       <div className="grid md:grid-cols-2 gap-8 items-center relative z-10">
         <div className="space-y-6">
           <h3 className={`text-3xl font-bold bg-gradient-to-r ${coach.gradient} bg-clip-text text-transparent`}>
-            Meet Your {coach.title}
+            Meet {coach.name}, your {coach.title}
           </h3>
           <p className="text-lg text-muted-foreground">
             {coach.description}

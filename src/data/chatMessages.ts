@@ -1,7 +1,7 @@
 export const wellnessMessages = [
   {
     type: "ai",
-    content: "Hi friend! I'm Presence, your AI Avatar Coach. I notice you're interested in wellness support. I can help connect you with:\n\n1. Dr. Sarah, our expert who specializes in holistic well-being\n2. Jenny and Michael, community members who recently overcame similar challenges\n\nHow can we support you today?",
+    content: "Hi friend! I'm Ava, your AI Wellness Coach. I notice you're interested in wellness support. I can help connect you with:\n\n1. Dr. Sarah, our expert who specializes in holistic well-being\n2. Jenny and Michael, community members who recently overcame similar challenges\n\nHow can we support you today?",
     service: "wellness"
   },
   {
@@ -18,7 +18,7 @@ export const wellnessMessages = [
 export const nutritionMessages = [
   {
     type: "ai",
-    content: "Hello! I'm Presence, your AI Avatar Coach, and I'm excited to support your nutrition journey! I can connect you with:\n\n1. Our nutrition experts for professional guidance\n2. Sarah and David, community members who achieved their health goals\n\nWhat aspects of nutrition would you like to explore?",
+    content: "Hello! I'm Olivia, your AI Nutrition Coach, and I'm excited to support your nutrition journey! I can connect you with:\n\n1. Our nutrition experts for professional guidance\n2. Sarah and David, community members who achieved their health goals\n\nWhat aspects of nutrition would you like to explore?",
     service: "nutrition"
   },
   {
@@ -35,7 +35,7 @@ export const nutritionMessages = [
 export const spiritualMessages = [
   {
     type: "ai",
-    content: "Blessed to meet you! I'm Presence, your AI Avatar Coach, and I'm here to support your spiritual journey. I can connect you with:\n\n1. Our spiritual mentors for faith-based guidance\n2. Maria and John, community members on similar spiritual paths\n\nWhat's on your heart today?",
+    content: "Blessed to meet you! I'm Amara, your AI Spiritual Guide, and I'm here to support your spiritual journey. I can connect you with:\n\n1. Our spiritual mentors for faith-based guidance\n2. Maria and John, community members on similar spiritual paths\n\nWhat's on your heart today?",
     service: "spiritual"
   },
   {
@@ -52,7 +52,7 @@ export const spiritualMessages = [
 export const fitnessMessages = [
   {
     type: "ai",
-    content: "Hi there! I'm Presence, your AI Avatar Coach, and I'm excited to be your fitness companion! I can connect you with:\n\n1. Our certified fitness experts for professional guidance\n2. Tom and Lisa, community members who achieved similar fitness goals\n\nWhat are your fitness goals?",
+    content: "Hi there! I'm Amber, your AI Fitness Coach, and I'm excited to be your fitness companion! I can connect you with:\n\n1. Our certified fitness experts for professional guidance\n2. Tom and Lisa, community members who achieved similar fitness goals\n\nWhat are your fitness goals?",
     service: "fitness"
   },
   {
@@ -69,7 +69,7 @@ export const fitnessMessages = [
 export const financialMessages = [
   {
     type: "ai",
-    content: "Hello! I'm Presence, your AI Avatar Coach, and I'm here to help you navigate your financial journey! I can connect you with:\n\n1. Our financial experts for professional guidance\n2. Robert and Emma, community members who achieved financial freedom\n\nWhat would you like to focus on?",
+    content: "Hello! I'm Maya, your AI Financial Coach, and I'm here to help you navigate your financial journey! I can connect you with:\n\n1. Our financial experts for professional guidance\n2. Robert and Emma, community members who achieved financial freedom\n\nWhat would you like to focus on?",
     service: "financial"
   },
   {
