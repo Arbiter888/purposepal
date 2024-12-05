@@ -1,40 +1,111 @@
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useSpring } from "framer-motion";
+import { useEffect, useState } from "react";
+
+interface Particle {
+  id: number;
+  x: number;
+  y: number;
+  initialX: number;
+  initialY: number;
+  size: number;
+  color: string;
+}
 
 export const FloatingParticles = () => {
-  // Array of gradient combinations using our predefined colors
-  const gradients = [
-    'linear-gradient(to right, #f59e0b, #f97316, #ef4444)', // Sunshine
-    'linear-gradient(to right, #8B5CF6, #D946EF)', // Purple to Pink
-    'linear-gradient(to right, #0EA5E9, #33C3F0)', // Ocean Blues
-    'linear-gradient(to right, #F2FCE2, #FEF7CD)', // Soft Green to Yellow
-    'linear-gradient(to right, #FEC6A1, #FFDEE2)', // Soft Orange to Pink
+  const [particles, setParticles] = useState<Particle[]>([]);
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+  const smoothX = useSpring(mouseX, { damping: 50, stiffness: 400 });
+  const smoothY = useSpring(mouseY, { damping: 50, stiffness: 400 });
+
+  // Colors that match our theme
+  const particleColors = [
+    'from-secondary via-accent to-secondary',
+    'from-tertiary via-accent to-tertiary',
+    'from-highlight via-secondary to-highlight',
+    'from-accent via-tertiary to-accent',
+    'from-secondary/80 via-highlight to-secondary/80',
   ];
 
+  useEffect(() => {
+    // Initialize particles
+    const newParticles = Array.from({ length: 50 }, (_, i) => ({
+      id: i,
+      x: Math.random() * window.innerWidth,
+      y: Math.random() * window.innerHeight,
+      initialX: Math.random() * window.innerWidth,
+      initialY: Math.random() * window.innerHeight,
+      size: Math.random() * 3 + 1,
+      color: particleColors[Math.floor(Math.random() * particleColors.length)],
+    }));
+    setParticles(newParticles);
+
+    // Handle mouse movement
+    const handleMouseMove = (e: MouseEvent) => {
+      mouseX.set(e.clientX);
+      mouseY.set(e.clientY);
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+
   return (
-    <div className="absolute inset-0 overflow-hidden">
-      {[...Array(30)].map((_, i) => (
+    <div className="fixed inset-0 pointer-events-none overflow-hidden">
+      {particles.map((particle) => (
         <motion.div
-          key={i}
-          initial={{ opacity: 0, y: Math.random() * 100 }}
+          key={particle.id}
+          className={`absolute rounded-full bg-gradient-to-r ${particle.color}`}
+          style={{
+            width: particle.size,
+            height: particle.size,
+            x: particle.initialX,
+            y: particle.initialY,
+            filter: 'blur(1px)',
+          }}
           animate={{
-            opacity: [0.2, 0.5, 0.2],
-            y: [-10, -500],
-            x: Math.sin(i) * 50,
+            x: [
+              particle.initialX,
+              particle.initialX + Math.sin(particle.id) * 100,
+              particle.initialX,
+            ],
+            y: [
+              particle.initialY,
+              particle.initialY + Math.cos(particle.id) * 100,
+              particle.initialY,
+            ],
+            scale: [1, 1.2, 1],
           }}
           transition={{
-            duration: 10 + Math.random() * 10,
+            duration: 5 + Math.random() * 5,
             repeat: Infinity,
-            delay: Math.random() * 5,
+            ease: "linear",
           }}
-          className="absolute w-1 h-1 rounded-full"
+          drag
+          dragConstraints={{
+            top: 0,
+            right: 0,
+            bottom: 0,
+            left: 0,
+          }}
+          dragElastic={0.2}
+          whileHover={{ scale: 1.5 }}
           style={{
-            left: `${Math.random() * 100}%`,
-            top: '100%',
-            background: gradients[i % gradients.length],
-            boxShadow: '0 0 10px rgba(245, 158, 11, 0.5)'
+            x: useMotionValue(particle.x),
+            y: useMotionValue(particle.y),
           }}
         />
       ))}
+      <motion.div
+        className="absolute w-96 h-96 rounded-full pointer-events-none"
+        style={{
+          background: "radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%)",
+          x: smoothX,
+          y: smoothY,
+          translateX: "-50%",
+          translateY: "-50%",
+        }}
+      />
     </div>
   );
 };
