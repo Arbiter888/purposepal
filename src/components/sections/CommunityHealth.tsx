@@ -53,7 +53,9 @@ const CommunityHealth = () => {
         transition={{ duration: 0.6 }}
         className="text-center mb-16"
       >
-        <h2 className="text-4xl font-bold text-gradient-neon mb-4">AI-Powered Community Matching</h2>
+        <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gradient-neon mb-4">
+          AI-Powered Community Matching
+        </h2>
         <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
           Our AI coaches analyze your goals, values, and journey to connect you with like-minded individuals who can enrich your path to wellness and growth.
         </p>
