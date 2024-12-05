@@ -18,7 +18,7 @@ const ExperiencePlatform = () => {
         >
           Meet Presence's AI Avatar Coach Friends
         </motion.span>
-        <h2 className="text-4xl md:text-5xl font-bold text-gradient-purple mb-6">Experience Presence's Circle of Support</h2>
+        <h2 className="text-4xl md:text-5xl font-bold text-gradient-purple mb-6">Experience the Presence of More Support</h2>
         <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
           Presence has carefully chosen these AI Avatar Coaches as trusted friends to provide comprehensive support across all aspects of your life journey
         </p>
