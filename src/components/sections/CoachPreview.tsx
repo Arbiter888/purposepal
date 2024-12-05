@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { MessageSquare, Star, Video } from "lucide-react";
+import { MessageSquare, Video } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 interface CoachPreviewProps {
@@ -68,7 +68,7 @@ const CoachPreview = ({ activeService }: CoachPreviewProps) => {
       <div className="relative z-10 flex flex-col h-full">
         <div className="space-y-4 mb-6">
           <motion.h3 
-            className={`text-2xl md:text-3xl font-bold bg-gradient-to-r ${coach.gradient} bg-clip-text text-transparent`}
+            className={`text-3xl md:text-4xl font-bold text-[#4ADE80] mb-2`}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
@@ -76,7 +76,7 @@ const CoachPreview = ({ activeService }: CoachPreviewProps) => {
             Meet {coach.name}
           </motion.h3>
           <motion.p 
-            className="text-lg text-muted-foreground"
+            className="text-base md:text-lg text-white/90"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
@@ -109,7 +109,7 @@ const CoachPreview = ({ activeService }: CoachPreviewProps) => {
           {coach.tags.map((tag, index) => (
             <span
               key={tag}
-              className={`px-3 py-1 rounded-full text-sm bg-gradient-to-r ${coach.gradient} bg-opacity-10 backdrop-blur-sm`}
+              className="px-4 py-2 rounded-full text-sm bg-[#4ADE80]/20 text-[#4ADE80]"
             >
               {tag}
             </span>
@@ -123,16 +123,16 @@ const CoachPreview = ({ activeService }: CoachPreviewProps) => {
           transition={{ delay: 0.6 }}
         >
           <Button 
-            className={`w-full bg-gradient-to-r ${coach.gradient} hover:opacity-90 transition-opacity`}
+            className="w-full h-14 text-base font-medium bg-gradient-to-r from-[#4ADE80] to-[#2DD4BF] hover:opacity-90 transition-opacity rounded-2xl"
           >
-            <MessageSquare className="w-4 h-4 mr-2" />
+            <MessageSquare className="w-5 h-5 mr-2" />
             Chat Now
           </Button>
           <Button 
             variant="outline" 
-            className="w-full border-blue-400/20 hover:bg-white/5"
+            className="w-full h-14 text-base font-medium border-none bg-white/5 hover:bg-white/10 rounded-2xl"
           >
-            <Video className="w-4 h-4 mr-2" />
+            <Video className="w-5 h-5 mr-2" />
             Schedule Video Call
           </Button>
         </motion.div>
