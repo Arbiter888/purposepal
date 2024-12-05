@@ -1,12 +1,37 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import ParticleSystem from "./hero/ParticleSystem";
 
 const HeroSection = () => {
   return (
     <section className="min-h-screen section-padding relative overflow-hidden flex items-center">
-      {/* Interactive particle background */}
-      <ParticleSystem />
+      {/* Enhanced animated background elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <motion.div
+          animate={{
+            scale: [1, 1.2, 1],
+            opacity: [0.3, 0.5, 0.3],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="absolute -top-1/2 -left-1/2 w-full h-full bg-gradient-to-r from-secondary/20 via-accent/20 to-secondary/20 rounded-full blur-3xl"
+        />
+        <motion.div
+          animate={{
+            scale: [1, 1.1, 1],
+            opacity: [0.2, 0.4, 0.2],
+          }}
+          transition={{
+            duration: 6,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 1,
+          }}
+          className="absolute -bottom-1/2 -right-1/2 w-full h-full bg-gradient-to-l from-secondary/20 via-accent/20 to-secondary/20 rounded-full blur-3xl"
+        />
+      </div>
 
       {/* Main content with enhanced animations */}
       <motion.div
