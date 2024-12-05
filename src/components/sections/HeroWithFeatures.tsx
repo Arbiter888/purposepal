@@ -46,7 +46,7 @@ const HeroWithFeatures = () => {
           className="flex items-center justify-center gap-2 mb-6"
         >
           <span className="text-2xl md:text-3xl font-medium inline-block">
-            Experience <span className="text-gradient-sunshine">the Presence</span> of More Support
+            Design your dream life with <span className="text-gradient-sunshine">BornPurpose</span>
           </span>
         </motion.div>
         
