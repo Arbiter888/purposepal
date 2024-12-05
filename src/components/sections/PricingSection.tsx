@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Check, MessageSquare, Users, Crown, Globe, DollarSign } from "lucide-react";
+import { Check, Users, Crown } from "lucide-react";
 
 const plans = [
   {
@@ -19,7 +19,8 @@ const plans = [
     credits: "200 credits/month",
     creditValue: "Perfect for regular AI coaching and guidance",
     savings: "Save up to $450/month",
-    comparison: "Traditional coaching: $480/month vs. $29/month for AI-powered support"
+    comparison: "Traditional coaching: $480/month vs. $29/month for AI-powered support",
+    buttonColor: "text-gradient-candy"
   },
   {
     name: "Whole Life",
@@ -40,7 +41,8 @@ const plans = [
     credits: "500 credits/month",
     creditValue: "Full access to AI coaching and expert network",
     savings: "Save up to $900/month",
-    comparison: "Traditional services: $1000+/month vs. $99/month for comprehensive support"
+    comparison: "Traditional services: $1000+/month vs. $99/month for comprehensive support",
+    buttonColor: "text-gradient-sunshine"
   },
   {
     name: "Life Together",
@@ -62,17 +64,15 @@ const plans = [
     credits: "Unlimited credits",
     creditValue: "Complete AI and community support for transformation",
     savings: "Save up to $2000/month",
-    comparison: "Traditional programs: $2200+/month vs. $199/month for AI-powered community"
-  },
+    comparison: "Traditional programs: $2200+/month vs. $199/month for AI-powered community",
+    buttonColor: "text-gradient-aurora"
+  }
 ];
 
 const PricingSection = () => {
-  const handleGetStarted = (planName: string, price: string) => {
-    const subject = `Get Started with BornPurpose ${planName} Plan`;
-    const body = `Hello,\n\nI would like to get started with the ${planName} plan at ${price}/month.\n\nPlease provide me with more information about getting started.`;
-    
-    const mailtoLink = `mailto:membership@bornpurpose.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    window.location.href = mailtoLink;
+  const handleGetStarted = (planName: string) => {
+    // Handle the get started action
+    console.log(`Getting started with ${planName} plan`);
   };
 
   return (
@@ -81,93 +81,56 @@ const PricingSection = () => {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.6 }}
-        className="text-center mb-16 relative z-10"
+        className="text-center mb-16"
       >
-        <h2 className="text-4xl font-bold text-gradient-sunshine">Choose Your Journey</h2>
-        <p className="mt-4 text-xl text-muted-foreground">
+        <h2 className="text-4xl font-bold text-gradient-sunshine mb-4">Choose Your Journey</h2>
+        <p className="text-xl text-muted-foreground">
           Select the plan that best fits your transformation goals
         </p>
       </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto relative z-10">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
         {plans.map((plan, index) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: index * 0.1 }}
-            className={`glass p-8 rounded-2xl hover-lift relative backdrop-blur-lg 
-              ${plan.name === "Pro" ? "border-2 border-secondary/50" : "border border-white/10"}
-              before:absolute before:inset-0 before:rounded-2xl before:bg-gradient-to-b before:from-white/5 before:to-transparent before:pointer-events-none
-              after:absolute after:inset-0 after:rounded-2xl after:bg-gradient-to-t after:from-white/5 after:to-transparent after:pointer-events-none`}
+            className="glass p-8 rounded-2xl relative"
           >
-            <div className="relative">
-              <div className="flex items-center justify-center mb-6">
-                <div className="relative">
-                  <plan.icon className="w-12 h-12 text-gradient relative z-10" />
-                  <div className="absolute inset-0 bg-gradient-to-r from-secondary/20 to-accent/20 blur-xl" />
-                </div>
-              </div>
-              
-              <h3 className={`text-2xl font-semibold ${
-                plan.name === "Pro" 
-                  ? "text-gradient-candy"
-                  : plan.name === "Whole Life" 
-                    ? "text-gradient-sunshine"
-                    : "text-gradient-aurora"
-              } mb-2`}>{plan.name}</h3>
-              <p className="text-muted-foreground mb-4">{plan.description}</p>
-              <div className={`text-4xl font-bold ${
-                plan.name === "Pro" 
-                  ? "text-gradient-candy"
-                  : plan.name === "Whole Life"
-                    ? "text-gradient-sunshine"
-                    : "text-gradient-aurora"
-              } mb-6`}>
+            <div className="mb-8">
+              <h3 className={`text-2xl font-bold ${plan.buttonColor} mb-2`}>{plan.name}</h3>
+              <p className="text-muted-foreground text-sm mb-4">{plan.description}</p>
+              <div className={`text-4xl font-bold ${plan.buttonColor} mb-6`}>
                 {plan.price}<span className="text-lg">/month</span>
               </div>
-              
-              <div className="mb-6 p-4 glass rounded-xl">
-                <p className="text-lg font-semibold mb-2">{plan.credits}</p>
-                <p className="text-sm text-muted-foreground">{plan.creditValue}</p>
-              </div>
-
-              <div className="mb-6 p-4 glass rounded-xl bg-white/5">
-                <div className="flex items-center gap-2 mb-2">
-                  <DollarSign className="w-5 h-5 text-gradient-sunshine" />
-                  <p className="font-semibold text-gradient-sunshine">{plan.savings}</p>
-                </div>
-                <p className="text-sm text-muted-foreground/80">{plan.comparison}</p>
-              </div>
-              
-              <ul className="space-y-4 mb-8">
-                {plan.features.map((feature, featureIndex) => (
-                  <li key={featureIndex} className="flex items-center gap-2 group">
-                    <div className="relative">
-                      <Check className="h-5 w-5 text-secondary flex-shrink-0 relative z-10" />
-                      <div className="absolute inset-0 bg-secondary/20 blur-sm opacity-0 group-hover:opacity-100 transition-opacity" />
-                    </div>
-                    <span className="text-muted-foreground">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-              
-              <motion.button 
-                onClick={() => handleGetStarted(plan.name, plan.price)}
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className={`w-full glass px-6 py-3 rounded-full font-medium hover-lift transition-all duration-300
-                  border border-white/10 hover:border-white/20 backdrop-blur-lg
-                  ${plan.name === "Pro" 
-                    ? "text-gradient-candy" 
-                    : plan.name === "Whole Life"
-                      ? "text-gradient-sunshine"
-                      : "text-gradient-aurora"} 
-                  bg-gradient-to-r from-white/5 to-white/10 hover:from-white/10 hover:to-white/15`}
-              >
-                Get Started
-              </motion.button>
             </div>
+
+            <div className="glass p-4 rounded-xl mb-6">
+              <p className="font-semibold mb-1">{plan.credits}</p>
+              <p className="text-sm text-muted-foreground">{plan.creditValue}</p>
+            </div>
+
+            <div className="glass p-4 rounded-xl mb-6">
+              <p className={`font-semibold ${plan.buttonColor} mb-1`}>{plan.savings}</p>
+              <p className="text-sm text-muted-foreground">{plan.comparison}</p>
+            </div>
+
+            <ul className="space-y-3 mb-8">
+              {plan.features.map((feature, featureIndex) => (
+                <li key={featureIndex} className="flex items-center gap-2">
+                  <Check className="w-5 h-5 text-green-500 flex-shrink-0" />
+                  <span className="text-sm text-muted-foreground">{feature}</span>
+                </li>
+              ))}
+            </ul>
+
+            <button
+              onClick={() => handleGetStarted(plan.name)}
+              className={`w-full py-3 px-6 rounded-full glass ${plan.buttonColor} font-semibold transition-all duration-300 hover:scale-105`}
+            >
+              Get Started
+            </button>
           </motion.div>
         ))}
       </div>
