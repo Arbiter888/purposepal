@@ -106,13 +106,15 @@ const CoachPreview = ({ activeService }: CoachPreviewProps) => {
         <div className="relative">
           <div className={`absolute inset-0 bg-gradient-to-r ${coach.gradient.replace(/(from-|via-|to-)/g, "$1opacity-20")} rounded-3xl blur-3xl`} />
           <div className="relative bg-muted/80 rounded-3xl overflow-hidden">
-            <iframe 
-              className="w-full aspect-video object-cover rounded-2xl"
-              src={coach.videoUrl}
-              title={`Meet your ${coach.title}`}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
+            <div className="aspect-video rounded-2xl overflow-hidden">
+              <iframe 
+                src={coach.videoUrl}
+                title={`Meet your ${coach.title}`}
+                className="w-full h-full"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              />
+            </div>
             <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
