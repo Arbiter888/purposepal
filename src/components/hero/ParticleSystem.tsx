@@ -1,15 +1,6 @@
 import { useEffect, useRef } from "react";
 import p5 from "p5";
 
-interface Particle {
-  x: number;
-  y: number;
-  vx: number;
-  vy: number;
-  color: string;
-  size: number;
-}
-
 const ParticleSystem = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const sketchRef = useRef<p5>();
@@ -18,25 +9,29 @@ const ParticleSystem = () => {
     if (!containerRef.current) return;
 
     const sketch = (p: p5) => {
-      const particles: Particle[] = [];
+      const particles: Array<{
+        x: number;
+        y: number;
+        vx: number;
+        vy: number;
+        color: p5.Color;
+        size: number;
+      }> = [];
       const numParticles = 50;
-      let mouseX = 0;
-      let mouseY = 0;
-
-      // Colors from our theme
-      const colors = [
-        "#86B6B6", // secondary
-        "#E8A8A8", // accent
-        "#B8A8E8", // tertiary
-        "#A8E8D4", // highlight
-      ];
 
       p.setup = () => {
         const canvas = p.createCanvas(window.innerWidth, window.innerHeight);
         canvas.parent(containerRef.current!);
 
-        // Initialize particles
+        // Initialize particles with p5 color objects
         for (let i = 0; i < numParticles; i++) {
+          const colors = [
+            p.color(134, 182, 182, 100), // secondary
+            p.color(232, 168, 168, 100), // accent
+            p.color(184, 168, 232, 100), // tertiary
+            p.color(168, 232, 212, 100), // highlight
+          ];
+
           particles.push({
             x: p.random(0, p.width),
             y: p.random(0, p.height),
@@ -50,14 +45,12 @@ const ParticleSystem = () => {
 
       p.draw = () => {
         p.clear();
-        mouseX = p.mouseX;
-        mouseY = p.mouseY;
 
         // Update and draw particles
         particles.forEach((particle) => {
           // Add mouse interaction
-          const dx = mouseX - particle.x;
-          const dy = mouseY - particle.y;
+          const dx = p.mouseX - particle.x;
+          const dy = p.mouseY - particle.y;
           const distance = p.sqrt(dx * dx + dy * dy);
           
           if (distance < 100) {
@@ -85,14 +78,9 @@ const ParticleSystem = () => {
           if (particle.y < 0) particle.y = p.height;
           if (particle.y > p.height) particle.y = 0;
 
-          // Parse the hex color to RGB values
-          const r = parseInt(particle.color.slice(1, 3), 16);
-          const g = parseInt(particle.color.slice(3, 5), 16);
-          const b = parseInt(particle.color.slice(5, 7), 16);
-
-          // Draw particle with RGB values and alpha
+          // Draw particle
           p.noStroke();
-          p.fill(r, g, b, 64); // Using RGB values and alpha of 64 (25% opacity)
+          p.fill(particle.color);
           p.circle(particle.x, particle.y, particle.size);
         });
       };
