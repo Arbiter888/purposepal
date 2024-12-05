@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
-import { MessageSquare } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Bot, User, ChevronDown } from "lucide-react";
 import { useState } from "react";
 import {
   DropdownMenu,
@@ -8,6 +8,14 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
+import { 
+  wellnessMessages, 
+  nutritionMessages, 
+  spiritualMessages, 
+  fitnessMessages,
+  financialMessages,
+  serviceHighlight 
+} from "@/data/chatMessages";
 
 interface EnhancedChatPreviewProps {
   onServiceChange: (service: string) => void;
@@ -16,88 +24,33 @@ interface EnhancedChatPreviewProps {
 const coaches = [
   { 
     id: "wellness", 
-    name: "Ava",
-    title: "Wellness Coach",
+    name: "Ava", 
     gradient: "from-green-400 via-cyan-500 to-blue-500",
-    bgGradient: "bg-gradient-to-r from-green-400 via-cyan-500 to-blue-500",
-    examples: [
-      "How can I manage daily stress?",
-      "What are some good meditation practices?",
-      "Tips for better sleep habits?"
-    ],
-    capabilities: [
-      "Personalized wellness plans",
-      "Stress management techniques",
-      "Work-life balance guidance"
-    ]
+    bgGradient: "bg-gradient-to-r from-green-400 via-cyan-500 to-blue-500"
   },
   { 
     id: "nutrition", 
-    name: "Olivia",
-    title: "Nutrition Expert",
+    name: "Olivia", 
     gradient: "from-pink-500 via-purple-500 to-indigo-500",
-    bgGradient: "bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500",
-    examples: [
-      "How can I plan healthy meals?",
-      "What's a balanced breakfast?",
-      "Tips for portion control?"
-    ],
-    capabilities: [
-      "Meal planning assistance",
-      "Dietary recommendations",
-      "Nutritional guidance"
-    ]
+    bgGradient: "bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500"
   },
   { 
     id: "spiritual", 
-    name: "Amara",
-    title: "Spiritual Guide",
+    name: "Amara", 
     gradient: "from-yellow-400 via-orange-500 to-red-500",
-    bgGradient: "bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500",
-    examples: [
-      "How to start meditation?",
-      "Daily spiritual practices?",
-      "Finding inner peace?"
-    ],
-    capabilities: [
-      "Meditation guidance",
-      "Spiritual development",
-      "Mindfulness practices"
-    ]
+    bgGradient: "bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500"
   },
   { 
     id: "fitness", 
-    name: "Amber",
-    title: "Fitness Coach",
+    name: "Amber", 
     gradient: "from-lime-400 via-emerald-500 to-teal-500",
-    bgGradient: "bg-gradient-to-r from-lime-400 via-emerald-500 to-teal-500",
-    examples: [
-      "Best exercises for beginners?",
-      "How to improve flexibility?",
-      "Creating a workout routine?"
-    ],
-    capabilities: [
-      "Custom workout plans",
-      "Form guidance",
-      "Progress tracking"
-    ]
+    bgGradient: "bg-gradient-to-r from-lime-400 via-emerald-500 to-teal-500"
   },
   { 
     id: "financial", 
-    name: "Maya",
-    title: "Financial Advisor",
+    name: "Maya", 
     gradient: "from-blue-400 via-indigo-500 to-purple-500",
-    bgGradient: "bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-500",
-    examples: [
-      "How to start budgeting?",
-      "Investment tips for beginners?",
-      "Saving for retirement?"
-    ],
-    capabilities: [
-      "Financial planning",
-      "Investment guidance",
-      "Budget management"
-    ]
+    bgGradient: "bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-500"
   },
 ];
 
@@ -109,8 +62,25 @@ const EnhancedChatPreview = ({ onServiceChange }: EnhancedChatPreviewProps) => {
     onServiceChange(coach.id);
   };
 
+  const getActiveMessages = () => {
+    switch (activeCoach.id) {
+      case "wellness":
+        return wellnessMessages;
+      case "nutrition":
+        return nutritionMessages;
+      case "spiritual":
+        return spiritualMessages;
+      case "fitness":
+        return fitnessMessages;
+      case "financial":
+        return financialMessages;
+      default:
+        return wellnessMessages;
+    }
+  };
+
   return (
-    <div className="max-w-6xl mx-auto px-4">
+    <div className="max-w-5xl mx-auto">
       <div className="mb-8">
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
@@ -118,8 +88,8 @@ const EnhancedChatPreview = ({ onServiceChange }: EnhancedChatPreviewProps) => {
               variant="outline" 
               className={`w-full h-14 text-lg font-medium ${activeCoach.bgGradient} hover:opacity-90 transition-opacity rounded-2xl border-none text-white`}
             >
-              Chat with {activeCoach.name} - Your {activeCoach.title}
-              <MessageSquare className="ml-2 h-5 w-5" />
+              {activeCoach.name}
+              <ChevronDown className="ml-2 h-5 w-5" />
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent className="w-full min-w-[200px] bg-black/90 backdrop-blur-lg border border-white/10">
@@ -132,7 +102,7 @@ const EnhancedChatPreview = ({ onServiceChange }: EnhancedChatPreviewProps) => {
                 onClick={() => handleCoachChange(coach)}
               >
                 <div className={`w-full h-full bg-gradient-to-r ${coach.gradient} bg-clip-text text-transparent group-hover:text-white transition-colors`}>
-                  {coach.name} - {coach.title}
+                  {coach.name}
                 </div>
               </DropdownMenuItem>
             ))}
@@ -143,46 +113,53 @@ const EnhancedChatPreview = ({ onServiceChange }: EnhancedChatPreviewProps) => {
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="grid grid-cols-1 md:grid-cols-2 gap-6"
+        className="bg-muted rounded-3xl p-4 sm:p-8 relative overflow-hidden"
       >
-        <div className="glass rounded-3xl p-6 space-y-4">
-          <h3 className={`text-xl font-semibold bg-gradient-to-r ${activeCoach.gradient} bg-clip-text text-transparent`}>
-            Example Questions
-          </h3>
-          <ul className="space-y-3">
-            {activeCoach.examples.map((example, index) => (
-              <motion.li
-                key={example}
-                initial={{ opacity: 0, x: -20 }}
+        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-secondary via-accent to-secondary opacity-50" />
+        
+        <div className="space-y-4 sm:space-y-6 mb-8 max-h-[400px] sm:max-h-[500px] overflow-y-auto custom-scrollbar">
+          <AnimatePresence mode="sync">
+            {getActiveMessages().map((message, index) => (
+              <motion.div 
+                key={`${activeCoach.id}-${index}`}
+                initial={{ opacity: 0, x: message.type === 'ai' ? -20 : 20 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: index * 0.1 }}
-                className="flex items-center space-x-3 text-white/90"
+                exit={{ opacity: 0, x: message.type === 'ai' ? -20 : 20 }}
+                transition={{ delay: index * 0.2 }}
+                className={`flex items-start gap-3 sm:gap-4 ${message.type === 'user' ? 'justify-end' : ''}`}
               >
-                <div className={`w-2 h-2 rounded-full ${activeCoach.bgGradient}`} />
-                <span>{example}</span>
-              </motion.li>
-            ))}
-          </ul>
-        </div>
+                {message.type === 'ai' && (
+                  <div className={`w-8 h-8 sm:w-10 sm:h-10 rounded-full ${serviceHighlight[message.service]} flex items-center justify-center flex-shrink-0`}>
+                    <Bot className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+                  </div>
+                )}
+                
+                <div className={`relative ${message.type === 'user' ? 'bg-accent/10' : 'bg-muted/80'} rounded-2xl p-3 sm:p-4 max-w-[85%] sm:max-w-[80%] ${
+                  message.type === 'ai' ? 'rounded-tl-sm' : 'rounded-tr-sm'
+                }`}>
+                  {message.type === 'ai' && (
+                    <div className="absolute left-[-8px] top-4 w-0 h-0 border-t-[8px] border-t-transparent border-r-[8px] border-r-muted/80 border-b-[8px] border-b-transparent" />
+                  )}
+                  {message.type === 'user' && (
+                    <div className="absolute right-[-8px] top-4 w-0 h-0 border-t-[8px] border-t-transparent border-l-[8px] border-l-accent/10 border-b-[8px] border-b-transparent" />
+                  )}
+                  <p className={`text-base sm:text-lg whitespace-pre-line ${
+                    message.type === 'user' 
+                      ? 'text-gradient-sunshine' 
+                      : 'text-gradient-candy'
+                  }`}>
+                    {message.content}
+                  </p>
+                </div>
 
-        <div className="glass rounded-3xl p-6 space-y-4">
-          <h3 className={`text-xl font-semibold bg-gradient-to-r ${activeCoach.gradient} bg-clip-text text-transparent`}>
-            How I Can Help
-          </h3>
-          <ul className="space-y-3">
-            {activeCoach.capabilities.map((capability, index) => (
-              <motion.li
-                key={capability}
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: index * 0.1 }}
-                className="flex items-center space-x-3 text-white/90"
-              >
-                <div className={`w-2 h-2 rounded-full ${activeCoach.bgGradient}`} />
-                <span>{capability}</span>
-              </motion.li>
+                {message.type === 'user' && (
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gradient-to-r from-accent to-secondary flex items-center justify-center flex-shrink-0">
+                    <User className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+                  </div>
+                )}
+              </motion.div>
             ))}
-          </ul>
+          </AnimatePresence>
         </div>
       </motion.div>
     </div>
