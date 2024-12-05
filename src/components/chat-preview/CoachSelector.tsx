@@ -12,6 +12,7 @@ interface CoachSelectorProps {
 export const CoachSelector = ({ coaches, activeCoach, onCoachChange }: CoachSelectorProps) => {
   return (
     <div className="mb-8">
+      <p className="text-white text-center mb-4 text-lg">Select your Coach</p>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button 
