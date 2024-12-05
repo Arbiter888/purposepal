@@ -73,7 +73,7 @@ const PricingSection = () => {
         transition={{ duration: 0.6 }}
         className="text-center mb-16"
       >
-        <h2 className="text-4xl font-bold text-gradient-sunshine mb-4">Choose Your Journey</h2>
+        <h2 className="text-6xl md:text-7xl lg:text-8xl font-bold text-gradient-sunshine mb-6">Choose Your Journey</h2>
         <p className="text-xl text-muted-foreground">
           Select the plan that best fits your transformation goals
         </p>
