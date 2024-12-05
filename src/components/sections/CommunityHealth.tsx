@@ -84,13 +84,14 @@ const CommunityHealth = () => {
   });
 
   useEffect(() => {
+    // Reduced interval from 5000ms to 3000ms for more frequent transitions
     const interval = setInterval(() => {
       setActiveMatch((prev) => {
         const newState = { ...prev };
         newState[activeCategory] = (prev[activeCategory] + 1) % categories[activeCategory].matches.length;
         return newState;
       });
-    }, 5000);
+    }, 3000);
 
     return () => clearInterval(interval);
   }, [activeCategory]);
@@ -109,7 +110,7 @@ const CommunityHealth = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.3 }} // Reduced from 0.5 to 0.3 for faster transitions
             className="text-5xl md:text-6xl lg:text-7xl font-bold text-gradient-rainbow mb-4"
           >
             {categories[activeCategory].titleText}
@@ -136,7 +137,7 @@ const CommunityHealth = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.5 }}
+                transition={{ duration: 0.3 }} // Reduced from 0.5 to 0.3 for faster transitions
                 className={`cursor-pointer ${activeCategory === index ? 'scale-105' : 'scale-95'} transition-all duration-300`}
               >
                 <ConnectionCategory
