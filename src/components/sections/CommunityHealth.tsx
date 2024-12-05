@@ -1,33 +1,36 @@
 import { motion } from "framer-motion";
-import { Heart, Users, Handshake, Brain, Target, ArrowRight, Bot, Sparkles } from "lucide-react";
+import { Heart, Users, Handshake, Brain, Target, ArrowRight, Bot, Sparkles, MessageCircle } from "lucide-react";
 
 const featuredMatches = [
   {
     name: "Sarah Chen",
     type: "Business Match",
     image: "https://i.pravatar.cc/150?img=47",
-    reason: "Both focused on sustainable business practices and mindful leadership",
+    aiSuggestion: "Based on Sarah's focus on mindful leadership and your interest in sustainable business practices, I believe you two would make excellent business partners. She's also passionate about wellness integration in the workplace, which aligns with your goals.",
     interests: ["Entrepreneurship", "Wellness", "Innovation"],
     icon: Handshake,
     iconColor: "text-cyan-500",
+    aiCoach: "Career AI Coach"
   },
   {
     name: "Michael Rivera",
     type: "Friendship Match",
     image: "https://i.pravatar.cc/150?img=68",
-    reason: "Shared interest in personal development and spiritual growth",
+    aiSuggestion: "I noticed you both share a deep interest in personal development and meditation. Michael's experience in organizing wellness retreats could complement your journey perfectly. You both value authentic connections and spiritual growth.",
     interests: ["Meditation", "Fitness", "Reading"],
     icon: Users,
     iconColor: "text-purple-500",
+    aiCoach: "Wellness AI Coach"
   },
   {
     name: "Emma Thompson",
     type: "Romantic Match",
     image: "https://i.pravatar.cc/150?img=45",
-    reason: "Compatible life goals and values alignment",
+    aiSuggestion: "Emma's approach to life-work balance and spiritual growth mirrors yours beautifully. You both prioritize personal development and have compatible values around mindfulness and wellness. I think you'd have meaningful conversations about your spiritual journeys.",
     interests: ["Travel", "Wellness", "Arts"],
     icon: Heart,
     iconColor: "text-pink-500",
+    aiCoach: "Relationship AI Coach"
   },
 ];
 
@@ -65,10 +68,15 @@ const MatchCard = ({ match, index }) => (
       </div>
     </div>
     
-    <div className="mb-4">
-      <div className="flex items-start gap-2 text-sm text-muted-foreground">
-        <Bot className="w-4 h-4 mt-1 text-secondary" />
-        <p>{match.reason}</p>
+    <div className="mb-4 glass bg-white/5 p-4 rounded-xl">
+      <div className="flex items-start gap-3">
+        <Bot className="w-5 h-5 mt-1 text-secondary flex-shrink-0" />
+        <div className="space-y-2">
+          <div className="text-sm text-secondary font-medium">{match.aiCoach}</div>
+          <p className="text-sm text-muted-foreground leading-relaxed">
+            {match.aiSuggestion}
+          </p>
+        </div>
       </div>
     </div>
 
@@ -82,6 +90,15 @@ const MatchCard = ({ match, index }) => (
         </span>
       ))}
     </div>
+    
+    <motion.button
+      whileHover={{ scale: 1.02 }}
+      whileTap={{ scale: 0.98 }}
+      className="w-full mt-4 flex items-center justify-center gap-2 glass px-4 py-2 rounded-full hover:bg-white/10 transition-all text-sm"
+    >
+      <MessageCircle className="w-4 h-4" />
+      <span>Connect through AI Coach</span>
+    </motion.button>
   </motion.div>
 );
 
@@ -106,29 +123,29 @@ const CommunityHealth = () => {
         transition={{ duration: 0.6 }}
         className="text-center mb-16"
       >
-        <h2 className="text-4xl font-bold text-gradient-neon mb-4">Community Matching System</h2>
+        <h2 className="text-4xl font-bold text-gradient-neon mb-4">AI-Powered Community Matching</h2>
         <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-          Based on your goals and coach recommendations, our AI-powered system matches you with like-minded individuals across three dimensions.
+          Our AI coaches analyze your goals, values, and journey to connect you with like-minded individuals who can enrich your path to wellness and growth.
         </p>
       </motion.div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto mb-16">
         <FeatureCard
           icon={Heart}
-          title="Romantic Matches"
-          description="Find meaningful connections with partners who share your wellness journey and lifestyle goals"
+          title="Romantic Connections"
+          description="Find meaningful relationships with partners who share your wellness journey and spiritual values"
           color="text-pink-500"
         />
         <FeatureCard
           icon={Users}
           title="Friendship Matches"
-          description="Connect with like-minded individuals who complement your interests and support your personal growth"
+          description="Connect with like-minded individuals who complement your interests and support your growth"
           color="text-purple-500"
         />
         <FeatureCard
           icon={Handshake}
-          title="Business Matches"
-          description="Network with professionals who align with your career aspirations and entrepreneurial goals"
+          title="Business Networks"
+          description="Build professional relationships with others who align with your values and aspirations"
           color="text-cyan-500"
         />
       </div>
@@ -142,10 +159,10 @@ const CommunityHealth = () => {
         <div className="text-center mb-8">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/10 mb-4">
             <Sparkles className="w-4 h-4 text-secondary" />
-            <span className="text-sm font-medium text-secondary">Featured Matches</span>
+            <span className="text-sm font-medium text-secondary">AI Coach Suggestions</span>
           </div>
           <h3 className="text-2xl font-semibold text-gradient-neon">
-            Example Matches Suggested by AI Coaches
+            Personalized Match Recommendations
           </h3>
         </div>
 
@@ -162,22 +179,22 @@ const CommunityHealth = () => {
         transition={{ delay: 0.4 }}
         className="mt-16 max-w-4xl mx-auto glass p-8 rounded-2xl"
       >
-        <h3 className="text-2xl font-semibold text-gradient-neon mb-6 text-center">How Matching Works</h3>
+        <h3 className="text-2xl font-semibold text-gradient-neon mb-6 text-center">How AI Matching Works</h3>
         <div className="space-y-6">
           <ProcessStep
             icon={Brain}
-            title="AI-Powered Analysis"
-            description="Our system analyzes your goals, interests, and lifestyle patterns"
+            title="Deep Understanding"
+            description="AI coaches analyze your goals, interests, and lifestyle patterns"
           />
           <ProcessStep
             icon={Target}
-            title="Coach Recommendations"
-            description="Personal coaches provide insights to enhance matching accuracy"
+            title="Precise Matching"
+            description="Advanced algorithms find meaningful connections based on compatibility"
           />
           <ProcessStep
             icon={ArrowRight}
-            title="Continuous Learning"
-            description="The system evolves with your feedback and changing preferences"
+            title="Guided Introductions"
+            description="AI coaches facilitate natural connections and conversations"
           />
         </div>
       </motion.div>
