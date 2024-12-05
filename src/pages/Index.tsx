@@ -8,7 +8,6 @@ import CoachPreview from "@/components/sections/CoachPreview";
 import CommunityHealth from "@/components/sections/CommunityHealth";
 import PricingSection from "@/components/sections/PricingSection";
 import CallToAction from "@/components/sections/CallToAction";
-import LoadingScreen from "@/components/LoadingScreen";
 
 const coachInfo = {
   wellness: {
@@ -46,7 +45,6 @@ const coachInfo = {
 const Index = () => {
   const [selectedService, setSelectedService] = useState("wellness");
   const [scrollProgress, setScrollProgress] = useState(0);
-  const [isLoading, setIsLoading] = useState(true);
 
   const handleScroll = () => {
     const scrollPx = document.documentElement.scrollTop;
@@ -61,10 +59,6 @@ const Index = () => {
   }, []);
 
   const activeCoach = coachInfo[selectedService as keyof typeof coachInfo];
-
-  if (isLoading) {
-    return <LoadingScreen onLoadingComplete={() => setIsLoading(false)} />;
-  }
 
   return (
     <div className="min-h-screen bg-black text-white relative">
