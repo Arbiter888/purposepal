@@ -1,39 +1,45 @@
 import { motion } from "framer-motion";
-import { Brain, Heart, Globe, DollarSign } from "lucide-react";
+import { Brain, Heart, Globe, Users, Sparkles, DollarSign } from "lucide-react";
 
 const features = [
   {
     icon: Brain,
-    title: "Personal Growth",
+    title: "Your Personal Guide",
     description: [
-      "Your dedicated AI avatar coach available 24/7",
+      "24/7 AI avatar coach support",
       "Personalized development roadmaps",
-      "Access to wellness, nutrition & fitness guidance"
-    ],
-    savings: "Save $200+/month on traditional coaching",
-    costComparison: "Traditional coaching: $150-200/session vs. Unlimited AI support including wellness, nutrition, and fitness coaching"
-  },
-  {
-    icon: Heart,
-    title: "Life Design",
-    description: [
       "Comprehensive life assessment tools",
       "Spiritual & financial wellness guidance",
-      "Holistic lifestyle optimization"
+      "International relocation support"
     ],
-    savings: "Save $300+/month on life coaching",
-    costComparison: "Life coach: $200/session vs. Continuous guidance including spiritual and financial coaching"
+    savings: "Save $500+/month on coaching services",
+    costComparison: "Traditional coaching: $150-200/session vs. Unlimited AI support across all life areas"
   },
   {
-    icon: Globe,
-    title: "Global Living",
+    icon: Users,
+    title: "Meet Her Friends",
     description: [
-      "International relocation guidance",
-      "Cultural integration support",
-      "Access to global wellness resources"
+      "Connect with specialized AI coaches",
+      "Wellness & nutrition guidance",
+      "Spiritual & mindfulness support",
+      "Fitness & health expertise",
+      "Financial planning assistance"
     ],
-    savings: "Save $500+/month on relocation services",
-    costComparison: "Relocation consultant: $250/hour vs. Complete support package with worldwide wellness network"
+    savings: "Save $300+/month on specialized coaching",
+    costComparison: "Specialized coaches: $200+/session vs. Access to multiple AI expert coaches"
+  },
+  {
+    icon: Sparkles,
+    title: "Community Matchmaker",
+    description: [
+      "Connect with like-minded individuals",
+      "Find relationship matches",
+      "Discover business partnerships",
+      "Access real-world experts",
+      "Join supportive communities"
+    ],
+    savings: "Save $400+/month on networking services",
+    costComparison: "Professional matchmaking: $250+/month vs. AI-powered connections and introductions"
   }
 ];
 
@@ -53,7 +59,7 @@ const FeaturesShowcase = () => {
         transition={{ duration: 0.6 }}
         className="text-center mb-16 relative z-10"
       >
-        <h2 className="text-4xl font-bold text-gradient-aurora mb-4">Meet Presence, Your AI Avatar Coach</h2>
+        <h2 className="text-4xl font-bold text-gradient-aurora mb-4">Meet Your AI Coaches</h2>
         <p className="text-xl text-muted-foreground/90 max-w-2xl mx-auto mb-12">
           Meet your dedicated BornPurpose AI Avatar Coach - your personal guide to transformation. Experience 24/7 support and expert guidance tailored just for you. <span className="text-gradient-sunshine font-semibold">Save up to ${totalMonthlySavings}+ monthly</span> compared to traditional coaching services.
         </p>
@@ -72,7 +78,7 @@ const FeaturesShowcase = () => {
         </div>
       </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto relative z-10">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto relative z-10">
         {features.map((feature, index) => (
           <motion.div
             key={index}

@@ -36,7 +36,7 @@ const HeroWithFeatures = () => {
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-8"
         >
           <Bot className="w-5 h-5 text-gradient-rainbow" />
-          <span className="text-gradient-rainbow text-sm font-medium">Meet Presence & Their AI Avatar Coach Friends</span>
+          <span className="text-gradient-rainbow text-sm font-medium">Meet Presence & Her AI Avatar Coach Friends</span>
         </motion.div>
 
         <motion.div
@@ -73,7 +73,7 @@ const HeroWithFeatures = () => {
           transition={{ delay: 0.5 }}
           className="mt-8 text-xl md:text-2xl text-muted-foreground/90 max-w-2xl mx-auto leading-relaxed glass p-6 rounded-xl"
         >
-          Join <span className="text-gradient-rainbow font-medium">Presence</span> and their carefully chosen 
+          Join <span className="text-gradient-rainbow font-medium">Presence</span> and her carefully chosen 
           <span className="text-gradient-aurora font-medium"> AI Avatar Coach friends</span> on a transformative journey. 
           Connect with <span className="text-gradient-candy font-medium">like-minded members</span> to live life together 
           as they guide you through <span className="text-gradient-sunshine font-medium">wellness</span>, 
@@ -131,7 +131,7 @@ const HeroWithFeatures = () => {
               }}
             />
             <Users className="w-5 h-5" />
-            <span className="relative z-10">Share With Friends</span>
+            <span className="relative z-10">I Have a Referral</span>
           </motion.button>
         </motion.div>
 

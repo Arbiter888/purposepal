@@ -143,7 +143,7 @@ const EnhancedChatPreview = ({ onServiceChange }: EnhancedChatPreviewProps) => {
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="grid grid-cols-1 md:grid-cols-2 gap-6"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
       >
         <div className="glass rounded-3xl p-6 space-y-4">
           <h3 className={`text-xl font-semibold bg-gradient-to-r ${activeCoach.gradient} bg-clip-text text-transparent`}>
@@ -183,6 +183,66 @@ const EnhancedChatPreview = ({ onServiceChange }: EnhancedChatPreviewProps) => {
               </motion.li>
             ))}
           </ul>
+        </div>
+
+        <div className="glass rounded-3xl p-6 space-y-4">
+          <h3 className={`text-xl font-semibold bg-gradient-to-r ${activeCoach.gradient} bg-clip-text text-transparent`}>
+            Expert Connections
+          </h3>
+          <ul className="space-y-3">
+            <motion.li
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              className="flex items-center space-x-3 text-white/90"
+            >
+              <div className={`w-2 h-2 rounded-full ${activeCoach.bgGradient}`} />
+              <span>Professional {activeCoach.title}s</span>
+            </motion.li>
+            <motion.li
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.1 }}
+              className="flex items-center space-x-3 text-white/90"
+            >
+              <div className={`w-2 h-2 rounded-full ${activeCoach.bgGradient}`} />
+              <span>Certified Practitioners</span>
+            </motion.li>
+            <motion.li
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.2 }}
+              className="flex items-center space-x-3 text-white/90"
+            >
+              <div className={`w-2 h-2 rounded-full ${activeCoach.bgGradient}`} />
+              <span>Industry Specialists</span>
+            </motion.li>
+          </ul>
+        </div>
+
+        <div className="glass rounded-3xl p-6 space-y-4">
+          <h3 className={`text-xl font-semibold bg-gradient-to-r ${activeCoach.gradient} bg-clip-text text-transparent`}>
+            User Testimonial
+          </h3>
+          <div className="space-y-4">
+            <motion.blockquote
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              className="text-white/90 italic"
+            >
+              "{activeCoach.name} helped me transform my {activeCoach.id} journey. The personalized guidance and expert connections made all the difference!"
+            </motion.blockquote>
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.1 }}
+              className="flex items-center space-x-2 text-white/70"
+            >
+              <div className={`w-8 h-8 rounded-full ${activeCoach.bgGradient} flex items-center justify-center`}>
+                <span className="text-white text-sm">JD</span>
+              </div>
+              <span>John Doe</span>
+            </motion.div>
+          </div>
         </div>
       </motion.div>
     </div>
