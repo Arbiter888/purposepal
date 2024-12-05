@@ -63,7 +63,7 @@ const Index = () => {
               transition={{ duration: 0.5 }}
               className="text-center mb-8 md:mb-16"
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-gradient-aurora mb-4">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gradient-aurora mb-4">
                 Meet Your AI Coaches
               </h2>
               <p className="text-lg md:text-xl text-muted-foreground/90 max-w-2xl mx-auto">
