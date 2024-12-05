@@ -16,11 +16,11 @@ const ExperiencePlatform = () => {
           transition={{ delay: 0.2 }}
           className="text-sm uppercase tracking-wider text-secondary mb-4 inline-block"
         >
-          Meet Presence's AI Avatar Coach Friends
+          Your Personal Transformation Journey
         </motion.span>
-        <h2 className="text-4xl md:text-5xl font-bold text-gradient-purple mb-6">Experience the Presence of More Support</h2>
+        <h2 className="text-4xl md:text-5xl font-bold text-gradient-purple mb-6">Experience Personal Growth with Presence</h2>
         <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-          Presence has carefully chosen these AI Avatar Coaches as trusted friends to provide comprehensive support across all aspects of your life journey
+          Discover how Presence's personalized coaching approach helps you achieve your goals through comprehensive support and guidance
         </p>
       </motion.div>
 
@@ -35,15 +35,15 @@ const ExperiencePlatform = () => {
           <div className="h-12 w-12 rounded-2xl bg-gradient-to-r from-accent via-tertiary to-secondary flex items-center justify-center mb-6">
             <Bot className="w-6 h-6 text-white" />
           </div>
-          <h3 className="text-2xl font-semibold text-gradient-candy mb-4">Presence's AI Support Network</h3>
+          <h3 className="text-2xl font-semibold text-gradient-candy mb-4">24/7 Personal Support</h3>
           <p className="text-lg text-muted-foreground mb-6">
-            Each AI Avatar Coach is a trusted friend of Presence, carefully selected to provide personalized guidance and support on your transformational journey
+            Access your dedicated AI coach anytime, anywhere. Get personalized guidance and support whenever you need it on your journey
           </p>
           <div className="flex items-center justify-between mt-auto pt-4 border-t border-white/10">
             <span className="text-sm text-muted-foreground">Core Feature</span>
             <div className="flex items-center gap-2">
               <Brain className="w-4 h-4 text-yellow-400" />
-              <span className="font-semibold">Presence's Friends</span>
+              <span className="font-semibold">Always Available</span>
             </div>
           </div>
         </motion.div>
@@ -58,15 +58,15 @@ const ExperiencePlatform = () => {
           <div className="h-12 w-12 rounded-2xl bg-gradient-to-r from-secondary via-highlight to-tertiary flex items-center justify-center mb-6">
             <Users className="w-6 h-6 text-white" />
           </div>
-          <h3 className="text-2xl font-semibold text-gradient-aurora mb-4">Trusted by Presence</h3>
+          <h3 className="text-2xl font-semibold text-gradient-aurora mb-4">Personalized Guidance</h3>
           <p className="text-lg text-muted-foreground mb-6">
-            Each AI Coach has been personally vetted by Presence to ensure they align with our values and commitment to your growth and well-being
+            Experience coaching that adapts to your unique needs, goals, and progress, ensuring a truly personalized growth journey
           </p>
           <div className="flex items-center justify-between mt-auto pt-4 border-t border-white/10">
             <span className="text-sm text-muted-foreground">Premium Feature</span>
             <div className="flex items-center gap-2">
               <Heart className="w-4 h-4 text-yellow-400" />
-              <span className="font-semibold">Presence's Network</span>
+              <span className="font-semibold">Tailored Support</span>
             </div>
           </div>
         </motion.div>
@@ -81,15 +81,15 @@ const ExperiencePlatform = () => {
           <div className="h-12 w-12 rounded-2xl bg-gradient-to-r from-highlight via-accent to-tertiary flex items-center justify-center mb-6">
             <UserPlus className="w-6 h-6 text-white" />
           </div>
-          <h3 className="text-2xl font-semibold text-gradient-rainbow mb-4">Community of Friends</h3>
+          <h3 className="text-2xl font-semibold text-gradient-rainbow mb-4">Growth Community</h3>
           <p className="text-lg text-muted-foreground mb-6">
-            Join a supportive community of individuals connected through Presence's network of trusted AI Coaches, sharing similar transformation journeys
+            Join a supportive community of like-minded individuals on their personal development journey, sharing experiences and insights
           </p>
           <div className="flex items-center justify-between mt-auto pt-4 border-t border-white/10">
             <span className="text-sm text-muted-foreground">Elite Feature</span>
             <div className="flex items-center gap-2">
               <Users className="w-4 h-4 text-yellow-400" />
-              <span className="font-semibold">Presence's Community</span>
+              <span className="font-semibold">Community Support</span>
             </div>
           </div>
         </motion.div>
