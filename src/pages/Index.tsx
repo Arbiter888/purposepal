@@ -9,6 +9,39 @@ import CommunityHealth from "@/components/sections/CommunityHealth";
 import PricingSection from "@/components/sections/PricingSection";
 import CallToAction from "@/components/sections/CallToAction";
 
+const coachInfo = {
+  wellness: {
+    name: "Ava",
+    title: "Wellness Coach",
+    gradient: "from-green-400 via-cyan-500 to-blue-500",
+    bgGradient: "bg-gradient-to-r from-green-400 via-cyan-500 to-blue-500"
+  },
+  nutrition: {
+    name: "Olivia",
+    title: "Nutrition Expert",
+    gradient: "from-pink-500 via-purple-500 to-indigo-500",
+    bgGradient: "bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500"
+  },
+  spiritual: {
+    name: "Amara",
+    title: "Spiritual Guide",
+    gradient: "from-yellow-400 via-orange-500 to-red-500",
+    bgGradient: "bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500"
+  },
+  fitness: {
+    name: "Amber",
+    title: "Fitness Expert",
+    gradient: "from-lime-400 via-emerald-500 to-teal-500",
+    bgGradient: "bg-gradient-to-r from-lime-400 via-emerald-500 to-teal-500"
+  },
+  financial: {
+    name: "Maya",
+    title: "Financial Advisor",
+    gradient: "from-blue-400 via-indigo-500 to-purple-500",
+    bgGradient: "bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-500"
+  }
+};
+
 const Index = () => {
   const [selectedService, setSelectedService] = useState("wellness");
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -24,6 +57,8 @@ const Index = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const activeCoach = coachInfo[selectedService as keyof typeof coachInfo];
 
   return (
     <div className="min-h-screen bg-black text-white relative">
@@ -63,8 +98,8 @@ const Index = () => {
               transition={{ duration: 0.5 }}
               className="text-center mb-8 md:mb-16"
             >
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gradient-aurora mb-4">
-                Meet Your AI Coaches
+              <h2 className={`text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r ${activeCoach.gradient} bg-clip-text text-transparent mb-4`}>
+                Meet {activeCoach.name}, {activeCoach.title}
               </h2>
               <p className="text-lg md:text-xl text-muted-foreground/90 max-w-2xl mx-auto">
                 Choose your personal AI coach and start your journey to a better life
