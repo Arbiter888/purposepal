@@ -10,45 +10,45 @@ const coachData = {
   wellness: {
     name: "Ava",
     title: "Mental Wellness Coach",
-    description: "Transform your mental well-being with personalized guidance from your dedicated AI-powered Wellness Coach. Get expert advice on stress management, mindfulness, and emotional balance.",
+    description: "Transform your mental well-being with personalized guidance from your dedicated AI-powered Wellness Coach.",
     gradient: "from-green-400 via-cyan-500 to-blue-500",
-    tags: ["Stress Management", "Mindfulness", "Emotional Balance", "Personal Growth"],
+    tags: ["Stress Management", "Mindfulness", "Emotional Balance"],
     videoUrl: "https://www.youtube.com/embed/GkOue0KxWaQ",
     backgroundImage: "/lovable-uploads/440c76a5-97ea-4586-87db-b7ad21444b16.png"
   },
   nutrition: {
     name: "Olivia",
     title: "Nutrition Expert",
-    description: "Transform your dietary habits with personalized guidance from your dedicated AI-powered Nutrition Coach. Get expert advice on meal planning, portion control, and healthy eating strategies.",
+    description: "Transform your dietary habits with personalized guidance from your dedicated AI-powered Nutrition Coach.",
     gradient: "from-pink-500 via-purple-500 to-indigo-500",
-    tags: ["Meal Planning", "Portion Control", "Dietary Analysis", "Nutritional Guidance"],
+    tags: ["Meal Planning", "Portion Control", "Dietary Analysis"],
     videoUrl: "https://www.youtube.com/embed/_9x2l119RGw",
     backgroundImage: "/lovable-uploads/4335b249-4c44-4b85-bbbf-fa72d693bc4f.png"
   },
   spiritual: {
     name: "Amara",
     title: "Spiritual Guide",
-    description: "Transform your spiritual journey with personalized guidance from your dedicated AI-powered Spiritual Coach. Get expert advice on meditation, mindfulness, and personal development.",
+    description: "Transform your spiritual journey with personalized guidance from your dedicated AI-powered Spiritual Coach.",
     gradient: "from-yellow-400 via-orange-500 to-red-500",
-    tags: ["Meditation", "Mindfulness", "Spiritual Growth", "Inner Peace"],
+    tags: ["Meditation", "Mindfulness", "Spiritual Growth"],
     videoUrl: "https://www.youtube.com/embed/4cmO7dEGQBk",
     backgroundImage: "/lovable-uploads/440c76a5-97ea-4586-87db-b7ad21444b16.png"
   },
   fitness: {
     name: "Amber",
     title: "Fitness Expert",
-    description: "Transform your fitness journey with personalized guidance from your dedicated AI-powered Fitness Coach. Get expert advice on workouts, form correction, and exercise planning.",
+    description: "Transform your fitness journey with personalized guidance from your dedicated AI-powered Fitness Coach.",
     gradient: "from-lime-400 via-emerald-500 to-teal-500",
-    tags: ["Workout Planning", "Form Guidance", "Exercise Tips", "Fitness Goals"],
+    tags: ["Workout Planning", "Form Guidance", "Exercise Tips"],
     videoUrl: "https://www.youtube.com/embed/O0o-Y25rv7c",
     backgroundImage: "/lovable-uploads/2b866cad-b0b6-4291-b93e-404f8ef8e0e4.png"
   },
   financial: {
     name: "Maya",
     title: "Financial Coach",
-    description: "Transform your financial future with personalized guidance from your dedicated AI-powered Financial Coach. Get expert advice on budgeting, investments, and wealth building strategies.",
+    description: "Transform your financial future with personalized guidance from your dedicated AI-powered Financial Coach.",
     gradient: "from-blue-400 via-indigo-500 to-purple-500",
-    tags: ["Investment Planning", "Budgeting", "Wealth Building", "Tax Strategy"],
+    tags: ["Investment Planning", "Budgeting", "Wealth Building"],
     videoUrl: "https://www.youtube.com/embed/UiJ0OfgSt1M",
     backgroundImage: "/lovable-uploads/e1950664-3053-4b9a-aed1-78f46c6e7573.png"
   },
@@ -63,86 +63,79 @@ const CoachPreview = ({ activeService }: CoachPreviewProps) => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="glass rounded-3xl p-8 backdrop-blur-xl relative overflow-hidden"
+      className="glass rounded-3xl p-4 md:p-6 lg:p-8 h-full flex flex-col"
     >
-      <div 
-        className="absolute inset-0 bg-cover bg-center opacity-10"
-        style={{ backgroundImage: `url(${coach.backgroundImage})` }}
-      />
-      <div className="grid md:grid-cols-2 gap-8 items-center relative z-10">
-        <div className="space-y-6">
-          <h3 className={`text-3xl font-bold bg-gradient-to-r ${coach.gradient} bg-clip-text text-transparent`}>
-            Meet {coach.name}, your {coach.title}
-          </h3>
-          <p className="text-lg text-muted-foreground">
+      <div className="relative z-10 flex flex-col h-full">
+        <div className="space-y-4 mb-6">
+          <motion.h3 
+            className={`text-2xl md:text-3xl font-bold bg-gradient-to-r ${coach.gradient} bg-clip-text text-transparent`}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2 }}
+          >
+            Meet {coach.name}
+          </motion.h3>
+          <motion.p 
+            className="text-lg text-muted-foreground"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3 }}
+          >
             {coach.description}
-          </p>
-          <div className="flex items-center gap-4">
-            <div className="flex -space-x-4">
-              {[...Array(3)].map((_, i) => (
-                <div
-                  key={i}
-                  className={`w-10 h-10 rounded-full border-2 border-background bg-gradient-to-r ${coach.gradient}`}
-                />
-              ))}
-            </div>
-            <div>
-              <div className="flex items-center gap-1">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-yellow-500 text-yellow-500" />
-                ))}
-              </div>
-              <p className="text-sm text-muted-foreground">
-                Trusted by 10,000+ users
-              </p>
-            </div>
-          </div>
-          <div className="flex flex-wrap gap-4">
-            <Button className={`bg-gradient-to-r ${coach.gradient}`}>
-              <MessageSquare className="w-4 h-4 mr-2" />
-              Chat Now
-            </Button>
-            <Button variant="outline" className="border-blue-400/20">
-              <Video className="w-4 h-4 mr-2" />
-              Schedule Video Call
-            </Button>
-          </div>
+          </motion.p>
         </div>
-        <div className="relative">
-          <div className={`absolute inset-0 bg-gradient-to-r ${coach.gradient.replace(/(from-|via-|to-)/g, "$1opacity-20")} rounded-3xl blur-3xl`} />
-          <div className="relative bg-muted/80 rounded-3xl overflow-hidden">
-            <div className="aspect-video rounded-2xl overflow-hidden">
-              <iframe 
-                src={coach.videoUrl}
-                title={`Meet your ${coach.title}`}
-                className="w-full h-full"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-              />
-            </div>
-            <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
-              <div className="space-y-4">
-                <div className="flex items-center gap-3">
-                  <div className={`w-10 h-10 rounded-full bg-gradient-to-r ${coach.gradient}`} />
-                  <div>
-                    <p className="font-medium text-white">{coach.title}</p>
-                    <p className="text-sm text-white/80">Online now</p>
-                  </div>
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  {coach.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className={`px-3 py-1 rounded-full text-xs bg-white/10 backdrop-blur-sm text-white`}
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+
+        <motion.div 
+          className="relative rounded-2xl overflow-hidden aspect-video mb-6"
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.4 }}
+        >
+          <iframe 
+            src={coach.videoUrl}
+            title={`Meet ${coach.name}`}
+            className="w-full h-full"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
+        </motion.div>
+
+        <motion.div 
+          className="flex flex-wrap gap-2 mb-6"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5 }}
+        >
+          {coach.tags.map((tag, index) => (
+            <span
+              key={tag}
+              className={`px-3 py-1 rounded-full text-sm bg-gradient-to-r ${coach.gradient} bg-opacity-10 backdrop-blur-sm`}
+            >
+              {tag}
+            </span>
+          ))}
+        </motion.div>
+
+        <motion.div 
+          className="mt-auto space-y-3"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.6 }}
+        >
+          <Button 
+            className={`w-full bg-gradient-to-r ${coach.gradient} hover:opacity-90 transition-opacity`}
+          >
+            <MessageSquare className="w-4 h-4 mr-2" />
+            Chat Now
+          </Button>
+          <Button 
+            variant="outline" 
+            className="w-full border-blue-400/20 hover:bg-white/5"
+          >
+            <Video className="w-4 h-4 mr-2" />
+            Schedule Video Call
+          </Button>
+        </motion.div>
       </div>
     </motion.div>
   );

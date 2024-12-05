@@ -55,10 +55,41 @@ const Index = () => {
         <FeaturesShowcase />
         <ExperiencePlatform />
         
-        <div className="relative">
-          <div className="max-w-7xl mx-auto px-4 space-y-12">
-            <CoachPreview activeService={selectedService} />
-            <InteractiveDemo onServiceChange={setSelectedService} />
+        <div className="relative py-12 md:py-24">
+          <div className="max-w-7xl mx-auto px-4 space-y-8 md:space-y-16">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="text-center mb-8 md:mb-16"
+            >
+              <h2 className="text-3xl md:text-4xl font-bold text-gradient-aurora mb-4">
+                Meet Your AI Coaches
+              </h2>
+              <p className="text-lg md:text-xl text-muted-foreground/90 max-w-2xl mx-auto">
+                Choose your personal AI coach and start your journey to a better life
+              </p>
+            </motion.div>
+
+            <div className="grid md:grid-cols-2 gap-8 md:gap-12">
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5 }}
+                className="order-2 md:order-1"
+              >
+                <InteractiveDemo onServiceChange={setSelectedService} />
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5 }}
+                className="order-1 md:order-2"
+              >
+                <CoachPreview activeService={selectedService} />
+              </motion.div>
+            </div>
           </div>
         </div>
 
