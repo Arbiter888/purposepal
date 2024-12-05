@@ -85,9 +85,14 @@ const ParticleSystem = () => {
           if (particle.y < 0) particle.y = p.height;
           if (particle.y > p.height) particle.y = 0;
 
-          // Draw particle
+          // Parse the hex color to RGB values
+          const r = parseInt(particle.color.slice(1, 3), 16);
+          const g = parseInt(particle.color.slice(3, 5), 16);
+          const b = parseInt(particle.color.slice(5, 7), 16);
+
+          // Draw particle with RGB values and alpha
           p.noStroke();
-          p.fill(particle.color + "40"); // Add transparency
+          p.fill(r, g, b, 64); // Using RGB values and alpha of 64 (25% opacity)
           p.circle(particle.x, particle.y, particle.size);
         });
       };
