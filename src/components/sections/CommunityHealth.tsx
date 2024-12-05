@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 const categories = [
   {
     title: "Business Connections",
+    titleText: "Meet your New Business Partner",
     description: "Find partners who share your vision and values for professional growth",
     icon: Handshake,
     iconColor: "text-cyan-500",
@@ -28,6 +29,7 @@ const categories = [
   },
   {
     title: "Friendship Matches",
+    titleText: "Meet your New Friend",
     description: "Connect with like-minded individuals who share your interests and values",
     icon: Users,
     iconColor: "text-purple-500",
@@ -50,6 +52,7 @@ const categories = [
   },
   {
     title: "Romantic Connections",
+    titleText: "Meet your Life Partner",
     description: "Discover meaningful relationships based on shared values and life goals",
     icon: Heart,
     iconColor: "text-pink-500",
@@ -100,9 +103,18 @@ const CommunityHealth = () => {
         transition={{ duration: 0.6 }}
         className="text-center mb-16"
       >
-        <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gradient-rainbow mb-4">
-          AI-Powered Community Matching
-        </h2>
+        <AnimatePresence mode="wait">
+          <motion.h2
+            key={categories[activeCategory].titleText}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.5 }}
+            className="text-5xl md:text-6xl lg:text-7xl font-bold text-gradient-rainbow mb-4"
+          >
+            {categories[activeCategory].titleText}
+          </motion.h2>
+        </AnimatePresence>
         <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
           Our AI coaches analyze your goals, values, and journey to connect you with like-minded individuals who can enrich your path to wellness and growth.
         </p>
