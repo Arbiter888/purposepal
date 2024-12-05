@@ -1,19 +1,16 @@
 import { motion } from "framer-motion";
-import { MessageSquare } from "lucide-react";
 import { useState } from "react";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Button } from "@/components/ui/button";
+import { PreviewCard } from "./chat-preview/PreviewCard";
+import { BulletList } from "./chat-preview/BulletList";
+import { TestimonialCard } from "./chat-preview/TestimonialCard";
+import { CoachSelector } from "./chat-preview/CoachSelector";
+import { Coach } from "./chat-preview/types";
 
 interface EnhancedChatPreviewProps {
   onServiceChange: (service: string) => void;
 }
 
-const coaches = [
+const coaches: Coach[] = [
   { 
     id: "wellness", 
     name: "Ava",
@@ -104,146 +101,51 @@ const coaches = [
 const EnhancedChatPreview = ({ onServiceChange }: EnhancedChatPreviewProps) => {
   const [activeCoach, setActiveCoach] = useState(coaches[0]);
 
-  const handleCoachChange = (coach: typeof coaches[0]) => {
+  const handleCoachChange = (coach: Coach) => {
     setActiveCoach(coach);
     onServiceChange(coach.id);
   };
 
   return (
     <div className="max-w-6xl mx-auto px-4">
-      <div className="mb-8">
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button 
-              variant="outline" 
-              className={`w-full h-14 text-lg font-medium ${activeCoach.bgGradient} hover:opacity-90 transition-opacity rounded-2xl border-none text-white`}
-            >
-              Chat with {activeCoach.name} - Your {activeCoach.title}
-              <MessageSquare className="ml-2 h-5 w-5" />
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent className="w-full min-w-[200px] bg-black/90 backdrop-blur-lg border border-white/10">
-            {coaches.map((coach) => (
-              <DropdownMenuItem
-                key={coach.id}
-                className={`text-lg py-3 px-4 focus:bg-white/10 focus:text-white cursor-pointer group ${
-                  activeCoach.id === coach.id ? 'bg-white/10' : ''
-                }`}
-                onClick={() => handleCoachChange(coach)}
-              >
-                <div className={`w-full h-full bg-gradient-to-r ${coach.gradient} bg-clip-text text-transparent group-hover:text-white transition-colors`}>
-                  {coach.name} - {coach.title}
-                </div>
-              </DropdownMenuItem>
-            ))}
-          </DropdownMenuContent>
-        </DropdownMenu>
-      </div>
+      <CoachSelector 
+        coaches={coaches}
+        activeCoach={activeCoach}
+        onCoachChange={handleCoachChange}
+      />
 
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+        className="grid grid-cols-1 md:grid-cols-2 gap-6"
       >
-        <div className="glass rounded-3xl p-6 space-y-4">
-          <h3 className={`text-xl font-semibold bg-gradient-to-r ${activeCoach.gradient} bg-clip-text text-transparent`}>
-            Example Questions
-          </h3>
-          <ul className="space-y-3">
-            {activeCoach.examples.map((example, index) => (
-              <motion.li
-                key={example}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: index * 0.1 }}
-                className="flex items-center space-x-3 text-white/90"
-              >
-                <div className={`w-2 h-2 rounded-full ${activeCoach.bgGradient}`} />
-                <span>{example}</span>
-              </motion.li>
-            ))}
-          </ul>
-        </div>
+        <PreviewCard title="Example Questions" gradient={activeCoach.gradient}>
+          <BulletList items={activeCoach.examples} gradient={activeCoach.bgGradient} />
+        </PreviewCard>
 
-        <div className="glass rounded-3xl p-6 space-y-4">
-          <h3 className={`text-xl font-semibold bg-gradient-to-r ${activeCoach.gradient} bg-clip-text text-transparent`}>
-            How I Can Help
-          </h3>
-          <ul className="space-y-3">
-            {activeCoach.capabilities.map((capability, index) => (
-              <motion.li
-                key={capability}
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: index * 0.1 }}
-                className="flex items-center space-x-3 text-white/90"
-              >
-                <div className={`w-2 h-2 rounded-full ${activeCoach.bgGradient}`} />
-                <span>{capability}</span>
-              </motion.li>
-            ))}
-          </ul>
-        </div>
+        <PreviewCard title="How I Can Help" gradient={activeCoach.gradient}>
+          <BulletList items={activeCoach.capabilities} gradient={activeCoach.bgGradient} />
+        </PreviewCard>
 
-        <div className="glass rounded-3xl p-6 space-y-4">
-          <h3 className={`text-xl font-semibold bg-gradient-to-r ${activeCoach.gradient} bg-clip-text text-transparent`}>
-            Expert Connections
-          </h3>
-          <ul className="space-y-3">
-            <motion.li
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              className="flex items-center space-x-3 text-white/90"
-            >
-              <div className={`w-2 h-2 rounded-full ${activeCoach.bgGradient}`} />
-              <span>Professional {activeCoach.title}s</span>
-            </motion.li>
-            <motion.li
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.1 }}
-              className="flex items-center space-x-3 text-white/90"
-            >
-              <div className={`w-2 h-2 rounded-full ${activeCoach.bgGradient}`} />
-              <span>Certified Practitioners</span>
-            </motion.li>
-            <motion.li
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.2 }}
-              className="flex items-center space-x-3 text-white/90"
-            >
-              <div className={`w-2 h-2 rounded-full ${activeCoach.bgGradient}`} />
-              <span>Industry Specialists</span>
-            </motion.li>
-          </ul>
-        </div>
+        <PreviewCard title="Expert Connections" gradient={activeCoach.gradient}>
+          <BulletList 
+            items={[
+              `Professional ${activeCoach.title}s`,
+              "Certified Practitioners",
+              "Industry Specialists"
+            ]} 
+            gradient={activeCoach.bgGradient}
+          />
+        </PreviewCard>
 
-        <div className="glass rounded-3xl p-6 space-y-4">
-          <h3 className={`text-xl font-semibold bg-gradient-to-r ${activeCoach.gradient} bg-clip-text text-transparent`}>
-            User Testimonial
-          </h3>
-          <div className="space-y-4">
-            <motion.blockquote
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              className="text-white/90 italic"
-            >
-              "{activeCoach.name} helped me transform my {activeCoach.id} journey. The personalized guidance and expert connections made all the difference!"
-            </motion.blockquote>
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.1 }}
-              className="flex items-center space-x-2 text-white/70"
-            >
-              <div className={`w-8 h-8 rounded-full ${activeCoach.bgGradient} flex items-center justify-center`}>
-                <span className="text-white text-sm">JD</span>
-              </div>
-              <span>John Doe</span>
-            </motion.div>
-          </div>
-        </div>
+        <PreviewCard title="User Testimonial" gradient={activeCoach.gradient}>
+          <TestimonialCard
+            quote={`${activeCoach.name} helped me transform my ${activeCoach.id} journey. The personalized guidance and expert connections made all the difference!`}
+            author="John Doe"
+            initials="JD"
+            gradient={activeCoach.bgGradient}
+          />
+        </PreviewCard>
       </motion.div>
     </div>
   );
