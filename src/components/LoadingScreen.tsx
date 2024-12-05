@@ -16,6 +16,14 @@ const LoadingScreen = ({ onLoadingComplete }: LoadingScreenProps) => {
       const duration = 3000; // 3 seconds
       const startTime = Date.now();
 
+      // Custom easing function defined outside of p object
+      const ease = (progress: number, g: number) => {
+        if (progress < 0.5)
+          return 0.5 * Math.pow(2 * progress, g);
+        else
+          return 1 - 0.5 * Math.pow(2 * (1 - progress), g);
+      };
+
       p.setup = () => {
         p.createCanvas(window.innerWidth, window.innerHeight);
         p.noStroke();
@@ -39,7 +47,7 @@ const LoadingScreen = ({ onLoadingComplete }: LoadingScreenProps) => {
         const sunY = p.lerp(
           p.height * 0.8,
           p.height * 0.4,
-          p.ease(progress, 3)
+          ease(progress, 3) // Using the standalone ease function
         );
 
         // Sun glow
@@ -72,14 +80,6 @@ const LoadingScreen = ({ onLoadingComplete }: LoadingScreenProps) => {
             p.remove();
           }, 500);
         }
-      };
-
-      // Custom easing function
-      p.ease = (p: number, g: number) => {
-        if (p < 0.5)
-          return 0.5 * Math.pow(2 * p, g);
-        else
-          return 1 - 0.5 * Math.pow(2 * (1 - p), g);
       };
 
       // Handle window resize
