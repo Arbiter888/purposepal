@@ -1,17 +1,14 @@
 import { motion } from "framer-motion";
-import { MessageSquare, Video, Calendar, Coins, Globe, Users, Bot, Brain, Heart, UserPlus, Sparkles, Target, Rocket } from "lucide-react";
+import { MessageSquare, Users, ArrowRight, Bot, Heart, Handshake } from "lucide-react";
 
 const ExperiencePlatform = () => {
   return (
     <section className="section-padding relative overflow-hidden">
-      {/* Background gradient effect */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-secondary/5 to-background pointer-events-none" />
-      
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
         transition={{ duration: 0.6 }}
-        className="text-center mb-16 relative z-10"
+        className="text-center mb-16"
       >
         <motion.div 
           initial={{ opacity: 0 }}
@@ -19,85 +16,67 @@ const ExperiencePlatform = () => {
           transition={{ delay: 0.2 }}
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/10 mb-6"
         >
-          <Sparkles className="w-4 h-4 text-secondary" />
-          <span className="text-sm font-medium text-secondary">Transform Your Life</span>
+          <Bot className="w-4 h-4 text-secondary" />
+          <span className="text-sm font-medium text-secondary">AI Coach Network</span>
         </motion.div>
         
-        <h2 className="text-4xl md:text-5xl font-bold text-gradient-purple mb-6">
-          Experience Personal Growth with Presence
+        <h2 className="text-4xl font-bold text-gradient-purple mb-6">
+          Your Journey with Specialized AI Coaches
         </h2>
         <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-          Embark on a transformative journey with personalized guidance and support that adapts to your unique path
+          After Presence understands your goals, connect with specialized AI coaches who will guide you through specific aspects of your journey
         </p>
       </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto relative z-10">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          whileHover={{ y: -5 }}
-          transition={{ duration: 0.3 }}
-          className="glass rounded-3xl p-8 hover:bg-white/10 transition-all cursor-pointer group"
+          transition={{ delay: 0.1 }}
+          className="glass p-8 rounded-2xl hover:scale-105 transition-transform duration-300"
         >
-          <div className="h-14 w-14 rounded-2xl bg-gradient-to-r from-accent via-tertiary to-secondary flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-            <Target className="w-7 h-7 text-white" />
-          </div>
-          <h3 className="text-2xl font-semibold text-gradient-candy mb-4">Personalized Goals</h3>
-          <p className="text-lg text-muted-foreground mb-6">
-            Set and achieve meaningful goals with AI-powered guidance that understands your unique aspirations and challenges
+          <MessageSquare className="w-12 h-12 mb-4 text-pink-500" />
+          <h3 className="text-xl font-semibold text-gradient-neon mb-3">Personal Coaching Sessions</h3>
+          <p className="text-muted-foreground mb-4">
+            Each AI coach specializes in different areas of personal growth, from wellness to finance, providing targeted guidance for your specific needs
           </p>
-          <div className="flex items-center justify-between mt-auto pt-4 border-t border-white/10">
-            <span className="text-sm text-muted-foreground">Core Feature</span>
-            <div className="flex items-center gap-2">
-              <Brain className="w-4 h-4 text-secondary" />
-              <span className="font-semibold">Smart Planning</span>
-            </div>
+          <div className="flex items-center text-sm text-muted-foreground">
+            <ArrowRight className="w-4 h-4 mr-2" />
+            <span>Seamlessly switch between coaches based on your needs</span>
           </div>
         </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          whileHover={{ y: -5 }}
-          transition={{ duration: 0.3, delay: 0.1 }}
-          className="glass rounded-3xl p-8 hover:bg-white/10 transition-all cursor-pointer group"
+          transition={{ delay: 0.2 }}
+          className="glass p-8 rounded-2xl hover:scale-105 transition-transform duration-300"
         >
-          <div className="h-14 w-14 rounded-2xl bg-gradient-to-r from-secondary via-highlight to-tertiary flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-            <Rocket className="w-7 h-7 text-white" />
-          </div>
-          <h3 className="text-2xl font-semibold text-gradient-aurora mb-4">Continuous Growth</h3>
-          <p className="text-lg text-muted-foreground mb-6">
-            Experience dynamic coaching that evolves with you, providing insights and strategies tailored to your progress
+          <Heart className="w-12 h-12 mb-4 text-purple-500" />
+          <h3 className="text-xl font-semibold text-gradient-neon mb-3">Personalized Matching</h3>
+          <p className="text-muted-foreground mb-4">
+            Your interactions with AI coaches help refine your profile, improving the quality of matches with potential partners, friends, and business connections
           </p>
-          <div className="flex items-center justify-between mt-auto pt-4 border-t border-white/10">
-            <span className="text-sm text-muted-foreground">Premium Feature</span>
-            <div className="flex items-center gap-2">
-              <Heart className="w-4 h-4 text-accent" />
-              <span className="font-semibold">Adaptive Support</span>
-            </div>
+          <div className="flex items-center text-sm text-muted-foreground">
+            <ArrowRight className="w-4 h-4 mr-2" />
+            <span>AI-powered compatibility analysis</span>
           </div>
         </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          whileHover={{ y: -5 }}
-          transition={{ duration: 0.3, delay: 0.2 }}
-          className="glass rounded-3xl p-8 hover:bg-white/10 transition-all cursor-pointer group"
+          transition={{ delay: 0.3 }}
+          className="glass p-8 rounded-2xl hover:scale-105 transition-transform duration-300"
         >
-          <div className="h-14 w-14 rounded-2xl bg-gradient-to-r from-highlight via-accent to-tertiary flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-            <Users className="w-7 h-7 text-white" />
-          </div>
-          <h3 className="text-2xl font-semibold text-gradient-rainbow mb-4">Supportive Community</h3>
-          <p className="text-lg text-muted-foreground mb-6">
-            Connect with like-minded individuals on similar journeys, sharing experiences and celebrating growth together
+          <Handshake className="w-12 h-12 mb-4 text-cyan-500" />
+          <h3 className="text-xl font-semibold text-gradient-neon mb-3">Community Integration</h3>
+          <p className="text-muted-foreground mb-4">
+            Your AI coaches help introduce you to like-minded individuals in our community who share similar goals and values
           </p>
-          <div className="flex items-center justify-between mt-auto pt-4 border-t border-white/10">
-            <span className="text-sm text-muted-foreground">Elite Feature</span>
-            <div className="flex items-center gap-2">
-              <UserPlus className="w-4 h-4 text-highlight" />
-              <span className="font-semibold">Community Growth</span>
-            </div>
+          <div className="flex items-center text-sm text-muted-foreground">
+            <ArrowRight className="w-4 h-4 mr-2" />
+            <span>Connect with others on similar journeys</span>
           </div>
         </motion.div>
       </div>
