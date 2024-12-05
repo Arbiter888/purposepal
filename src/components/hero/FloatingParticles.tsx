@@ -52,50 +52,51 @@ export const FloatingParticles = () => {
 
   return (
     <div className="fixed inset-0 pointer-events-none overflow-hidden">
-      {particles.map((particle) => (
-        <motion.div
-          key={particle.id}
-          className={`absolute rounded-full bg-gradient-to-r ${particle.color}`}
-          style={{
-            width: particle.size,
-            height: particle.size,
-            x: particle.initialX,
-            y: particle.initialY,
-            filter: 'blur(1px)',
-          }}
-          animate={{
-            x: [
-              particle.initialX,
-              particle.initialX + Math.sin(particle.id) * 100,
-              particle.initialX,
-            ],
-            y: [
-              particle.initialY,
-              particle.initialY + Math.cos(particle.id) * 100,
-              particle.initialY,
-            ],
-            scale: [1, 1.2, 1],
-          }}
-          transition={{
-            duration: 5 + Math.random() * 5,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-          drag
-          dragConstraints={{
-            top: 0,
-            right: 0,
-            bottom: 0,
-            left: 0,
-          }}
-          dragElastic={0.2}
-          whileHover={{ scale: 1.5 }}
-          style={{
-            x: useMotionValue(particle.x),
-            y: useMotionValue(particle.y),
-          }}
-        />
-      ))}
+      {particles.map((particle) => {
+        const motionX = useMotionValue(particle.x);
+        const motionY = useMotionValue(particle.y);
+        
+        return (
+          <motion.div
+            key={particle.id}
+            className={`absolute rounded-full bg-gradient-to-r ${particle.color}`}
+            style={{
+              width: particle.size,
+              height: particle.size,
+              x: motionX,
+              y: motionY,
+              filter: 'blur(1px)',
+            }}
+            animate={{
+              x: [
+                particle.initialX,
+                particle.initialX + Math.sin(particle.id) * 100,
+                particle.initialX,
+              ],
+              y: [
+                particle.initialY,
+                particle.initialY + Math.cos(particle.id) * 100,
+                particle.initialY,
+              ],
+              scale: [1, 1.2, 1],
+            }}
+            transition={{
+              duration: 5 + Math.random() * 5,
+              repeat: Infinity,
+              ease: "linear",
+            }}
+            drag
+            dragConstraints={{
+              top: 0,
+              right: 0,
+              bottom: 0,
+              left: 0,
+            }}
+            dragElastic={0.2}
+            whileHover={{ scale: 1.5 }}
+          />
+        );
+      })}
       <motion.div
         className="absolute w-96 h-96 rounded-full pointer-events-none"
         style={{
