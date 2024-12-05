@@ -36,7 +36,7 @@ const HeroWithFeatures = () => {
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-8"
         >
           <Bot className="w-5 h-5 text-gradient-rainbow" />
-          <span className="text-gradient-rainbow text-sm font-medium">Meet Presence, Your Personal AI Avatar Coach</span>
+          <span className="text-gradient-rainbow text-sm font-medium">Meet Presence & Their AI Avatar Coach Friends</span>
         </motion.div>
 
         <motion.div
@@ -46,7 +46,7 @@ const HeroWithFeatures = () => {
           className="flex items-center justify-center gap-2 mb-6"
         >
           <span className="text-2xl md:text-3xl font-medium inline-block">
-            Design Your Dream Life with <span className="text-gradient-sunshine">BornPurpose</span>
+            Experience Life with <span className="text-gradient-sunshine">BornPurpose</span>
           </span>
         </motion.div>
         
@@ -63,7 +63,7 @@ const HeroWithFeatures = () => {
             transition={{ delay: 0.6 }}
             className="text-gradient-aurora block mt-2 relative"
           >
-            A New Life
+            Wholeness Begins Here
           </motion.span>
         </motion.h1>
 
@@ -73,8 +73,8 @@ const HeroWithFeatures = () => {
           transition={{ delay: 0.5 }}
           className="mt-8 text-xl md:text-2xl text-muted-foreground/90 max-w-2xl mx-auto leading-relaxed glass p-6 rounded-xl"
         >
-          Experience personalized coaching like never before with your dedicated AI Avatar Coach.
-          Available 24/7, ready to guide you through every step of your transformation journey.
+          Join Presence and their carefully chosen AI Avatar Coach friends on a transformative journey. 
+          Together, they'll guide you through wellness, nutrition, spiritual growth, fitness, and financial success.
         </motion.p>
 
         <motion.div
@@ -102,7 +102,7 @@ const HeroWithFeatures = () => {
               }}
             />
             <UserPlus className="w-5 h-5" />
-            <span className="relative z-10">Sign Up for Early Access</span>
+            <span className="relative z-10">Begin Your Journey</span>
           </motion.button>
           
           <motion.button
@@ -125,7 +125,7 @@ const HeroWithFeatures = () => {
               }}
             />
             <Users className="w-5 h-5" />
-            <span className="relative z-10">I Have a Referral</span>
+            <span className="relative z-10">Share With Friends</span>
           </motion.button>
         </motion.div>
 
