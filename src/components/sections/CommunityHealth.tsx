@@ -1,8 +1,6 @@
 import { motion } from "framer-motion";
-import { Heart, Users, Handshake, Brain, Target, Sparkles, MessageSquare, UserCheck, Zap } from "lucide-react";
+import { Heart, Users, Handshake } from "lucide-react";
 import { ConnectionCategory } from "../community/ConnectionCategory";
-import { ProcessStep } from "../community/ProcessStep";
-import { TestimonialCard } from "../chat-preview/TestimonialCard";
 
 const categories = [
   {
@@ -46,54 +44,6 @@ const categories = [
   }
 ];
 
-const testimonials = [
-  {
-    quote: "The AI coach helped me find my perfect business partner. Our values and vision aligned perfectly!",
-    author: "Sarah Chen",
-    initials: "SC",
-    image: "photo-1649972904349-6e44c42644a7",
-    gradient: "bg-gradient-to-r from-secondary to-accent"
-  },
-  {
-    quote: "Through expert guidance, I discovered what I truly wanted in relationships and found amazing connections.",
-    author: "Emma Thompson",
-    initials: "ET",
-    image: "photo-1581091226825-a6a2a5aee158",
-    gradient: "bg-gradient-to-r from-tertiary to-highlight"
-  },
-  {
-    quote: "The personalized matching process introduced me to people who share my values and aspirations.",
-    author: "Michael Rivera",
-    initials: "MR",
-    image: "photo-1581092795360-fd1ca04f0952",
-    gradient: "bg-gradient-to-r from-highlight to-secondary"
-  }
-];
-
-const processSteps = [
-  {
-    icon: Brain,
-    title: "AI Understanding",
-    description: "Presence AI engages in natural conversations to understand your personality, aspirations, and life goals",
-    bgColor: "bg-red-500/20",
-    iconColor: "text-red-500"
-  },
-  {
-    icon: UserCheck,
-    title: "Expert Guidance",
-    description: "Connect with professional coaches who help refine your goals and prepare you for meaningful relationships",
-    bgColor: "bg-amber-500/20",
-    iconColor: "text-amber-500"
-  },
-  {
-    icon: Target,
-    title: "Personalized Matching",
-    description: "Our AI combines insights from your journey and expert guidance to find truly compatible connections",
-    bgColor: "bg-green-500/20",
-    iconColor: "text-green-500"
-  }
-];
-
 const CommunityHealth = () => {
   return (
     <section className="section-padding relative overflow-hidden">
@@ -109,7 +59,7 @@ const CommunityHealth = () => {
         </p>
       </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto mb-16">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
         {categories.map((category, index) => (
           <ConnectionCategory
             key={category.title}
@@ -117,56 +67,6 @@ const CommunityHealth = () => {
           />
         ))}
       </div>
-
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.4 }}
-        className="mt-16 max-w-6xl mx-auto"
-      >
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/10 mb-6">
-            <Sparkles className="w-4 h-4 text-secondary" />
-            <span className="text-sm font-medium text-secondary">Your Journey to Meaningful Connections</span>
-          </div>
-          <h3 className="text-3xl font-bold mb-4">How AI Matching Works</h3>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            Our AI-powered platform guides you through a journey of self-discovery to meaningful connections
-          </p>
-        </div>
-        
-        <div className="space-y-6 mb-16">
-          {processSteps.map((step, index) => (
-            <ProcessStep
-              key={index}
-              {...step}
-              index={index}
-            />
-          ))}
-        </div>
-
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6 }}
-          className="mt-16"
-        >
-          <h4 className="text-2xl font-semibold text-center mb-8">What Our Members Say</h4>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.2 }}
-                className="glass p-6 rounded-xl hover:scale-105 transition-transform duration-300"
-              >
-                <TestimonialCard {...testimonial} />
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-      </motion.div>
     </section>
   );
 };
