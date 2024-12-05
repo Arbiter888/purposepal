@@ -88,22 +88,13 @@ const Index = () => {
         <HeroWithFeatures />
         <FeaturesShowcase />
         
-        <div className="relative py-12 md:py-24">
-          <div className="max-w-7xl mx-auto px-4 space-y-8 md:space-y-16">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="text-center mb-8 md:mb-16"
-            >
-              <h2 className={`text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r ${activeCoach.gradient} bg-clip-text text-transparent mb-4`}>
-                Meet your AI Coach, {activeCoach.name}
-              </h2>
-              <p className="text-lg md:text-xl text-muted-foreground/90 max-w-2xl mx-auto">
-                Choose your personal AI coach and start your journey to a better life
-              </p>
-            </motion.div>
-
+        <motion.div 
+          className="relative"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+        >
+          <div className="max-w-7xl mx-auto px-4 space-y-8 md:space-y-12">
             <div className="grid md:grid-cols-2 gap-8 md:gap-12">
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
@@ -124,7 +115,7 @@ const Index = () => {
               </motion.div>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         <CommunityHealth />
         <PricingSection />
