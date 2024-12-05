@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Heart, Users, Handshake, Brain, Target, ArrowRight, Sparkles, MessageSquare, UserCheck, Zap } from "lucide-react";
+import { Heart, Users, Handshake, Brain, Target, Sparkles, MessageSquare, UserCheck, Zap } from "lucide-react";
 import { ConnectionCategory } from "../community/ConnectionCategory";
 import { ProcessStep } from "../community/ProcessStep";
 
@@ -45,6 +45,30 @@ const categories = [
   }
 ];
 
+const experts = [
+  {
+    name: "Dr. Sarah Chen",
+    role: "Life Purpose Coach",
+    image: "https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=800&q=80",
+    description: "Helping you align career and personal goals",
+    expertise: ["Career Development", "Life Planning", "Personal Growth"]
+  },
+  {
+    name: "Emma Thompson",
+    role: "Relationship Expert",
+    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=800&q=80",
+    description: "Creating meaningful connections through understanding",
+    expertise: ["Dating Strategy", "Communication", "Self-Discovery"]
+  },
+  {
+    name: "Dr. Michelle Wang",
+    role: "Wellness Coach",
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80",
+    description: "Balancing mind, body, and relationships",
+    expertise: ["Holistic Wellness", "Mindfulness", "Lifestyle Design"]
+  }
+];
+
 const CommunityHealth = () => {
   return (
     <section className="section-padding relative overflow-hidden">
@@ -73,16 +97,16 @@ const CommunityHealth = () => {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4 }}
-        className="mt-16 max-w-4xl mx-auto"
+        className="mt-16 max-w-6xl mx-auto"
       >
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/10 mb-6">
             <Sparkles className="w-4 h-4 text-secondary" />
-            <span className="text-sm font-medium text-secondary">How AI Matching Works</span>
+            <span className="text-sm font-medium text-secondary">Your Journey to Meaningful Connections</span>
           </div>
-          <h3 className="text-3xl font-bold mb-4">Intelligent Connection Process</h3>
+          <h3 className="text-3xl font-bold mb-4">Personalized Matching Process</h3>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Our sophisticated AI system uses multiple layers of analysis to ensure meaningful and compatible connections.
+            Our AI-powered platform guides you through a journey of self-discovery to meaningful connections
           </p>
         </div>
         
@@ -90,34 +114,66 @@ const CommunityHealth = () => {
           <ProcessStep
             index={0}
             icon={Brain}
-            title="Deep Understanding"
-            description="AI analyzes your personality traits, communication style, and life experiences through natural conversations"
+            title="AI Understanding"
+            description="Presence AI engages in natural conversations to understand your personality, aspirations, and life goals"
           />
           <ProcessStep
             index={1}
-            icon={Target}
-            title="Precise Matching"
-            description="Advanced algorithms identify potential connections based on compatibility scores across multiple dimensions"
+            icon={UserCheck}
+            title="Expert Guidance"
+            description="Connect with professional coaches who help refine your goals and prepare you for meaningful relationships"
           />
           <ProcessStep
             index={2}
-            icon={MessageSquare}
-            title="Guided Conversations"
-            description="AI coaches facilitate initial interactions and suggest relevant topics to discuss"
-          />
-          <ProcessStep
-            index={3}
-            icon={UserCheck}
-            title="Compatibility Verification"
-            description="Continuous analysis of interaction patterns to ensure meaningful connection development"
-          />
-          <ProcessStep
-            index={4}
-            icon={Zap}
-            title="Dynamic Adaptation"
-            description="AI learns from your feedback and interactions to improve future matches and suggestions"
+            icon={Target}
+            title="Personalized Matching"
+            description="Our AI combines insights from your journey and expert guidance to find truly compatible connections"
           />
         </div>
+
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6 }}
+          className="mt-16"
+        >
+          <h4 className="text-2xl font-semibold text-center mb-8">Meet Our Expert Guides</h4>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {experts.map((expert, index) => (
+              <motion.div
+                key={expert.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.2 }}
+                className="glass p-6 rounded-xl hover:scale-105 transition-transform duration-300"
+              >
+                <div className="relative mb-4">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-xl" />
+                  <img
+                    src={expert.image}
+                    alt={expert.name}
+                    className="w-full h-64 object-cover rounded-xl"
+                  />
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <h5 className="text-white font-semibold text-lg">{expert.name}</h5>
+                    <p className="text-white/80 text-sm">{expert.role}</p>
+                  </div>
+                </div>
+                <p className="text-muted-foreground mb-4">{expert.description}</p>
+                <div className="flex flex-wrap gap-2">
+                  {expert.expertise.map((skill) => (
+                    <span
+                      key={skill}
+                      className="text-xs px-3 py-1 rounded-full glass bg-white/5"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
       </motion.div>
     </section>
   );
