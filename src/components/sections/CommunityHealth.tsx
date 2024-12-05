@@ -53,7 +53,7 @@ const CommunityHealth = () => {
         transition={{ duration: 0.6 }}
         className="text-center mb-16"
       >
-        <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gradient-neon mb-4">
+        <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gradient-rainbow mb-4">
           AI-Powered Community Matching
         </h2>
         <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
