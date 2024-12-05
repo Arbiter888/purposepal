@@ -1,15 +1,13 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { Send, Bot, User } from "lucide-react";
+import { Bot, User } from "lucide-react";
 import { useState } from "react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
-import { Button } from "@/components/ui/button";
 import { 
   wellnessMessages, 
   nutritionMessages, 
   spiritualMessages, 
   fitnessMessages,
   financialMessages,
-  suggestedMessages,
   serviceHighlight 
 } from "@/data/chatMessages";
 
@@ -18,16 +16,11 @@ interface EnhancedChatPreviewProps {
 }
 
 const EnhancedChatPreview = ({ onServiceChange }: EnhancedChatPreviewProps) => {
-  const [inputValue, setInputValue] = useState("");
   const [activeTab, setActiveTab] = useState("wellness");
 
   const handleTabChange = (value: string) => {
     setActiveTab(value);
     onServiceChange(value);
-  };
-
-  const handleSuggestedMessage = (message: string) => {
-    setInputValue(message);
   };
 
   const getActiveMessages = () => {
@@ -76,7 +69,7 @@ const EnhancedChatPreview = ({ onServiceChange }: EnhancedChatPreviewProps) => {
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-secondary via-accent to-secondary opacity-50" />
           
           <div className="space-y-6 mb-8 max-h-[500px] overflow-y-auto custom-scrollbar">
-            <AnimatePresence mode="wait">
+            <AnimatePresence mode="sync">
               {getActiveMessages().map((message, index) => (
                 <motion.div 
                   key={`${activeTab}-${index}`}
@@ -95,11 +88,9 @@ const EnhancedChatPreview = ({ onServiceChange }: EnhancedChatPreviewProps) => {
                   <div className={`relative ${message.type === 'user' ? 'bg-accent/10' : 'bg-muted/80'} rounded-2xl p-4 max-w-[80%] ${
                     message.type === 'ai' ? 'rounded-tl-sm' : 'rounded-tr-sm'
                   }`}>
-                    {/* Add triangle pointer for AI messages */}
                     {message.type === 'ai' && (
                       <div className="absolute left-[-8px] top-4 w-0 h-0 border-t-[8px] border-t-transparent border-r-[8px] border-r-muted/80 border-b-[8px] border-b-transparent" />
                     )}
-                    {/* Add triangle pointer for user messages */}
                     {message.type === 'user' && (
                       <div className="absolute right-[-8px] top-4 w-0 h-0 border-t-[8px] border-t-transparent border-l-[8px] border-l-accent/10 border-b-[8px] border-b-transparent" />
                     )}
@@ -120,39 +111,6 @@ const EnhancedChatPreview = ({ onServiceChange }: EnhancedChatPreviewProps) => {
                 </motion.div>
               ))}
             </AnimatePresence>
-          </div>
-          
-          <div className="space-y-4">
-            <div className="flex gap-3">
-              <input 
-                type="text" 
-                value={inputValue}
-                onChange={(e) => setInputValue(e.target.value)}
-                placeholder="Type your message..." 
-                className="flex-1 bg-muted/80 rounded-full px-6 py-4 focus:outline-none focus:ring-2 focus:ring-secondary/50 transition-all text-lg"
-              />
-              <motion.button 
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-muted/80 p-4 rounded-full hover:bg-white/10 transition-colors group"
-              >
-                <Send className="w-6 h-6 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-              </motion.button>
-            </div>
-            
-            <div className="flex flex-wrap gap-2">
-              {suggestedMessages[activeTab as keyof typeof suggestedMessages].map((message, index) => (
-                <Button
-                  key={index}
-                  variant="outline"
-                  size="sm"
-                  onClick={() => handleSuggestedMessage(message)}
-                  className="text-sm hover:bg-accent/10"
-                >
-                  {message}
-                </Button>
-              ))}
-            </div>
           </div>
         </motion.div>
       </Tabs>
