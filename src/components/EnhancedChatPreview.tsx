@@ -1,8 +1,5 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { PreviewCard } from "./chat-preview/PreviewCard";
-import { BulletList } from "./chat-preview/BulletList";
-import { TestimonialCard } from "./chat-preview/TestimonialCard";
 import { CoachSelector } from "./chat-preview/CoachSelector";
 import { Coach } from "./chat-preview/types";
 
@@ -113,40 +110,6 @@ const EnhancedChatPreview = ({ onServiceChange }: EnhancedChatPreviewProps) => {
         activeCoach={activeCoach}
         onCoachChange={handleCoachChange}
       />
-
-      <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="grid grid-cols-1 md:grid-cols-2 gap-6"
-      >
-        <PreviewCard title="Example Questions" gradient={activeCoach.gradient}>
-          <BulletList items={activeCoach.examples} gradient={activeCoach.bgGradient} />
-        </PreviewCard>
-
-        <PreviewCard title="How I Can Help" gradient={activeCoach.gradient}>
-          <BulletList items={activeCoach.capabilities} gradient={activeCoach.bgGradient} />
-        </PreviewCard>
-
-        <PreviewCard title="Expert Connections" gradient={activeCoach.gradient}>
-          <BulletList 
-            items={[
-              `Professional ${activeCoach.title}s`,
-              "Certified Practitioners",
-              "Industry Specialists"
-            ]} 
-            gradient={activeCoach.bgGradient}
-          />
-        </PreviewCard>
-
-        <PreviewCard title="User Testimonial" gradient={activeCoach.gradient}>
-          <TestimonialCard
-            quote={`${activeCoach.name} helped me transform my ${activeCoach.id} journey. The personalized guidance and expert connections made all the difference!`}
-            author="John Doe"
-            initials="JD"
-            gradient={activeCoach.bgGradient}
-          />
-        </PreviewCard>
-      </motion.div>
     </div>
   );
 };
