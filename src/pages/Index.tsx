@@ -109,23 +109,23 @@ const Index = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="mb-8"
+              className="text-center mb-8"
             >
-              <EnhancedChatPreview onServiceChange={setSelectedService} />
+              <h2 className={`text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r ${activeCoach.gradient} bg-clip-text text-transparent mb-4`}>
+                Meet {activeCoach.name}
+              </h2>
+              <p className="text-lg md:text-xl text-white/90">
+                Choose your personal AI coach and start your journey to a better life
+              </p>
             </motion.div>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="text-center mb-8 md:mb-16"
+              className="mb-8"
             >
-              <h2 className={`text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r ${activeCoach.gradient} bg-clip-text text-transparent mb-4`}>
-                Meet {activeCoach.name}, your new AI {activeCoach.title}
-              </h2>
-              <p className="text-lg md:text-xl text-muted-foreground/90 max-w-2xl mx-auto">
-                Choose your personal AI coach and start your journey to a better life
-              </p>
+              <EnhancedChatPreview onServiceChange={setSelectedService} />
             </motion.div>
 
             <div className="grid md:grid-cols-2 gap-8 md:gap-12">
