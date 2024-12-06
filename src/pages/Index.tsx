@@ -13,6 +13,39 @@ import { Button } from "@/components/ui/button";
 import { HelpCircle } from "lucide-react";
 import { wellnessMessages, nutritionMessages, spiritualMessages, fitnessMessages, financialMessages, suggestedMessages } from "@/data/chatMessages";
 
+const coachInfo = {
+  wellness: {
+    name: "Ava",
+    title: "Wellness Coach",
+    gradient: "from-green-400 via-cyan-500 to-blue-500",
+    bgGradient: "bg-gradient-to-r from-green-400 via-cyan-500 to-blue-500"
+  },
+  nutrition: {
+    name: "Olivia",
+    title: "Nutrition Expert",
+    gradient: "from-pink-500 via-purple-500 to-indigo-500",
+    bgGradient: "bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500"
+  },
+  spiritual: {
+    name: "Amara",
+    title: "Spiritual Guide",
+    gradient: "from-yellow-400 via-orange-500 to-red-500",
+    bgGradient: "bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500"
+  },
+  fitness: {
+    name: "Amber",
+    title: "Fitness Expert",
+    gradient: "from-lime-400 via-emerald-500 to-teal-500",
+    bgGradient: "bg-gradient-to-r from-lime-400 via-emerald-500 to-teal-500"
+  },
+  financial: {
+    name: "Maya",
+    title: "Financial Advisor",
+    gradient: "from-blue-400 via-indigo-500 to-purple-500",
+    bgGradient: "bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-500"
+  }
+};
+
 const Index = () => {
   const [selectedService, setSelectedService] = useState("wellness");
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -30,39 +63,7 @@ const Index = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const activeCoach = {
-    wellness: {
-      name: "Ava",
-      title: "Wellness Coach",
-      gradient: "from-green-400 via-cyan-500 to-blue-500",
-      bgGradient: "bg-gradient-to-r from-green-400 via-cyan-500 to-blue-500"
-    },
-    nutrition: {
-      name: "Olivia",
-      title: "Nutrition Expert",
-      gradient: "from-pink-500 via-purple-500 to-indigo-500",
-      bgGradient: "bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500"
-    },
-    spiritual: {
-      name: "Amara",
-      title: "Spiritual Guide",
-      gradient: "from-yellow-400 via-orange-500 to-red-500",
-      bgGradient: "bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500"
-    },
-    fitness: {
-      name: "Amber",
-      title: "Fitness Expert",
-      gradient: "from-lime-400 via-emerald-500 to-teal-500",
-      bgGradient: "bg-gradient-to-r from-lime-400 via-emerald-500 to-teal-500"
-    },
-    financial: {
-      name: "Maya",
-      title: "Financial Advisor",
-      gradient: "from-blue-400 via-indigo-500 to-purple-500",
-      bgGradient: "bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-500"
-    }
-  }[selectedService];
-
+  const activeCoach = coachInfo[selectedService as keyof typeof coachInfo];
   const messages = {
     wellness: wellnessMessages,
     nutrition: nutritionMessages,
@@ -118,22 +119,16 @@ const Index = () => {
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-              <div className="lg:col-span-8">
-                <EnhancedChatPreview onServiceChange={setSelectedService} />
-              </div>
-              
-              <div className="lg:col-span-4">
-                <motion.div
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5 }}
-                  className="w-full"
-                >
-                  <CoachPreview activeService={selectedService} />
-                </motion.div>
-              </div>
-            </div>
+            <EnhancedChatPreview onServiceChange={setSelectedService} />
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="w-full"
+            >
+              <CoachPreview activeService={selectedService} />
+            </motion.div>
 
             <div className="grid md:grid-cols-2 gap-8 md:gap-12">
               <motion.div
