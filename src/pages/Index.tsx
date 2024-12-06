@@ -119,15 +119,6 @@ const Index = () => {
               </p>
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="mb-8"
-            >
-              <EnhancedChatPreview onServiceChange={setSelectedService} />
-            </motion.div>
-
             <div className="grid md:grid-cols-2 gap-8 md:gap-12">
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
@@ -180,12 +171,21 @@ const Index = () => {
                 <CoachPreview activeService={selectedService} />
               </motion.div>
             </div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="mb-8"
+            >
+              <EnhancedChatPreview onServiceChange={setSelectedService} />
+            </motion.div>
+
+            <CommunityHealth />
+            <PricingSection />
+            <CallToAction />
           </div>
         </div>
-
-        <CommunityHealth />
-        <PricingSection />
-        <CallToAction />
       </div>
     </div>
   );
