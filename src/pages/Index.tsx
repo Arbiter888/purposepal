@@ -130,12 +130,12 @@ const Index = () => {
               <CoachPreview activeService={selectedService} />
             </motion.div>
 
-            <div className="grid md:grid-cols-2 gap-8 md:gap-12">
+            <div className="w-full">
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5 }}
-                className="order-2 md:order-1 relative"
+                className="relative"
               >
                 <div className="relative">
                   <Button
