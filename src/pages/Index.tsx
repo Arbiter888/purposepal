@@ -16,38 +16,53 @@ import { wellnessMessages, nutritionMessages, spiritualMessages, fitnessMessages
 const coachInfo = {
   wellness: {
     name: "Ava",
-    title: "Wellness Coach",
+    title: "Mental Wellness Coach",
+    description: "Transform your mental well-being with personalized guidance from your dedicated AI-powered Wellness Coach.",
     gradient: "from-green-400 via-cyan-500 to-blue-500",
-    bgGradient: "bg-gradient-to-r from-green-400 via-cyan-500 to-blue-500"
+    tags: ["Stress Management", "Mindfulness", "Emotional Balance"],
+    videoUrl: "https://www.youtube.com/embed/GkOue0KxWaQ",
+    backgroundImage: "/lovable-uploads/440c76a5-97ea-4586-87db-b7ad21444b16.png"
   },
   nutrition: {
     name: "Olivia",
     title: "Nutrition Expert",
+    description: "Transform your dietary habits with personalized guidance from your dedicated AI-powered Nutrition Coach.",
     gradient: "from-pink-500 via-purple-500 to-indigo-500",
-    bgGradient: "bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500"
+    tags: ["Meal Planning", "Portion Control", "Dietary Analysis"],
+    videoUrl: "https://www.youtube.com/embed/_9x2l119RGw",
+    backgroundImage: "/lovable-uploads/4335b249-4c44-4b85-bbbf-fa72d693bc4f.png"
   },
   spiritual: {
     name: "Amara",
     title: "Spiritual Guide",
+    description: "Transform your spiritual journey with personalized guidance from your dedicated AI-powered Spiritual Coach.",
     gradient: "from-yellow-400 via-orange-500 to-red-500",
-    bgGradient: "bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500"
+    tags: ["Meditation", "Mindfulness", "Spiritual Growth"],
+    videoUrl: "https://www.youtube.com/embed/4cmO7dEGQBk",
+    backgroundImage: "/lovable-uploads/440c76a5-97ea-4586-87db-b7ad21444b16.png"
   },
   fitness: {
     name: "Amber",
     title: "Fitness Expert",
+    description: "Transform your fitness journey with personalized guidance from your dedicated AI-powered Fitness Coach.",
     gradient: "from-lime-400 via-emerald-500 to-teal-500",
-    bgGradient: "bg-gradient-to-r from-lime-400 via-emerald-500 to-teal-500"
+    tags: ["Workout Planning", "Form Guidance", "Exercise Tips"],
+    videoUrl: "https://www.youtube.com/embed/O0o-Y25rv7c",
+    backgroundImage: "/lovable-uploads/2b866cad-b0b6-4291-b93e-404f8ef8e0e4.png"
   },
   financial: {
     name: "Maya",
-    title: "Financial Advisor",
+    title: "Financial Coach",
+    description: "Transform your financial future with personalized guidance from your dedicated AI-powered Financial Coach.",
     gradient: "from-blue-400 via-indigo-500 to-purple-500",
-    bgGradient: "bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-500"
-  }
+    tags: ["Investment Planning", "Budgeting", "Wealth Building"],
+    videoUrl: "https://www.youtube.com/embed/UiJ0OfgSt1M",
+    backgroundImage: "/lovable-uploads/e1950664-3053-4b9a-aed1-78f46c6e7573.png"
+  },
 };
 
 const Index = () => {
-  const [selectedService, setSelectedService] = useState("wellness");
+  const [selectedService, setSelectedService] = useState("spiritual"); // Changed default to spiritual for Amara
   const [scrollProgress, setScrollProgress] = useState(0);
   const [showHelp, setShowHelp] = useState(false);
 
