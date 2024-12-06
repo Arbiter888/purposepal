@@ -1,75 +1,72 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { Heart, Users, Handshake } from "lucide-react";
+import { Heart, Bot, Sparkles } from "lucide-react";
 import { ConnectionCategory } from "../community/ConnectionCategory";
 import { useState, useEffect } from "react";
 
 const categories = [
   {
-    title: "Business Connections",
-    titleText: "Meet your New Business Partner",
-    description: "Find partners who share your vision and values for professional growth",
-    icon: Handshake,
+    title: "Wellness Friends",
+    description: "Connect with people who share your wellness journey and mindful living practices",
+    icon: Sparkles,
     iconColor: "text-cyan-500",
     matches: [
       {
         name: "Sarah Chen",
         image: "https://i.pravatar.cc/150?img=47",
-        aiCoach: "Career AI Coach",
-        aiSuggestion: "Sarah's focus on mindful leadership and sustainable business practices aligns perfectly with your entrepreneurial goals.",
-        interests: ["Entrepreneurship", "Wellness", "Innovation"]
+        aiCoach: "Wellness AI Coach Ava",
+        aiSuggestion: "Sarah's dedication to mindfulness and holistic wellness aligns perfectly with your journey to inner peace.",
+        interests: ["Meditation", "Yoga", "Mindful Living"]
       },
       {
         name: "David Park",
         image: "https://i.pravatar.cc/150?img=12",
-        aiCoach: "Career AI Coach",
-        aiSuggestion: "David's expertise in sustainable business models could complement your growth strategy.",
-        interests: ["Sustainability", "Tech", "Leadership"]
+        aiCoach: "Wellness AI Coach Ava",
+        aiSuggestion: "David's focus on work-life balance and stress management could complement your wellness goals.",
+        interests: ["Stress Management", "Mindfulness", "Healthy Living"]
       }
     ]
   },
   {
-    title: "Friendship Matches",
-    titleText: "Meet your New Friend",
-    description: "Connect with like-minded individuals who share your interests and values",
-    icon: Users,
+    title: "Spiritual Friends",
+    description: "Find companions who share your spiritual journey and personal growth aspirations",
+    icon: Heart,
     iconColor: "text-purple-500",
     matches: [
       {
         name: "Michael Rivera",
         image: "https://i.pravatar.cc/150?img=68",
-        aiCoach: "Wellness AI Coach",
-        aiSuggestion: "Michael's dedication to personal growth and meditation practice resonates with your spiritual journey.",
-        interests: ["Meditation", "Fitness", "Reading"]
+        aiCoach: "Spiritual Guide Amara",
+        aiSuggestion: "Michael's deep interest in meditation and spiritual growth resonates with your quest for inner wisdom.",
+        interests: ["Spiritual Growth", "Meditation", "Personal Development"]
       },
       {
         name: "Lisa Wong",
         image: "https://i.pravatar.cc/150?img=32",
-        aiCoach: "Wellness AI Coach",
-        aiSuggestion: "Lisa's passion for mindfulness and community building aligns with your interests.",
-        interests: ["Yoga", "Art", "Community"]
+        aiCoach: "Spiritual Guide Amara",
+        aiSuggestion: "Lisa's commitment to spiritual practices and community building aligns with your path.",
+        interests: ["Spiritual Community", "Mindfulness", "Inner Peace"]
       }
     ]
   },
   {
-    title: "Romantic Connections",
-    titleText: "Meet your Life Partner",
-    description: "Discover meaningful relationships based on shared values and life goals",
-    icon: Heart,
+    title: "Growth Friends",
+    description: "Connect with people focused on personal development and mutual support",
+    icon: Bot,
     iconColor: "text-pink-500",
     matches: [
       {
         name: "Emma Thompson",
         image: "https://i.pravatar.cc/150?img=45",
-        aiCoach: "Relationship AI Coach",
-        aiSuggestion: "Emma's approach to life-work balance and spiritual growth mirrors yours beautifully.",
-        interests: ["Travel", "Wellness", "Arts"]
+        aiCoach: "Financial Advisor Maya",
+        aiSuggestion: "Emma shares your interest in personal growth and financial wellness journey.",
+        interests: ["Personal Growth", "Financial Wellness", "Life Balance"]
       },
       {
         name: "James Wilson",
         image: "https://i.pravatar.cc/150?img=15",
-        aiCoach: "Relationship AI Coach",
-        aiSuggestion: "James shares your passion for personal development and mindful living.",
-        interests: ["Mindfulness", "Nature", "Growth"]
+        aiCoach: "Fitness Coach Amber",
+        aiSuggestion: "James's holistic approach to fitness and wellness matches your goals.",
+        interests: ["Fitness Journey", "Wellness", "Active Lifestyle"]
       }
     ]
   }
@@ -84,7 +81,6 @@ const CommunityHealth = () => {
   });
 
   useEffect(() => {
-    // Reduced interval from 5000ms to 3000ms for more frequent transitions
     const interval = setInterval(() => {
       setActiveMatch((prev) => {
         const newState = { ...prev };
@@ -106,18 +102,18 @@ const CommunityHealth = () => {
       >
         <AnimatePresence mode="wait">
           <motion.h2
-            key={categories[activeCategory].titleText}
+            key="main-title"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.3 }} // Reduced from 0.5 to 0.3 for faster transitions
+            transition={{ duration: 0.3 }}
             className="text-5xl md:text-6xl lg:text-7xl font-bold text-gradient-rainbow mb-4"
           >
-            {categories[activeCategory].titleText}
+            And meet your new circle of friends
           </motion.h2>
         </AnimatePresence>
         <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-          Our AI coaches analyze your goals, values, and journey to connect you with like-minded individuals who can enrich your path to wellness and growth.
+          Our AI coaches analyze your journey and connect you with like-minded individuals who can enrich your path to wellness and growth.
         </p>
       </motion.div>
 
@@ -137,7 +133,7 @@ const CommunityHealth = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.3 }} // Reduced from 0.5 to 0.3 for faster transitions
+                transition={{ duration: 0.3 }}
                 className={`cursor-pointer ${activeCategory === index ? 'scale-105' : 'scale-95'} transition-all duration-300`}
               >
                 <ConnectionCategory
