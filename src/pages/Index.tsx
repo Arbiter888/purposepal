@@ -112,7 +112,7 @@ const Index = () => {
               className="text-center mb-8"
             >
               <h2 className={`text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r ${activeCoach.gradient} bg-clip-text text-transparent mb-4`}>
-                Meet {activeCoach.name}
+                Meet her friend, {activeCoach.name}, your new {activeCoach.title}
               </h2>
               <p className="text-lg md:text-xl text-white/90">
                 Choose your personal AI coach and start your journey to a better life
