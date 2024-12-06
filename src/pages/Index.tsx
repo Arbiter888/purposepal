@@ -119,6 +119,17 @@ const Index = () => {
               </p>
             </motion.div>
 
+            <EnhancedChatPreview onServiceChange={setSelectedService} />
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="w-full"
+            >
+              <CoachPreview activeService={selectedService} />
+            </motion.div>
+
             <div className="grid md:grid-cols-2 gap-8 md:gap-12">
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
@@ -161,25 +172,7 @@ const Index = () => {
                   <ChatPreview messages={messages} service={selectedService} />
                 </div>
               </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5 }}
-                className="order-1 md:order-2"
-              >
-                <CoachPreview activeService={selectedService} />
-              </motion.div>
             </div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="mb-8"
-            >
-              <EnhancedChatPreview onServiceChange={setSelectedService} />
-            </motion.div>
 
             <CommunityHealth />
             <PricingSection />
