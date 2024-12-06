@@ -16,6 +16,7 @@ import SavedPlans from "@/components/SavedPlans";
 import { Button } from "@/components/ui/button";
 import { HelpCircle } from "lucide-react";
 import { wellnessMessages, nutritionMessages, spiritualMessages, fitnessMessages, financialMessages, suggestedMessages } from "@/data/chatMessages";
+import { Plan } from "@/components/SavedPlans";
 
 const coachInfo = {
   wellness: {
@@ -72,7 +73,9 @@ const Index = () => {
         });
         return [];
       }
-      return data;
+
+      // Type assertion to ensure the data matches our Plan interface
+      return (data as Plan[]) || [];
     },
   });
 

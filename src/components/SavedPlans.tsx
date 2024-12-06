@@ -11,6 +11,7 @@ export interface Plan {
   status: 'active' | 'archived' | 'completed';
   service: string;
   created_at: string;
+  user_id: string; // Added this field since it comes from Supabase
 }
 
 interface SavedPlansProps {
