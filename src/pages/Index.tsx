@@ -109,6 +109,15 @@ const Index = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
+              className="mb-8"
+            >
+              <EnhancedChatPreview onServiceChange={setSelectedService} />
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
               className="text-center mb-8 md:mb-16"
             >
               <h2 className={`text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r ${activeCoach.gradient} bg-clip-text text-transparent mb-4`}>
@@ -171,15 +180,6 @@ const Index = () => {
                 <CoachPreview activeService={selectedService} />
               </motion.div>
             </div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="mt-8"
-            >
-              <EnhancedChatPreview onServiceChange={setSelectedService} />
-            </motion.div>
           </div>
         </div>
 

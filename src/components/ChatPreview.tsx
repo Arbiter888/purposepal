@@ -44,12 +44,12 @@ const ChatPreview = ({ messages, service }: ChatPreviewProps) => {
               {message.type === 'ai' ? (
                 <div className="space-y-4">
                   {typeof message.content === 'string' ? (
-                    <p className="text-lg bg-gradient-to-r from-purple-400 via-pink-500 to-blue-500 bg-clip-text text-transparent">
+                    <p className="text-lg text-white">
                       {message.content}
                     </p>
                   ) : (
                     message.content.map((item: string, idx: number) => (
-                      <p key={idx} className="text-lg bg-gradient-to-r from-purple-400 via-pink-500 to-blue-500 bg-clip-text text-transparent">
+                      <p key={idx} className="text-lg text-white">
                         {item}
                       </p>
                     ))
