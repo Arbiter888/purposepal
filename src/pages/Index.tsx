@@ -8,6 +8,7 @@ import CommunityHealth from "@/components/sections/CommunityHealth";
 import PricingSection from "@/components/sections/PricingSection";
 import CallToAction from "@/components/sections/CallToAction";
 import ChatPreview from "@/components/ChatPreview";
+import EnhancedChatPreview from "@/components/EnhancedChatPreview";
 import { Button } from "@/components/ui/button";
 import { HelpCircle } from "lucide-react";
 import { wellnessMessages, nutritionMessages, spiritualMessages, fitnessMessages, financialMessages, suggestedMessages } from "@/data/chatMessages";
@@ -170,6 +171,15 @@ const Index = () => {
                 <CoachPreview activeService={selectedService} />
               </motion.div>
             </div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="mt-8"
+            >
+              <EnhancedChatPreview onServiceChange={setSelectedService} />
+            </motion.div>
           </div>
         </div>
 
