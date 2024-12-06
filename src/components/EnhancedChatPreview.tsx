@@ -9,6 +9,23 @@ interface EnhancedChatPreviewProps {
 
 const coaches: Coach[] = [
   { 
+    id: "spiritual", 
+    name: "Amara",
+    title: "Spiritual Guide",
+    gradient: "from-yellow-400 via-orange-500 to-red-500",
+    bgGradient: "bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500",
+    examples: [
+      "How to start meditation?",
+      "Daily spiritual practices?",
+      "Finding inner peace?"
+    ],
+    capabilities: [
+      "Meditation guidance",
+      "Spiritual development",
+      "Mindfulness practices"
+    ]
+  },
+  { 
     id: "wellness", 
     name: "Ava",
     title: "Wellness Coach",
@@ -40,23 +57,6 @@ const coaches: Coach[] = [
       "Meal planning assistance",
       "Dietary recommendations",
       "Nutritional guidance"
-    ]
-  },
-  { 
-    id: "spiritual", 
-    name: "Amara",
-    title: "Spiritual Guide",
-    gradient: "from-yellow-400 via-orange-500 to-red-500",
-    bgGradient: "bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500",
-    examples: [
-      "How to start meditation?",
-      "Daily spiritual practices?",
-      "Finding inner peace?"
-    ],
-    capabilities: [
-      "Meditation guidance",
-      "Spiritual development",
-      "Mindfulness practices"
     ]
   },
   { 
