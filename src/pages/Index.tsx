@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { useQuery } from "@tanstack/react-query";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/components/ui/use-toast";
 import HeroWithFeatures from "@/components/sections/HeroWithFeatures";
 import FeaturesShowcase from "@/components/sections/FeaturesShowcase";
 import InteractiveDemo from "@/components/sections/InteractiveDemo";
@@ -9,6 +12,7 @@ import PricingSection from "@/components/sections/PricingSection";
 import CallToAction from "@/components/sections/CallToAction";
 import ChatPreview from "@/components/ChatPreview";
 import EnhancedChatPreview from "@/components/EnhancedChatPreview";
+import SavedPlans from "@/components/SavedPlans";
 import { Button } from "@/components/ui/button";
 import { HelpCircle } from "lucide-react";
 import { wellnessMessages, nutritionMessages, spiritualMessages, fitnessMessages, financialMessages, suggestedMessages } from "@/data/chatMessages";
@@ -50,6 +54,27 @@ const Index = () => {
   const [selectedService, setSelectedService] = useState("wellness");
   const [scrollProgress, setScrollProgress] = useState(0);
   const [showHelp, setShowHelp] = useState(false);
+  const { toast } = useToast();
+
+  const { data: savedPlans, isLoading } = useQuery({
+    queryKey: ['saved-plans'],
+    queryFn: async () => {
+      const { data, error } = await supabase
+        .from('saved_plans')
+        .select('*')
+        .order('created_at', { ascending: false });
+      
+      if (error) {
+        toast({
+          title: "Error loading saved plans",
+          description: error.message,
+          variant: "destructive",
+        });
+        return [];
+      }
+      return data;
+    },
+  });
 
   const handleScroll = () => {
     const scrollPx = document.documentElement.scrollTop;
@@ -112,15 +137,15 @@ const Index = () => {
               className="text-center mb-8"
             >
               <h2 className={`text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r ${activeCoach.gradient} bg-clip-text text-transparent mb-4`}>
-                Meet {activeCoach.name}
+                Choose Your Coach
               </h2>
               <p className="text-lg md:text-xl text-white/90">
-                Choose your personal AI coach and start your journey to a better life
+                Select your personal AI coach and start your journey to a better life
               </p>
             </motion.div>
 
             <EnhancedChatPreview onServiceChange={setSelectedService} />
-
+            
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -173,6 +198,9 @@ const Index = () => {
                 </div>
               </motion.div>
             </div>
+
+            {/* Add Saved Plans Section */}
+            <SavedPlans plans={savedPlans || []} isLoading={isLoading} />
 
             <CommunityHealth />
             <PricingSection />
