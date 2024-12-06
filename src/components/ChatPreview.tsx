@@ -5,21 +5,17 @@ import { useState } from "react";
 interface ChatPreviewProps {
   messages: any[];
   service: string;
-  onSimulatePlan?: (type: 'plan' | 'suggestion', service: string) => void;
 }
 
-const ChatPreview = ({ messages, service, onSimulatePlan }: ChatPreviewProps) => {
+const ChatPreview = ({ messages, service }: ChatPreviewProps) => {
   const [inputValue, setInputValue] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!inputValue.trim()) return;
     
-    // Simulate plan creation when user sends a message
-    if (onSimulatePlan) {
-      onSimulatePlan(Math.random() > 0.5 ? 'plan' : 'suggestion', service);
-    }
-    
+    // Here you would typically handle sending the message
+    // For now, we'll just clear the input
     setInputValue("");
   };
 
