@@ -135,7 +135,7 @@ const Index = () => {
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5 }}
-                className="relative"
+                className="relative glass rounded-3xl p-8 backdrop-blur-xl bg-black/40"
               >
                 <div className="relative">
                   <Button
