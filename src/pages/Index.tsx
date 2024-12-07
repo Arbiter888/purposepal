@@ -9,6 +9,7 @@ import PricingSection from "@/components/sections/PricingSection";
 import CallToAction from "@/components/sections/CallToAction";
 import ChatPreview from "@/components/ChatPreview";
 import EnhancedChatPreview from "@/components/EnhancedChatPreview";
+import ConvaiWidget from "@/components/sections/ConvaiWidget";
 import { Button } from "@/components/ui/button";
 import { HelpCircle } from "lucide-react";
 import { wellnessMessages, nutritionMessages, spiritualMessages, fitnessMessages, financialMessages, suggestedMessages } from "@/data/chatMessages";
@@ -62,7 +63,7 @@ const coachInfo = {
 };
 
 const Index = () => {
-  const [selectedService, setSelectedService] = useState("spiritual"); // Changed default to spiritual for Amara
+  const [selectedService, setSelectedService] = useState("spiritual");
   const [scrollProgress, setScrollProgress] = useState(0);
   const [showHelp, setShowHelp] = useState(false);
 
@@ -135,6 +136,7 @@ const Index = () => {
             </motion.div>
 
             <EnhancedChatPreview onServiceChange={setSelectedService} />
+            <ConvaiWidget />
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
