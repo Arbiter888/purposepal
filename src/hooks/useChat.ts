@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { supabase } from "@/integrations/supabase/client";
 import { wellnessMessages, nutritionMessages, spiritualMessages, fitnessMessages, financialMessages } from "@/data/chatMessages";
 
 const initialMessages = {
@@ -11,13 +12,13 @@ const initialMessages = {
 
 export const useChat = (service: string) => {
   const [messages, setMessages] = useState(initialMessages[service as keyof typeof initialMessages] || []);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    // Reset messages when service changes
     setMessages(initialMessages[service as keyof typeof initialMessages] || []);
   }, [service]);
 
-  const sendMessage = (content: string) => {
+  const sendMessage = async (content: string) => {
     // Add user message
     const userMessage = {
       type: 'user',
@@ -25,21 +26,38 @@ export const useChat = (service: string) => {
     };
     
     setMessages(prev => [...prev, userMessage]);
+    setIsLoading(true);
 
-    // Simulate AI response
-    setTimeout(() => {
+    try {
+      const { data, error } = await supabase.functions.invoke('chat-with-coach', {
+        body: { message: content, service }
+      });
+
+      if (error) throw error;
+
       const aiResponse = {
         type: 'ai',
-        content: `Thank you for your message about "${content}". As your ${service} coach, I'm here to help! Let me know what specific guidance you're looking for.`,
+        content: data.response,
         service,
       };
       
       setMessages(prev => [...prev, aiResponse]);
-    }, 1000);
+    } catch (error) {
+      console.error('Error sending message:', error);
+      const errorMessage = {
+        type: 'ai',
+        content: "I apologize, but I'm having trouble responding right now. Please try again later.",
+        service,
+      };
+      setMessages(prev => [...prev, errorMessage]);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return {
     messages,
     sendMessage,
+    isLoading
   };
 };

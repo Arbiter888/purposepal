@@ -7,21 +7,23 @@ interface ChatPreviewProps {
   messages: any[];
   service: string;
   onSendMessage?: (message: string) => void;
+  isLoading?: boolean;
 }
 
-const ChatPreview = ({ messages, service, onSendMessage }: ChatPreviewProps) => {
+const ChatPreview = ({ messages, service, onSendMessage, isLoading }: ChatPreviewProps) => {
   const [inputValue, setInputValue] = useState("");
   const suggestions = suggestedMessages[service as keyof typeof suggestedMessages] || [];
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!inputValue.trim()) return;
+    if (!inputValue.trim() || isLoading) return;
     
     onSendMessage?.(inputValue.trim());
     setInputValue("");
   };
 
   const handleSuggestionClick = (suggestion: string) => {
+    if (isLoading) return;
     onSendMessage?.(suggestion);
   };
 
@@ -40,7 +42,8 @@ const ChatPreview = ({ messages, service, onSendMessage }: ChatPreviewProps) => 
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: index * 0.1 }}
               onClick={() => handleSuggestionClick(suggestion)}
-              className="glass px-4 py-2 rounded-full text-sm hover:bg-white/10 transition-colors"
+              className={`glass px-4 py-2 rounded-full text-sm hover:bg-white/10 transition-colors ${isLoading ? 'opacity-50 cursor-not-allowed' : ''}`}
+              disabled={isLoading}
             >
               {suggestion}
             </motion.button>
@@ -94,6 +97,17 @@ const ChatPreview = ({ messages, service, onSendMessage }: ChatPreviewProps) => 
             )}
           </motion.div>
         ))}
+        {isLoading && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="flex items-center space-x-2"
+          >
+            <div className="w-2 h-2 bg-white/50 rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
+            <div className="w-2 h-2 bg-white/50 rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
+            <div className="w-2 h-2 bg-white/50 rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
+          </motion.div>
+        )}
       </div>
       
       <form onSubmit={handleSubmit} className="flex gap-3">
@@ -103,12 +117,14 @@ const ChatPreview = ({ messages, service, onSendMessage }: ChatPreviewProps) => 
           onChange={(e) => setInputValue(e.target.value)}
           placeholder="Type your message..." 
           className="flex-1 glass rounded-full px-6 py-4 focus:outline-none focus:ring-2 focus:ring-secondary/50 transition-all text-lg bg-white/5 text-white"
+          disabled={isLoading}
         />
         <motion.button 
           type="submit"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="glass p-4 rounded-full hover:bg-white/10 transition-colors group"
+          className={`glass p-4 rounded-full hover:bg-white/10 transition-colors group ${isLoading ? 'opacity-50 cursor-not-allowed' : ''}`}
+          disabled={isLoading}
         >
           <Send className="w-6 h-6 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1 text-white" />
         </motion.button>

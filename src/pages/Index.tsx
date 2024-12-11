@@ -65,7 +65,7 @@ const Index = () => {
   const [selectedService, setSelectedService] = useState("spiritual");
   const [scrollProgress, setScrollProgress] = useState(0);
   const [showHelp, setShowHelp] = useState(false);
-  const { messages, sendMessage } = useChat(selectedService);
+  const { messages, sendMessage, isLoading } = useChat(selectedService);
 
   const handleScroll = () => {
     const scrollPx = document.documentElement.scrollTop;
@@ -126,7 +126,7 @@ const Index = () => {
               </p>
             </motion.div>
 
-            <EnhancedChatPreview onServiceChange={setSelectedService} />
+            <InteractiveDemo onServiceChange={setSelectedService} />
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -181,6 +181,7 @@ const Index = () => {
                     messages={messages} 
                     service={selectedService}
                     onSendMessage={sendMessage}
+                    isLoading={isLoading}
                   />
                 </div>
               </motion.div>
