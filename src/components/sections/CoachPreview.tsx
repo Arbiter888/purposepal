@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { MessageSquare, Video } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import ConvaiWidget from "./ConvaiWidget";
 
 interface CoachPreviewProps {
   activeService: string;
@@ -100,8 +99,6 @@ const CoachPreview = ({ activeService }: CoachPreviewProps) => {
             allowFullScreen
           />
         </motion.div>
-
-        <ConvaiWidget />
 
         <motion.div 
           className="flex flex-wrap gap-2 mb-6"
