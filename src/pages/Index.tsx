@@ -10,7 +10,7 @@ import CallToAction from "@/components/sections/CallToAction";
 import ChatPreview from "@/components/ChatPreview";
 import { Button } from "@/components/ui/button";
 import { HelpCircle } from "lucide-react";
-import { wellnessMessages, nutritionMessages, spiritualMessages, fitnessMessages, financialMessages, suggestedMessages } from "@/data/chatMessages";
+import { suggestedMessages } from "@/data/chatMessages";
 import { useChat } from "@/hooks/useChat";
 
 const coachInfo = {
