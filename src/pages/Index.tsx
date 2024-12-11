@@ -5,20 +5,20 @@ import GradientShowcase from "@/components/sections/GradientShowcase";
 import CoachPreview from "@/components/sections/CoachPreview";
 import CommunityHealth from "@/components/sections/CommunityHealth";
 import CallToAction from "@/components/sections/CallToAction";
-import EnhancedChatPreview from "@/components/EnhancedChatPreview";
+import { coachPersonalities } from "@/data/chatMessages";
 
 const Index = () => {
-  const [activeService, setActiveService] = useState("wellness");
+  const [selectedService, setSelectedService] = useState("wellness");
 
   return (
     <div className="flex flex-col min-h-screen">
       <HeroWithFeatures />
       <FeaturesShowcase />
       <GradientShowcase />
-      <section className="section-padding">
-        <EnhancedChatPreview onServiceChange={setActiveService} />
-        <CoachPreview activeService={activeService} />
-      </section>
+      <CoachPreview 
+        selectedService={selectedService}
+        setSelectedService={setSelectedService}
+      />
       <CommunityHealth />
       <CallToAction />
     </div>
