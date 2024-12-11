@@ -52,10 +52,11 @@ const coachData = {
     videoUrl: "https://www.youtube.com/embed/UiJ0OfgSt1M",
     backgroundImage: "/lovable-uploads/e1950664-3053-4b9a-aed1-78f46c6e7573.png"
   },
-};
+} as const;
 
 const CoachPreview = ({ activeService }: CoachPreviewProps) => {
-  const coach = coachData[activeService as keyof typeof coachData];
+  // Default to wellness coach if the activeService doesn't exist in coachData
+  const coach = coachData[activeService as keyof typeof coachData] || coachData.wellness;
 
   return (
     <motion.div
