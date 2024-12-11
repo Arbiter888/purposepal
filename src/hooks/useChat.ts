@@ -25,7 +25,7 @@ export const useChat = (service: string) => {
     const userMessage = {
       type: 'user',
       content,
-      service, // Add the service property here
+      service,
     };
     
     setMessages(prev => [...prev, userMessage]);
