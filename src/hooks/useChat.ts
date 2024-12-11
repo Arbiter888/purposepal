@@ -1,25 +1,27 @@
 import { useState, useEffect } from 'react';
 import { supabase } from "@/integrations/supabase/client";
-import { wellnessMessages, nutritionMessages, spiritualMessages, fitnessMessages, financialMessages } from "@/data/chatMessages";
+import { coachPersonalities } from "@/data/chatMessages";
 
-const initialMessages = {
-  wellness: wellnessMessages,
-  nutrition: nutritionMessages,
-  spiritual: spiritualMessages,
-  fitness: fitnessMessages,
-  financial: financialMessages,
+const getInitialMessage = (service: string) => {
+  const coach = coachPersonalities[service as keyof typeof coachPersonalities];
+  if (!coach) return [];
+  
+  return [{
+    type: 'ai',
+    content: `Hi! I'm ${coach.name}, your ${coach.role}. How can I help you today?`,
+    service,
+  }];
 };
 
 export const useChat = (service: string) => {
-  const [messages, setMessages] = useState(initialMessages[service as keyof typeof initialMessages] || []);
+  const [messages, setMessages] = useState(getInitialMessage(service));
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    setMessages(initialMessages[service as keyof typeof initialMessages] || []);
+    setMessages(getInitialMessage(service));
   }, [service]);
 
   const sendMessage = async (content: string) => {
-    // Add user message
     const userMessage = {
       type: 'user',
       content,

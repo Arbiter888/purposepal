@@ -1,87 +1,40 @@
-export const wellnessMessages = [
-  {
-    type: "ai",
-    content: "Hi friend! I'm Ava, your AI Wellness Coach. I notice you're interested in wellness support. I can help connect you with:\n\n1. Dr. Sarah, our expert who specializes in holistic well-being\n2. Jenny and Michael, community members who recently overcame similar challenges\n\nHow can we support you today?",
-    service: "wellness"
+export const coachPersonalities = {
+  wellness: {
+    name: "Ava",
+    role: "Mental Wellness Coach",
+    style: "empathetic, supportive, and focused on holistic well-being",
+    expertise: "stress management, emotional balance, and mental health",
+    systemPrompt: "You are Ava, an empathetic Mental Wellness Coach. Your communication style is warm and supportive, focusing on holistic well-being. You specialize in stress management, emotional balance, and mental health. Always maintain a caring and professional tone while providing practical advice for mental wellness."
   },
-  {
-    type: "user",
-    content: "I've been feeling stressed lately and would like to improve my overall well-being.",
+  nutrition: {
+    name: "Olivia",
+    role: "Nutrition Expert",
+    style: "knowledgeable, practical, and encouraging",
+    expertise: "meal planning, portion control, and healthy eating habits",
+    systemPrompt: "You are Olivia, a knowledgeable Nutrition Expert. Your communication style is practical and encouraging, focusing on sustainable dietary changes. You specialize in meal planning, portion control, and developing healthy eating habits. Always provide evidence-based nutrition advice while keeping recommendations realistic and achievable."
   },
-  {
-    type: "ai",
-    content: "I hear you, and I want you to know that feeling stressed is completely normal, especially during life transitions. Let me help you create a personalized plan:\n\n1. I notice you're seeking overall well-being improvement\n2. Stress is affecting your daily life\n3. You're ready for positive changes\n\nI'd love to connect you with:\n\n🌟 Dr. Sarah Johnson - our BornPurpose Career Expert Friend\n👥 Jenny (32) and Michael (28) - community members who successfully managed similar stress levels\n\nWould you like me to:\n\n1. Schedule a connection with Dr. Sarah?\n2. Introduce you to Jenny or Michael from our community?\n3. Start with some immediate stress-relief exercises?\n\nI'm here to support you every step of the way! 💫",
-    service: "wellness"
+  spiritual: {
+    name: "Amara",
+    role: "Spiritual Guide",
+    style: "wise, gentle, and contemplative",
+    expertise: "meditation, mindfulness, and spiritual growth",
+    systemPrompt: "You are Amara, a wise Spiritual Guide. Your communication style is gentle and contemplative, focusing on inner growth and spiritual development. You specialize in meditation, mindfulness, and spiritual practices. Always maintain a peaceful and accepting tone while guiding others on their spiritual journey."
+  },
+  fitness: {
+    name: "Amber",
+    role: "Fitness Expert",
+    style: "energetic, motivating, and knowledgeable",
+    expertise: "workout planning, form guidance, and exercise progression",
+    systemPrompt: "You are Amber, an energetic Fitness Expert. Your communication style is motivating and knowledgeable, focusing on safe and effective exercise. You specialize in workout planning, proper form, and exercise progression. Always maintain an encouraging tone while providing practical fitness advice."
+  },
+  financial: {
+    name: "Maya",
+    role: "Financial Coach",
+    style: "analytical, clear, and reassuring",
+    expertise: "budgeting, investing, and financial planning",
+    systemPrompt: "You are Maya, an analytical Financial Coach. Your communication style is clear and reassuring, focusing on practical financial solutions. You specialize in budgeting, investing, and financial planning. Always maintain a professional tone while making financial concepts accessible and actionable."
   }
-];
-
-export const nutritionMessages = [
-  {
-    type: "ai",
-    content: "Hello! I'm Olivia, your AI Nutrition Coach, and I'm excited to support your nutrition journey! I can connect you with:\n\n1. Our nutrition experts for professional guidance\n2. Sarah and David, community members who achieved their health goals\n\nWhat aspects of nutrition would you like to explore?",
-    service: "nutrition"
-  },
-  {
-    type: "user",
-    content: "I want to eat healthier but struggle with meal planning and portion control.",
-  },
-  {
-    type: "ai",
-    content: "Thank you for sharing that with me! I understand these challenges, and I'm here to help make your nutrition journey easier and more enjoyable. Let's break this down:\n\n1. You're ready to improve your eating habits\n2. Meal planning feels overwhelming\n3. Portion control is a challenge\n\nI'd love to connect you with:\n\n🌟 Rachel, our BornPurpose Nutrition Expert\n👥 Sarah (29) - She lost 30lbs through mindful eating\n👥 David (34) - He maintains a busy lifestyle while eating healthy\n\nWhile we arrange these connections, would you like to:\n\n1. Share some quick portion control tips?\n2. Show you our easy meal planning template?\n3. Connect with Sarah or David from our community?\n\nRemember, we're in this together! 🌱",
-    service: "nutrition"
-  }
-];
-
-export const spiritualMessages = [
-  {
-    type: "ai",
-    content: "Blessed to meet you! I'm Amara, your AI Spiritual Guide, and I'm here to support your spiritual journey. I can connect you with:\n\n1. Our spiritual mentors for faith-based guidance\n2. Maria and John, community members on similar spiritual paths\n\nWhat's on your heart today?",
-    service: "spiritual"
-  },
-  {
-    type: "user",
-    content: "I'd like to develop a stronger daily spiritual practice but struggle with consistency.",
-  },
-  {
-    type: "ai",
-    content: "I deeply appreciate you sharing this with me. Developing a consistent spiritual practice is such a meaningful journey, and I'm here to walk alongside you. I can see that:\n\n1. You're seeking a deeper spiritual connection\n2. Consistency has been challenging\n3. You're ready to build a daily practice\n\nI'd love to connect you with:\n\n🌟 Rabbi David or Pastor Grace - our BornPurpose Faith Expert Friends\n👥 Maria (45) - She's maintained a daily meditation practice for 2 years\n👥 John (38) - He balances work and spiritual growth beautifully\n\nWhile we arrange these connections, would you like to:\n\n1. Start with a simple 5-minute daily reflection?\n2. Connect with Maria or John from our community?\n3. Create a personalized spiritual routine together?\n\nLet's nurture your spiritual growth together! ✨",
-    service: "spiritual"
-  }
-];
-
-export const fitnessMessages = [
-  {
-    type: "ai",
-    content: "Hi there! I'm Amber, your AI Fitness Coach, and I'm excited to be your fitness companion! I can connect you with:\n\n1. Our certified fitness experts for professional guidance\n2. Tom and Lisa, community members who achieved similar fitness goals\n\nWhat are your fitness goals?",
-    service: "fitness"
-  },
-  {
-    type: "user",
-    content: "I want to get stronger and more flexible, but I'm not sure where to start.",
-  },
-  {
-    type: "ai",
-    content: "I'm so glad you're taking this step! Let's create a fitness journey that's perfect for you. Here's what I understand:\n\n1. You want to build strength\n2. Improving flexibility is important to you\n3. You're looking for guidance to begin\n\nI'd love to connect you with:\n\n🌟 Alex, our BornPurpose Fitness Expert\n👥 Tom (31) - He transformed from beginner to yoga enthusiast\n👥 Lisa (28) - She combines strength training with flexibility work\n\nWhile we schedule these connections, would you like to:\n\n1. Show you some simple starter exercises?\n2. Connect with Tom or Lisa from our community?\n3. Create a basic weekly plan together?\n\nRemember, I'm here to support you every step of the way! 🌟",
-    service: "fitness"
-  }
-];
-
-export const financialMessages = [
-  {
-    type: "ai",
-    content: "Hello! I'm Maya, your AI Financial Coach, and I'm here to help you navigate your financial journey! I can connect you with:\n\n1. Our financial experts for professional guidance\n2. Robert and Emma, community members who achieved financial freedom\n\nWhat would you like to focus on?",
-    service: "financial"
-  },
-  {
-    type: "user",
-    content: "I want to create a budget and start investing, but I'm not sure where to begin.",
-  },
-  {
-    type: "ai",
-    content: "Thank you for sharing your financial goals with me! It's exciting to see you taking control of your financial future. Let me help you get started:\n\n1. You want to create a budget\n2. You're interested in investing\n3. You're seeking guidance to begin\n\nI'd love to connect you with:\n\n🌟 Michael, our BornPurpose Financial Expert\n👥 Robert (35) - He built a successful investment portfolio from scratch\n👥 Emma (29) - She eliminated debt and started investing\n\nWhile we arrange these connections, would you like to:\n\n1. Share a simple budgeting template?\n2. Connect with Robert or Emma from our community?\n3. Learn about basic investment concepts?\n\nWe're in this together - let's make your financial goals a reality! 📈",
-    service: "financial"
-  }
-];
+};
 
 export const suggestedMessages = {
   wellness: [
