@@ -5,6 +5,7 @@ import GradientShowcase from "@/components/sections/GradientShowcase";
 import CoachPreview from "@/components/sections/CoachPreview";
 import CommunityHealth from "@/components/sections/CommunityHealth";
 import CallToAction from "@/components/sections/CallToAction";
+import EnhancedChatPreview from "@/components/EnhancedChatPreview";
 
 const Index = () => {
   const [activeService, setActiveService] = useState("wellness");
@@ -14,7 +15,10 @@ const Index = () => {
       <HeroWithFeatures />
       <FeaturesShowcase />
       <GradientShowcase />
-      <CoachPreview activeService={activeService} />
+      <section className="section-padding">
+        <EnhancedChatPreview onServiceChange={setActiveService} />
+        <CoachPreview activeService={activeService} />
+      </section>
       <CommunityHealth />
       <CallToAction />
     </div>
