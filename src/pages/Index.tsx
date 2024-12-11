@@ -8,10 +8,10 @@ import CommunityHealth from "@/components/sections/CommunityHealth";
 import PricingSection from "@/components/sections/PricingSection";
 import CallToAction from "@/components/sections/CallToAction";
 import ChatPreview from "@/components/ChatPreview";
-import EnhancedChatPreview from "@/components/EnhancedChatPreview";
 import { Button } from "@/components/ui/button";
 import { HelpCircle } from "lucide-react";
 import { wellnessMessages, nutritionMessages, spiritualMessages, fitnessMessages, financialMessages, suggestedMessages } from "@/data/chatMessages";
+import { useChat } from "@/hooks/useChat";
 
 const coachInfo = {
   wellness: {
@@ -65,6 +65,7 @@ const Index = () => {
   const [selectedService, setSelectedService] = useState("spiritual");
   const [scrollProgress, setScrollProgress] = useState(0);
   const [showHelp, setShowHelp] = useState(false);
+  const { messages, sendMessage } = useChat(selectedService);
 
   const handleScroll = () => {
     const scrollPx = document.documentElement.scrollTop;
@@ -79,15 +80,6 @@ const Index = () => {
   }, []);
 
   const activeCoach = coachInfo[selectedService as keyof typeof coachInfo];
-  const messages = {
-    wellness: wellnessMessages,
-    nutrition: nutritionMessages,
-    spiritual: spiritualMessages,
-    fitness: fitnessMessages,
-    financial: financialMessages,
-  }[selectedService];
-
-  const suggestions = suggestedMessages[selectedService as keyof typeof suggestedMessages];
 
   return (
     <div className="min-h-screen bg-black text-white relative">
@@ -127,7 +119,7 @@ const Index = () => {
               className="text-center mb-8"
             >
               <h2 className={`text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r ${activeCoach.gradient} bg-clip-text text-transparent mb-4`}>
-                Meet her friend, {activeCoach.name}, your new {activeCoach.title}
+                Meet {activeCoach.name}, your new {activeCoach.title}
               </h2>
               <p className="text-lg md:text-xl text-white/90">
                 Choose your personal AI coach and start your journey to a better life
@@ -161,7 +153,7 @@ const Index = () => {
                   >
                     <HelpCircle className="w-5 h-5" />
                   </Button>
-                  {showHelp ? (
+                  {showHelp && (
                     <motion.div
                       initial={{ opacity: 0, y: -10 }}
                       animate={{ opacity: 1, y: 0 }}
@@ -170,21 +162,26 @@ const Index = () => {
                     >
                       <h3 className="text-xl font-semibold mb-4">Suggested Topics</h3>
                       <div className="grid grid-cols-1 gap-2">
-                        {suggestions.map((suggestion, index) => (
+                        {suggestedMessages[selectedService as keyof typeof suggestedMessages]?.map((suggestion, index) => (
                           <motion.div
                             key={index}
                             initial={{ opacity: 0, x: -10 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: index * 0.1 }}
                             className="glass p-3 rounded-xl cursor-pointer hover:bg-white/10 transition-colors"
+                            onClick={() => sendMessage(suggestion)}
                           >
                             {suggestion}
                           </motion.div>
                         ))}
                       </div>
                     </motion.div>
-                  ) : null}
-                  <ChatPreview messages={messages} service={selectedService} />
+                  )}
+                  <ChatPreview 
+                    messages={messages} 
+                    service={selectedService}
+                    onSendMessage={sendMessage}
+                  />
                 </div>
               </motion.div>
             </div>
