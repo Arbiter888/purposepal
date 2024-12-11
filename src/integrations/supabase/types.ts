@@ -32,6 +32,7 @@ export type Database = {
       }
       saved_plans: {
         Row: {
+          coach_personality: Json | null
           content: string
           created_at: string
           id: string
@@ -42,6 +43,7 @@ export type Database = {
           user_id: string
         }
         Insert: {
+          coach_personality?: Json | null
           content: string
           created_at?: string
           id?: string
@@ -52,6 +54,7 @@ export type Database = {
           user_id: string
         }
         Update: {
+          coach_personality?: Json | null
           content?: string
           created_at?: string
           id?: string
