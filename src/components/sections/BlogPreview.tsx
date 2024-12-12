@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { useQuery } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
+import { Link } from "react-router-dom";
 
 const BlogPreview = () => {
   const { data: posts, isLoading } = useQuery({
@@ -42,18 +43,22 @@ const BlogPreview = () => {
               </div>
             ))
           ) : posts?.map((post) => (
-            <motion.div
+            <Link 
+              to={`/blog/${post.slug}`} 
               key={post.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              className="glass p-6 rounded-xl hover-lift"
             >
-              <h3 className="text-xl font-semibold mb-4 text-gradient-aurora">{post.title}</h3>
-              <p className="text-sm text-muted-foreground mb-4 line-clamp-3">{post.excerpt}</p>
-              <span className="text-xs text-muted-foreground">
-                {new Date(post.published_at).toLocaleDateString()}
-              </span>
-            </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                className="glass p-6 rounded-xl hover-lift cursor-pointer transition-all duration-300 hover:bg-white/5"
+              >
+                <h3 className="text-xl font-semibold mb-4 text-gradient-aurora">{post.title}</h3>
+                <p className="text-sm text-muted-foreground mb-4 line-clamp-3">{post.excerpt}</p>
+                <span className="text-xs text-muted-foreground">
+                  {new Date(post.published_at).toLocaleDateString()}
+                </span>
+              </motion.div>
+            </Link>
           ))}
         </div>
 
