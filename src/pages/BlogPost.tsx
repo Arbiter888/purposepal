@@ -2,6 +2,9 @@ import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import { Home } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const BlogPost = () => {
   const { slug } = useParams();
@@ -65,6 +68,13 @@ const BlogPost = () => {
   return (
     <div className="min-h-screen bg-black text-white py-10">
       <article className="max-w-4xl mx-auto px-4 text-left">
+        <div className="flex justify-end mb-6">
+          <Link to="/">
+            <Button variant="ghost" size="icon" className="hover:bg-white/10">
+              <Home className="h-5 w-5" />
+            </Button>
+          </Link>
+        </div>
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { useQuery } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import { Link } from "react-router-dom";
+import { Home } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const BlogListing = () => {
   const { data: posts, isLoading } = useQuery({
@@ -21,13 +23,20 @@ const BlogListing = () => {
   return (
     <div className="min-h-screen bg-black text-white py-20">
       <div className="max-w-6xl mx-auto px-4">
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-4xl md:text-5xl font-bold mb-12 text-gradient-aurora"
-        >
-          Latest Articles
-        </motion.h1>
+        <div className="flex items-center justify-between mb-12">
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-4xl md:text-5xl font-bold text-gradient-aurora"
+          >
+            Latest Articles
+          </motion.h1>
+          <Link to="/">
+            <Button variant="ghost" size="icon" className="hover:bg-white/10">
+              <Home className="h-5 w-5" />
+            </Button>
+          </Link>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {isLoading ? (
