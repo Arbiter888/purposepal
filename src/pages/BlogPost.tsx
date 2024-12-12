@@ -22,9 +22,9 @@ const BlogPost = () => {
       let headerImage = '';
       if (data.title.toLowerCase().includes('business coaching')) {
         headerImage = '/lovable-uploads/bb3656a9-8148-42c2-92f8-35f38dd91101.png';
-        // Remove extra images from business coaching article
+        // Remove images above "Understanding Business Coaching Fundamentals"
         data.content = data.content.replace(
-          /<figure.*?<\/figure>\s*<figure.*?<\/figure>/s,
+          /<figure.*?<\/figure>(?:\s*<figure.*?<\/figure>)?(?=.*?Understanding Business Coaching Fundamentals)/s,
           ''
         );
       } else if (data.title.toLowerCase().includes('life coaching')) {
