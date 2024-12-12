@@ -17,6 +17,16 @@ const BlogPost = () => {
         .single();
       
       if (error) throw error;
+      
+      // Remove extra images from business coaching article
+      if (post?.title?.toLowerCase().includes('business coaching')) {
+        const cleanedContent = data.content.replace(
+          /<figure.*?<\/figure>\s*<figure.*?<\/figure>/s,
+          ''
+        );
+        return { ...data, content: cleanedContent };
+      }
+      
       return data;
     }
   });
@@ -60,16 +70,14 @@ const BlogPost = () => {
           className="space-y-8"
         >
           {/* Hero Image */}
-          {post.thumbnail_url && (
-            <div className="relative h-[400px] w-full rounded-xl overflow-hidden mb-8">
-              <img 
-                src={post.thumbnail_url}
-                alt={post.title}
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-            </div>
-          )}
+          <div className="relative h-[400px] w-full rounded-xl overflow-hidden mb-8">
+            <img 
+              src={post.thumbnail_url}
+              alt={post.title}
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+          </div>
 
           {/* Title and Meta */}
           <div className="space-y-4">
