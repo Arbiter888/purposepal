@@ -50,14 +50,14 @@ const FeaturesShowcase = () => {
   }, 0);
 
   return (
-    <section className="section-padding bg-muted relative overflow-hidden">
+    <section className="w-full bg-muted relative overflow-hidden py-20">
       <div className="absolute inset-0 bg-gradient-to-br from-secondary/5 via-accent/5 to-tertiary/5" />
       
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.6 }}
-        className="text-center mb-16 relative z-10"
+        className="text-center mb-16 relative z-10 px-4 sm:px-6 lg:px-8"
       >
         <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gradient-aurora mb-4">Meet Presence, Your Personal Coach</h2>
         <p className="text-xl text-muted-foreground/90 max-w-2xl mx-auto mb-12">
@@ -78,7 +78,7 @@ const FeaturesShowcase = () => {
         </div>
       </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto relative z-10">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-[2000px] mx-auto relative z-10 px-4 sm:px-6 lg:px-8">
         {features.map((feature, index) => (
           <motion.div
             key={index}
