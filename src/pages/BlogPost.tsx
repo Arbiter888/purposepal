@@ -23,8 +23,10 @@ const BlogPost = () => {
       if (data.title.toLowerCase().includes('business coaching')) {
         headerImage = '/lovable-uploads/bb3656a9-8148-42c2-92f8-35f38dd91101.png';
         // Remove images above "Understanding Business Coaching Fundamentals"
-        const regex = new RegExp('<figure[^>]*>.*?<\/figure>.*?<figure[^>]*>.*?<\/figure>.*?(?=<h2[^>]*>Understanding Business Coaching Fundamentals)', 's');
-        data.content = data.content.replace(regex, '');
+        data.content = data.content.replace(
+          /<figure.*?<\/figure>(?:\s*<figure.*?<\/figure>)?(?=.*?Understanding Business Coaching Fundamentals)/s,
+          ''
+        );
       } else if (data.title.toLowerCase().includes('life coaching')) {
         headerImage = '/lovable-uploads/a5162b73-aec8-4911-baf9-0199ea671edf.png';
       } else if (data.title.toLowerCase().includes('wellness coaching')) {
