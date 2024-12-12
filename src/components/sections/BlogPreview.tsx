@@ -28,7 +28,7 @@ const BlogPreview = () => {
         transition={{ duration: 0.6 }}
         className="max-w-4xl mx-auto text-center"
       >
-        <h2 className="text-4xl font-bold text-gradient-sunshine mb-4">Ready to Transform Your Life?</h2>
+        <h2 className="text-4xl font-bold text-gradient-sunshine mb-8">Ready to Transform Your Life?</h2>
         <p className="mt-4 text-lg text-muted-foreground mb-12">
           Start reading our blog for expert tips, insights, and guidance on your journey to personal growth
         </p>
@@ -36,65 +36,41 @@ const BlogPreview = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
           {isLoading ? (
             Array(3).fill(0).map((_, i) => (
-              <div key={i} className="bg-zinc-900/50 rounded-xl animate-pulse">
-                <div className="h-48 bg-zinc-800 rounded-t-xl"></div>
-                <div className="p-6">
-                  <div className="h-6 bg-zinc-800 rounded w-3/4 mb-4"></div>
-                  <div className="h-20 bg-zinc-800 rounded mb-4"></div>
-                  <div className="h-4 bg-zinc-800 rounded w-1/3"></div>
-                </div>
+              <div key={i} className="glass p-6 rounded-xl animate-pulse">
+                <div className="h-4 bg-white/10 rounded w-3/4 mb-4"></div>
+                <div className="h-20 bg-white/10 rounded mb-4"></div>
+                <div className="h-4 bg-white/10 rounded w-1/2"></div>
               </div>
             ))
           ) : posts?.map((post) => (
             <Link 
               to={`/blog/${post.slug}`} 
               key={post.id}
-              className="block"
             >
-              <motion.article
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                className="bg-zinc-900/50 rounded-xl overflow-hidden hover:bg-zinc-900/70 transition-all duration-300"
+                className="glass p-6 rounded-xl hover-lift cursor-pointer transition-all duration-300 hover:bg-white/5"
               >
-                <div className="relative h-48 w-full">
-                  {post.thumbnail_url && (
-                    <img 
-                      src={post.thumbnail_url} 
-                      alt={post.title}
-                      className="w-full h-full object-cover"
-                    />
-                  )}
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-3">
-                    <span className="bg-gradient-to-r from-emerald-400 to-blue-500 bg-clip-text text-transparent">
-                      {post.title}
-                    </span>
-                  </h3>
-                  <p className="text-sm text-muted-foreground mb-4 line-clamp-3">
-                    {post.excerpt}
-                  </p>
-                  <time className="text-xs text-muted-foreground">
-                    {new Date(post.published_at).toLocaleDateString()}
-                  </time>
-                </div>
-              </motion.article>
+                <h3 className="text-xl font-semibold mb-4 text-gradient-aurora">{post.title}</h3>
+                <p className="text-sm text-muted-foreground mb-4 line-clamp-3">{post.excerpt}</p>
+                <span className="text-xs text-muted-foreground">
+                  {new Date(post.published_at).toLocaleDateString()}
+                </span>
+              </motion.div>
             </Link>
           ))}
         </div>
 
-        <motion.div
+        <motion.a
+          href="/blog"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
+          className="glass px-8 py-4 rounded-full font-medium hover-lift inline-flex items-center gap-2"
         >
-          <Link
-            to="/blog"
-            className="glass px-8 py-4 rounded-full font-medium hover-lift inline-flex items-center gap-2"
-          >
-            Read More Articles
-            <ArrowRight className="w-5 h-5" />
-          </Link>
-        </motion.div>
+          Read More Articles
+          <ArrowRight className="w-5 h-5" />
+        </motion.a>
       </motion.div>
     </section>
   );
