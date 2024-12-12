@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { Send } from "lucide-react";
 import { useState } from "react";
 import { suggestedMessages } from "@/data/chatMessages";
+import { useVoiceSynthesis } from "@/hooks/useVoiceSynthesis";
+import VoiceControl from "./VoiceControl";
 
 interface ChatPreviewProps {
   messages: any[];
@@ -10,8 +12,18 @@ interface ChatPreviewProps {
   isLoading?: boolean;
 }
 
+const voiceMap = {
+  wellness: 'EXAVITQu4vr4xnSDxMaL', // Sarah - warm and professional
+  nutrition: 'XB0fDUnXU5powFXDhCwa', // Charlotte - clear and informative
+  spiritual: 'pFZP5JQG7iQjIQuC4Bku', // Lily - calm and soothing
+  fitness: 'TX3LPaxmHKxFdv7VOQHJ', // Liam - energetic and motivating
+  business: 'CwhRBWXzGAHq8TQ4Fs17', // Roger - authoritative and professional
+};
+
 const ChatPreview = ({ messages, service, onSendMessage, isLoading }: ChatPreviewProps) => {
   const [inputValue, setInputValue] = useState("");
+  const [volume, setVolume] = useState(1);
+  const { synthesizeSpeech, isLoading: isSynthesizing } = useVoiceSynthesis(service as keyof typeof voiceMap);
   const suggestions = suggestedMessages[service as keyof typeof suggestedMessages] || [];
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -27,12 +39,29 @@ const ChatPreview = ({ messages, service, onSendMessage, isLoading }: ChatPrevie
     onSendMessage?.(suggestion);
   };
 
+  const playMessage = async (message: string) => {
+    try {
+      const audio = await synthesizeSpeech(message, 'YOUR-API-KEY');
+      if (audio) {
+        audio.volume = volume;
+        await audio.play();
+      }
+    } catch (error) {
+      console.error('Failed to play message:', error);
+    }
+  };
+
   return (
     <motion.div 
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       className="glass rounded-3xl p-8 backdrop-blur-xl bg-black/40"
     >
+      <div className="flex justify-between items-center mb-6">
+        <h3 className="text-xl font-semibold text-white">Chat with your coach</h3>
+        <VoiceControl onVolumeChange={setVolume} />
+      </div>
+
       <div className="space-y-4 mb-4">
         <div className="flex flex-wrap gap-2">
           {suggestions.map((suggestion, index) => (
@@ -51,7 +80,7 @@ const ChatPreview = ({ messages, service, onSendMessage, isLoading }: ChatPrevie
         </div>
       </div>
 
-      <div className="space-y-6 max-h-[500px] overflow-y-auto mb-8">
+      <div className="space-y-6 max-h-[500px] overflow-y-auto mb-8 custom-scrollbar">
         {messages.map((message, index) => (
           <motion.div 
             key={index}
@@ -61,7 +90,10 @@ const ChatPreview = ({ messages, service, onSendMessage, isLoading }: ChatPrevie
             className={`flex items-start gap-4 ${message.type === 'ai' ? '' : 'justify-end'}`}
           >
             {message.type === 'ai' && (
-              <div className="w-10 h-10 rounded-full bg-gradient-to-r from-green-400 to-blue-500 flex-shrink-0 animate-pulse flex items-center justify-center">
+              <div 
+                className="w-10 h-10 rounded-full bg-gradient-to-r from-green-400 to-blue-500 flex-shrink-0 animate-pulse flex items-center justify-center cursor-pointer"
+                onClick={() => playMessage(message.content)}
+              >
                 <span className="text-white text-xl">🤖</span>
               </div>
             )}
@@ -97,7 +129,7 @@ const ChatPreview = ({ messages, service, onSendMessage, isLoading }: ChatPrevie
             )}
           </motion.div>
         ))}
-        {isLoading && (
+        {(isLoading || isSynthesizing) && (
           <motion.div 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
