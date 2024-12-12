@@ -4,13 +4,7 @@ import { useState } from "react";
 import { suggestedMessages } from "@/data/chatMessages";
 import { useVoiceSynthesis } from "@/hooks/useVoiceSynthesis";
 import VoiceControl from "./VoiceControl";
-
-interface ChatPreviewProps {
-  messages: any[];
-  service: string;
-  onSendMessage?: (message: string) => void;
-  isLoading?: boolean;
-}
+import { supabase } from "@/integrations/supabase/client";
 
 const voiceMap = {
   wellness: 'EXAVITQu4vr4xnSDxMaL', // Sarah - warm and professional
@@ -19,6 +13,13 @@ const voiceMap = {
   fitness: 'TX3LPaxmHKxFdv7VOQHJ', // Liam - energetic and motivating
   business: 'CwhRBWXzGAHq8TQ4Fs17', // Roger - authoritative and professional
 };
+
+interface ChatPreviewProps {
+  messages: any[];
+  service: string;
+  onSendMessage?: (message: string) => void;
+  isLoading?: boolean;
+}
 
 const ChatPreview = ({ messages, service, onSendMessage, isLoading }: ChatPreviewProps) => {
   const [inputValue, setInputValue] = useState("");
@@ -41,7 +42,17 @@ const ChatPreview = ({ messages, service, onSendMessage, isLoading }: ChatPrevie
 
   const playMessage = async (message: string) => {
     try {
-      const audio = await synthesizeSpeech(message, 'YOUR-API-KEY');
+      const { data: { ELEVENLABS_API_KEY }, error } = await supabase
+        .from('secrets')
+        .select('ELEVENLABS_API_KEY')
+        .single();
+
+      if (error) {
+        console.error('Failed to fetch API key:', error);
+        return;
+      }
+
+      const audio = await synthesizeSpeech(message, ELEVENLABS_API_KEY);
       if (audio) {
         audio.volume = volume;
         await audio.play();
