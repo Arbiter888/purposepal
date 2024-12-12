@@ -42,12 +42,16 @@ const ChatPreview = ({ messages, service, onSendMessage, isLoading }: ChatPrevie
 
   const playMessage = async (message: string) => {
     try {
+      console.log('Starting playMessage function...');
+      
       console.log('Fetching API key from Supabase...');
       const { data, error } = await supabase
         .from('secrets')
         .select('value')
         .eq('name', 'ELEVENLABS_API_KEY')
-        .maybeSingle(); // Changed from .single() to .maybeSingle()
+        .maybeSingle();
+
+      console.log('Supabase response:', { data, error });
 
       if (error) {
         console.error('Failed to fetch API key:', error);
