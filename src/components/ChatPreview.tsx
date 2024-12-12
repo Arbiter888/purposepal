@@ -47,26 +47,26 @@ const ChatPreview = ({ messages, service, onSendMessage, isLoading }: ChatPrevie
       console.log('Voice ID being used:', voiceMap[service as keyof typeof voiceMap]);
       
       console.log('Fetching API key from Supabase...');
-      const { data, error } = await supabase
+      const { data: secretData, error: secretError } = await supabase
         .from('secrets')
         .select('value')
         .eq('name', 'ELEVENLABS_API_KEY')
         .maybeSingle();
 
-      console.log('Supabase response:', { data, error });
+      console.log('Supabase response:', { secretData, secretError });
 
-      if (error) {
-        console.error('Failed to fetch API key:', error);
+      if (secretError) {
+        console.error('Failed to fetch API key:', secretError);
         return;
       }
 
-      if (!data?.value) {
+      if (!secretData?.value) {
         console.error('No API key found in secrets. Please make sure you have set the ELEVENLABS_API_KEY in Supabase.');
         return;
       }
 
       console.log('API key retrieved successfully, attempting speech synthesis...');
-      const audio = await synthesizeSpeech(message, data.value);
+      const audio = await synthesizeSpeech(message, secretData.value);
       
       if (audio) {
         console.log('Speech synthesized successfully, playing audio...');

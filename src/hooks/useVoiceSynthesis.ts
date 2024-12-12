@@ -19,12 +19,13 @@ export const useVoiceSynthesis = (service: keyof typeof voiceMap) => {
     setError(null);
 
     try {
-      console.log('Starting speech synthesis...');
+      console.log('Starting speech synthesis with text:', text);
       console.log('Using voice ID:', voiceMap[service]);
       
       const response = await fetch(`${ELEVEN_LABS_API_ENDPOINT}/${voiceMap[service]}`, {
         method: 'POST',
         headers: {
+          'Accept': 'audio/mpeg',
           'Content-Type': 'application/json',
           'xi-api-key': apiKey,
         },
