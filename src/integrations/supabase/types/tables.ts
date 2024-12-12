@@ -1,3 +1,5 @@
+import { Json } from './database';
+
 export type Tables = {
   blog_posts: {
     Row: {
