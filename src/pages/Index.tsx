@@ -9,11 +9,21 @@ import PricingSection from "@/components/sections/PricingSection";
 import BlogPreview from "@/components/sections/BlogPreview";
 import ChatPreview from "@/components/ChatPreview";
 import { useChat } from "@/hooks/useChat";
+import PasswordProtection from "@/components/PasswordProtection";
 
 const Index = () => {
   const [selectedService, setSelectedService] = useState("spiritual");
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
   const { messages, sendMessage, isLoading } = useChat(selectedService);
+
+  useEffect(() => {
+    const checkAuth = () => {
+      const hasAccess = localStorage.getItem("siteAccess") === "granted";
+      setIsAuthenticated(hasAccess);
+    };
+    checkAuth();
+  }, []);
 
   const handleScroll = () => {
     const scrollPx = document.documentElement.scrollTop;
@@ -26,6 +36,10 @@ const Index = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  if (!isAuthenticated) {
+    return <PasswordProtection onCorrectPassword={() => setIsAuthenticated(true)} />;
+  }
 
   return (
     <div className="min-h-screen bg-black text-white relative">
@@ -57,7 +71,6 @@ const Index = () => {
         <FeaturesShowcase />
         <InteractiveDemo onServiceChange={setSelectedService} />
         
-        {/* Coach Preview and Chat Section */}
         <div className="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
           <CoachPreview activeService={selectedService} />
           <div className="lg:mt-0">
