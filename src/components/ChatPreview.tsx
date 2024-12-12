@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
-import { Send } from "lucide-react";
+import { Send, Volume2 } from "lucide-react";
 import { useState } from "react";
 import { suggestedMessages } from "@/data/chatMessages";
 import { useVoiceSynthesis } from "@/hooks/useVoiceSynthesis";
 import VoiceControl from "./VoiceControl";
 import { supabase } from "@/integrations/supabase/client";
+import { Button } from "./ui/button";
 
 const voiceMap = {
   wellness: 'EXAVITQu4vr4xnSDxMaL',
@@ -121,11 +122,19 @@ const ChatPreview = ({ messages, service, onSendMessage, isLoading }: ChatPrevie
             className={`flex items-start gap-4 ${message.type === 'ai' ? '' : 'justify-end'}`}
           >
             {message.type === 'ai' && (
-              <div 
-                className="w-10 h-10 rounded-full bg-gradient-to-r from-green-400 to-blue-500 flex-shrink-0 animate-pulse flex items-center justify-center cursor-pointer"
-                onClick={() => playMessage(message.content)}
-              >
-                <span className="text-white text-xl">🤖</span>
+              <div className="flex items-center gap-2">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-r from-green-400 to-blue-500 flex-shrink-0 flex items-center justify-center">
+                  <span className="text-white text-xl">🤖</span>
+                </div>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  onClick={() => playMessage(message.content)}
+                  className="hover:bg-white/10 transition-colors"
+                  title="Play message"
+                >
+                  <Volume2 className="h-5 w-5 text-white" />
+                </Button>
               </div>
             )}
             
