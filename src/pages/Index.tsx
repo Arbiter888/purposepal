@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import HeroWithFeatures from "@/components/sections/HeroWithFeatures";
 import FeaturesShowcase from "@/components/sections/FeaturesShowcase";
@@ -56,13 +56,20 @@ const Index = () => {
         <HeroWithFeatures />
         <FeaturesShowcase />
         <InteractiveDemo onServiceChange={setSelectedService} />
-        <CoachPreview activeService={selectedService} />
-        <ChatPreview 
-          messages={messages} 
-          service={selectedService}
-          onSendMessage={sendMessage}
-          isLoading={isLoading}
-        />
+        
+        {/* Coach Preview and Chat Section */}
+        <div className="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+          <CoachPreview activeService={selectedService} />
+          <div className="lg:mt-0">
+            <ChatPreview 
+              messages={messages} 
+              service={selectedService}
+              onSendMessage={sendMessage}
+              isLoading={isLoading}
+            />
+          </div>
+        </div>
+
         <CommunityHealth />
         <PricingSection />
         <BlogPreview />
