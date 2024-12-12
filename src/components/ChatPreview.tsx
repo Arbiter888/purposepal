@@ -42,6 +42,7 @@ const ChatPreview = ({ messages, service, onSendMessage, isLoading }: ChatPrevie
 
   const playMessage = async (message: string) => {
     try {
+      console.log('Fetching API key from Supabase...');
       const { data, error } = await supabase
         .from('secrets')
         .select('value')
@@ -53,10 +54,20 @@ const ChatPreview = ({ messages, service, onSendMessage, isLoading }: ChatPrevie
         return;
       }
 
+      if (!data?.value) {
+        console.error('No API key found in secrets');
+        return;
+      }
+
+      console.log('API key retrieved successfully, attempting speech synthesis...');
       const audio = await synthesizeSpeech(message, data.value);
+      
       if (audio) {
+        console.log('Speech synthesized successfully, playing audio...');
         audio.volume = volume;
         await audio.play();
+      } else {
+        console.error('No audio returned from synthesizeSpeech');
       }
     } catch (error) {
       console.error('Failed to play message:', error);
