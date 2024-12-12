@@ -51,6 +51,18 @@ const BlogPost = () => {
     );
   }
 
+  // Determine which hero image to use based on the post title/content
+  const getHeroImage = () => {
+    if (post.title.toLowerCase().includes('business coaching')) {
+      return '/lovable-uploads/e4399d5d-0bcf-4a91-9646-8c5a693c8d54.png';
+    } else if (post.title.toLowerCase().includes('life coaching')) {
+      return '/lovable-uploads/50c2f92e-7a97-460d-a666-14f41af85a60.png';
+    } else if (post.title.toLowerCase().includes('wellness coaching')) {
+      return '/lovable-uploads/24a164bf-f4e9-4664-85df-51a71d3008d4.png';
+    }
+    return post.thumbnail_url; // fallback to the post's thumbnail if no match
+  };
+
   return (
     <div className="min-h-screen bg-black text-white py-10">
       <article className="max-w-4xl mx-auto px-4 text-left">
@@ -62,8 +74,8 @@ const BlogPost = () => {
           {/* Hero Image */}
           <div className="relative h-[400px] w-full rounded-xl overflow-hidden mb-8">
             <img 
-              src="/lovable-uploads/3b2712cd-0d8b-403b-a574-d88e333eab3e.png"
-              alt="Group of people in a wellness coaching session sitting in blue chairs around a wooden table"
+              src={getHeroImage()}
+              alt={post.title}
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
