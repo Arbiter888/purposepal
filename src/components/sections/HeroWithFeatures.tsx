@@ -3,6 +3,7 @@ import { AnimatedBackground } from "../hero/AnimatedBackground";
 import { FloatingParticles } from "../hero/FloatingParticles";
 import { FeatureBadges } from "../hero/FeatureBadges";
 import { Bot, UserPlus, Users, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const HeroWithFeatures = () => {
   const handleEmailClick = (type: 'signup' | 'referral') => {
@@ -134,15 +135,16 @@ const HeroWithFeatures = () => {
             <span className="relative z-10">I Have a Referral</span>
           </motion.button>
 
-          <motion.a
-            href="/blog"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="glass px-8 py-4 rounded-full font-medium hover-lift flex items-center gap-2 text-lg"
-          >
-            Read Our Blog
-            <ArrowRight className="w-5 h-5" />
-          </motion.a>
+          <Link to="/blog">
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="glass px-8 py-4 rounded-full font-medium hover-lift flex items-center gap-2 text-lg"
+            >
+              Read Our Blog
+              <ArrowRight className="w-5 h-5" />
+            </motion.div>
+          </Link>
         </motion.div>
 
         <FeatureBadges />
