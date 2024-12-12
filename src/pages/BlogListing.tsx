@@ -32,11 +32,13 @@ const BlogListing = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {isLoading ? (
             Array(6).fill(0).map((_, i) => (
-              <div key={i} className="glass p-6 rounded-xl animate-pulse">
-                <div className="h-48 bg-white/10 rounded-lg mb-4"></div>
-                <div className="h-4 bg-white/10 rounded w-3/4 mb-4"></div>
-                <div className="h-20 bg-white/10 rounded mb-4"></div>
-                <div className="h-4 bg-white/10 rounded w-1/2"></div>
+              <div key={i} className="bg-zinc-900/50 rounded-xl animate-pulse">
+                <div className="h-48 bg-zinc-800 rounded-t-xl"></div>
+                <div className="p-6">
+                  <div className="h-6 bg-zinc-800 rounded w-3/4 mb-4"></div>
+                  <div className="h-20 bg-zinc-800 rounded mb-4"></div>
+                  <div className="h-4 bg-zinc-800 rounded w-1/3"></div>
+                </div>
               </div>
             ))
           ) : posts?.map((post) => (
@@ -48,27 +50,30 @@ const BlogListing = () => {
               <motion.article
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                className="glass p-6 rounded-xl hover-lift cursor-pointer transition-all duration-300 hover:bg-white/5 h-full"
+                className="bg-zinc-900/50 rounded-xl overflow-hidden hover:bg-zinc-900/70 transition-all duration-300 h-full"
               >
-                {post.thumbnail_url && (
-                  <div className="relative h-48 rounded-lg overflow-hidden mb-4">
+                <div className="relative h-48 w-full">
+                  {post.thumbnail_url && (
                     <img 
                       src={post.thumbnail_url} 
                       alt={post.title}
                       className="w-full h-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                  </div>
-                )}
-                <h2 className="text-xl font-semibold mb-4 text-gradient-aurora">
-                  {post.title}
-                </h2>
-                <p className="text-sm text-muted-foreground mb-4 line-clamp-3">
-                  {post.excerpt}
-                </p>
-                <time className="text-xs text-muted-foreground">
-                  {new Date(post.published_at).toLocaleDateString()}
-                </time>
+                  )}
+                </div>
+                <div className="p-6">
+                  <h2 className="text-xl font-semibold mb-3">
+                    <span className="bg-gradient-to-r from-emerald-400 to-blue-500 bg-clip-text text-transparent">
+                      {post.title}
+                    </span>
+                  </h2>
+                  <p className="text-sm text-muted-foreground mb-4 line-clamp-3">
+                    {post.excerpt}
+                  </p>
+                  <time className="text-xs text-muted-foreground">
+                    {new Date(post.published_at).toLocaleDateString()}
+                  </time>
+                </div>
               </motion.article>
             </Link>
           ))}
