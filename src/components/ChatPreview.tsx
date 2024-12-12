@@ -42,9 +42,10 @@ const ChatPreview = ({ messages, service, onSendMessage, isLoading }: ChatPrevie
 
   const playMessage = async (message: string) => {
     try {
-      const { data: { ELEVENLABS_API_KEY }, error } = await supabase
+      const { data, error } = await supabase
         .from('secrets')
-        .select('ELEVENLABS_API_KEY')
+        .select('value')
+        .eq('name', 'ELEVENLABS_API_KEY')
         .single();
 
       if (error) {
@@ -52,7 +53,7 @@ const ChatPreview = ({ messages, service, onSendMessage, isLoading }: ChatPrevie
         return;
       }
 
-      const audio = await synthesizeSpeech(message, ELEVENLABS_API_KEY);
+      const audio = await synthesizeSpeech(message, data.value);
       if (audio) {
         audio.volume = volume;
         await audio.play();
