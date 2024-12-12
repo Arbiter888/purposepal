@@ -106,10 +106,43 @@ export default {
         float: "float 3s ease-in-out infinite",
         "spin-slow": "spin-slow 8s linear infinite",
       },
+      typography: {
+        DEFAULT: {
+          css: {
+            maxWidth: 'none',
+            color: 'inherit',
+            a: {
+              color: 'inherit',
+              textDecoration: 'none',
+              fontWeight: '500',
+            },
+            strong: {
+              color: 'inherit',
+              fontWeight: '700',
+            },
+            code: {
+              color: 'inherit',
+            },
+            h1: {
+              color: 'inherit',
+            },
+            h2: {
+              color: 'inherit',
+            },
+            h3: {
+              color: 'inherit',
+            },
+            h4: {
+              color: 'inherit',
+            },
+          },
+        },
+      },
     },
   },
   plugins: [
     require("tailwindcss-animate"),
+    require("@tailwindcss/typography"),
     function({ addUtilities }) {
       const newUtilities = {
         '.text-gradient': {
