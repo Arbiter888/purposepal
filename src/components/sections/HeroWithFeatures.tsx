@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { AnimatedBackground } from "../hero/AnimatedBackground";
 import { FloatingParticles } from "../hero/FloatingParticles";
 import { FeatureBadges } from "../hero/FeatureBadges";
-import { Bot, UserPlus, Users } from "lucide-react";
+import { Bot, UserPlus, Users, ArrowRight } from "lucide-react";
 
 const HeroWithFeatures = () => {
   const handleEmailClick = (type: 'signup' | 'referral') => {

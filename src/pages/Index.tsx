@@ -8,15 +8,11 @@ import CommunityHealth from "@/components/sections/CommunityHealth";
 import PricingSection from "@/components/sections/PricingSection";
 import BlogPreview from "@/components/sections/BlogPreview";
 import ChatPreview from "@/components/ChatPreview";
-import { Button } from "@/components/ui/button";
-import { HelpCircle } from "lucide-react";
-import { suggestedMessages } from "@/data/chatMessages";
 import { useChat } from "@/hooks/useChat";
 
 const Index = () => {
   const [selectedService, setSelectedService] = useState("spiritual");
   const [scrollProgress, setScrollProgress] = useState(0);
-  const [showHelp, setShowHelp] = useState(false);
   const { messages, sendMessage, isLoading } = useChat(selectedService);
 
   const handleScroll = () => {
@@ -30,8 +26,6 @@ const Index = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const activeCoach = coachInfo[selectedService as keyof typeof coachInfo];
 
   return (
     <div className="min-h-screen bg-black text-white relative">
