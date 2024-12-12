@@ -53,7 +53,7 @@ const BlogPost = () => {
 
   return (
     <div className="min-h-screen bg-black text-white py-10">
-      <article className="max-w-4xl mx-auto px-4">
+      <article className="max-w-4xl mx-auto px-4 text-left">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
