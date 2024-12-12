@@ -33,6 +33,7 @@ const BlogListing = () => {
           {isLoading ? (
             Array(6).fill(0).map((_, i) => (
               <div key={i} className="glass p-6 rounded-xl animate-pulse">
+                <div className="h-48 bg-white/10 rounded-lg mb-4"></div>
                 <div className="h-4 bg-white/10 rounded w-3/4 mb-4"></div>
                 <div className="h-20 bg-white/10 rounded mb-4"></div>
                 <div className="h-4 bg-white/10 rounded w-1/2"></div>
@@ -49,6 +50,15 @@ const BlogListing = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 className="glass p-6 rounded-xl hover-lift cursor-pointer transition-all duration-300 hover:bg-white/5 h-full"
               >
+                {post.thumbnail_url && (
+                  <div className="relative w-full h-48 mb-4 rounded-lg overflow-hidden">
+                    <img
+                      src={post.thumbnail_url}
+                      alt={post.title}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                )}
                 <h2 className="text-xl font-semibold mb-4 text-gradient-aurora">
                   {post.title}
                 </h2>
