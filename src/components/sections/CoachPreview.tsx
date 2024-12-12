@@ -49,7 +49,7 @@ const coachData = {
     description: "Transform your business success with personalized guidance from your dedicated AI-powered Business Coach.",
     gradient: "from-blue-400 via-indigo-500 to-purple-500",
     tags: ["Business Strategy", "Leadership", "Growth Planning"],
-    videoUrl: "https://www.youtube.com/embed/UiJ0OfgSt1M",
+    videoUrl: "https://www.youtube.com/embed/hQeuxpS9Eg4",
     backgroundImage: "/lovable-uploads/e1950664-3053-4b9a-aed1-78f46c6e7573.png"
   },
 };

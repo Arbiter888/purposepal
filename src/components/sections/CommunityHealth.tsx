@@ -87,7 +87,7 @@ const CommunityHealth = () => {
         newState[activeCategory] = (prev[activeCategory] + 1) % categories[activeCategory].matches.length;
         return newState;
       });
-    }, 3000);
+    }, 5000); // Changed from 3000 to 5000 ms for slower transitions
 
     return () => clearInterval(interval);
   }, [activeCategory]);
