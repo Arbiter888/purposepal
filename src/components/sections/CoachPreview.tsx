@@ -43,12 +43,12 @@ const coachData = {
     videoUrl: "https://www.youtube.com/embed/O0o-Y25rv7c",
     backgroundImage: "/lovable-uploads/2b866cad-b0b6-4291-b93e-404f8ef8e0e4.png"
   },
-  financial: {
+  business: {
     name: "Maya",
-    title: "Financial Coach",
-    description: "Transform your financial future with personalized guidance from your dedicated AI-powered Financial Coach.",
+    title: "Business Coach",
+    description: "Transform your business success with personalized guidance from your dedicated AI-powered Business Coach.",
     gradient: "from-blue-400 via-indigo-500 to-purple-500",
-    tags: ["Investment Planning", "Budgeting", "Wealth Building"],
+    tags: ["Business Strategy", "Leadership", "Growth Planning"],
     videoUrl: "https://www.youtube.com/embed/UiJ0OfgSt1M",
     backgroundImage: "/lovable-uploads/e1950664-3053-4b9a-aed1-78f46c6e7573.png"
   },

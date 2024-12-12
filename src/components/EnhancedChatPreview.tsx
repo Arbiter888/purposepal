@@ -77,20 +77,20 @@ const coaches: Coach[] = [
     ]
   },
   { 
-    id: "financial", 
+    id: "business", 
     name: "Maya",
-    title: "Financial Advisor",
+    title: "Business Coach",
     gradient: "from-blue-400 via-indigo-500 to-purple-500",
     bgGradient: "bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-500",
     examples: [
-      "How to start budgeting?",
-      "Investment tips for beginners?",
-      "Saving for retirement?"
+      "How to grow my business?",
+      "Leadership development tips?",
+      "Strategic planning help?"
     ],
     capabilities: [
-      "Financial planning",
-      "Investment guidance",
-      "Budget management"
+      "Business strategy",
+      "Leadership coaching",
+      "Growth planning"
     ]
   },
 ];
