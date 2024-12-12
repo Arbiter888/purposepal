@@ -17,6 +17,16 @@ const BlogPost = () => {
         .single();
       
       if (error) throw error;
+      
+      // Remove extra images from business coaching article
+      if (post?.title?.toLowerCase().includes('business coaching')) {
+        const cleanedContent = data.content.replace(
+          /<figure.*?<\/figure>\s*<figure.*?<\/figure>/s,
+          ''
+        );
+        return { ...data, content: cleanedContent };
+      }
+      
       return data;
     }
   });
@@ -51,18 +61,6 @@ const BlogPost = () => {
     );
   }
 
-  // Determine which hero image to use based on the post title/content
-  const getHeroImage = () => {
-    if (post.title.toLowerCase().includes('business coaching')) {
-      return '/lovable-uploads/e4399d5d-0bcf-4a91-9646-8c5a693c8d54.png';
-    } else if (post.title.toLowerCase().includes('life coaching')) {
-      return '/lovable-uploads/50c2f92e-7a97-460d-a666-14f41af85a60.png';
-    } else if (post.title.toLowerCase().includes('wellness coaching')) {
-      return '/lovable-uploads/24a164bf-f4e9-4664-85df-51a71d3008d4.png';
-    }
-    return post.thumbnail_url; // fallback to the post's thumbnail if no match
-  };
-
   return (
     <div className="min-h-screen bg-black text-white py-10">
       <article className="max-w-4xl mx-auto px-4 text-left">
@@ -74,7 +72,7 @@ const BlogPost = () => {
           {/* Hero Image */}
           <div className="relative h-[400px] w-full rounded-xl overflow-hidden mb-8">
             <img 
-              src={getHeroImage()}
+              src={post.thumbnail_url}
               alt={post.title}
               className="w-full h-full object-cover"
             />
