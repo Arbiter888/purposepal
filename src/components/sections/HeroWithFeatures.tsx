@@ -133,6 +133,16 @@ const HeroWithFeatures = () => {
             <Users className="w-5 h-5" />
             <span className="relative z-10">I Have a Referral</span>
           </motion.button>
+
+          <motion.a
+            href="/blog"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="glass px-8 py-4 rounded-full font-medium hover-lift flex items-center gap-2 text-lg"
+          >
+            Read Our Blog
+            <ArrowRight className="w-5 h-5" />
+          </motion.a>
         </motion.div>
 
         <FeatureBadges />
