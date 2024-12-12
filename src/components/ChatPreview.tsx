@@ -47,7 +47,7 @@ const ChatPreview = ({ messages, service, onSendMessage, isLoading }: ChatPrevie
         .from('secrets')
         .select('value')
         .eq('name', 'ELEVENLABS_API_KEY')
-        .single();
+        .maybeSingle(); // Changed from .single() to .maybeSingle()
 
       if (error) {
         console.error('Failed to fetch API key:', error);
@@ -55,7 +55,7 @@ const ChatPreview = ({ messages, service, onSendMessage, isLoading }: ChatPrevie
       }
 
       if (!data?.value) {
-        console.error('No API key found in secrets');
+        console.error('No API key found in secrets. Please make sure you have set the ELEVENLABS_API_KEY in Supabase.');
         return;
       }
 
