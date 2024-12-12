@@ -62,8 +62,8 @@ const BlogPost = () => {
           {/* Hero Image */}
           <div className="relative h-[400px] w-full rounded-xl overflow-hidden mb-8">
             <img 
-              src="/lovable-uploads/6fe21698-d9f3-42ef-bf25-86d72e4d604a.png"
-              alt="Woman using laptop on couch"
+              src="/lovable-uploads/3b2712cd-0d8b-403b-a574-d88e333eab3e.png"
+              alt="Group of people in a wellness coaching session sitting in blue chairs around a wooden table"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
