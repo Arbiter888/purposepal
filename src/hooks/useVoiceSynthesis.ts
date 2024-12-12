@@ -3,11 +3,11 @@ import { useState, useCallback } from 'react';
 const ELEVEN_LABS_API_ENDPOINT = 'https://api.elevenlabs.io/v1/text-to-speech';
 
 const voiceMap = {
-  wellness: 'EXAVITQu4vr4xnSDxMaL', // Sarah - warm and professional
-  nutrition: 'XB0fDUnXU5powFXDhCwa', // Charlotte - clear and informative
-  spiritual: 'pFZP5JQG7iQjIQuC4Bku', // Lily - calm and soothing
-  fitness: 'TX3LPaxmHKxFdv7VOQHJ', // Liam - energetic and motivating
-  business: 'CwhRBWXzGAHq8TQ4Fs17', // Roger - authoritative and professional
+  wellness: 'EXAVITQu4vr4xnSDxMaL',
+  nutrition: 'XB0fDUnXU5powFXDhCwa',
+  spiritual: 'pFZP5JQG7iQjIQuC4Bku',
+  fitness: 'TX3LPaxmHKxFdv7VOQHJ',
+  business: 'CwhRBWXzGAHq8TQ4Fs17',
 };
 
 export const useVoiceSynthesis = (service: keyof typeof voiceMap) => {
@@ -19,6 +19,9 @@ export const useVoiceSynthesis = (service: keyof typeof voiceMap) => {
     setError(null);
 
     try {
+      console.log('Starting speech synthesis...');
+      console.log('Using voice ID:', voiceMap[service]);
+      
       const response = await fetch(`${ELEVEN_LABS_API_ENDPOINT}/${voiceMap[service]}`, {
         method: 'POST',
         headers: {
@@ -35,16 +38,22 @@ export const useVoiceSynthesis = (service: keyof typeof voiceMap) => {
         }),
       });
 
+      console.log('ElevenLabs API response status:', response.status);
+      
       if (!response.ok) {
-        throw new Error('Failed to synthesize speech');
+        const errorText = await response.text();
+        console.error('ElevenLabs API error:', errorText);
+        throw new Error(`Failed to synthesize speech: ${errorText}`);
       }
 
+      console.log('Successfully received audio response');
       const audioBlob = await response.blob();
       const audioUrl = URL.createObjectURL(audioBlob);
       const audio = new Audio(audioUrl);
       
       return audio;
     } catch (err) {
+      console.error('Error in synthesizeSpeech:', err);
       setError(err instanceof Error ? err.message : 'An error occurred');
       throw err;
     } finally {

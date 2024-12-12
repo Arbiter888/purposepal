@@ -7,11 +7,11 @@ import VoiceControl from "./VoiceControl";
 import { supabase } from "@/integrations/supabase/client";
 
 const voiceMap = {
-  wellness: 'EXAVITQu4vr4xnSDxMaL', // Sarah - warm and professional
-  nutrition: 'XB0fDUnXU5powFXDhCwa', // Charlotte - clear and informative
-  spiritual: 'pFZP5JQG7iQjIQuC4Bku', // Lily - calm and soothing
-  fitness: 'TX3LPaxmHKxFdv7VOQHJ', // Liam - energetic and motivating
-  business: 'CwhRBWXzGAHq8TQ4Fs17', // Roger - authoritative and professional
+  wellness: 'EXAVITQu4vr4xnSDxMaL',
+  nutrition: 'XB0fDUnXU5powFXDhCwa',
+  spiritual: 'pFZP5JQG7iQjIQuC4Bku',
+  fitness: 'TX3LPaxmHKxFdv7VOQHJ',
+  business: 'CwhRBWXzGAHq8TQ4Fs17',
 };
 
 interface ChatPreviewProps {
@@ -42,7 +42,9 @@ const ChatPreview = ({ messages, service, onSendMessage, isLoading }: ChatPrevie
 
   const playMessage = async (message: string) => {
     try {
-      console.log('Starting playMessage function...');
+      console.log('Starting playMessage function with message:', message);
+      console.log('Current service:', service);
+      console.log('Voice ID being used:', voiceMap[service as keyof typeof voiceMap]);
       
       console.log('Fetching API key from Supabase...');
       const { data, error } = await supabase
@@ -69,7 +71,9 @@ const ChatPreview = ({ messages, service, onSendMessage, isLoading }: ChatPrevie
       if (audio) {
         console.log('Speech synthesized successfully, playing audio...');
         audio.volume = volume;
-        await audio.play();
+        await audio.play().catch(error => {
+          console.error('Error playing audio:', error);
+        });
       } else {
         console.error('No audio returned from synthesizeSpeech');
       }
